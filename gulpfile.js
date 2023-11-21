@@ -14,18 +14,18 @@ const sourcemaps = require('gulp-sourcemaps');
 const paths = {
   port: '3000',
   input: './src/**/*',
-  output: './dist/',
+  output: './docs/',
   html: {
     input: './src/html/**',
-    output: './dist/html/'
+    output: './docs/html/'
   },
   style: {
     input: './src/scss/*.scss',
-    output: './dist/css'
+    output: './docs/css'
   },
   js: {
     input: './src/js/*.js',
-    output: './dist/js/'
+    output: './docs/js/'
   }
 };
 
