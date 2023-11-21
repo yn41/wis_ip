@@ -1,0 +1,86 @@
+h1{
+    @include font(22, normal, $gray800, $bold);
+    line-height: normal;
+}
+
+h2{
+    @include font(19, normal, $gray800, $bold);
+    @include pc{
+        @include font(26);
+    }
+}
+a, button, input{
+    transition: all 300ms;
+}
+.hide{
+    opacity: 0;
+    transition: all 400ms ease;
+}
+.ellipsis {
+    @include ellipsis;
+}
+.ellipsis2 {
+    @include ellipsis("multi", 2);
+}
+.ellipsis3 {
+    @include ellipsis("multi", 3);
+}
+.ellipsis4 {
+    @include ellipsis("multi", 4);
+}
+.f11{
+    @include font(11);
+}
+.f12{
+    @include font(12);
+}
+.f13{
+    @include font(13);
+}
+.f14{
+    @include font(14);
+}
+
+.logo{
+    @include setCont(48px, 48px, inline-block);
+    @include bgSvg(logo(), no-repeat, 50% 50%, 100% auto);
+    span{
+        @include blind;
+    }
+}
+.btn{
+    width: 100%;
+    background-color: $point;;
+    @include font(16, 19, $gray50, $medi);
+    padding: 17px 5px 18px;
+    border-radius: 14px;
+    // &:hover{
+    //     background-color: #ccc8ff;
+    // }
+    &:hover, &:active{
+        background-color: #6737cc;
+    }
+}
+.textarea{
+    @include setCont(100%, 104px, block);
+    @include font(16, normal, $gray400);
+    padding: 16px 18px;
+    border: 1px solid $gray200;
+    background-color: $white;
+    border-radius: 8px;
+    resize: none;
+    &::placeholder{
+        @include font(16, normal, $gray400);
+    }
+}
+input.ipt{
+    @include setCont(100%, 40px, block);
+    @include font(16, normal, $gray400);
+    padding: 16px 18px;
+    border: 1px solid $gray200;
+    background-color: $white;
+    border-radius: 8px;
+    &::placeholder{
+        @include font(16, normal, $gray400);
+    }
+}
