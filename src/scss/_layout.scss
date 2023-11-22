@@ -14,6 +14,7 @@
     border-bottom: 1px solid rgba(255,255,255,0);
     opacity: 1;
     z-index: 10;
+    overflow: hidden;
     &.hidden{
         transform: translate(-50%, $header*-1);
         opacity: 0;
@@ -45,30 +46,57 @@
         height: 100%;
     }
     .gnb{
-        @include setCont(auto, 0, none, relative);
-        opacity: 0;
+        @include setCont(100%, auto, block, absolute);
+        top: -1px;
+        left: 50%;
+        transform: translateX(-50%);
         z-index: -1;
-        transition: opacity 300ms;
+        opacity: 0;
+        overflow: hidden;
+        transition: opacity 400ms ease; 
         @include pc{
-            @include setCont(auto, 100%, flex,);
-            align-items: center;
+            @include setCont(auto, 100%, block, relative);
             overflow: hidden;
+            top: 0;
+            left: unset;
+            transform: unset;
             opacity: 1;
             z-index: 1;
         }
+        .g_inner{
+            @include setCont(100%, auto, block, relative, $white);
+            align-items: center;
+            z-index: 12;
+            padding: $header 0 20px;
+            @include pc{
+                width: auto;
+                display: flex;
+                padding: 0;
+            }
+        }
         a{
-            @include font(16, 55, $gray800);
-            height: 100%;
+            @include font(16, normal, $gray800);
+            padding: 12px calcPercent(20);
             display: block;
-            margin: 0 5.5px;
-            padding: 0 12px;
             position: relative;
+            height: 43px;
+            overflow: hidden;
+            @include pc{
+                display: inline-block;
+                height: 100%;
+                margin: 0 5.5px;
+                padding: 0 12px;
+                @include fontPc(16, 55);
+                background-color: $white;
+            }
             &::before{
-                @include setCont(0, 1px, block, absolute, $gray800);
-                left: 50%;
-                bottom: 0;
-                transform: translateX(-50%);
-                transition: width 300ms;
+                @include pc{
+                    @include setCont(0, 1px, block, absolute, $gray800);
+                    left: 50%;
+                    bottom: 0;
+                    transform: translateX(-50%);
+                    transition: width 300ms;
+                }
             }
             &:hover:not(.on){
                 opacity: 0.6;
@@ -80,20 +108,65 @@
                 }
             }
         }
+        .btn_menu_close{
+            @include setCont(20px, 20px, block, absolute);
+            @include blind;
+            top: 16px;
+            right: 20px;
+            display: none;
+            &::before, &:after{
+                @include setCont(18px, 1px, block, absolute, $gray500);
+                transition: all 300ms;
+                top: 50%;
+                left: 50%;
+                transform: translate(-50%, -50%) rotate(45deg);
+            }
+            &::after{
+                transform: translate(-50%, -50%) rotate(-45deg);
+            }
+            &:hover{
+                &::before, &:after{
+                    background-color: $gray700;
+                }
+            }
+        }
     }
     .btn_menu{
         @include setCont(48px, 48px, block, relative);
         @include bgSvg(icoMenu($s_gray400), no-repeat, 50% 50%, 100% auto);
         transition: opacity transform 300ms;
+        &:hover{
+            transform: scale(1.025);
+            @include bgSvg(icoMenu($s_gray500), no-repeat, 50% 50%, 100% auto);
+        }
         @include pc{
             display: none;
         }
         span{
             @include blind;
         }
-        &:hover{
-            transform: scale(1.025);
-            @include bgSvg(icoMenu($s_gray500), no-repeat, 50% 50%, 100% auto);
+    }
+    &.open{
+        overflow: unset;
+        .logo{
+            position: relative;
+            z-index: 13;
+        }
+        .gnb{
+            @include setCont(100%, 100vh, block, fixed);
+            display: block;
+            top: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            z-index: 11;
+            opacity: 1;
+            &::before{
+                @include setCont(100%, 100vh, block, fixed, rgba(136, 136, 136, 0.50));
+                z-index: 11;
+            }
+            .btn_menu_close{
+                display: block;
+            }
         }
     }
 }
@@ -104,8 +177,9 @@
 }
 .footer{
     width: 100%;
+    background-color:  $gray50;
     .inner{
-        @include setCont(100%, auto, block, relative, $gray50);
+        @include setCont(100%, auto, block, relative);
         padding:  32px calcPercent(20) 86px;
         max-width: 1004px;
         margin: 0 auto;
@@ -121,7 +195,7 @@
             color: $gray400;
         }
         @include pc{
-            @include font(15);
+            @include fontPc(15);
         }
     }
     .bx_logo{
@@ -131,7 +205,7 @@
         margin-bottom: 8px;
         @include pc{
             margin-bottom: 25px;
-            @include font(23, normal, $gray500, $bold);
+            @include fontPc(23, normal, $gray500, $bold);
         }
         .logo{
             @include setCont(32px, 32px, inline-block);
@@ -158,7 +232,7 @@
         a{
             @include font(15);
             @include pc{
-                @include font(19);
+                @include fontPc(19);
             }
             &+a{
                 margin-top: 13px;
@@ -177,7 +251,7 @@
             @include font(13, normal, $gray400);
             margin-top: 8px;
             @include pc{
-                @include font(15, normal, $gray400);
+                @include fontPc(15, normal, $gray400);
             }
         }
     }

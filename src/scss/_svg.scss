@@ -11,3 +11,7 @@
   $url: "data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='48' height='48' viewBox='0 0 48 48'%3E%3Cpath d='M15.19 16c-.657 0-1.19.448-1.19 1s.533 1 1.19 1h17.62c.657 0 1.19-.448 1.19-1s-.533-1-1.19-1H15.19zm0 7c-.657 0-1.19.448-1.19 1s.533 1 1.19 1h17.62c.657 0 1.19-.448 1.19-1s-.533-1-1.19-1H15.19zm0 7c-.657 0-1.19.448-1.19 1s.533 1 1.19 1h17.62c.657 0 1.19-.448 1.19-1s-.533-1-1.19-1H15.19z' fill='%23"+$color+"' fill-rule='nonzero'/%3E%3C/svg%3E";
   @return url($url);
 }
+@function btnClose($color) {
+  $url: "data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='16' height='16'%3E%3Cpath fill='%23"+$color+"' d='M8 0a8 8 0 1 0 0 16A8 8 0 0 0 8 0zm2.966 9.834a.8.8 0 1 1-1.132 1.132L8 9.13l-1.834 1.835a.8.8 0 0 1-1.132-1.132L6.87 8 5.034 6.166a.8.8 0 0 1 1.132-1.132L8 6.87l1.834-1.835a.8.8 0 0 1 1.132 1.132L9.13 8l1.835 1.834z'/%3E%3C/svg%3E";
+  @return url($url);
+}

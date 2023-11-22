@@ -1,7 +1,11 @@
-@function calcRem($size) {
+@function calcRem($size, $type: null) {
   /*Mobile용 믹스인*/
   // $remSize: $size / $font;
-  $remSize: math.div($size, $font);
+  $temp : $font;
+  @if $type == "pc" {
+    $temp : $pc_font;
+  }
+  $remSize: math.div($size, $temp);
   @return #{$remSize}rem;
 }
 
@@ -74,6 +78,30 @@
     line-height: normal;
   }
 }
+
+@mixin fontPc($size, $line: null, $color: null, $weight: null){
+  font-size: calcRem($size, "pc");
+  @if $weight != null {
+    font-weight: $weight;
+  }
+  @if $color != null {
+    color: $color;
+  }
+  @if $line != null {
+    @if($size == $line){
+      line-height: 1; 
+    } @else {
+      @if($line == "normal"){
+        line-height: normal;
+      }@else{
+        line-height: calcRem($line, "pc"); 
+      }
+    }
+  }@else{
+    line-height: normal;
+  }
+}
+
 @mixin lineHight($size){
   line-height: calcRem($size);
 }

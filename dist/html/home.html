@@ -27,11 +27,14 @@
 			            <button type="button" class="btn_menu"><span class="blind">menu button</span></button>
 			            
 				<nav class="gnb">
-					<a href="#" target="_parent" class="on">Home</a>  
-					<a href="#" target="_parent">University Rankings</a>  
-					<a href="#" target="_parent">Company Rankings</a>  
-					<a href="#" target="_parent">Patent Valuation</a>  
-					<a href="#" target="_parent">Inventor Tech Valuation</a>  
+					<div class="g_inner">
+						<button type="button" class="btn_menu_close">menu close</button>
+						<a href="#" target="_parent" class="on">Home</a>  
+						<a href="#" target="_parent">University Rankings</a>  
+						<a href="#" target="_parent">Company Rankings</a>  
+						<a href="#" target="_parent">Patent Valuation</a>  
+						<a href="#" target="_parent">Inventor Tech Valuation</a>  
+					</div>
 				</nav>
 			
 			        </div>
@@ -145,8 +148,14 @@
 								<h2>Have Feedback?</h2>
 								<p>Help us create a better experience for you! <br/>Feel free to reach out with any questions, comments, or requests.</p>
 								<div class="form">
-									<textarea class="textarea" placeholder="Write comment"></textarea>
-									<input type="email" class="ipt" placeholder="Your email" />
+									<div class="bx_textarea">
+										<textarea class="textarea" placeholder="Write comment"></textarea>
+										<button type="button" class="btn_clear">delete</button>
+									</div>
+									<div class="bx_ipt">
+										<input type="email" class="ipt" placeholder="Your email" />
+										<button type="button" class="btn_clear">delete</button>
+									</div>
 									<button type="button" class="btn">Send</button>
 								</div>
 								<a href="mailto:hello@iprankings.com" class="link_email">hello@iprankings.com</a>

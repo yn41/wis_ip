@@ -5,7 +5,7 @@ $font_url: "/font";
 $version: "?v=0";
 
 // $max: 1080px;
-$pc: 1080px; 
+$pc: 1004px; 
 // $s_pc: 1280;
 $tablet: 768px;
 $s_tablet: 768;
@@ -18,7 +18,7 @@ $footer: 210px;
 /*Font 및 Color*/
 $family: "Pretendard", "pretendard", "프리텐다드","Apple SD Gothic Neo", "Malgun Gothic",  "맑은 고딕", "돋음", "AppleGothic", "Arial", "Meiryo", "sans-serif";
 $font: 16;
-// $pc_font: 16px;
+$pc_font: 19;
 
 $normal: 400;
 $medi: 500;
@@ -45,7 +45,7 @@ $s_gray500 : "878990";
 $s_gray600 : "6b6d71";
 $s_gray700 : "47484e";
 $s_gray800 : "313336";
-$s_gray900 : "878990";
+$s_gray900 : "212224";
 
 $purple50 : #F7F0FF;
 $purple100 : #EADFFF;
@@ -66,7 +66,9 @@ $border: rgba(39, 43, 55, 0.16);
 
 $white: #fff;
 $black: #212224;
+$red: #b3261e;
 
 $s_white: "fff";
 $s_black: "212224";
 $s_point: "8145ff";
+$s_red: "b3261e";
