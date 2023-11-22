@@ -53,32 +53,4 @@ $(function(){
 		$("body").css({"overflow":"", "top":""});
 		scrollPosition = 0;
 	});
-	
-	//셀랙트 박스 세팅
-	// for (var i =0; i < $(".slct").length; i++) {
-	// 	var target = $(".slct").eq(i);
-	// 	if($.trim(target.find(".slct_tit").text()) === "")
-	// 		target.find(".slct_tit").text(target.find(".slct_cont .select").text());
-		
-	// }
-	// $(".slct_tit").on("click", function (e) {
-	// 	if($(this).parent().hasClass("on") === true) {
-	// 		$(this).parent().removeClass("on");
-	// 	}else {
-	// 		$(".slct").removeClass("on");
-	// 		$(this).parent().addClass("on");
-	// 	}
-	// });
-	// $(".slct_cont li").on("click", function(){
-	// 	$(this).parents(".slct").find(".slct_tit").text($(this).text());
-	// 	$(this).parent().find("li").removeClass("select");
-	// 	$(this).addClass("select");
-	// 	$(this).parents(".slct").removeClass("on");
-	// });
-	// $(document).on("click", function(e){
-	// 	if(e.target.className === "slct" || e.target.className === "slct_tit" || e.target.className === "slct_cont") {return false;}
-	// 	$(".slct").removeClass("on");
-	// });
 });
-// $(window).resize(function(){
-// });

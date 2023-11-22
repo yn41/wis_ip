@@ -71,7 +71,7 @@ function sassComp(done) {
 function js() {
   return gulp.src(paths.js.input)
     // .pipe(gulp.dest(paths.js.output))
-    .pipe(uglify())
+    // .pipe(uglify())
     .pipe(gulp.dest(paths.js.output))
     // .pipe(gulp.dest(paths.js.output + '/min'))
     .pipe(browsersync.reload({stream: true}));
