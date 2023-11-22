@@ -113,19 +113,19 @@
   font-family: "Pretendard";
   font-weight: 400;
   font-display: block;
-  src: local("※"), url("/font/Pretendard-Regular.woff2") format("woff2"), local("※"), url("/font/Pretendard-Regular.woff") format("woff");
+  src: local("※"), url("../font/Pretendard-Regular.woff2") format("woff2"), local("※"), url("../font/Pretendard-Regular.woff") format("woff");
 }
 @font-face {
   font-family: "Pretendard";
   font-weight: 500;
   font-display: block;
-  src: local("※"), url("/font/Pretendard-Medium.woff2") format("woff2"), local("※"), url("/font/Pretendard-Medium.woff") format("woff");
+  src: local("※"), url("../font/Pretendard-Medium.woff2") format("woff2"), local("※"), url("../font/Pretendard-Medium.woff") format("woff");
 }
 @font-face {
   font-family: "Pretendard";
   font-weight: 700;
   font-display: block;
-  src: local("※"), url("/font/Pretendard-Bold.woff2") format("woff2"), local("※"), url("/font/Pretendard-Bold.woff") format("woff");
+  src: local("※"), url("../font/Pretendard-Bold.woff2") format("woff2"), local("※"), url("../font/Pretendard-Bold.woff") format("woff");
 }
 html, body {
   border: none;
