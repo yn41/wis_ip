@@ -29,19 +29,31 @@ function getInternetExplorerVersion() {
 
 $(function(){ 
 	//header 스크롤 올리면 보이고 내리면 사라지고
-	let prevScrollpos = window.pageYOffset;
+	let prevScrollpos = $(document).scrollTop();
+	let scrollPosition = 0;
 	$(window).on('scroll', function(){
-		// $(window).scrollTop();
-		var currentScrollPos = window.pageYOffset;
+		var currentScrollPos = $(document).scrollTop();
 		if (prevScrollpos > currentScrollPos) {
-			console.log("up");
 			$(".header").removeClass("hidden");
 		} else {
-			$(".header").addClass("hidden");
-			console.log("down");
+			$(".header").addClass("hidden").removeClass("open");
 		}
 		prevScrollpos = currentScrollPos;
-	})
+	});
+	$(".btn_clear").click(function(){
+		$(this).prev().val("").focus();
+	});
+	$(".btn_menu").click(function(){
+		$(".header").addClass("open");
+		scrollPosition = $(document).scrollTop();
+		$("body").css({"overflow":"hidden", "top": (scrollPosition*-1)});
+	});
+	$(".btn_menu_close").click(function(){
+		$(".header").removeClass("open");
+		$("body").css({"overflow":"", "top":""});
+		scrollPosition = 0;
+	});
+	
 	//셀랙트 박스 세팅
 	// for (var i =0; i < $(".slct").length; i++) {
 	// 	var target = $(".slct").eq(i);

@@ -1,12 +1,15 @@
 h1{
     @include font(22, normal, $gray800, $bold);
     line-height: normal;
+    @include pc{
+        @include font(30);
+    }
 }
 
 h2{
     @include font(19, normal, $gray800, $bold);
     @include pc{
-        @include font(26);
+        @include font(28);
     }
 }
 a, button, input{
@@ -69,18 +72,125 @@ a, button, input{
     background-color: $white;
     border-radius: 8px;
     resize: none;
+    transition: all 300ms;
     &::placeholder{
         @include font(16, normal, $gray400);
+    }
+    &:hover, &:active{
+        border: 1px solid $gray300;
+    }
+    &:focus{
+        border: 1px solid #636567;
+        color: #121416;
+    }
+    &.red{
+        color: $red;
+        border: 1px solid $red;
+        &::placeholder{
+            color: $red;
+        }
+    }
+    &.dis, &:disabled{
+        color: #e1e3e7;
+        border: 1px solid #e1e3e7;
+        &::placeholder{
+            color: #e1e3e7;
+        }
     }
 }
 input.ipt{
     @include setCont(100%, 40px, block);
     @include font(16, normal, $gray400);
-    padding: 16px 18px;
+    padding: 0 18px;
     border: 1px solid $gray200;
     background-color: $white;
     border-radius: 8px;
+    transition: all 300ms;
     &::placeholder{
         @include font(16, normal, $gray400);
     }
+    &:hover, &:active{
+        border: 1px solid #d0d2d5;
+        &::placeholder{
+            color: #121416;
+        }
+    }
+    &:focus{
+        border: 1px solid #636567;
+        color: #121416;
+    }
+    &.red{
+        color: $red;
+        border: 1px solid $red;
+        &::placeholder{
+            color: $red;
+        }
+    }
+    &.dis, &:disabled{
+        color: #e1e3e7;
+        border: 1px solid #e1e3e7;
+        &::placeholder{
+            color: #e1e3e7;
+        }
+    }
+}
+.bx_ipt, .bx_textarea{
+    @include setCont(100%, 40px, block, relative);
+    .ipt, .textarea{
+        height: 100%;
+        &:focus {
+            padding-right: 35px;
+            &+.btn_clear {
+                opacity: 1;
+            }
+        }
+    }
+    .btn_clear{
+        @include setCont(15.8px, 15.8px, block, absolute);
+        @include bgSvg(btnClose("121416"), no-repeat, 50% 50%, 100% auto);
+        border-radius: 25px;
+        @include blind;
+        top: 50%;
+        right: 11.7px;
+        transform: translateY(-50%);
+        opacity: 0;
+        transition: all 300ms;
+    }
+}
+.bx_textarea{
+    height: 104px;
+    .textarea{
+        &:focus {
+            padding-right: 18px;
+            &+.btn_clear {
+                opacity: 1;
+            }
+        }
+    }
+    .btn_clear{
+        top:5px;
+        right: 6px;
+        transform: unset;
+    }
+}
+.txt_point{
+    color: $point  !important;
+}
+.txt_red{
+    color: #b3261e !important;
+}
+.txt_black{
+    color: #121416 !important;
+}
+.txt_gray{
+    color: $gray600 !important;
+}
+.txt_light_gray{
+    color: $gray400 !important;
+}
+.f_medi{
+    font-weight: $medi !important;
+}
+.f_boldi{
+    font-weight: $bold !important;
 }

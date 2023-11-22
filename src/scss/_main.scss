@@ -1,0 +1,439 @@
+.main{
+    .header{
+        background-color: unset;
+        &.fix{
+            background-color: $white;
+        }
+        @include pc{
+            background-color: $white;
+        }
+    }
+    .container{
+        padding-top: 0;
+        .inner{
+            padding: 34px calcPercent(24);
+            max-width: 1004px;
+            margin: 0 auto;
+            @include pc{
+                padding: 0;
+            }
+        }
+    }
+    .area1{
+        @include setCont(100%, auto, block);
+        background-image: linear-gradient(to bottom, rgba(255, 255, 255, 0) 0%, #e3dff4);
+        .inner{
+            @include setCont(100%, auto, flex, relative);
+            padding: 0;
+            height: 421px;
+            flex-direction: column;
+            align-items: center;
+            transition: all 300ms;
+            @include pc{
+                height: 490px;
+                flex-direction: unset;
+            }
+        }
+        .left{
+            text-align: center;
+            @include pc{
+                @include setCont(490px, 100%);
+            }
+        }
+        .right{
+            text-align: center;
+        }
+        h1{
+            @include font(22, normal, $point, $bold);
+            display: flex;
+            width: 100%;
+            justify-content: center;
+            align-items: center;
+            margin: 72px auto 0;
+            @include pc{
+                margin: 197px auto 9px;
+            }
+        }
+        h3{
+            @include font(16, normal, $purple400, $medi);
+        }
+        .img1{
+            display: block;
+            width: 284.6px;
+            margin: 35px auto 32px;
+            @include pc{
+                width: 394.5px;
+                margin: 0 auto;
+            }
+        }
+    }
+    .area2{
+        .inner{
+            padding-top: 30px;
+            padding-bottom: 28px;
+            @include pc{
+                display: flex;
+                justify-content: space-between;
+                margin-top: -38px;
+                padding: 0 0 100px;
+            }
+        }
+        .left, .right{
+            width: 100%;
+            display: flex;
+            justify-content: space-between;
+            flex-wrap: wrap;
+            @include pc{
+                width: 50%;;
+                justify-content: flex-start;
+            }
+        }
+        .right{
+            @include pc{
+                justify-content: flex-end;
+            }
+        }
+        .unit{
+            width: calcPercent(148, 312);
+            min-width: 148px;
+            height: 160px;
+            display: flex;
+            flex-wrap: wrap;
+            align-items: center;
+            margin: 8px 0;
+            border-radius: 10px;
+            box-shadow: 0 2px 4px 0 rgba(39, 43, 55, 0.16);
+            background-color: #fff;
+            @include pc{
+                margin: 0;
+                align-content: flex-start;
+                justify-content: center;
+            }
+            &:hover{
+                opacity: 0.8;
+                box-shadow: 0 2px 4px 0 rgba(39, 43, 55, 0.3);
+                .bx_img{
+                    transform: scale(0.9);
+                }
+            }
+            .bx_img{
+                width: 100%;
+                max-width: 130px;
+                margin: 0 auto;
+                transition: all 300ms;
+                @include pc{
+                    max-width: 100%;
+                }
+            }
+            img{
+                display: block;
+                margin: 0 auto;
+                @include pc{
+                    transform: unset;
+                }
+            }
+            p{
+                @include font(16, normal, $purple600, $medi);
+                text-align: left;
+                padding: 0 calcPercent(16,148) 16px;
+                word-break: keep-all;
+                @include pc{
+                    width: 100%;
+                    text-align: center;
+                    @include fontPc(19);
+                    font-weight: $bold;
+                }
+                span{
+                    min-width: 100px;
+                    display: block;
+                    @include pc{
+                        min-width: 0;
+                        display: inline-block;
+                    }
+                }
+            }
+            &.link_univ{
+                padding-top: 18px;
+                @include pc{
+                    padding-top: 34px;
+                    margin-right: 17px;
+                }
+                img{
+                    width: 129px;
+                    transform: translateX(calcPercent(-4.5, 129));
+                    margin-bottom: 9px;
+                    @include pc{
+                        width: 193px;
+                        margin-bottom: 38px;
+                    }
+                }
+            }
+            &.link_comp{
+                padding-top: 14px;
+                @include pc{
+                    padding-top: 28px;
+                }
+                img{
+                    width: 96.6px;
+                    margin-bottom:5px;
+                    @include pc{
+                        width: 144px;
+                        margin-bottom: 32px;
+                    }
+                }
+            }
+            &.link_univ, &.link_comp{
+                @include pc{
+                    width: 238px;
+                    @include setCont(238px, 254px);
+                }
+            }
+            &.link_patent{
+                padding-top: 16px;
+                img{
+                    width: 83px;
+                    transform: translateX(calcPercent(16, 83));
+                    margin-bottom:7px;
+                    @include pc{
+                        width: 77px;
+                        margin: 0 auto;
+                        transform: translateX(-2px);
+                    }
+                }
+            }
+            &.link_inven{
+                padding-top: 19.7px;
+                @include pc{
+                }
+                img{
+                    width: 69.9px;
+                    transform: translateX(calcPercent(29.5, 69.9));
+                    margin-bottom:9.3px;
+                    @include pc{
+                        margin: 0 auto;
+                        transform: translateX(-1.5px);
+                    }
+                }
+            }
+            &.link_patent, &.link_inven{
+                @include pc{
+                    @include setCont(494px, 119px);
+                    justify-content: flex-start;
+                    align-content: center;
+                    padding: 0;
+                    .bx_img{
+                        width: 137px;
+                        margin: 0;
+                    }
+                    p{
+                        width: auto;
+                        padding: 0;
+                    }
+                }
+            }
+        }
+    }
+    .area3{
+        @include setCont(100%, auto, block, relative, $purple500);
+        @include font(16, normal, $gray50);
+        text-align: center;
+        @include pc{
+            @include setCont(100%, 645px);
+            @include fontPc(19);
+            margin: 41px 0;
+            background-color: $purple400;
+        }
+        .inner{
+            padding-top: 33px;
+            padding-bottom: 41px;
+            @include pc{
+                @include setCont(834px, 727px, block, absolute, $purple500);
+                outline: 16px solid $white;
+                top: -41px;
+                left: 50%;
+                transform: translateX(-50%);
+                z-index: 2;
+                padding: 96px 85px 134px 86px
+            }
+        }
+        h2{
+            margin-bottom: 32px;
+            color: $gray50;
+            @include pc{
+                margin-bottom: 75px;
+                @include fontPc(26);
+            }
+        }
+        .cont{
+            text-align: left;
+        }
+        p+p{
+            margin-top: 19px;
+            @include pc{
+                margin-top:22px;
+            }
+        }
+        .txt_right{
+            margin-top: 38px;
+            text-align: right;
+            @include pc{
+                margin-top:44px;
+            }
+        }
+    }
+    .area4{
+        .inner{
+            padding: 36px calcPercent(13.5) 21px;
+            @include pc{
+                padding: 100px 0 112px;
+                width: 922px;
+            }
+        }
+        h2{
+            text-align: center;
+            padding-bottom: 11px;
+            @include pc{
+                @include fontPc(30);
+            }
+        }
+        .cont{
+            @include setCont(100%, auto, flex);
+            flex-wrap: wrap;
+            justify-content: center;
+            max-width: 450px;
+            margin: 0 auto;
+            @include pc{
+                max-width: 100%;
+                justify-content: space-between;
+            }
+        }
+        .team_mem{
+            margin: 24px 0;
+            @include setCont(null, auto, block, relative);
+            width: calcPercent(104, 333);
+            min-width: 104px;
+            text-align: center;
+            margin: 24px calcPercent(30.5, 333);
+            @include pc{
+                width: 154px;
+                margin: 60px 0 0;
+            }
+            img{
+                width: calcPercent(96, 104);
+                @include pc{
+                    width: 100%;
+                }
+            }
+            h3{
+                @include font(16, normal, $point, $bold);
+                margin: 16px auto 2px;
+                @include pc{
+                    @include fontPc(19);
+                    margin: 24px auto 12px;
+                }
+            }
+            p{
+                @include font(13, 18, $gray800, $medi);
+                @include pc{
+                    @include fontPc(16);
+                }
+                span{
+                    display: block;
+                }
+            }
+        }
+    }
+    .area5{
+        @include pc{
+            background-color: $gray100;
+            height: 446px;
+        }
+        .inner{
+            padding: 0;
+            @include pc{
+                height: 100%;
+                display: flex;
+                justify-content: flex-start;
+                align-items: center;
+            }
+        }
+        .c_inner{
+            padding: 34px calcPercent(24);
+            margin: 0 auto;
+            @include pc{
+                padding: 0;
+            }
+        }
+        .left{
+            border-top: 12px solid $gray100;
+            @include pc{
+                @include setCont(calcPercent(648,1004), 383px, flex);
+                justify-content: space-between;
+                align-items: center;
+                padding-left: 0;
+                border-right: 1px solid $gray300;
+                border-top: 0;
+                .btn{
+                    @include setCont(335px, 59px);
+                }
+            }
+            .c_inner{
+                padding-top: 32px;
+                padding-bottom: 27px;
+                @include pc{
+                    padding: 0;
+                }
+            }
+            p{
+                margin: 16px auto 24px;
+                @include font(16, normal, $gray800);
+                @include pc{
+                    margin-bottom: 36px;
+                }
+            }
+        }
+        .right{
+            background-color: $gray100;
+            @include pc{
+                padding: 0 15px 0 47px;
+            }
+            .c_inner{
+                padding-top: 32px;
+                padding-bottom: 28px;
+                @include pc{
+                    width: 312px;
+                    padding: 0;
+                }
+            }
+            h2{
+                @include pc{
+                    @include fontPc(19);
+                }
+            }
+            p{
+                margin: 16px auto 24px;
+                @include font(16, normal, $gray800);
+                @include pc{
+                    @include fontPc(16);
+                }
+            }
+            .link_email{
+                @include font(16, normal, $gray400, $medi);
+                text-align: right;
+                display: block;
+                &:hover{
+                    color: $gray500;
+                }
+                @include pc{
+                    @include fontPc(16);
+                }
+            }
+            .bx_textarea{
+                margin-bottom: 9px;
+            }
+            .btn{
+                margin: 24px 0 16px;
+            }
+        }
+    }
+}
