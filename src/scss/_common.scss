@@ -44,6 +44,34 @@ a, button, input{
     @include font(14);
 }
 
+.txt_point{
+    color: $point  !important;
+}
+.txt_red{
+    color: #b3261e !important;
+}
+.txt_black{
+    color: #121416 !important;
+}
+.txt_yellow{
+    color: #e9a802 !important;
+}
+.txt_grean{
+    color: #00b54a !important;
+}
+.txt_gray{
+    color: $gray600 !important;
+}
+.txt_light_gray{
+    color: $gray400 !important;
+}
+.f_medi{
+    font-weight: $medi !important;
+}
+.f_boldi{
+    font-weight: $bold !important;
+}
+
 .logo{
     @include setCont(48px, 48px, inline-block);
     @include bgSvg(logo(), no-repeat, 50% 50%, 100% auto);
@@ -52,63 +80,73 @@ a, button, input{
     }
 }
 .btn{
-    width: 100%;
+    // width: 100%;
     background-color: $point;;
     @include font(16, 19, $gray50, $medi);
-    padding: 17px 5px 18px;
+    padding: 17px 34px 18px;
     border-radius: 14px;
-    // &:hover{
-    //     background-color: #ccc8ff;
-    // }
     &:hover, &:active{
         background-color: #6737cc;
     }
-}
-.textarea{
-    @include setCont(100%, 104px, block);
-    @include font(16, normal, $gray400);
-    padding: 16px 18px;
-    border: 1px solid $gray200;
-    background-color: $white;
-    border-radius: 8px;
-    resize: none;
-    transition: all 300ms;
-    &::placeholder{
-        @include font(16, normal, $gray400);
-    }
-    &:hover, &:active{
-        border: 1px solid $gray300;
-    }
-    &:focus{
-        border: 1px solid #636567;
-        color: #121416;
-    }
-    &.red{
-        color: $red;
-        border: 1px solid $red;
-        &::placeholder{
-            color: $red;
-        }
+    &+.btn{
+        margin-left: 8px;
     }
     &.dis, &:disabled{
-        color: #e1e3e7;
-        border: 1px solid #e1e3e7;
-        &::placeholder{
-            color: #e1e3e7;
+        background-color: $purple200;
+    }
+    &.full{
+        width: 100%;
+        &+.btn{
+            margin-left: 0;
+        }
+    }
+    &.half{
+        width: 50%;
+    }
+    &.s_large{
+       padding: 13px 26px 14px;
+       border-radius: 10px;
+       @include pc{
+           @include fontPc(16);
+       }
+    }
+    &.s_medi{
+        padding: 10px 18px;
+        border-radius: 8px;
+        @include pc{
+            @include fontPc(16);
+        }
+    }
+    &.s_tiny{
+        @include font(13);
+        padding: 10px 12.5px 9px;
+        border-radius: 6px;
+        @include pc{
+            @include fontPc(13);
+        }
+    }
+    &.l_purple{
+        background-color: $purple50;
+        color: $point;
+        &:hover, &:active{
+            background-color: $purple200;
+            color: $point;
+        }
+        &.dis, &:disabled{
+            background-color: $purple50;
+            color: $purple200;
         }
     }
 }
-input.ipt{
-    @include setCont(100%, 40px, block);
-    @include font(16, normal, $gray400);
-    padding: 0 18px;
-    border: 1px solid $gray200;
-    background-color: $white;
+.colb{
+    display: flex;
+    justify-content: space-between;
+}
+input.ipt, .textarea{
+    @include setCont(100%, 40px, block, relative, $white);
     border-radius: 8px;
+    border: 1px solid $gray200;
     transition: all 300ms;
-    &::placeholder{
-        @include font(16, normal, $gray400);
-    }
     &:hover, &:active{
         border: 1px solid #d0d2d5;
         &::placeholder{
@@ -126,6 +164,35 @@ input.ipt{
             color: $red;
         }
     }
+    &.yellow{
+        border-color: #e9a802;
+        color: #121416;
+        &::placeholder{
+            color: #121416;
+        }
+    }
+    &.grean{
+        border-color: #00b54a;
+        color: #121416;
+        &::placeholder{
+            color: #121416;
+        }
+    }
+}
+.textarea{
+    height: 104px;
+    @include font(16, normal, $gray400);
+    padding: 16px 18px;
+    resize: none;
+    @include pc{
+        @include fontPc(16);
+    }
+    &::placeholder{
+        @include font(16, normal, $gray400);
+        @include pc{
+            @include fontPc(16, 16);
+        }
+    }
     &.dis, &:disabled{
         color: #e1e3e7;
         border: 1px solid #e1e3e7;
@@ -134,8 +201,29 @@ input.ipt{
         }
     }
 }
-.bx_ipt, .bx_textarea{
-    @include setCont(100%, 40px, block, relative);
+input.ipt{
+    height: 40px;
+    @include font(16, 16, $gray400);
+    padding: 0 18px;
+    @include pc{
+        @include fontPc(16, 16);
+    }
+    &::placeholder{
+        @include font(16, 16, $gray400);
+        @include pc{
+            @include fontPc(16, 16);
+        }
+    }
+    &.dis, &:disabled{
+        color: #e1e3e7;
+        border: 1px solid #e1e3e7;
+        &::placeholder{
+            color: #e1e3e7;
+        }
+    }
+}
+.bx_ipt, .bx_textarea, .bx_search{
+    @include setCont(100%, 40px, block, relative, $white);
     .ipt, .textarea{
         height: 100%;
         &:focus {
@@ -144,17 +232,41 @@ input.ipt{
                 opacity: 1;
             }
         }
+        &.dis, &:disabled{
+            color: #505254;
+            border: 1px solid #edeff2;
+            background-color: #edeff2;
+            &::placeholder{
+                color: #505254;
+            }
+        }
+    }
+    &+.btn{
+        margin-left: 8px;
     }
     .btn_clear{
         @include setCont(15.8px, 15.8px, block, absolute);
         @include bgSvg(btnClose("121416"), no-repeat, 50% 50%, 100% auto);
-        border-radius: 25px;
         @include blind;
         top: 50%;
         right: 11.7px;
         transform: translateY(-50%);
         opacity: 0;
         transition: all 300ms;
+        z-index: 2;
+    }
+    .btn_search{
+        @include setCont(12px, 12px, block, absolute);
+        @include bgSvg(btnSearch("000"), no-repeat, 50% 50%, 100% auto);
+        @include blind;
+        top: 50%;
+        left: 12px;
+        transform: translateY(-50%);
+        transition: all 300ms;
+        z-index: 2;
+        &:hover{
+            opacity: 0.7;
+        }
     }
 }
 .bx_textarea{
@@ -173,24 +285,148 @@ input.ipt{
         transform: unset;
     }
 }
-.txt_point{
-    color: $point  !important;
+.bx_search{
+    .ipt{
+        border-color: $gray200;
+        padding: 0 30px 0 38px;
+        &:focus {
+            padding-right: 30px;
+        }
+    }
+    .btn_clear{
+        @include bgSvg(btnClose($s_gray600), no-repeat, 50% 50%, 100% auto);
+        right: 8px;
+    }
+    &.bg_gray{
+        .ipt{
+            border-color: $gray100;
+            background-color: $gray100;
+            &::placeholder{
+                color: $gray400;
+            }
+
+        }
+        .btn_search{
+            @include bgSvg(btnSearch($s_gray500), no-repeat, 50% 50%, 100% auto);
+        }
+    }
 }
-.txt_red{
-    color: #b3261e !important;
+.bx_slct{
+    @include setCont(267px, auto, inline-block, relative);
+    transition: all 300ms;
+    &:hover{
+        .slct_tit{
+            color: #121416;
+        }
+    }
+    &.dis{
+        border-color: #d0d2d5;
+        .slct_tit{
+            background-color: #f6f7f9;
+            border-color: #f6f7f9;
+            color: #505254;
+            cursor: context-menu;
+            &:after{
+                @include bgSvg(arrDown("8a8c8f"), no-repeat, 50% 50%, 100% auto);
+            }
+        }
+    }
+    &.red{
+        .slct_tit{
+            color: #b3261e;
+            border-color: #b3261e;
+            &:after{
+                @include bgSvg(arrDown("b3261e"), no-repeat, 50% 50%, 100% auto);
+            }
+        }
+    }
+    .slct_tit{
+        @include setCont(100%, 40px, flex, relative, $white);
+        @include font(14, 14, #505254);
+        padding: 0 15px 0 16px;
+        align-items: center;
+        transition: all 300ms;
+        border: 1px solid #d0d2d5;
+        border-radius: 8px;
+        @include pc{
+            @include fontPc(14, 14);
+        }
+        &:after{
+            @include setCont(11px, 7px, block, absolute);
+            @include bgSvg(arrDown("8a8c8f"), no-repeat, 50% 50%, 100% auto);
+            transform: translateY(-50%);
+            top: 50%;
+            right: 15px;
+            transition: all 300ms;
+        }
+    }
+    .slct_cont{
+        @include setCont(100%, 0, inline-block, absolute, $white);
+        padding: 0 8px;
+        top: 40px;
+        z-index: 5;
+        border: 0 solid rgba(255, 255, 255, 0);
+        transition: all 300ms;
+        overflow: hidden;
+        &::-webkit-scrollbar-thumb {
+          background: $gray500;
+        }
+        .slct_item{
+            button{
+                @include setCont(100%, 40px, block, relative);
+                @include font(14,24,#505254, normal);
+                @include ellipsis;
+                padding: 8px 16px;
+                text-align: left;
+                @include pc{
+                    @include fontPc(14,24);
+                }
+                &:hover{
+                    background-color: $gray100;
+                    color: $gray500;
+                }
+            }
+            &.select{
+                button{
+                    background-color: #edeff2;
+                }
+            }
+        }
+    }
+    &.on{
+        .slct_tit{
+            border-radius: 8px 8px 0 0;
+            border-color : #636567;
+            &:after{
+                transform: translateY(-50%) rotate(180deg);
+            }
+        }
+        .slct_cont{
+            height: 128px;
+            padding: 4px 8px;
+            overflow: auto;
+            border-radius: 0 0 8px 8px;
+            border: 1px solid #636567;
+            border-top: none;
+        }
+        &.red{
+            .slct_tit{
+                color: #b3261e;
+                border-color: #b3261e;
+                &:after{
+                    @include bgSvg(arrDown("b3261e"), no-repeat, 50% 50%, 100% auto);
+                }
+            }
+            .slct_cont{
+                border: 1px solid #b3261e;
+                border-top: none;
+            }
+        }
+    }
 }
-.txt_black{
-    color: #121416 !important;
-}
-.txt_gray{
-    color: $gray600 !important;
-}
-.txt_light_gray{
-    color: $gray400 !important;
-}
-.f_medi{
-    font-weight: $medi !important;
-}
-.f_boldi{
-    font-weight: $bold !important;
+.show_mobile{
+    @include pc{
+        display: none;
+
+    }
 }

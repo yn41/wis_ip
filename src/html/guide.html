@@ -4,7 +4,8 @@
 	<body>
 		<div class="ui_guide">
 		  <section class="ui_inner">
-			<h2 class="ui_h2">UI 가이드</h2>
+			<h2 class="ui_h2 mb10">UI 가이드</h2>
+			<p class="mb20">아래 정의된 클래스는 HTML에서 class에 추가하여 사용 가능합니다.</p>
 			<article class="ui_article">
 				<h3 class="ui_h3">1) 글자</h3>
 				<div class="ui_container">
@@ -13,16 +14,18 @@
 						<h4 class="ui_h4">- 기본</h4>
 							<b>폰트</b> : Pretendard(프리텐다드) <br/>
 							<b>폰트 사이즈</b> : 16px(모바일) / 19px(pc) <br/>
-							<b>굵기 Medium 클래스명</b> : <span class="f_medi">.f_medi</span> <br/>
-							<b>굵기 bold 클래스명</b> : <span class="f_bold">.f_bold or b, strong 태그 사용</span><br/>
+							<b>굵기 Medium 클래스</b> : <span class="f_medi">.f_medi</span> <br/>
+							<b>굵기 bold 클래스</b> : <span class="f_bold">.f_bold or b, strong 태그 사용</span><br/>
 					  </div>
 					  <div class="ui_unit">
 						<h4 class="ui_h4">- 폰트 색상</h4>
-						<p class="txt_black"><b>.txt_black</b></p>
-						<p class="txt_gray"><b>.txt_gray</b></p>
-						<p class="txt_light_gray"><b>.txt_light_gray</b></p>
-						<p class="txt_point"><b>.txt_point</b></p>
-						<p class="txt_red"><b>.txt_red</b></p>
+						<p class="txt_black"><span>클래스 : txt_black</span></p>
+						<p class="txt_gray"><span>클래스 : txt_gray</span></p>
+						<p class="txt_light_gray"><span>클래스 : txt_light_gray</span></p>
+						<p class="txt_point"><span>클래스 : txt_point</span></p>
+						<p class="txt_red"><span>클래스 : txt_red</span></p>
+						<p class="txt_yellow"><span>클래스 : txt_yellow</span></p>
+						<p class="txt_grean"><span>클래스 : txt_grean</span></p>
 					  </div>
 					  <div class="ui_unit">
 						<h4 class="ui_h4">- 제목테그 (모바일 기준)</h4>
@@ -97,17 +100,123 @@
 					</div>
 				</div>
 			</article>
-			<!-- <article class="ui_article">
-				<h3 class="ui_h3">1) button</h3>
+			<article class="ui_article">
 				<div class="ui_container">
 					<div class="ui_left">
-					  <div class="ui_unit">
-					</div>
+						<h3 class="ui_h3">1) button</h3>
+					  	<div class="ui_unit">
+							<h4 class="ui_h4">- btn (기본)</h4>
+							<button type="button" class="btn">버튼</button>
+							<button type="button" class="btn" disabled="disabled">disabled 버튼</button>
+							<h4 class="ui_h4">- btn l_purple (밝은 보라색)</h4>
+							<button type="button" class="btn l_purple">버튼</button>
+							<button type="button" class="btn l_purple" disabled="disabled">버튼</button>
+							<h4 class="ui_h4">- btn s_large</h4>
+							<button type="button" class="btn s_large">large 버튼</button>
+							<button type="button" class="btn s_large" disabled="disabled">disabled 버튼</button>
+							<button type="button" class="btn l_purple s_large">버튼</button>
+							<button type="button" class="btn l_purple s_large" disabled="disabled">버튼</button>
+							<h4 class="ui_h4">- btn s_medi</h4>
+							<button type="button" class="btn s_medi">Medium 버튼</button>
+							<button type="button" class="btn s_medi" disabled="disabled">disabled 버튼</button>
+							<button type="button" class="btn l_purple s_medi">버튼</button>
+							<button type="button" class="btn l_purple s_medi" disabled="disabled">버튼</button>
+							<h4 class="ui_h4">- btn s_tiny</h4>
+							<button type="button" class="btn s_tiny">tiny 버튼</button>
+							<button type="button" class="btn s_tiny" disabled="disabled">disabled 버튼</button>
+							<button type="button" class="btn l_purple s_tiny">버튼</button>
+							<button type="button" class="btn l_purple s_tiny" disabled="disabled">버튼</button>
+							<h4 class="ui_h4">- btn full (가로 100%)</h4>
+							<button type="button" class="btn s_medi full">버튼</button>
+							<button type="button" class="btn l_purple full mt10">버튼</button>
+							<h4 class="ui_h4">- btn half (가로 50%)</h4>
+							<p class="ui_desc">아래 코드처럼 div.colb 도 같이 사용해야합니다</p>
+							<div class="colb">
+								<button type="button" class="btn s_tiny half">버튼</button>
+								<button type="button" class="btn s_tiny l_purple half">버튼</button>
+							</div>
+						</div>
 					</div>
 					<div class="ui_right">
+						<h3 class="ui_h3">2) Input</h3>
+					  	<div class="ui_unit">
+							<h4 class="ui_h4">- bx_ipt ipt</h4>
+							<p class="ui_desc">가로 크기 지정시 bx_ipt에 인라인 스타일 적용해주세요</p>
+							<div class="bx_ipt" style="width: 280px;">
+								<input type="text" class="ipt" placeholder="포커스되면 버튼 노출">
+								<button type="button" class="btn_clear">delete</button>
+							</div>
+							<div class="bx_ipt">
+								<input type="text" class="ipt" disabled="disabled" placeholder="비활성화">
+								<button type="button" class="btn_clear">delete</button>
+							</div>
+							<div class="bx_ipt">
+								<input type="text" class="ipt red" placeholder="경고">
+								<button type="button" class="btn_clear">delete</button>
+							</div>
+							<h4 class="ui_h4">- bx_ipt > ipt yellow</h4>
+							<div class="bx_ipt">
+								<input type="text" class="ipt yellow" placeholder="경고">
+								<button type="button" class="btn_clear">delete</button>
+							</div>
+							<h4 class="ui_h4">- bx_ipt > ipt grean</h4>
+							<div class="bx_ipt">
+								<input type="text" class="ipt grean" placeholder="경고">
+								<button type="button" class="btn_clear">delete</button>
+							</div>
+							<h4 class="ui_h4">- search input</h4>
+							<div class="bx_search">
+								<button type="button" class="btn_search">search button</button>
+								<input type="text" class="ipt" placeholder="검색박스">
+								<button type="button" class="btn_clear">delete</button>
+							</div>
+							<h4 class="ui_h4">- search input gray</h4>
+							<div class="bx_search bg_gray">
+								<button type="button" class="btn_search">search button</button>
+								<input type="text" class="ipt" placeholder="검색박스">
+								<button type="button" class="btn_clear">delete</button>
+							</div>
+						</div>
+						<h3 class="ui_h3">2) Select box</h3>
+						<p class="ui_desc">가로 크기 지정시 bx_ipt에 인라인 스타일 적용해주세요</p>
+						<div class="ui_unit mt10">
+							<div class="bx_slct">
+								<button class="slct_tit" type="button"></button>
+								<ul class="slct_cont">
+									<li class="slct_item"><button  type="button">test01</button></li>
+									<li class="slct_item select"><button  type="button">test02</button></li>
+									<li class="slct_item"><button type="button">test03</button></li>
+									<li class="slct_item"><button type="button">test04</button></li>
+									<li class="slct_item"><button type="button">test05</button></li>
+								</ul>
+							</div>
+							<div class="bx_slct dis">
+								<button class="slct_tit" type="button">비활성화</button>
+								<ul class="slct_cont">
+									<li class="slct_item"><button type="button">test01</button></li>
+									<li class="slct_item"><button type="button">test02</button></li>
+									<li class="slct_item"><button type="button">test03</button></li>
+									<li class="slct_item"><button type="button">test04</button></li>
+									<li class="slct_item"><button type="button">test05</button></li>
+								</ul>
+							</div>
+							<h4 class="ui_h4">- 에러</h4>
+							<div class="bx_slct red">
+								<button class="slct_tit" type="button">에러</button>
+								<ul class="slct_cont">
+									<li class="slct_item"><button type="button">test01</button></li>
+									<li class="slct_item"><button type="button">test02</button></li>
+									<li class="slct_item"><button type="button">test03</button></li>
+									<li class="slct_item"><button type="button">test04</button></li>
+									<li class="slct_item"><button type="button">test05</button></li>
+								</ul>
+							</div>
+						</div>
 					</div>
 				</div>
-			</article> -->
+					</div>
+				</div>
+			</article>
 		  </section>
 		</div>
 	</body>
@@ -134,12 +243,32 @@
 			margin-top: 30px;
 		}
 		.ui_left, .ui_right {
-			width: 50%;
+			width: 100%;
+		}
+		@media (min-width: 1280px) {
+			.ui_left, .ui_right {
+				width: 50%;
+			}
+		}
+		.ui_left {
+			padding-right: 20px;
+		}
+		.ui_right {
+			padding-left: 20px;
 		}
 		.ui_guide .ui_container {
 			width: 100%;
-			display: flex;
-			padding: 10px 10px;
+			padding: 0;
+		}
+		.ui_guide .ui_desc {
+			color: #BCBEC3;
+			margin-bottom: 5px;
+		}
+		@media (min-width: 1280px) {
+			.ui_guide .ui_container {
+				padding: 10px 10px;
+				display: flex;
+			}
 		}
 		.ui_guide .ui_area_notice {
 			padding: 0 5px 20px;
@@ -150,6 +279,18 @@
 		}
 		.ui_guide .ui_unit + .ui_unit{
 			margin-top: 20px;
+		}
+		.ui_guide .bx_slct + .bx_slct{
+			margin-top: 10px;
+		}
+		@media (min-width: 1280px) {
+			.ui_guide .bx_slct + .bx_slct{
+				margin-top: 0;
+				margin-left: 10px;
+			}
+		}
+		.ui_guide .bx_ipt + .bx_ipt{
+			margin-top: 5px;
 		}
 		.ui_guide .ui_area > .col2 > .col {
 			padding: 0 20px;
@@ -174,6 +315,9 @@
 			color: #313131;
 			font-size: 16px;
 			margin-bottom: 10px;
+		}
+		.ui_guide .ui_h4 {
+			margin: 10px 0 5px;
 		}
 		.ui_guide .ui_area .ui_h3:before {
 			content: "";

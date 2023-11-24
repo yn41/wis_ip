@@ -12,12 +12,13 @@
         padding-top: 0;
         .inner{
             padding: 34px calcPercent(24);
-            max-width: 1004px;
-            margin: 0 auto;
             @include pc{
                 padding: 0;
             }
         }
+    }
+    .btn{
+        width: 100%;
     }
     .area1{
         @include setCont(100%, auto, block);
@@ -340,99 +341,6 @@
                 span{
                     display: block;
                 }
-            }
-        }
-    }
-    .area5{
-        @include pc{
-            background-color: $gray100;
-            height: 446px;
-        }
-        .inner{
-            padding: 0;
-            @include pc{
-                height: 100%;
-                display: flex;
-                justify-content: flex-start;
-                align-items: center;
-            }
-        }
-        .c_inner{
-            padding: 34px calcPercent(24);
-            margin: 0 auto;
-            @include pc{
-                padding: 0;
-            }
-        }
-        .left{
-            border-top: 12px solid $gray100;
-            @include pc{
-                @include setCont(calcPercent(648,1004), 383px, flex);
-                justify-content: space-between;
-                align-items: center;
-                padding-left: 0;
-                border-right: 1px solid $gray300;
-                border-top: 0;
-                .btn{
-                    @include setCont(335px, 59px);
-                }
-            }
-            .c_inner{
-                padding-top: 32px;
-                padding-bottom: 27px;
-                @include pc{
-                    padding: 0;
-                }
-            }
-            p{
-                margin: 16px auto 24px;
-                @include font(16, normal, $gray800);
-                @include pc{
-                    margin-bottom: 36px;
-                }
-            }
-        }
-        .right{
-            background-color: $gray100;
-            @include pc{
-                padding: 0 15px 0 47px;
-            }
-            .c_inner{
-                padding-top: 32px;
-                padding-bottom: 28px;
-                @include pc{
-                    width: 312px;
-                    padding: 0;
-                }
-            }
-            h2{
-                @include pc{
-                    @include fontPc(19);
-                }
-            }
-            p{
-                margin: 16px auto 24px;
-                @include font(16, normal, $gray800);
-                @include pc{
-                    @include fontPc(16);
-                }
-            }
-            .link_email{
-                @include font(16, normal, $gray400, $medi);
-                text-align: right;
-                display: block;
-                &:hover{
-                    color: $gray500;
-                }
-                @include pc{
-                    @include fontPc(16);
-                }
-            }
-            .bx_textarea{
-                margin-bottom: 9px;
-            }
-            .btn{
-                margin: 24px 0 16px;
             }
         }
     }
