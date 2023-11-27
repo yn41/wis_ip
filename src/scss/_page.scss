@@ -38,6 +38,15 @@
                 display: flex;
             }
         }
+        .left{
+            @include setCont(100%, calcVw(218));
+            min-height: 218px;
+            max-height: 400px;
+            @include pc{
+                @include setCont(494px, 445px);
+                max-height: unset; 
+            }
+        }
         .right{
             margin-top: 25px;
             flex-grow: 1;
@@ -48,11 +57,9 @@
         }
         .bx_thum{
             width: 100%;
-            height: calcVw(218);
+            height: 100%;
             display: block;
             position: relative;
-            min-height: 218px;
-            max-height: 400px;
             left: 50%;
             transform: translateX(-50%);
             background-size: auto 100% !important;
@@ -61,7 +68,6 @@
             }
             @include pc{
                 @include setCont(494px, 445px);
-                max-height: unset; 
                 border-radius: 10px;
             }
         }

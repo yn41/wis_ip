@@ -51,8 +51,37 @@ $(function(){
 	});
 	$(".btn_menu_close").click(function(){
 		$(".header").removeClass("open");
-		$(".logo").slideUp();
 		$("body").css({"overflow":"", "top":""});
 		scrollPosition = 0;
 	});
+	
+	// S | v:pat1 - 셀랙트 박스 세팅
+	for (var i =0; i < $(".bx_slct").length; i++) {
+		var target = $(".bx_slct").eq(i);
+		if($.trim(target.find(".slct_tit").text()) === "")
+		target.find(".slct_tit").text(target.find(".slct_cont .select").text());
+}
+	$(".slct_tit").on("click", function (e) {
+		if($(this).parent().hasClass("dis") !== true){
+			if($(this).parent().hasClass("on") === true) {
+				$(this).parent().removeClass("on");
+			}else {
+				$(".bx_slct").removeClass("on");
+				$(this).parent().addClass("on");
+			}
+		}
+	});
+	$(".slct_cont li").on("click", function(){
+		$(this).parents(".bx_slct").find(".slct_tit").text($(this).text());
+		$(this).parent().find("li").removeClass("select");
+		$(this).addClass("select");
+		$(this).parents(".bx_slct").removeClass("on");
+	});
+	$(document).on("click", function(e){
+		if(e.target.className === "bx_slct" || e.target.className === "slct_tit" || e.target.className === "slct_cont") {return false;}
+		$(".bx_slct").removeClass("on");
+	});
+	// E | v:pat1 - 셀랙트 박스 세팅
 });
+// $(window).resize(function(){
+// });

@@ -7,13 +7,13 @@
 		<meta name="theme-color" content="#ffffff">
 		<meta name="Description" content="IPRankings">
 		<title>index | IPRankings </title>
-		<link rel="icon" href="/img/favicon.ico" type="image/x-icon"> 
-		<link rel="stylesheet" type="text/css" href="/css/style.css">
-		<link rel="stylesheet" type="text/css" href="/css/animate.min.css">
-		<link rel="stylesheet" type="text/css" href="/css/swiper.min.css"><!-- v:pat1 : 파일 추가 -->
-		<script src = "/js/jquery-3.7.1.min.js"></script>
-		<script src = "/js/swiper.js"></script>
-		<script src = "/js/ui.js"></script><!-- v:pat1 : 파일 추가 -->
+		<link rel="icon" href="../img/favicon.ico" type="image/x-icon"> 
+		<link rel="stylesheet" type="text/css" href="../css/style.css">
+		<link rel="stylesheet" type="text/css" href="../css/animate.min.css">
+		<link rel="stylesheet" type="text/css" href="../css/swiper.min.css"><!-- v:pat1 : 파일 추가 -->
+		<script src = "../js/jquery-3.7.1.min.js"></script>
+		<script src = "../js/swiper.js"></script>
+		<script src = "../js/ui.js"></script>
 		
 	</head>
 	<body>
@@ -33,14 +33,14 @@
 				  <tr>
 					<th>Title</th>
 					<th>담당자</th>
-					<th>Date</th>
+					<th>완료/수정일</th>
 				  </tr>
 				</thead>
 				<tbody>
 					<tr>
 					  <td><a href="guide.html" target="_blank" class="ui_link">UI 가이드</a> <em class="ui_new">new</em></td>
 					  <td>이유나</td>
-					  <td>23.11.22</td>
+					  <td>23.11.27</td>
 					</tr>
 					<tr>
 						<td><a href="home.html" target="_blank" class="ui_link">HOME</a></td>
@@ -50,7 +50,7 @@
 					<tr>
 						<td><a href="patent.html" target="_blank" class="ui_link">Patent 1</a> <em class="ui_new">new</em></td>
 						<td>이유나</td>
-						<td>23.11.24</td>
+						<td>23.11.27</td>
 					</tr>
 				</tbody>
 			  </table>
@@ -110,14 +110,15 @@
 		}
 		@media (max-width: 768px) {
 			.ui_tbl col:nth-child(2) {
-				width: 50px;
+				/* width: 50px; */
+				display: none;
 			}
 		}
 		.ui_tbl col:last-child {
 			display: table-column;
 		}
 		@media (max-width: 768px) {
-			.ui_tbl col:last-child {
+			.ui_tbl td:nth-child(2) {
 				display: none;
 			}
 		}
@@ -143,7 +144,7 @@
 			display: table-cell;
 		}
 		@media (max-width: 768px) {
-			.ui_tbl td:last-child {
+			.ui_tbl td:nth-child(2) {
 				display: none;
 			}
 		}
@@ -154,7 +155,7 @@
 			display: table-cell;
 		}
 		@media (max-width: 768px) {
-			.ui_tbl th:last-child {
+			.ui_tbl th:nth-child(2) {
 				display: none;
 			}
 		}

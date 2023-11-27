@@ -315,10 +315,9 @@ input.ipt{
             &::placeholder{
                 color: $gray400;
             }
-
         }
         .btn_search{
-            @include bgSvg(btnSearch($s_gray500), no-repeat, 50% 50%, 100% auto);
+            @include bgSvg(btnSearch($s_gray500), no-repeat, 50% 50%, 12px auto);
         }
     }
 }
