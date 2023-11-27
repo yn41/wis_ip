@@ -100,6 +100,7 @@
             position: relative;
             height: 43px;
             overflow: hidden;
+            opacity: 0;
             @include pc{
                 display: inline-block;
                 height: 100%;
@@ -107,6 +108,7 @@
                 padding: 0 12px;
                 @include fontPc(16, 55);
                 background-color: $white;
+                opacity: 1;
             }
             &::before{
                 @include pc{
@@ -174,15 +176,18 @@
             z-index: 11;
             opacity: 1;
             transition: opacity 400ms ease; 
-            .g_inner{
-                max-height: 100vh;
-                opacity: 1;
-            }
             &::before{
                 height: 100vh;
                 opacity: 1;
                 z-index: 11;
                 transition: opacity 400ms ease; 
+            }
+            .g_inner{
+                max-height: 100vh;
+                opacity: 1;
+            }
+            a{
+                opacity: 1;
             }
             .btn_menu_close{
                 display: block;
