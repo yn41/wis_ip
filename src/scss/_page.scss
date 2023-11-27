@@ -64,7 +64,7 @@
             transform: translateX(-50%);
             background-size: auto 100% !important;
             &:hover{
-                background-size: auto 90% !important;
+                background-size: auto 105% !important;
             }
             @include pc{
                 @include setCont(494px, 445px);
