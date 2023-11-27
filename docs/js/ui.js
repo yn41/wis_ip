@@ -43,6 +43,7 @@ $(function(){
 	$(".btn_clear").click(function(){
 		$(this).prev().val("").focus();
 	});
+	//menu
 	$(".btn_menu").click(function(){
 		$(".header").addClass("open");
 		scrollPosition = $(document).scrollTop();
@@ -50,6 +51,7 @@ $(function(){
 	});
 	$(".btn_menu_close").click(function(){
 		$(".header").removeClass("open");
+		$(".logo").slideUp();
 		$("body").css({"overflow":"", "top":""});
 		scrollPosition = 0;
 	});

@@ -9,12 +9,12 @@
     left: 50%;
     transform: translateX(-50%);
     flex-shrink: 1;
-    transition: all 300ms;
+    // transition: all 500ms ease;
     background-color:$white;
     border-bottom: 1px solid rgba(255,255,255,0);
     opacity: 1;
     z-index: 10;
-    overflow: hidden;
+    // overflow: hidden;
     &.hidden{
         transform: translate(-50%, $header*-1);
         opacity: 0;
@@ -35,6 +35,8 @@
         }
     }
     .logo{
+        position: relative;
+        z-index: 13;
         &:hover{
             opacity: 0.8;
         }
@@ -46,32 +48,49 @@
         height: 100%;
     }
     .gnb{
-        @include setCont(100%, auto, block, absolute);
+        @include setCont(100%, 0, block, absolute);
         top: -1px;
         left: 50%;
         transform: translateX(-50%);
-        z-index: -1;
-        opacity: 0;
         overflow: hidden;
-        transition: opacity 400ms ease; 
+        opacity: 0;
+        transition: all 600ms ease; 
         @include pc{
             @include setCont(auto, 100%, block, relative);
-            overflow: hidden;
             top: 0;
             left: unset;
+            right: 0;
             transform: unset;
+            transition: unset; 
             opacity: 1;
             z-index: 1;
         }
+        &::before{
+            @include setCont(100%, 100vh, block, fixed, rgba(136, 136, 136, 0.50));
+            top: 0;
+            left: 0;
+            z-index: -1;
+            opacity: 0;
+            transition: opacity 200ms ease;
+            @include pc{
+                display: none;
+            }
+        }
         .g_inner{
             @include setCont(100%, auto, block, relative, $white);
+            padding: $header 0 20px;
+            max-height: 0;
             align-items: center;
             z-index: 12;
-            padding: $header 0 20px;
+            overflow: hidden;
+            opacity: 0;
+            transition: all 400ms ease; 
             @include pc{
                 width: auto;
+                max-height: 100vh;
                 display: flex;
                 padding: 0;
+                opacity: 1;
             }
         }
         a{
@@ -93,7 +112,7 @@
                 @include pc{
                     @include setCont(0, 1px, block, absolute, $gray800);
                     left: 50%;
-                    bottom: 0;
+                    bottom: 1px;
                     transform: translateX(-50%);
                     transition: width 300ms;
                 }
@@ -148,21 +167,22 @@
     }
     &.open{
         overflow: unset;
-        .logo{
-            position: relative;
-            z-index: 13;
-        }
         .gnb{
             @include setCont(100%, 100vh, block, fixed);
             display: block;
             top: 0;
-            left: 50%;
-            transform: translateX(-50%);
             z-index: 11;
             opacity: 1;
+            transition: opacity 400ms ease; 
+            .g_inner{
+                max-height: 100vh;
+                opacity: 1;
+            }
             &::before{
-                @include setCont(100%, 100vh, block, fixed, rgba(136, 136, 136, 0.50));
+                height: 100vh;
+                opacity: 1;
                 z-index: 11;
+                transition: opacity 400ms ease; 
             }
             .btn_menu_close{
                 display: block;
@@ -268,15 +288,13 @@
         }
     }
 }
-
-
 .main .area5, .area_feadback{
     @include pc{
         background-color: $gray100;
         height: 446px;
     }
     .inner{
-        padding: 0;
+        padding: 0 !important;
         @include pc{
             height: 100%;
             display: flex;

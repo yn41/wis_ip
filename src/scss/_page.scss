@@ -1,4 +1,202 @@
-.swiper-container {
-    width: 600px;
-    height: 300px;
+.patent{
+    .btn{
+        width: 100%;
+    }
+    .area_top{
+        h2{
+            font-weight: $medi;
+            @include pc{
+                @include fontPc(26, normal, null, $bold);
+            }
+        }
+        .inner{
+            padding-bottom: 0;
+            @include pc{
+                padding-top: 80px;
+            }
+        }
+    }
+    .area_pick{
+        .inner{
+            padding: 31.5px 0 0;
+            @include pc{
+                padding: 79.5px 0 80px;
+            }
+        }
+        h2{
+            font-weight: $medi;
+            padding: 0 calcPercent(24) 16px;
+            @include pc{
+                padding: 0 0 24px;
+                @include fontPc(26, normal, null, $bold);
+            }
+        }
+        .content{
+            width: 100%;
+            display: block;
+            @include pc{
+                display: flex;
+            }
+        }
+        .right{
+            margin-top: 25px;
+            flex-grow: 1;
+            @include pc{
+                margin-top: 0;
+                width: 510px;
+            }
+        }
+        .bx_thum{
+            width: 100%;
+            height: calcVw(218);
+            display: block;
+            position: relative;
+            min-height: 218px;
+            max-height: 400px;
+            left: 50%;
+            transform: translateX(-50%);
+            background-size: auto 100% !important;
+            &:hover{
+                background-size: auto 90% !important;
+            }
+            @include pc{
+                @include setCont(494px, 445px);
+                max-height: unset; 
+                border-radius: 10px;
+            }
+        }
+        .p_info{
+            @include setCont(100%, auto, block, relative);
+            padding: 0 calcPercent(24) 10px calc(calcPercent(24) + 50px);
+            @include pc{
+                padding: 0 0 39px 101px;
+            }
+            .icon_electric{
+                top: 0;
+                left: calcPercent(24);
+                @include pc{
+                    left: 16px;
+                }
+            }
+            h3{
+                @include font(13, normal, $gray500, $normal);
+                margin-bottom: 8px;
+                @include pc{
+                    margin-bottom: 16px;
+                    @include fontPc(16);
+                }
+            }
+            p{
+                @include font(15, normal, $gray800, $medi);
+                width: 100%;
+                @include pc{
+                    width: 100%;
+                    @include fontPc(19);
+                    @include ellipsis("multi", 3);
+                }
+            }
+            .btn{
+                margin-top: 16px;
+
+            }
+        }
+    }
+    .area_sw{
+        @include setCont(100%, auto, block, relative);
+        .btn_prev, .btn_next{
+            @include setCont(69px, 0, block, absolute);
+            @include blind;
+            top: 7px;
+            overflow: hidden;
+            z-index: 5;
+            &::before{
+                @include setCont(100%, 100%, block);
+                @include bgSvg(arrDown("8a8c8f"), no-repeat, 50% 50%, 12px auto);
+                transform: rotate(90deg);
+            }
+            &:hover{
+                opacity: 0.6;
+            }
+            &.swiper-button-disabled{
+                &::before{
+                    @include bgSvg(arrDown("d0d2d5"), no-repeat, 50% 50%, 12px auto);
+                }
+            }
+            @include pc{
+                height: 233px;
+            }
+        }
+        .btn_prev{
+            left: 16px;
+        }
+        .btn_next{
+            right: 0;
+            &::before{
+                transform: rotate(-90deg);
+            }
+        }
+    }
+    .sw_pick {
+        @include setCont(100%, auto);
+        padding:0 calcPercent(24);
+        @include pc{
+            margin-left: 98px;
+            padding: 0;
+            width: 356px;
+        }
+        .swiper-wrapper{
+            padding: 6px 2px 26px;
+            margin-left: -1px;
+            @include pc{
+                margin-left: -1px;
+                padding-bottom: 0
+            }
+        }
+        .slide{
+            @include setCont(252px, 179px, flex, relative);
+            width: calcVw(252);
+            height: calcVw(179);
+            max-width: 364px;
+            max-height: 258.55px;
+            @include bgSvg(logoOver($s_gray200), no-repeat, 50% 50%, 80px auto);
+            margin-left: 2px;
+            align-items: center;
+            justify-content: center;
+            overflow: hidden;
+            border-radius: 10px;
+            padding: 4px 4px 5px;
+            box-shadow: 0 2px 4px 0 $gray100;
+            @include pc{
+                width: 324px;
+                height: 233px;
+                margin-bottom: 6px;
+                &:first-child{
+                    transform: translateX(1px);
+                }
+                &:last-child{
+                    transform: translateX(-6px);
+                }
+            }
+            .img{
+                min-height: 90%;
+                max-height: 100%;
+            }
+            .p_label{
+                @include font(13, normal, $gray600, $medi);
+                background-color: $gray300;
+                padding: 2px 10px 2px 11px;
+                border-radius: 8px;
+                position: absolute;
+                top: 16px;
+                left: 8px;
+                z-index: 2;
+            }
+        }
+    }
+    .area_search{
+        border-top: 12px solid $gray100;
+        .c_inner{
+            padding: 31.5px calcPercent(24);
+        }
+    }
 }

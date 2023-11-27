@@ -43,6 +43,7 @@ $(function(){
 	$(".btn_clear").click(function(){
 		$(this).prev().val("").focus();
 	});
+	//menu
 	$(".btn_menu").click(function(){
 		$(".header").addClass("open");
 		scrollPosition = $(document).scrollTop();
