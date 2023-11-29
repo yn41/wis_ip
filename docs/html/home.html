@@ -17,32 +17,29 @@
 		
 	</head>
 	<body>
-		<div class="wrap main">
+		<div class="wrap">
 			<header class="header">
 			    <div class="inner">
 			        <div class="left">
 			            <!-- <div class="logo"><span>ip logo</span></div> -->
 			            <a href="../html/home.html"  class="logo"><span>ip logo</span></a>
-			            
 			        </div>
 			        <div class="right">
 			            <button type="button" class="btn_menu"><span class="blind">menu button</span></button>
-			            
-				<nav class="gnb">
-					<div class="g_inner">
-						<button type="button" class="btn_menu_close">menu close</button>
-						<a href="../html/home.html"  class="on">Home</a>  
-						<a href="#" >University Rankings</a>  
-						<a href="#" >Company Rankings</a>  
-						<a href="../html/patent.html" >Patent Valuation</a>  
-						<a href="#" >Inventor Tech Valuation</a>  
-					</div>
-				</nav>
-			
+						<nav class="gnb">
+							<div class="g_inner">
+								<button type="button" class="btn_menu_close">menu close</button>
+								<a href="../html/home.html"  class="on">Home</a>  
+								<a href="#" >University Rankings</a>  
+								<a href="#" >Company Rankings</a>  
+								<a href="../html/patent.html" >Patent Valuation</a>  
+								<a href="#" >Inventor Tech Valuation</a>  
+							</div>
+						</nav>
 			        </div>
 			    </div>
 			</header>
-			<section class="container">
+			<section class="container main">
 				<article class="area1">
 					<div class="inner">
 						<div class="left">
@@ -188,15 +185,3 @@
 		</div>
 	</body>
 </html>
-<script>
-	
-$(function(){ 
-	$(window).on('scroll', function(){
-		if($(document).scrollTop()>0){
-			$(".header").addClass("fix");
-		}else{
-			$(".header").removeClass("fix");
-		}
-	})
-});
-</script>

@@ -298,6 +298,9 @@
         background-color: $gray100;
         height: 446px;
     }
+    .btn{
+        width: 100%;
+    }
     .inner{
         padding: 0 !important;
         @include pc{
@@ -345,7 +348,7 @@
     .right{
         background-color: $gray100;
         @include pc{
-            padding: 0 15px 0 47px;
+            padding: 0 49px 0 47px;
         }
         .c_inner{
             padding-top: 32px;
@@ -393,6 +396,246 @@
         margin-bottom: 15.5px;
     }
 }
-.area_visual{
- 
+
+.area_sw{
+    @include setCont(100%, auto, block, relative);
+    .btn_prev, .btn_next{
+        @include setCont(69px, 0, block, absolute);
+        @include blind;
+        top: 7px;
+        overflow: hidden;
+        z-index: 5;
+        &::before{
+            @include setCont(100%, 100%, block);
+            @include bgSvg(arrDown("8a8c8f"), no-repeat, 50% 50%, 12px auto);
+            transform: rotate(90deg);
+        }
+        &:hover{
+            opacity: 0.6;
+        }
+        &.swiper-button-disabled{
+            &::before{
+                @include bgSvg(arrDown("d0d2d5"), no-repeat, 50% 50%, 12px auto);
+            }
+        }
+        @include pc{
+            height: 233px;
+        }
+    }
+    .btn_prev{
+        left: 16px;
+    }
+    .btn_next{
+        right: 0;
+        &::before{
+            transform: rotate(-90deg);
+        }
+    }
+    .sw_pick {
+        @include setCont(100%, auto);
+        padding:0 calcPercent(24);
+        @include pc{
+            margin-left: 98px;
+            padding: 0;
+            width: 356px;
+        }
+        .swiper-wrapper{
+            padding: 6px 2px 26px;
+            margin-left: -1px;
+            @include pc{
+                margin-left: -1px;
+                padding-bottom: 0
+            }
+        }
+        .slide{
+            @include setCont(252px, 179px, flex, relative);
+            width: calcVw(252);
+            height: calcVw(179);
+            max-width: 364px;
+            max-height: 258.55px;
+            @include bgSvg(logoOver($s_gray200), no-repeat, 50% 50%, 80px auto);
+            margin-left: 2px;
+            align-items: center;
+            justify-content: center;
+            overflow: hidden;
+            border-radius: 10px;
+            padding: 4px 4px 5px;
+            box-shadow: 0 2px 4px 0 $gray100;
+            @include pc{
+                width: 324px;
+                height: 233px;
+                margin-bottom: 6px;
+                &:first-child{
+                    transform: translateX(1px);
+                }
+                &:last-child{
+                    transform: translateX(-6px);
+                }
+            }
+            .img{
+                min-height: 90%;
+                max-height: 100%;
+            }
+            .p_label{
+                @include font(13, normal, $gray600, $medi);
+                background-color: $gray300;
+                padding: 2px 10px 2px 11px;
+                border-radius: 8px;
+                position: absolute;
+                top: 16px;
+                left: 8px;
+                z-index: 2;
+            }
+        }
+    }
+} 
+@-webkit-keyframes aniOpen {
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
+}
+.ani_open{
+    animation-name: aniOpen;
+    animation-duration:300ms;
+    
+}
+.inventors_item{
+    @include setCont(100%, auto, block, relative, $white);
+    padding: 16px calcPercent(19, 328) 17px calcPercent(16, 328);
+    box-shadow: 0 2px 4px 1px rgba(55, 55, 72, 0.05);  
+    border-radius: 10px;
+    @include pc{
+        padding: 17px 15px;
+        
+    }
+    &+.inventors_item{
+        margin-top: 8px;
+    }
+    .c_left{
+        flex-grow: 1;
+        padding-left: 50px;
+        position: relative;
+        @include pc{
+            padding-left: 62.7px;
+        }
+        .icon{
+            @include setCont(34px, 34px, block, absolute);
+            top: 2px;
+            left: 0;
+            @include pc{
+                @include setCont(36px, 36px);
+            }
+        }
+        h3{
+            @include font(15, normal, $gray800, $medi);
+            padding: 0;
+            @include pc{
+                padding: 0;
+                @include fontPc(15);
+            }
+        }
+        .desc{
+            @include font(13, normal, $gray500);
+            margin-top: 4px;
+            @include pc{
+                @include fontPc(13);
+            }
+        }
+    }
+    .c_right{
+        flex-shrink: 0;
+        padding: 8px 0 0 10px;
+        .txt_top{
+            @include font(16, normal, $gray800, $medi);
+            @include pc{
+                @include fontPc(16);
+            }
+        }
+        .txt_point{
+            @include font(19, normal, $point, $medi);
+            @include pc{
+                @include fontPc(19);
+            }
+        }
+    }
+    .bx_tag{
+        @include setCont(100%, 20px, block, relative);
+        @include ellipsis;
+        margin-top: 12px;
+        margin-left: -2px;
+        .tag{
+            display: inline-block;
+            @include font(13, normal, $gray800);
+            padding: 2px 10px;
+            border-radius: 6px;
+            vertical-align: top;
+            background-color: $gray100;
+            @include pc{
+                @include fontPc(13);
+            }
+        }
+    }
+    &.type1{
+        padding: 0 0 24px 0;
+        box-shadow: unset;  
+        border-radius: 0;
+        @include pc{
+            padding: 20px 0 24px !important;
+        }
+    }
+    .rank_chart{
+        margin-top: 8px;
+        @include pc{
+            margin-top: 24px;
+        }
+    }
+}
+.wrap_coming{
+    @include setCont(100%, auto);
+    text-align: center;
+    .bx_coming{
+        @include setCont(100%, 163px, flex);
+        @include font(16, normal, $gray500, $medi);
+        flex-direction: column;
+        justify-content: flex-end;
+        align-items: center;
+        padding-bottom: 32px;
+        &::before{
+            @include setCont(38px, 47px, block);
+            @include bg("/sub/patent/coming.png", no-repeat, 50% 50%, 100% auto);
+            margin-bottom: 12px;
+        }
+        @include pc{
+            height: 199px;
+            @include fontPc(16);   
+            padding-bottom: 36px;
+        }
+    }
+    .btn{
+        width: 100%;
+        @include pc{
+            width: unset;
+            padding: 13px 16px 14px;
+            @include fontPc(16);
+            margin: 0 auto;
+            border-radius: 10px;
+        }
+    }
+}
+.rank_chart{
+    @include setCont(100%, 20px,block, relative, $gray100);
+    border-radius: 6px;
+    .bar{
+        @include setCont(20px, 100%, block, absolute, $point);
+        @include blind;
+        top: 0;
+        border-radius: 6px;
+        right: 0;
+        @include pc{
+            width: 36px;
+        }
+    }
 }

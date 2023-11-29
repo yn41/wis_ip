@@ -447,12 +447,30 @@ input.ipt{
 }
 .show_mobile{
     @include pc{
-        display: none;
+        display: none !important;
     }
 }
 .show_pc{
-    display: none;
+    display: none !important;
     @include pc{
-        display: block;
+        display: block !important;
+    }
+}
+.btn_txt{
+    @include setCont(100%, auto, flex, relative);
+    @include font(16,19, $point, $medi);
+    justify-content: center;
+    padding:17px 16px 18px;
+    border-top: 1px solid $gray100;
+    &:hover{
+        opacity: 0.6;
+    }
+}
+.btn_more{
+    @include setCont(100%, 38px, block);
+    @include bgSvg(arrDown($s_gray400), no-repeat, 50% 50%, 14px auto);
+    @include blind;
+    &:hover{
+        opacity: 0.6;
     }
 }

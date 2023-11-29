@@ -1,13 +1,4 @@
 .main{
-    .header{
-        background-color: unset;
-        &.fix{
-            background-color: $white;
-        }
-        @include pc{
-            background-color: $white;
-        }
-    }
     .container{
         padding-top: 0;
         .inner{
@@ -26,7 +17,7 @@
         .inner{
             @include setCont(100%, auto, flex, relative);
             padding: 0;
-            height: 421px;
+            height: 365px;
             flex-direction: column;
             align-items: center;
             transition: all 300ms;
@@ -50,7 +41,7 @@
             width: 100%;
             justify-content: center;
             align-items: center;
-            margin: 72px auto 0;
+            margin: 16px auto 0;
             @include pc{
                 margin: 197px auto 9px;
             }

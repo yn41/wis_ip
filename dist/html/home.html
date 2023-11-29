@@ -17,7 +17,7 @@
 		
 	</head>
 	<body>
-		<div class="wrap main">
+		<div class="wrap">
 			<header class="header">
 			    <div class="inner">
 			        <div class="left">
@@ -42,7 +42,7 @@
 			        </div>
 			    </div>
 			</header>
-			<section class="container">
+			<section class="container main">
 				<article class="area1">
 					<div class="inner">
 						<div class="left">
@@ -191,12 +191,5 @@
 <script>
 	
 $(function(){ 
-	$(window).on('scroll', function(){
-		if($(document).scrollTop()>0){
-			$(".header").addClass("fix");
-		}else{
-			$(".header").removeClass("fix");
-		}
-	})
 });
 </script>
