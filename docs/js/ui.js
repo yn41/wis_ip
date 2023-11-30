@@ -55,12 +55,11 @@ $(function(){
 		scrollPosition = 0;
 	});
 	
-	// S | v:pat1 - 셀랙트 박스 세팅
 	for (var i =0; i < $(".bx_slct").length; i++) {
 		var target = $(".bx_slct").eq(i);
 		if($.trim(target.find(".slct_tit").text()) === "")
 		target.find(".slct_tit").text(target.find(".slct_cont .select").text());
-}
+	}
 	$(".slct_tit").on("click", function (e) {
 		if($(this).parent().hasClass("dis") !== true){
 			if($(this).parent().hasClass("on") === true) {
@@ -81,7 +80,13 @@ $(function(){
 		if(e.target.className === "bx_slct" || e.target.className === "slct_tit" || e.target.className === "slct_cont") {return false;}
 		$(".bx_slct").removeClass("on");
 	});
-	// E | v:pat1 - 셀랙트 박스 세팅
 });
-// $(window).resize(function(){
-// });
+// S | v:pat2 - gnb 반응형 대응
+$(window).resize(function(){
+	if($( window ).width() > 1003 && $(".header").hasClass("open")){
+		$(".header").removeClass("open");
+		$("body").css({"overflow":"", "top":""});
+		scrollPosition = 0;
+	}
+});
+// E | v:pat2 -  gnb 반응형 대응
