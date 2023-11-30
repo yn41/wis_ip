@@ -84,7 +84,7 @@
             z-index: 12;
             overflow: hidden;
             opacity: 0;
-            transition: all 400ms ease; 
+            // transition: all 400ms ease; 
             @include pc{
                 width: auto;
                 max-height: 100vh;
@@ -501,6 +501,12 @@
     animation-name: aniOpen;
     animation-duration:300ms;
     
+}
+a.inventors_item{
+    &:hover, &:active{
+        transform: scale(0.95);
+        background-color: $gray50;
+    }
 }
 .inventors_item{
     @include setCont(100%, auto, block, relative, $white);

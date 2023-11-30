@@ -1,33 +1,9 @@
 <!DOCTYPE html>
 <html lang="ko">
-	<head>
-		<meta charset="UTF-8">
-		<meta name="viewport" content="width=device-width, initial-scale=1.0">
-		<meta http-equiv="X-UA-Compatible" content="ie=edge">
-		<meta name="theme-color" content="#ffffff">
-		<meta name="Description" content="IPRankings">
-		<title>Patent | IPRankings </title>
-		<link rel="icon" href="../img/favicon.ico" type="image/x-icon"> 
-		<link rel="stylesheet" type="text/css" href="../css/style.css">
-		<link rel="stylesheet" type="text/css" href="../css/animate.min.css">
-		<link rel="stylesheet" type="text/css" href="../css/swiper.min.css"><!-- v:pat1 : 파일 추가 -->
-		<script src = "../js/jquery-3.7.1.min.js"></script>
-		<script src = "../js/swiper.js"></script>
-		<script src = "../js/ui.js"></script>
-		
-	</head>
+	<include src="include/head.html" title="Patent"></include>
 	<body>
 		<div class="wrap">
-			<header class="header">
-			    <div class="inner">
-			        <div class="left">
-			            <!-- <div class="logo"><span>ip logo</span></div> -->
-			            <a href="../html/home.html"  class="logo"><span>ip logo</span></a>
-			            
-			        </div>
-			        <div class="right">
-			            <button type="button" class="btn_menu"><span class="blind">menu button</span></button>
-			            
+			<include src="include/header.html">
 				<nav class="gnb">
 					<div class="g_inner">
 						<button type="button" class="btn_menu_close">menu close</button>
@@ -38,11 +14,8 @@
 						<a href="#" target="_parent">Inventor Tech Valuation</a>  
 					</div>
 				</nav>
-			
-			        </div>
-			    </div>
-			</header>
-			<section class="container patentDetail">
+			</include>
+			<section class="container patentSpec">
 				<article class="area1">
 					<div class="inner">
 						<div class="a_top">
@@ -130,7 +103,7 @@
 													<p class="desc">Patents: 3</p>
 												</div>
 												<div class="c_right">
-													<b class="txt_point">32.56M</b>
+													<b class="txt_point">32.6M</b>
 												</div>
 											</div>
 											<div class="bx_tag">
@@ -215,7 +188,7 @@
 												<p class="desc">Patents: 5</p>
 											</div>
 											<div class="c_right">
-												<b class="txt_point">3.52M</b>
+												<b class="txt_point">3.5M</b>
 											</div>
 										</div>
 										<div class="bx_tag">
@@ -288,7 +261,7 @@
 							</div>
 						</div>
 					</div>
-				</article>
+				</article> 
 				<article class="area4">
 					<div class="inner">
 						<div class="left">
@@ -344,7 +317,7 @@
 									</div>
 									<div class="bx_ipt">
 										<input type="email" class="ipt" placeholder="Your email" />
-										<button type="button" class="btn_clear">delete</button>
+										<button type="button" class="btn_clear">dsselete</button>
 									</div>
 									<button type="button" class="btn">Send</button>
 								</div>
@@ -354,25 +327,7 @@
 					</div>
 				</div>
 			</section>
-			<footer class="footer">
-			    <div class="inner">
-			        <a href="../html/home.html" class="bx_logo">
-			            <!-- <div class="logo"><span>ip gray logo</span></div> -->
-			            <div class="logo"><span>ip gray logo</span></div>
-			            <strong>IPRankings.com</strong>
-			        </a>
-			        <div class="f_menu">
-			            <a href="#" target="_parent">University Rankings</a>  
-			            <a href="#" target="_parent">Company Rankings</a>  
-			            <a href="../html/patent.html" target="_parent">Patent Valuation</a>  
-			            <a href="#" target="_parent">Inventor Tech Valuation</a>
-			        </div>
-			        <div class="comp">
-			            <a href="#" target="_parent">Privacy Policy</a>
-			            <p class="cop">Copyright © 2023 IPRankings.com <br/>Powered by Wisdomain</p>
-			        </div>
-			    </div>
-			</footer>
+			<include src="include/footer.html" title="home"></include>
 		</div>
 	</body>
 </html>
