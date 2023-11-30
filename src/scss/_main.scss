@@ -12,17 +12,19 @@
         width: 100%;
     }
     .area1{
-        @include setCont(100%, auto, block);
+        @include setCont(100%, 365px, block);
         background-image: linear-gradient(to bottom, rgba(255, 255, 255, 0) 0%, #e3dff4);
+        @include pc{
+            height: 490px;
+        }
         .inner{
-            @include setCont(100%, auto, flex, relative);
+            @include setCont(100%, 100%, flex, relative);
             padding: 0;
-            height: 365px;
+            // height: 365px;
             flex-direction: column;
             align-items: center;
             transition: all 300ms;
             @include pc{
-                height: 490px;
                 flex-direction: unset;
             }
         }

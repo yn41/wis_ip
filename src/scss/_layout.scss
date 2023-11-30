@@ -516,12 +516,14 @@ a.inventors_item{
     padding: 16px calcPercent(19, 328) 17px calcPercent(16, 328);
     box-shadow: 0 2px 4px 1px rgba(55, 55, 72, 0.05);  
     border-radius: 10px;
-    @include pc{
-        padding: 17px 15px;
-        
-    }
     &+.inventors_item{
         margin-top: 8px;
+    }
+    @include pc{
+        padding: 17px 15px;
+    }
+    .colb{
+        align-items: flex-start !important;
     }
     .c_left{
         flex-grow: 1;
@@ -595,6 +597,12 @@ a.inventors_item{
             padding: 20px 0 24px !important;
         }
     }
+    &.type_rank{
+        padding: 20px;
+        .icon{
+            width: 34px;
+        }
+    }
     .rank_chart{
         margin-top: 8px;
         @include pc{
@@ -645,6 +653,32 @@ a.inventors_item{
         right: 0;
         @include pc{
             width: 36px;
+        }
+    }
+}
+.visual_wrap{
+    @include setCont(100%, 276px, flex, relative);
+    background-image: linear-gradient(to bottom, rgba(255, 255, 255, 0) 0%, #e3dff4);
+    .inner{
+        width: 100%;
+        padding: 0 !important;
+        display: flex;
+        justify-content: center;
+        @include pc{
+        }
+        .cont{
+            margin-top: 14px;
+            text-align: center;
+            .txt_point{
+                @include font(15, normal, $point, $medi);
+            }
+            h1{
+                font-weight: $medi;
+                margin: 4px auto 19px;
+            }
+            .img{
+                width: 278px;
+            }
         }
     }
 }

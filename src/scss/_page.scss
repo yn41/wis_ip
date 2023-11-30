@@ -435,3 +435,16 @@
         }
     }
 }
+.company{
+    .area1{
+        .inner{
+            padding: 16px;
+            &>.colb{
+                align-items: center;
+            }
+        }
+        .inventors_wrap{
+            margin-top: 12px;
+        }
+    }
+}

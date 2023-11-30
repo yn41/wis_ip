@@ -166,7 +166,7 @@ $(function(){
         // 반응형
         breakpoints: {
 			1004: {
-        		spaceBetween: 16, 
+        		spaceBetween: 16, // 슬라이드간 padding 값 30px 씩 떨어뜨려줌
             },
         }
     })
@@ -177,7 +177,7 @@ $(window).resize(function(){
 		clearTimeout(resizeCheck); 
 	};
 	resizeCheck = setTimeout(function(){
-		swiper.update(); 
+		swiper.update(); //스와이퍼 업데이트
 	},500);
 });
 </script>

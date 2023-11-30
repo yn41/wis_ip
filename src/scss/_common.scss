@@ -474,3 +474,10 @@ input.ipt{
         opacity: 0.6;
     }
 }
+.btn_filter{
+    @include setCont(20px, 15px, block,  relative, $gray100);
+    @include blind;
+    &:hover{
+        opacity: 0.6;
+    }
+}
