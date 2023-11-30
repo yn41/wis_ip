@@ -59,7 +59,7 @@ $(function(){
 		var target = $(".bx_slct").eq(i);
 		if($.trim(target.find(".slct_tit").text()) === "")
 		target.find(".slct_tit").text(target.find(".slct_cont .select").text());
-}
+	}
 	$(".slct_tit").on("click", function (e) {
 		if($(this).parent().hasClass("dis") !== true){
 			if($(this).parent().hasClass("on") === true) {
