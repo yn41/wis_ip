@@ -104,11 +104,9 @@
                 justify-content: center;
             }
             &:hover{
-                opacity: 0.8;
+                background-color: $gray50;
                 box-shadow: 0 2px 4px 0 rgba(39, 43, 55, 0.3);
-                .bx_img{
-                    transform: scale(0.9);
-                }
+                transform: scale(0.95);
             }
             .bx_img{
                 width: 100%;

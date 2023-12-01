@@ -414,18 +414,10 @@
             position: relative;
             margin-top: 119px;
         }
-        .inner{
-        }
         .area_search{
-            border-top: 12px solid $gray100;
             @include pc{
-                position: absolute;
                 top: -119px;
-                left: 0;
-                width: 100%;
-                border: none;
                 height: 119px;
-                z-index: 1;
                 .c_inner{
                     @include setCont(1004px, 100%, flex);
                     justify-content: center;
@@ -435,16 +427,43 @@
         }
     }
 }
-.company{
+.company, .university{
     .area1{
         .inner{
-            padding: 16px;
-            &>.colb{
-                align-items: center;
+            padding: 16px calcPercent(16) 27.5px;
+            @include pc{
+                padding: 32px 0 59.5px;
             }
         }
-        .inventors_wrap{
-            margin-top: 12px;
+        .inventors_wrap {
+            margin: 0 auto;
+            @include pc{
+                width: 664px;
+            }
+            .i_list{
+                margin-top: 12px;
+                @include pc{
+                    margin-top: 32px;
+                }
+            }
+            .area_search{
+                border: none;
+                .c_inner{
+                    padding-top: 15.5px;
+                    @include pc{
+                        padding-top: 42px;
+                    }
+                }
+            }
+        }
+    }
+}
+.university{
+    .area1{
+        .inventors_wrap {
+            .i_list{
+                margin-top: 16px;
+            }
         }
     }
 }

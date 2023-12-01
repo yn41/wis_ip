@@ -294,6 +294,7 @@
     }
 }
 .main .area5, .area_feadback{
+    position: relative;
     @include pc{
         background-color: $gray100;
         height: 446px;
@@ -387,6 +388,24 @@
         .btn{
             margin: 24px 0 16px;
             padding: 16px 34px;
+        }
+    }
+}
+.area_feadback{
+    .area_search{
+        border-top: 12px solid $gray100;
+        width: 100%;
+        @include pc{
+            position: absolute;
+            left: 50%;
+            transform: translateX(-50%);
+            border: none;
+            z-index: 2;
+            .c_inner{
+                @include setCont(1004px, 100%, flex);
+                justify-content: center;
+                align-items: center;
+            }
         }
     }
 }
@@ -505,6 +524,19 @@
     animation-duration:300ms;
     
 }
+.inventors_wrap{
+    .i_top{
+        @include setCont(100%, auto, flex, relative);
+        justify-content: space-between;
+        align-items: center;
+        h3{
+            @include font(13, normal, $gray600, $medi);
+            @include pc{
+                @include fontPc(13);
+            }
+        }
+    }
+}
 a.inventors_item{
     &:hover, &:active{
         transform: scale(0.95);
@@ -540,6 +572,14 @@ a.inventors_item{
                 @include setCont(36px, 36px);
             }
         }
+        .num{
+            @include setCont(24px, 34px, flex, absolute);
+            @include font(19, normal, $gray700, $medi);
+            justify-content: center;
+            align-items: center;
+            top: 2px;
+            left: 0;
+        }
         h3{
             @include font(15, normal, $gray800, $medi);
             padding: 0;
@@ -572,23 +612,6 @@ a.inventors_item{
             }
         }
     }
-    .bx_tag{
-        @include setCont(100%, 20px, block, relative);
-        @include ellipsis;
-        margin-top: 12px;
-        margin-left: -2px;
-        .tag{
-            display: inline-block;
-            @include font(13, normal, $gray800);
-            padding: 2px 10px;
-            border-radius: 6px;
-            vertical-align: top;
-            background-color: $gray100;
-            @include pc{
-                @include fontPc(13);
-            }
-        }
-    }
     &.type1{
         padding: 0 0 24px 0;
         box-shadow: unset;  
@@ -597,16 +620,69 @@ a.inventors_item{
             padding: 20px 0 24px !important;
         }
     }
-    &.type_rank{
+    &.type_rank, &.type_rank_num{
         padding: 20px;
         .icon{
             width: 34px;
+        }
+    }
+    &.type_rank_num{
+        h3, p{
+            margin-left: -12px;
         }
     }
     .rank_chart{
         margin-top: 8px;
         @include pc{
             margin-top: 24px;
+        }
+    }
+}
+.pagination{
+    @include setCont(100%, auto, flex, relative);
+    justify-content: center;
+    align-items: center;
+    margin: 22px auto 0;
+    @include pc{
+        margin: 42px auto 0;
+    }
+    .num, a.num, .btn_page_prev, .btn_page_next{
+        @include setCont(32px, 32px, flex, relative);
+        @include font(16, normal, $gray500, $medi);
+        justify-content: center;
+        align-items: center;
+        border-radius: 25px;
+        &:hover{
+            background-color: $gray100;
+        }
+        &+.num, &+a.num, &+.btn_page_prev, &+.btn_page_next{
+            margin-left: 8px;
+        }
+        @include pc{
+            @include fontPc(16);
+        }
+    }
+    .btn_page_prev, .btn_page_next{
+        @include blind;
+        &::before{
+            @include setCont(15px, 15px, block);
+            @include bgSvg(arrDown("bcbec3"), no-repeat, 50% 50%, 7px auto);
+        }
+    }
+    .num, a.num{
+        &.on{
+            background-color: $gray200;
+            color: $gray800;
+        }
+    }
+    .btn_page_prev{
+        &::before{
+            transform: rotate(90deg);
+        }
+    }
+    .btn_page_next{
+        &::before{
+            transform: rotate(-90deg);
         }
     }
 }
@@ -659,6 +735,9 @@ a.inventors_item{
 .visual_wrap{
     @include setCont(100%, 276px, flex, relative);
     background-image: linear-gradient(to bottom, rgba(255, 255, 255, 0) 0%, #e3dff4);
+    @include pc{
+        height: 384px
+    }
     .inner{
         width: 100%;
         padding: 0 !important;
@@ -669,16 +748,55 @@ a.inventors_item{
         .cont{
             margin-top: 14px;
             text-align: center;
+            @include pc{
+                margin-top: 46px;
+            }
             .txt_point{
                 @include font(15, normal, $point, $medi);
             }
             h1{
                 font-weight: $medi;
                 margin: 4px auto 19px;
+                @include pc{
+                    margin: 8px auto 34px;
+                    @include fontPc(22, normal, $gray800, $medi)
+                }
             }
             .img{
                 width: 278px;
+                @include pc{
+                    width: 362px;
+                }
             }
         }
+    }
+}
+.bx_tag{
+    @include setCont(100%, 20px, block, relative);
+    @include ellipsis;
+    margin-top: 12px;
+    margin-left: -2px;
+}
+.tag{
+    display: inline-block;
+    @include font(13, normal, $gray800);
+    padding: 2px 10px;
+    border-radius: 6px;
+    vertical-align: top;
+    background-color: $gray100;
+    @include pc{
+        @include fontPc(13);
+    }
+    &.bg_grean{
+        background-color: rgba(0, 171, 168, 0.15);
+    }
+    &.bg_pink{
+        background-color: rgba(216, 114, 229, 0.15);
+    }
+    &.bg_yellow{
+        background-color: rgba(250, 215, 51, 0.15);
+    }
+    &.bg_gray{
+        background-color: #ebeced;
     }
 }

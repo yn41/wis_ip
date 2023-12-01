@@ -307,8 +307,11 @@ input.ipt{
     .btn_clear{
         @include bgSvg(btnClose($s_gray600), no-repeat, 50% 50%, 100% auto);
         right: 8px;
+        @include pc{
+            right: 12px;
+        }
     }
-    &.bg_gray{
+    &.bx_gray{
         .ipt{
             border-color: $gray100;
             background-color: $gray100;
