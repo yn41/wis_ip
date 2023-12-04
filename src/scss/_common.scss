@@ -87,6 +87,7 @@ a, button, input{
     text-align: center;
     &:hover, &:active{
         background-color: #6737cc;
+        color: $gray50 !important;
     }
     &+.btn{
         margin-left: 8px;
@@ -130,7 +131,7 @@ a, button, input{
         color: $point;
         &:hover, &:active{
             background-color: $purple200;
-            color: $point;
+            color: $point !important;;
         }
         &.dis, &:disabled{
             background-color: $purple50;
@@ -307,8 +308,11 @@ input.ipt{
     .btn_clear{
         @include bgSvg(btnClose($s_gray600), no-repeat, 50% 50%, 100% auto);
         right: 8px;
+        @include pc{
+            right: 12px;
+        }
     }
-    &.bg_gray{
+    &.bx_gray{
         .ipt{
             border-color: $gray100;
             background-color: $gray100;
@@ -469,6 +473,14 @@ input.ipt{
 .btn_more{
     @include setCont(100%, 38px, block);
     @include bgSvg(arrDown($s_gray400), no-repeat, 50% 50%, 14px auto);
+    @include blind;
+    &:hover{
+        opacity: 0.6;
+    }
+}
+.btn_filter{
+    @include setCont(20px, 15px, block,  relative, $gray100);
+    @include bgSvg(btnFilter($s_gray500), no-repeat, 50% 50%, 100% auto);
     @include blind;
     &:hover{
         opacity: 0.6;

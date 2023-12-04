@@ -114,7 +114,7 @@
                 @include pc{
                     @include setCont(0, 1px, block, absolute, $gray800);
                     left: 50%;
-                    bottom: 1px;
+                    bottom: 0;
                     transform: translateX(-50%);
                     transition: width 300ms;
                 }
@@ -198,7 +198,8 @@
 .container{
     @include setCont(100%, auto, block);
     flex-grow: 1;
-    padding-top: $header;
+    max-width: 99999999px !important;
+    padding: $header 0  0!important;
 }
 .footer{
     width: 100%;
@@ -294,6 +295,7 @@
     }
 }
 .main .area5, .area_feadback{
+    position: relative;
     @include pc{
         background-color: $gray100;
         height: 446px;
@@ -390,6 +392,24 @@
         }
     }
 }
+.area_feadback{
+    .area_search{
+        border-top: 12px solid $gray100;
+        width: 100%;
+        @include pc{
+            position: absolute;
+            left: 50%;
+            transform: translateX(-50%);
+            border: none;
+            z-index: 2;
+            .c_inner{
+                @include setCont(1004px, 100%, flex);
+                justify-content: center;
+                align-items: center;
+            }
+        }
+    }
+}
 .area_top{
     @include setCont(100%, auto, block, relative);
     h2{
@@ -408,9 +428,11 @@
         opacity: 0;
         transition: all 200ms;
         &::before{
-            @include setCont(15px, 15px, block);
+            @include setCont(15px, 15px, block, absolute);
             @include bgSvg(arrDown("8a8c8f"), no-repeat, 50% 50%, 12px auto);
-            transform: rotate(90deg);
+            top: 50%;
+            left: 50%;
+            transform: rotate(90deg) translate(-50%, 38%);
         }
         &:hover{
             opacity: 0.6;
@@ -431,7 +453,7 @@
     .btn_next{
         right: 0;
         &::before{
-            transform: rotate(-90deg);
+            transform: rotate(-90deg) translate(41%, -50%);
         }
     }
     .sw_pick {
@@ -505,6 +527,19 @@
     animation-duration:300ms;
     
 }
+.inventors_wrap{
+    .i_top{
+        @include setCont(100%, auto, flex, relative);
+        justify-content: space-between;
+        align-items: center;
+        h3{
+            @include font(13, normal, $gray600, $medi);
+            @include pc{
+                @include fontPc(13);
+            }
+        }
+    }
+}
 a.inventors_item{
     &:hover, &:active{
         transform: scale(0.95);
@@ -516,12 +551,14 @@ a.inventors_item{
     padding: 16px calcPercent(19, 328) 17px calcPercent(16, 328);
     box-shadow: 0 2px 4px 1px rgba(55, 55, 72, 0.05);  
     border-radius: 10px;
-    @include pc{
-        padding: 17px 15px;
-        
-    }
     &+.inventors_item{
         margin-top: 8px;
+    }
+    @include pc{
+        padding: 17px 15px;
+    }
+    .colb{
+        align-items: flex-start !important;
     }
     .c_left{
         flex-grow: 1;
@@ -537,6 +574,14 @@ a.inventors_item{
             @include pc{
                 @include setCont(36px, 36px);
             }
+        }
+        .num{
+            @include setCont(24px, 34px, flex, absolute);
+            @include font(19, normal, $gray700, $medi);
+            justify-content: center;
+            align-items: center;
+            top: 2px;
+            left: 0;
         }
         h3{
             @include font(15, normal, $gray800, $medi);
@@ -570,23 +615,6 @@ a.inventors_item{
             }
         }
     }
-    .bx_tag{
-        @include setCont(100%, 20px, block, relative);
-        @include ellipsis;
-        margin-top: 12px;
-        margin-left: -2px;
-        .tag{
-            display: inline-block;
-            @include font(13, normal, $gray800);
-            padding: 2px 10px;
-            border-radius: 6px;
-            vertical-align: top;
-            background-color: $gray100;
-            @include pc{
-                @include fontPc(13);
-            }
-        }
-    }
     &.type1{
         padding: 0 0 24px 0;
         box-shadow: unset;  
@@ -595,10 +623,69 @@ a.inventors_item{
             padding: 20px 0 24px !important;
         }
     }
+    &.type_rank, &.type_rank_num{
+        padding: 20px;
+        .icon{
+            width: 34px;
+        }
+    }
+    &.type_rank_num{
+        h3, p{
+            margin-left: -12px;
+        }
+    }
     .rank_chart{
         margin-top: 8px;
         @include pc{
             margin-top: 24px;
+        }
+    }
+}
+.pagination{
+    @include setCont(100%, auto, flex, relative);
+    justify-content: center;
+    align-items: center;
+    margin: 22px auto 0;
+    @include pc{
+        margin: 42px auto 0;
+    }
+    .num, a.num, .btn_page_prev, .btn_page_next{
+        @include setCont(32px, 32px, flex, relative);
+        @include font(16, normal, $gray500, $medi);
+        justify-content: center;
+        align-items: center;
+        border-radius: 25px;
+        &:hover{
+            background-color: $gray100;
+        }
+        &+.num, &+a.num, &+.btn_page_prev, &+.btn_page_next{
+            margin-left: 8px;
+        }
+        @include pc{
+            @include fontPc(16);
+        }
+    }
+    .btn_page_prev, .btn_page_next{
+        @include blind;
+        &::before{
+            @include setCont(15px, 15px, block);
+            @include bgSvg(arrDown("bcbec3"), no-repeat, 50% 50%, 7px auto);
+        }
+    }
+    .num, a.num{
+        &.on{
+            background-color: $gray200;
+            color: $gray800;
+        }
+    }
+    .btn_page_prev{
+        &::before{
+            transform: rotate(90deg);
+        }
+    }
+    .btn_page_next{
+        &::before{
+            transform: rotate(-90deg);
         }
     }
 }
@@ -614,7 +701,7 @@ a.inventors_item{
         padding-bottom: 32px;
         &::before{
             @include setCont(38px, 47px, block);
-            @include bg("/sub/patent/coming.png", no-repeat, 50% 50%, 100% auto);
+            @include bgSvg(iconComing("888"), no-repeat, 50% 50%, 100% auto);
             margin-bottom: 12px;
         }
         @include pc{
@@ -646,5 +733,79 @@ a.inventors_item{
         @include pc{
             width: 36px;
         }
+    }
+}
+.visual_wrap{
+    @include setCont(100%, 276px, flex, relative);
+    background-image: linear-gradient(to bottom, rgba(255, 255, 255, 0) 0%, #e3dff4);
+    @include pc{
+        height: 384px
+    }
+    .inner{
+        width: 100%;
+        padding: 0 !important;
+        display: flex;
+        justify-content: center;
+        @include pc{
+        }
+        .cont{
+            margin-top: 14px;
+            text-align: center;
+            @include pc{
+                margin-top: 46px;
+            }
+            .txt_point{
+                @include font(15, normal, $point, $medi);
+            }
+            h1{
+                font-weight: $medi;
+                margin: 4px auto 19px;
+                @include pc{
+                    margin: 8px auto 34px;
+                    @include fontPc(22, normal, $gray800, $medi)
+                }
+            }
+            .img{
+                width: 278px;
+                @include pc{
+                    width: 362px;
+                }
+            }
+        }
+    }
+}
+.bx_tag{
+    @include setCont(100%, 20px, block, relative);
+    @include ellipsis;
+    margin-top: 12px;
+    margin-left: -2px;
+}
+.tag{
+    display: inline-block;
+    @include font(13, normal, $gray800);
+    padding: 2px 10px;
+    border-radius: 6px;
+    vertical-align: top;
+    background-color: $gray100;
+    @include pc{
+        @include fontPc(13);
+    }
+    &.bg_grean{
+        background-color: rgba(0, 171, 168, 0.15);
+    }
+    &.bg_pink{
+        background-color: rgba(216, 114, 229, 0.15);
+    }
+    &.bg_yellow{
+        background-color: rgba(250, 215, 51, 0.15);
+    }
+    &.bg_grean2{
+        background-color: rgba(145, 220, 90, 0.15);
+    }
+    &.bg_pink2{
+        background-color: rgba(255, 101, 148, 0.15);
+    } 
+    &.bg_gray{
+        background-color: #ebeced;
     }
 }

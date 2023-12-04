@@ -237,6 +237,9 @@
                 .nm{
                     @include font(22, normal, $gray800, $medi);
                     display: block;
+                    @include pc{
+                        @include fontPc(22);
+                    }
                     &+.nm{
                         margin-top: 8px;
                     }
@@ -250,6 +253,9 @@
             }
             .txt_point{
                 @include font(30, normal, $point, $bold);
+                @include pc{
+                    @include fontPc(30);
+                }
             }
         }
         .swiper-wrapper{
@@ -266,6 +272,9 @@
             font-weight: $medi;
             margin-bottom: 19px;
             @include font(22);
+            @include pc{
+                @include fontPc(22);
+            }
         }
         .inner{
             padding-bottom:39px;
@@ -279,7 +288,7 @@
             width: 100%;
             min-height: 312px;
             justify-content: center;
-            align-items: center;
+            align-items: flex-start;
             border-radius: 10px;
             box-shadow: 0 2px 4px 0 $gray100;
             overflow: hidden;
@@ -414,23 +423,55 @@
             position: relative;
             margin-top: 119px;
         }
-        .inner{
-        }
         .area_search{
-            border-top: 12px solid $gray100;
             @include pc{
-                position: absolute;
                 top: -119px;
-                left: 0;
-                width: 100%;
-                border: none;
                 height: 119px;
-                z-index: 1;
                 .c_inner{
                     @include setCont(1004px, 100%, flex);
                     justify-content: center;
                     align-items: center;
                 }
+            }
+        }
+    }
+}
+.company, .university{
+    .area1{
+        .inner{
+            padding: 16px calcPercent(16) 27.5px;
+            @include pc{
+                padding: 32px 0 59.5px;
+            }
+        }
+        .inventors_wrap {
+            margin: 0 auto;
+            @include pc{
+                width: 664px;
+            }
+            .i_list{
+                margin-top: 12px;
+                @include pc{
+                    margin-top: 32px;
+                }
+            }
+            .area_search{
+                border: none;
+                .c_inner{
+                    padding-top: 15.5px;
+                    @include pc{
+                        padding-top: 42px;
+                    }
+                }
+            }
+        }
+    }
+}
+.university{
+    .area1{
+        .inventors_wrap {
+            .i_list{
+                margin-top: 16px;
             }
         }
     }
