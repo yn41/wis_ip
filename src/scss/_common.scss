@@ -87,6 +87,7 @@ a, button, input{
     text-align: center;
     &:hover, &:active{
         background-color: #6737cc;
+        color: $gray50 !important;
     }
     &+.btn{
         margin-left: 8px;
@@ -130,7 +131,7 @@ a, button, input{
         color: $point;
         &:hover, &:active{
             background-color: $purple200;
-            color: $point;
+            color: $point !important;;
         }
         &.dis, &:disabled{
             background-color: $purple50;

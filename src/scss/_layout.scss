@@ -198,7 +198,8 @@
 .container{
     @include setCont(100%, auto, block);
     flex-grow: 1;
-    padding-top: $header;
+    max-width: 99999999px !important;
+    padding: $header 0  0!important;
 }
 .footer{
     width: 100%;
@@ -427,9 +428,11 @@
         opacity: 0;
         transition: all 200ms;
         &::before{
-            @include setCont(15px, 15px, block);
+            @include setCont(15px, 15px, block, absolute);
             @include bgSvg(arrDown("8a8c8f"), no-repeat, 50% 50%, 12px auto);
-            transform: rotate(90deg);
+            top: 50%;
+            left: 50%;
+            transform: rotate(90deg) translate(-50%, 38%);
         }
         &:hover{
             opacity: 0.6;
@@ -450,7 +453,7 @@
     .btn_next{
         right: 0;
         &::before{
-            transform: rotate(-90deg);
+            transform: rotate(-90deg) translate(41%, -50%);
         }
     }
     .sw_pick {

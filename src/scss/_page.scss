@@ -237,6 +237,9 @@
                 .nm{
                     @include font(22, normal, $gray800, $medi);
                     display: block;
+                    @include pc{
+                        @include fontPc(22);
+                    }
                     &+.nm{
                         margin-top: 8px;
                     }
@@ -250,6 +253,9 @@
             }
             .txt_point{
                 @include font(30, normal, $point, $bold);
+                @include pc{
+                    @include fontPc(30);
+                }
             }
         }
         .swiper-wrapper{
@@ -266,6 +272,9 @@
             font-weight: $medi;
             margin-bottom: 19px;
             @include font(22);
+            @include pc{
+                @include fontPc(22);
+            }
         }
         .inner{
             padding-bottom:39px;
@@ -279,7 +288,7 @@
             width: 100%;
             min-height: 312px;
             justify-content: center;
-            align-items: center;
+            align-items: flex-start;
             border-radius: 10px;
             box-shadow: 0 2px 4px 0 $gray100;
             overflow: hidden;
