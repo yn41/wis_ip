@@ -269,35 +269,3 @@
 		</div>
 	</body>
 </html>
-<script>
-var swiper;
-$(function(){ 
-	swiper = new Swiper('.swiper-container', {
-    	slidesPerView: "auto",
-		// slidesPerView: 1,
-		spaceBetween: 85, 
-        loop: false,
-        navigation: {
-			prevEl: '.btn_prev',
-			nextEl: '.btn_next',
-        },
-		observeParents :true,
-		observer : true,
-        // 반응형
-        breakpoints: {
-			1004: {
-        		spaceBetween: 16, // 슬라이드간 padding 값 30px 씩 떨어뜨려줌
-            },
-        }
-    })
-});
-var resizeCheck;
-$(window).resize(function(){
-	if(resizeCheck){ 
-		clearTimeout(resizeCheck); 
-	};
-	resizeCheck = setTimeout(function(){
-		swiper.update(); //스와이퍼 업데이트
-	},500);
-});
-</script>

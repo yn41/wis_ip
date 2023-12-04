@@ -698,7 +698,7 @@ a.inventors_item{
         padding-bottom: 32px;
         &::before{
             @include setCont(38px, 47px, block);
-            @include bg("/sub/patent/coming.png", no-repeat, 50% 50%, 100% auto);
+            @include bgSvg(iconComing("888"), no-repeat, 50% 50%, 100% auto);
             margin-bottom: 12px;
         }
         @include pc{
@@ -796,6 +796,12 @@ a.inventors_item{
     &.bg_yellow{
         background-color: rgba(250, 215, 51, 0.15);
     }
+    &.bg_grean2{
+        background-color: rgba(145, 220, 90, 0.15);
+    }
+    &.bg_pink2{
+        background-color: rgba(255, 101, 148, 0.15);
+    } 
     &.bg_gray{
         background-color: #ebeced;
     }

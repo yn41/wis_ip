@@ -479,6 +479,7 @@ input.ipt{
 }
 .btn_filter{
     @include setCont(20px, 15px, block,  relative, $gray100);
+    @include bgSvg(btnFilter($s_gray500), no-repeat, 50% 50%, 100% auto);
     @include blind;
     &:hover{
         opacity: 0.6;
