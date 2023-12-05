@@ -756,6 +756,9 @@ a.inventors_item{
             }
             .txt_point{
                 @include font(15, normal, $point, $medi);
+                @include pc{
+                    @include fontPc(15);
+                }
             }
             h1{
                 font-weight: $medi;

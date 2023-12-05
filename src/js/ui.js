@@ -81,7 +81,6 @@ $(function(){
 		$(".bx_slct").removeClass("on");
 	});
 });
-// S | v:pat2 - gnb 반응형 대응
 $(window).resize(function(){
 	if($( window ).width() > 1003 && $(".header").hasClass("open")){
 		$(".header").removeClass("open");
@@ -89,4 +88,3 @@ $(window).resize(function(){
 		scrollPosition = 0;
 	}
 });
-// E | v:pat2 -  gnb 반응형 대응
