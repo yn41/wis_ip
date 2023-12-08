@@ -1,75 +1,45 @@
 <!DOCTYPE html>
 <html lang="ko">
-	<include src="include/head.html" title="company spec"></include>
+	<include src="include/head.html" title="Inventor spec"></include>
 	<body>
 		<div class="wrap">
-			<include src="include/header.html" title="Company Rankings">
+			<include src="include/header.html" title="Inventor Tech Valuation">
 				<nav class="gnb">
 					<div class="g_inner">
 						<button type="button" class="btn_menu_close">menu close</button>
 						<a href="../html/home.html">Home</a>  
 						<a href="../html/university.html">University Rankings</a>  
-						<a href="../html/company.html" class="on">Company Rankings</a>  
+						<a href="../html/company.html">Company Rankings</a>  
 						<a href="../html/patent.html">Patent Valuation</a>  
-						<a href="../html/Inventor.html">Inventor Tech Valuation</a>  
+						<a href="../html/Inventor.html" class="on">Inventor Tech Valuation</a>  
 					</div>
 				</nav>
 			</include>
-			<section class="container company_spec">
-				<!-- s: 1위 -->
-				<article class="visual_wrap type_info"> 
-					<div class="inner">
-						<div class="cont left">
-                            <div class="c_info">
-                                <div class="bx_txt">
-                                    <b class="num">#1</b>
-                                    <h2>Samsung Electronics</h2>
-                                    <p class="txt_gray">South Korea</p>
-                                </div>
-                            </div>
-                            <dl>
-                                <dt>Granted US Patents : </dt><dd><b>419</b></dd>
-                            </dl>
-                            <dl>
-                                <dt>Estimated US Patent Value : </dt>
-                                <dd><b class="txt_point">$3,828,123,945</b></dd>
-                            </dl>
-						</div>
-                        <div class="right">
-                            <img src="../img/sub/company/img2.png" class="img" alt="main visual img1">
-                        </div>
-					</div>
-				</article>
-				<!-- e : 1위 -->
-				<!-- s : 2위 이하 -->
-				<!-- <em class="icon"><img src="../img/icon/rocket.png" alt="icon 회사"></em> -->
-				<!-- <em class="icon"><img src="../img/icon/star1.png" alt="icon 1위"></em> -->
-				<!-- <em class="icon"><img src="../img/icon/star2.png" alt="icon 2위"></em> -->
-				<!-- <em class="icon"><img src="../img/icon/star3.png" alt="icon 3위"></em> -->
-				<!-- <article class="visual_wrap type_info bg_white"> 
+			<section class="container inventorSpec">
+				<article class="visual_wrap type_info bg_white"> 
 					<div class="inner">
 						<div class="cont left">
 							<div class="c_info">
 								<div class="bx_icon">
-									<em class="icon"><img src="../img/icon/star3.png" alt="icon 3위"></em>
+									<em class="icon"><img src="../img/icon/icon1.svg" alt="icon 대학"></em>
                                 </div>
                                 <div class="bx_txt">
-									<b class="num">#3</b>
-                                    <h2>Samsung Electronics</h2>
-                                    <p class="txt_gray">South Korea</p>
+                                    <h2>University of California</h2>
+                                    <p class="txt_gray">California, USA</p>
                                 </div>
                             </div>
-                            <dl>
-                                <dt>Granted US Patents : </dt><dd><b>419</b></dd>
-                            </dl>
-                            <dl>
-								<dt>Estimated US Patent Value : </dt>
-                                <dd><b class="txt_point">$3,828,123,945</b></dd>
-                            </dl>
+							<div class="c_info2">
+								<dl>
+									<dt>Granted US Patents : </dt><dd><b>419</b></dd>
+								</dl>
+								<dl>
+									<dt>Estimated US Patent Value : </dt>
+									<dd><b class="txt_point">$3,828,123,945</b></dd>
+								</dl>
+							</div>
 						</div>
 					</div>
-				</article> -->
-				<!-- e : 2위 이하 -->
+				</article>
                 <article class="area1">
                     <div class="inner">
                         <h2>Best Patents</h2>
@@ -169,12 +139,192 @@
                         </div>
                     </div>
                 </article>
-                <article class="area2">
-                    <div class="inner">
-                        <div class="c_inventors">
-                            <h2>Best Patents</h2>
+				<article class="area2">
+					<div class="inner">
+						<h2>Invention Keywords</h2>
+						<div class="chart_wrap">
+							<span>차트 영역</span>
+						</div>
+					</div>
+				</article>
+				<article class="area3">
+					<div class="inner">
+						<div class="left a_rank">
+							<h2>Sector Ranking</h2>
+							<div class="unit u1">
+								<div class="inventors_item type1">
+									<div class="colb">
+										<div class="c_left">
+											<em class="icon">
+												<img src="../img/icon/ict.svg" alt="icon img">
+											</em>
+											<h3>Information & Communication Tech</h3>
+											<p class="desc">16th out of 32564 patents</p>
+										</div>
+										<div class="c_right">
+											<b class="txt_top">Top 1%</b>
+										</div>
+									</div>
+									<div class="rank_chart">
+										<span class="bar" style="right: 1%;">1%</span>
+									</div>
+								</div>
+								<div class="cont_more open">
+									<div class="inventors_wrap">
+										<div class="i_list">
+											<!-- <a href="#" class="inventors_item"> -->
+											<div class="inventors_item">
+												<div class="colb">
+													<div class="c_left">
+														<em class="icon">
+															<img src="../img/icon/icon1.svg" alt="icon img">
+														</em>
+														<h3>Robert S. Langer</h3>
+														<p class="desc">Patents: 3</p>
+													</div>
+													<div class="c_right">
+														<b class="txt_point">32.6M</b>
+													</div>
+												</div>
+												<div class="bx_tag">
+													<span class="tag">Biochemistry</span>
+													<span class="tag">ICT</span>
+													<span class="tag">Biomedical & Pharmaceuticals</span>
+												</div>
+											</div>
+											<div class="inventors_item">
+												<div class="colb">
+													<div class="c_left">
+														<em class="icon">
+															<img src="../img/icon/icon2.svg" alt="icon img">
+														</em>
+														<h3>Robert S. Langer</h3>
+														<p class="desc">Patents: 3</p>
+													</div>
+													<div class="c_right">
+														<b class="txt_point">32M</b>
+													</div>
+												</div>
+												<div class="bx_tag">
+													<span class="tag">Biochemistry</span>
+													<span class="tag">ICT</span>
+													<span class="tag">Biomedical & Pharmaceuticals</span>
+												</div>
+											</div>
+											<div class="inventors_item">
+												<div class="colb">
+													<div class="c_left">
+														<em class="icon">
+															<img src="../img/icon/icon3.svg" alt="icon img">
+														</em>
+														<h3>Robert S. Langer</h3>
+														<p class="desc">Patents: 3</p>
+													</div>
+													<div class="c_right">
+														<b class="txt_point">32M</b>
+													</div>
+												</div>
+												<div class="bx_tag">
+													<span class="tag">Biochemistry</span>
+													<span class="tag">ICT</span>
+													<span class="tag">Biomedical</span>
+												</div>
+											</div>
+										</div>
+									</div>
+								</div>
+								<button type="button" class="btn_txt" onclick="fnViewTop(this, 'u1')">Hide Top Inventors</button>
+							</div>
+							<div class="unit u2">
+								<div class="inventors_item type1">
+									<div class="colb">
+										<div class="c_left">
+											<em class="icon">
+												<img src="../img/icon/materials.svg" alt="icon img">
+											</em>
+											<h3>Materials</h3>
+											<p class="desc">16th out of 32564 patents</p>
+										</div>
+										<div class="c_right">
+											<b class="txt_top">Top 1%</b>
+										</div>
+									</div>
+									<div class="rank_chart">
+										<span class="bar" style="right: 1%;">1%</span>
+									</div>
+								</div>
+								<div class="cont_more">
+									<div class="inventors_wrap">
+										<div class="i_list">
+											<!-- <a href="#" class="inventors_item"> -->
+											<div class="inventors_item">
+												<div class="colb">
+													<div class="c_left">
+														<em class="icon">
+															<img src="../img/icon/icon1.svg" alt="icon img">
+														</em>
+														<h3>Robert S. Langer</h3>
+														<p class="desc">Patents: 3</p>
+													</div>
+													<div class="c_right">
+														<b class="txt_point">32.6M</b>
+													</div>
+												</div>
+												<div class="bx_tag">
+													<span class="tag">Biochemistry</span>
+													<span class="tag">ICT</span>
+													<span class="tag">Biomedical & Pharmaceuticals</span>
+												</div>
+											</div>
+											<div class="inventors_item">
+												<div class="colb">
+													<div class="c_left">
+														<em class="icon">
+															<img src="../img/icon/icon2.svg" alt="icon img">
+														</em>
+														<h3>Robert S. Langer</h3>
+														<p class="desc">Patents: 3</p>
+													</div>
+													<div class="c_right">
+														<b class="txt_point">32M</b>
+													</div>
+												</div>
+												<div class="bx_tag">
+													<span class="tag">Biochemistry</span>
+													<span class="tag">ICT</span>
+													<span class="tag">Biomedical & Pharmaceuticals</span>
+												</div>
+											</div>
+											<div class="inventors_item">
+												<div class="colb">
+													<div class="c_left">
+														<em class="icon">
+															<img src="../img/icon/icon3.svg" alt="icon img">
+														</em>
+														<h3>Robert S. Langer</h3>
+														<p class="desc">Patents: 3</p>
+													</div>
+													<div class="c_right">
+														<b class="txt_point">32M</b>
+													</div>
+												</div>
+												<div class="bx_tag">
+													<span class="tag">Biochemistry</span>
+													<span class="tag">ICT</span>
+													<span class="tag">Biomedical</span>
+												</div>
+											</div>
+										</div>
+									</div>
+								</div>
+								<button type="button" class="btn_txt" onclick="fnViewTop(this, 'u2')">Show Top Inventors</button>
+							</div>
+						</div>
+						<div class="right">
+							<h2>Inventors</h2>
 							<div class="inventors_wrap">
 								<div class="i_list">
+									<!-- <a href="#" class="inventors_item"> -->
 									<div class="inventors_item">
 										<div class="colb">
 											<div class="c_left">
@@ -189,7 +339,7 @@
 											</div>
 										</div>
 										<div class="bx_tag">
-											<span class="tag bg_gray">Biochemistry</span>
+											<span class="tag">Biochemistry</span>
 											<span class="tag">ICT</span>
 											<span class="tag">Biomedical</span>
 										</div>
@@ -208,7 +358,7 @@
 											</div>
 										</div>
 										<div class="bx_tag">
-											<span class="tag bg_gray">Biochemistry</span>
+											<span class="tag">Biochemistry</span>
 											<span class="tag">ICT</span>
 											<span class="tag">Pharmaceuticals</span>
 										</div>
@@ -227,8 +377,46 @@
 											</div>
 										</div>
 										<div class="bx_tag">
-											<span class="tag bg_gray">Biotech</span>
+											<span class="tag">Biotech</span>
 											<span class="tag">Pharma</span>
+											<span class="tag">Biomedical & Pharmaceuticals</span>
+										</div>
+									</div>
+									<div class="inventors_item show_pc">
+										<div class="colb">
+											<div class="c_left">
+												<em class="icon">
+													<img src="../img/icon/icon6.svg" alt="icon img">
+												</em>
+												<h3>Robert S. Langer</h3>
+												<p class="desc">Patents: 3</p>
+											</div>
+											<div class="c_right">
+												<b class="txt_point">32M</b>
+											</div>
+										</div>
+										<div class="bx_tag">
+											<span class="tag">Biochemistry</span>
+											<span class="tag">ICT</span>
+											<span class="tag">Biomedical & Pharmaceuticals</span>
+										</div>
+									</div>
+									<div class="inventors_item show_pc">
+										<div class="colb">
+											<div class="c_left">
+												<em class="icon">
+													<img src="../img/icon/icon5.svg" alt="icon img">
+												</em>
+												<h3>Robert S. Langer</h3>
+												<p class="desc">Patents: 3</p>
+											</div>
+											<div class="c_right">
+												<b class="txt_point">32M</b>
+											</div>
+										</div>
+										<div class="bx_tag">
+											<span class="tag">Biochemistry</span>
+											<span class="tag">ICT</span>
 											<span class="tag">Biomedical & Pharmaceuticals</span>
 										</div>
 									</div>
@@ -237,93 +425,9 @@
 								<!-- <div class="inventors_item ani_open"> or  <div class="i_list ani_open">... -->
 								<button class="btn_more" type="button">see more</button>
 							</div>
-                        </div>
-                        <div class="c_sectors">
-                            <h2>Best Sectors</h2>
-							<div class="sectors_wrap">
-                                <div class="sectors_chart">
-                                    <span class="bar" style="width: 22%;background-color: #00aba8;" title="Semiconductor Devices">Semiconductor Devices</span>
-                                    <span class="bar" style="width: 14%;background-color: #52cc7b;" title="Vehicles & Transportation">Vehicles & Transportation</span>
-                                    <span class="bar" style="width: 9%;background-color: #fad733;" title="Electrical & Electronics">Electrical & Electronics</span>
-                                    <span class="bar"  style="width: 7%;background-color: #d872e5;" title="Semiconductor Devices">Semiconductor Devices</span>
-                                    <span class="bar bg_other" title="Others">Others</span>
-                                </div>
-								<div class="s_list">
-									<div class="sectors_item ">
-										<div class="s_inner">
-											<div class="c_left">
-                                                <em class="icon"><img src="../img/icon/semi.svg" alt="icon img"></em>
-											</div>
-                                            <div class="c_center">
-                                                <h3>Semiconductor Devices</h3>
-                                                <p class="desc">22% | Patents: 34</p>
-                                            </div>
-											<div class="c_right">
-												<b class="txt">$32M</b>
-											</div>
-										</div>
-									</div>
-									<div class="sectors_item">
-										<div class="s_inner">
-											<div class="c_left">
-                                                <em class="icon"><img src="../img/icon/vehicles.svg" alt="icon img"></em>
-											</div>
-                                            <div class="c_center">
-                                                <h3>Vehicles & Transportation</h3>
-                                                <p class="desc">14% | Patents: 25</p>
-                                            </div>
-											<div class="c_right">
-												<b class="txt">$1,120M</b>
-											</div>
-										</div>
-									</div>
-									<div class="sectors_item">
-										<div class="s_inner">
-											<div class="c_left">
-                                                <em class="icon"><img src="../img/icon/electric.svg" alt="icon img"></em>
-											</div>
-                                            <div class="c_center">
-                                                <h3>Electrical & Electronics</h3>
-                                                <p class="desc">9% | Patents: 16</p>
-                                            </div>
-											<div class="c_right">
-												<b class="txt">$985M</b>
-											</div>
-										</div>
-									</div>
-									<div class="sectors_item">
-										<div class="s_inner">
-											<div class="c_left">
-                                                <em class="icon"><img src="../img/icon/data.svg" alt="icon img"></em>
-											</div>
-                                            <div class="c_center">
-                                                <h3>Semiconductor Devices</h3>
-                                                <p class="desc">7% | Patents: 18</p>
-                                            </div>
-											<div class="c_right">
-												<b class="txt">$771M</b>
-											</div>
-										</div>
-									</div>
-									<div class="sectors_item">
-										<div class="s_inner">
-											<div class="c_left">
-                                                <em class="icon"><img src="../img/icon/others.svg" alt="icon img"></em>
-											</div>
-                                            <div class="c_center">
-                                                <h3>Others</h3>
-                                                <p class="desc">65% | Patents: 263</p>
-                                            </div>
-											<div class="c_right">
-												<b class="txt">$5.2M</b>
-											</div>
-										</div>
-									</div>
-								</div>
-							</div>
-                        </div>
-                    </div>
-                </article>
+						</div>
+					</div>
+				</article> 
 				<div class="area_feadback">
 					<div class="inner">
 						<article class="left">
@@ -346,7 +450,8 @@
 							<div class="c_inner">
 								<h2>Have Feedback?</h2>
 								<p>Help us create a better experience for you! <br/>Feel free to reach out with any questions, comments, or requests.</p>
-								<div class="form">
+								<a href="mailto:hello@iprankings.com" class="link_email txt_point show_mobile">hello@iprankings.com</a>
+                                <div class="form show_pc">
 									<div class="bx_textarea">
 										<textarea class="textarea" placeholder="Write comment"></textarea>
 										<button type="button" class="btn_clear">delete</button>
@@ -357,7 +462,7 @@
 									</div>
 									<button type="button" class="btn">Send</button>
 								</div>
-								<a href="mailto:hello@iprankings.com" class="link_email">hello@iprankings.com</a>
+								<a href="mailto:hello@iprankings.com" class="link_email show_pc">hello@iprankings.com</a>
 							</div>
 						</article>
 					</div>
@@ -397,4 +502,14 @@ $(window).resize(function(){
 		swiper.update(); //스와이퍼 업데이트
 	},500);
 });
+function fnViewTop(e, nm){
+	if($(".area3").find(".unit."+nm+" .cont_more").hasClass("open")){
+		$(".area3").find(".unit."+nm+" .cont_more").removeClass("open");
+		$(e).text("View Top Inventors");
+	}
+	else{
+		$(".area3").find(".unit."+nm+" .cont_more").addClass("open");
+		$(e).text("Hide Top Inventors");
+	}
+}
 </script>

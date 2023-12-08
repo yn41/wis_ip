@@ -382,6 +382,7 @@
         h2{
             @include pc{
                 @include fontPc(19);
+                font-weight: $medi !important;
             }
         }
         p{
@@ -400,6 +401,14 @@
             }
             @include pc{
                 @include fontPc(16);
+            }
+            &.txt_point{
+                font-weight: $bold;
+                text-align: left;
+                margin: -8px 0 25px;
+                &:hover{
+                    color: $purple300 !important;
+                }
             }
         }
         .bx_textarea{
@@ -453,7 +462,7 @@
             left: 50%;
             transform: rotate(90deg) translate(-50%, 38%);
         }
-        &:hover{
+        &:hover:not(.swiper-button-disabled){
             opacity: 0.6;
         }
         &.swiper-button-disabled{
@@ -545,6 +554,11 @@
             @include pc{
                 margin: 3px 3px 5px 3px;
                 padding-right: 20px;
+            }
+        }
+        a.slide{
+            &:hover{
+                transform: scale(0.95);
             }
         }
         .slide{
@@ -702,11 +716,17 @@ a.inventors_item{
     .c_right{
         flex-shrink: 0;
         padding: 8px 0 0 10px;
+        text-align: right;
         .txt_top{
             @include font(16, normal, $gray800, $medi);
             @include pc{
                 @include fontPc(16);
             }
+        }
+        .txt_gray{
+            @include font(11, normal, $gray500);
+            display: block;
+            margin-bottom: 2.5px;
         }
         .txt_point{
             @include font(19, normal, $point, $medi);
@@ -724,7 +744,7 @@ a.inventors_item{
         }
     }
     &.type_rank, &.type_rank_num{
-        padding: 20px;
+        // padding: 20px;
         .icon{
             width: 34px;
         }
@@ -897,6 +917,7 @@ a.inventors_item{
             .c_info{
                 width: 100%;
                 display: flex;
+                align-items: center;
                 .bx_txt{
                     width: 100%;
                     display: flex;
@@ -930,14 +951,17 @@ a.inventors_item{
                     min-width: 60px;
                     flex-shrink: 1;
                     .icon{
-                        @include setCont(100%, 100%);
+                        @include setCont(100%, 100%, block);
+                        img{
+                            width: 100%;
+                        }
                     }
                 }
             }
             dl{
                 margin-top: 16px;
                 dt{
-                    @include font(13, normal, $gray700, $medi);
+                    @include font(13, normal, $gray600, $medi);
                     @include pc{
                         @include fontPc(13);
                     }
@@ -988,6 +1012,7 @@ a.inventors_item{
         border-bottom: 12px solid #f5f5f6;
         @include pc{
             height: auto;
+            min-height: 0;
             .inner{
                 width: $pc;
             }
@@ -995,10 +1020,19 @@ a.inventors_item{
         .left {
             padding: 16px calcPercent(24) 32px;
             @include pc{
-                padding: 50px 0;
+                padding: 60px 0 40px;
+                // padding: 50px 0;
+                display: flex;
+                width: 640px;
+                flex-shrink: 0;
             }
             .c_info{
                 padding-bottom: 6px;
+                @include pc{
+                    display: flex;
+                    width: 340px;
+                    padding: 0 10px 0 0;
+                }
                 .bx_txt{
                     padding-left: 16px;
                     h2{
@@ -1013,6 +1047,17 @@ a.inventors_item{
                         @include font(13);
                         @include pc{
                             @include fontPc(13);
+                        }
+                    }
+                }
+            }
+            .c_info2{
+                @include pc{
+                    flex-grow: 1;
+                    dl{
+                        margin-top: 0;
+                        &+dl{
+                            margin-top: 16px;
                         }
                     }
                 }
@@ -1094,5 +1139,19 @@ a.inventors_item{
                 }
             }
         }
+    }
+}
+.chart_wrap{
+    @include setCont(100%, auto, flex, relative, $white);
+    width: 100%;
+    min-height: 312px;
+    justify-content: center;
+    align-items: flex-start;
+    border-radius: 10px;
+    box-shadow: 0 2px 4px 0 $gray100;
+    overflow: hidden;
+    .temp{
+        width: auto;
+        height: 312px;
     }
 }

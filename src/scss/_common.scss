@@ -67,7 +67,7 @@ a, button, input{
 .f_medi{
     font-weight: $medi !important;
 }
-.f_boldi{
+.f_bold{
     font-weight: $bold !important;
 }
 
@@ -446,9 +446,6 @@ input.ipt{
     h2{
         margin-bottom: 15.5px;
     }
-    .bx_search{
-
-    }
 }
 .show_mobile{
     @include pc{
@@ -469,6 +466,9 @@ input.ipt{
     border-top: 1px solid $gray100;
     &:hover{
         opacity: 0.6;
+    }
+    @include pc{
+        @include fontPc(16);
     }
 }
 .btn_more{
