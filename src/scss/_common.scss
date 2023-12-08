@@ -67,12 +67,13 @@ a, button, input{
 .f_medi{
     font-weight: $medi !important;
 }
-.f_boldi{
+.f_bold{
     font-weight: $bold !important;
 }
 
 .logo{
     @include setCont(48px, 48px, inline-block);
+    min-width: 48px;
     @include bgSvg(logo(), no-repeat, 50% 50%, 100% auto);
     span{
         @include blind;
@@ -445,9 +446,6 @@ input.ipt{
     h2{
         margin-bottom: 15.5px;
     }
-    .bx_search{
-
-    }
 }
 .show_mobile{
     @include pc{
@@ -469,6 +467,9 @@ input.ipt{
     &:hover{
         opacity: 0.6;
     }
+    @include pc{
+        @include fontPc(16);
+    }
 }
 .btn_more{
     @include setCont(100%, 38px, block);
@@ -484,5 +485,40 @@ input.ipt{
     @include blind;
     &:hover{
         opacity: 0.6;
+    }
+}
+.bx_tag{
+    @include setCont(100%, 20px, block, relative);
+    @include ellipsis;
+    margin-top: 12px;
+    margin-left: -2px;
+}
+.tag{
+    display: inline-block;
+    @include font(13, normal, $gray800);
+    padding: 2px 10px;
+    border-radius: 6px;
+    vertical-align: top;
+    background-color: $gray100;
+    @include pc{
+        @include fontPc(13);
+    }
+    &.bg_grean{
+        background-color: rgba(0, 171, 168, 0.15);
+    }
+    &.bg_pink{
+        background-color: rgba(216, 114, 229, 0.15);
+    }
+    &.bg_yellow{
+        background-color: rgba(250, 215, 51, 0.15);
+    }
+    &.bg_grean2{
+        background-color: rgba(145, 220, 90, 0.15);
+    }
+    &.bg_pink2{
+        background-color: rgba(255, 101, 148, 0.15);
+    } 
+    &.bg_gray{
+        background-color: #ebeced;
     }
 }

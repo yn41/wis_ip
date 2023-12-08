@@ -1,33 +1,9 @@
 <!DOCTYPE html>
 <html lang="ko">
-	<head>
-		<meta charset="UTF-8">
-		<meta name="viewport" content="width=device-width, initial-scale=1.0">
-		<meta http-equiv="X-UA-Compatible" content="ie=edge">
-		<meta name="theme-color" content="#ffffff">
-		<meta name="Description" content="IPRankings">
-		<title>University spec | IPRankings </title>
-		<link rel="icon" href="../img/favicon.ico" type="image/x-icon"> 
-		<link rel="stylesheet" type="text/css" href="../css/style_test.css">
-		<link rel="stylesheet" type="text/css" href="../css/animate.min.css">
-		<link rel="stylesheet" type="text/css" href="../css/swiper.min.css">
-		<script src = "../js/jquery-3.7.1.min.js"></script>
-		<script src = "../js/swiper.js"></script>
-		<script src = "../js/ui.js"></script>
-		
-	</head>
+	<include src="include/head.html" title="University spec"></include>
 	<body>
 		<div class="wrap">
-			<header class="header">
-			    <div class="inner">
-			        <div class="left">
-			            <!-- <div class="logo"><span>ip logo</span></div> -->
-			            <a href="../html/home.html"  class="logo"><span>ip logo</span></a>
-			            <h1>University Rankings</h1>
-			        </div>
-			        <div class="right">
-			            <button type="button" class="btn_menu"><span class="blind">menu button</span></button>
-			                    
+			<include src="include/header.html" title="University Rankings">
 				<nav class="gnb">
 					<div class="g_inner">
 						<button type="button" class="btn_menu_close">menu close</button>
@@ -35,13 +11,10 @@
 						<a href="../html/university.html" class="on">University Rankings</a>  
 						<a href="../html/company.html">Company Rankings</a>  
 						<a href="../html/patent.html">Patent Valuation</a>  
-						<a href="#">Inventor Tech Valuation</a>  
+						<a href="../html/Inventor.html">Inventor Tech Valuation</a>  
 					</div>
 				</nav>
-			
-			        </div>
-			    </div>
-			</header>
+			</include>
 			<section class="container universitySpec">
 				<!-- s: 1위 -->
 				<!-- <article class="visual_wrap type_info"> 
@@ -86,13 +59,15 @@
                                     <p class="txt_gray">California, USA</p>
                                 </div>
                             </div>
-                            <dl>
-                                <dt>Granted US Patents : </dt><dd><b>419</b></dd>
-                            </dl>
-                            <dl>
-								<dt>Estimated US Patent Value : </dt>
-                                <dd><b class="txt_point">$3,828,123,945</b></dd>
-                            </dl>
+							<div class="c_info2">
+								<dl>
+									<dt>Granted US Patents : </dt><dd><b>419</b></dd>
+								</dl>
+								<dl>
+									<dt>Estimated US Patent Value : </dt>
+									<dd><b class="txt_point">$3,828,123,945</b></dd>
+								</dl>
+							</div>
 						</div>
 					</div>
 				</article>
@@ -103,6 +78,8 @@
                         <div class="area_sw">
                             <div class="swiper-container sw_patents">
                                 <div class="swiper-wrapper">
+									<!-- 링크 안사용하면 div로 상용해주세요 -->
+                                    <!-- <div class="swiper-slide slide"> -->
                                     <a href="#" class="swiper-slide slide">
                                         <em class="p_label">#1</em>
                                         <div class="bx_img">
@@ -116,7 +93,6 @@
                                         </div>
                                     </a>
                                     <a href="#" class="swiper-slide slide">
-                                    <!-- <div class="swiper-slide slide"> -->
                                         <em class="p_label">#2</em>
                                         <div class="bx_img">
                                             <img src="../img/sub/company/temp1.jpg" class="img" alt="#2"/>
@@ -201,6 +177,7 @@
                             <h2>Best Patents</h2>
 							<div class="inventors_wrap">
 								<div class="i_list">
+									<!-- <a href="#" class="inventors_item"> -->
 									<div class="inventors_item">
 										<div class="colb">
 											<div class="c_left">
@@ -389,25 +366,7 @@
 					</div>
 				</div>
 			</section>
-			<footer class="footer">
-			    <div class="inner">
-			        <a href="../html/home.html" class="bx_logo">
-			            <!-- <div class="logo"><span>ip gray logo</span></div> -->
-			            <div class="logo"><span>ip gray logo</span></div>
-			            <strong>IPRankings.com</strong>
-			        </a>
-			        <div class="f_menu">
-			            <a href="../html/university.html">University Rankings</a>  
-			            <a href="../html/company.html">Company Rankings</a>    
-			            <a href="../html/patent.html">Patent Valuation</a>  
-			            <a href="#">Inventor Tech Valuation</a>
-			        </div>
-			        <div class="comp">
-			            <a href="#">Privacy Policy</a>
-			            <p class="cop">Copyright © 2023 IPRankings.com <br/>Powered by Wisdomain</p>
-			        </div>
-			    </div>
-			</footer>
+			<include src="include/footer.html" title="home"></include>
 		</div>
 	</body>
 </html>
