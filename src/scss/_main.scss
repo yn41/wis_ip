@@ -36,6 +36,31 @@
         }
         .right{
             text-align: center;
+            position: relative;
+            // &::before{
+            //     @include setCont(27px, 28px, block, absolute);
+            //     @include bg("/main/img1_1.png", no-repeat, -234px -137px, 285px auto);
+            //     top: 172px;
+            //     right: 24px;
+            //     animation-name: aniMain1; 
+            //     animation-duration: 3000ms;
+            //     animation-timing-function: linear;
+            //     animation-iteration-count: infinite ;
+            //     // animation-direction:reverser;
+            //     z-index: 2;
+            // }
+            // &::after{
+            //     @include setCont(42px, 42px, block, absolute);
+            //     @include bg("/main/img1_2.png", no-repeat, 0 0, 42px auto);
+            //     top: 134px;
+            //     right: -3px;
+            //     animation-name: aniMain1; 
+            //     animation-duration: 5000ms;
+            //     animation-timing-function: linear;
+            //     animation-iteration-count: infinite ;
+            //     // animation-direction:alternate;
+            //     z-index: 2;
+            // }
         }
         h1{
             @include font(22, normal, $point, $bold);
@@ -55,6 +80,7 @@
             display: block;
             width: 284.6px;
             margin: 35px auto 32px;
+            
             @include pc{
                 width: 394.5px;
                 margin: 0 auto;
@@ -336,3 +362,26 @@
         }
     }
 }
+@-webkit-keyframes aniMain1 {
+    0% { 
+        // transform: scale(1.1) translate(1px, -2px);
+        transform: rotate(0deg)
+    }
+    100%{
+        transform: rotate(360deg)
+    }
+}
+// @-webkit-keyframes aniMain2 {
+//     0% { 
+//         // transform: translateY(0);
+//         transform: scale(1)  translateY(0);
+//     }
+//     80%{
+//         transform: scale(1) translateY(-50px);
+//         // transform: translateY(-5px);
+//     }
+//     100%{
+//         transform: scale(1)  translateY(0);
+//         // transform: translateY(-5px);
+//     }
+// }
