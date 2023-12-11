@@ -147,6 +147,11 @@
             dt{
                 margin-right: 3px;
             }
+            .skeleton{
+                min-width: 65px;
+                min-height: 15px;
+                display: block;
+            }
         }
         .a_top{
             .c_inner{
@@ -158,6 +163,10 @@
             }
             h1{
                 margin-bottom: 6px;
+                &.skeleton{
+                    min-width: 90%;
+                    min-height: 26px;
+                }
                 @include pc{
                     margin-bottom: 0;
                     @include fontPc(26);

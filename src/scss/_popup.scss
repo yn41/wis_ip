@@ -1,0 +1,47 @@
+.popup{
+    @include setCont(100%, 101%, block, fixed, rgba(39, 43, 55, 0.16));
+    z-index: 10;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    display: none;
+    .p_wrap{
+        @include setCont(100%, auto, block, absolute, $white);
+        max-height: 100vh;
+        overflow-y: auto;
+        bottom: 0;
+        left: 50%;
+        transform: translateX(-50%);
+        padding: 36px 32px 52px;
+        border-radius: 38px 38px 0 0;
+        box-shadow: 0 2px 5px 1px rgba(0, 0, 0, 0.5);
+        .btn_p_close{
+            @include setCont(64px, 4px, block, absolute, #f2f2f2);
+            @include blind;
+            top: 16px;
+            left: 50%;
+            transform: translateX(-50%);
+            z-index: 3;
+        }
+        .unit{
+            padding: 12px 0;
+        }
+        h1{
+            @include font(19, normal, $gray800, $medi);
+            margin-bottom: 4px;
+        }
+        h2{
+            @include font(16, normal, $gray800, $medi);
+            margin-bottom: 12px;
+        }
+        .bx_btn{
+            width: 100%;
+            .btn{
+                width: 100%;
+            }
+        }
+    }
+    &.open{
+        display: block;
+    }
+}

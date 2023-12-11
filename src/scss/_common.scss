@@ -80,7 +80,6 @@ a, button, input{
     }
 }
 .btn, a.btn{
-    // width: 100%;
     background-color: $point;;
     @include font(16, 19, $gray50, $medi);
     padding: 17px 34px 18px;
@@ -138,6 +137,31 @@ a, button, input{
             background-color: $purple50;
             color: $purple200;
         }
+    }
+}
+.bx_option{
+    @include setCont(100%, auto, flex);
+    width: calc(100% + 8px);
+    margin-left: -4px;
+    flex-wrap: wrap;
+}
+.btn_option, a.btn_option{
+    @include font(13, normal, $gray50, $medi);
+    padding: 7px 11px;
+    margin: 6px 4px;
+    border-radius: 6px;
+    text-align: center;
+    border: 1px solid $point;
+    color: $point;
+    &.on{
+        background-color: $point;
+        color: $gray50 !important;
+    }
+    &:hover:not(.on), &:active:not(.on){
+        // background-color: #6737cc;
+        background-color: $purple200;
+        border: 1px solid $purple200;
+        color: $gray50 !important;
     }
 }
 .icon_electric{
@@ -520,5 +544,22 @@ input.ipt{
     } 
     &.bg_gray{
         background-color: #ebeced;
+    }
+}
+
+.skeleton{
+    background-color: $gray100 !important;
+    background: linear-gradient(to right,  rgba(247,247,247,1) 0%,rgba(254,254,254,1) 52%,rgba(247,247,247,1) 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+    background-size: 200% 100%;
+    animation: aniSkeleton 3400ms infinite;
+    color: $gray100 !important;
+    border-radius: 3px;
+}
+@keyframes aniSkeleton {
+  0% {
+        background-position: 200% 0;
+    }
+    100% {
+        background-position: -200% 0;
     }
 }

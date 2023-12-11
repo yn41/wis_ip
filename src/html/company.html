@@ -267,5 +267,26 @@
 			</section>
 			<include src="include/footer.html" title="home"></include>
 		</div>
+		<include src="include/popupFilter.html"></include>
 	</body>
+	<script>
+		$(function(){ 
+			let scrollPosition = 0;
+			//menu
+			$(".btn_filter").click(function(){
+				$(".popup").addClass("open");
+				scrollPosition = $(document).scrollTop();
+				$("body").css({"overflow":"hidden", "top": (scrollPosition*-1)});
+			});
+			$(".btn_p_close").click(function(){
+				$("body").css({"overflow":"", "top":""});
+				scrollPosition = 0;
+			});
+			$(document).on("click", function(e){
+				// if(e.target.className === "bx_slct" || e.target.className === "slct_tit" || e.target.className === "slct_cont") {return false;}
+				// $(".bx_slct").removeClass("on");
+				$(".popup").removeClass("open");
+			});
+		});
+	</script>
 </html>

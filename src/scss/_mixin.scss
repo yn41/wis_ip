@@ -44,6 +44,7 @@
     font-display: block;
     src: local("※"), url($font_url + $fileNm + ".woff2") format("woff2"),
       local("※"), url($font_url + $fileNm + ".woff") format("woff");
+    font-display: block;
   }
 }
 
