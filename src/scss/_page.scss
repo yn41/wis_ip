@@ -150,7 +150,6 @@
             .skeleton{
                 min-width: 65px;
                 min-height: 15px;
-                display: block;
             }
         }
         .a_top{
@@ -164,7 +163,7 @@
             h1{
                 margin-bottom: 6px;
                 &.skeleton{
-                    min-width: 90%;
+                    min-width: 100%;
                     min-height: 26px;
                 }
                 @include pc{
@@ -243,16 +242,22 @@
                         margin: 0 0 9px 0;
                     }
                 }
+                dd{
+                    width: 100%;
+                }
                 .nm{
                     @include font(22, normal, $gray800, $medi);
                     display: block;
-                    @include pc{
-                        @include fontPc(22);
-                    }
                     &+.nm{
                         margin-top: 8px;
                     }
+                    &.skeleton{
+                        min-width: 93px;
+                        min-height: 26px;
+                        display: inline-block;
+                    }
                     @include pc{
+                        @include fontPc(22);
                         display: inline-block;
                         &+.nm{
                             margin-left: 8px;
@@ -264,6 +269,10 @@
                 @include font(30, normal, $point, $bold);
                 @include pc{
                     @include fontPc(30);
+                }
+                &.skeleton{
+                    min-width: 100%;
+                    min-height: 36px;
                 }
             }
         }

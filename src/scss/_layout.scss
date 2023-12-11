@@ -712,12 +712,20 @@ a.inventors_item{
                 padding: 0;
                 @include fontPc(15);
             }
+            &.skeleton{
+                min-width: 100%;
+                min-height: 18px;
+            }
         }
         .desc{
             @include font(13, normal, $gray500);
             margin-top: 4px;
             @include pc{
                 @include fontPc(13);
+            }
+            &.skeleton{
+                min-width: 150px;
+                min-height: 15px;
             }
         }
     }
@@ -729,6 +737,10 @@ a.inventors_item{
             @include font(16, normal, $gray800, $medi);
             @include pc{
                 @include fontPc(16);
+            }
+            &.skeleton{
+                min-width: 62px;
+                min-height: 19px;
             }
         }
         .txt_gray{
