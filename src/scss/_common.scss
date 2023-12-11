@@ -516,6 +516,9 @@ input.ipt{
     @include ellipsis;
     margin-top: 12px;
     margin-left: -2px;
+    &.skeleton {
+        min-width: 100%;
+    }
 }
 .tag{
     display: inline-block;

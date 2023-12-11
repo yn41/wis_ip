@@ -678,6 +678,10 @@ a.inventors_item{
     &+.inventors_item{
         margin-top: 8px;
     }
+    &.skeleton {
+        min-width: 100%;
+        min-height: 102px;
+    }
     @include pc{
         padding: 17px 15px;
     }
@@ -696,6 +700,9 @@ a.inventors_item{
             @include setCont(34px, 34px, block, absolute);
             top: 2px;
             left: 0;
+            &.skeleton{
+                border-radius: 50%;
+            }
         }
         .num{
             @include setCont(24px, 34px, flex, absolute);
@@ -713,7 +720,7 @@ a.inventors_item{
                 @include fontPc(15);
             }
             &.skeleton{
-                min-width: 100%;
+                min-width: 80%;
                 min-height: 18px;
             }
         }
@@ -740,7 +747,7 @@ a.inventors_item{
             }
             &.skeleton{
                 min-width: 62px;
-                min-height: 19px;
+                min-height: 23px;
             }
         }
         .txt_gray{
@@ -752,6 +759,10 @@ a.inventors_item{
             @include font(19, normal, $point, $medi);
             @include pc{
                 @include fontPc(19);
+            }
+            &.skeleton{
+                min-width: 52px;
+                min-height: 23px;
             }
         }
     }
@@ -778,6 +789,31 @@ a.inventors_item{
         margin-top: 8px;
         @include pc{
             margin-top: 24px;
+        }
+    }
+    &.group_skeleton{
+        .icon{
+            @include skeleton;
+            border-radius: 50%;
+        }
+        h3{
+            min-width: 80%;
+            min-height: 18px;
+            @include skeleton;
+        }
+        .desc{
+            min-width: 150px;
+            min-height: 15px;
+            @include skeleton;
+        }
+        .txt_top{
+            min-width: 62px;
+            min-height: 23px;
+            @include skeleton;
+        }
+        .txt_point{
+            min-width: 52px;
+            min-height: 23px;
         }
     }
 }

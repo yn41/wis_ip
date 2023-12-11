@@ -279,6 +279,9 @@
         .swiper-wrapper{
             padding-bottom: 24px;
         }
+        &.group_skeleton{
+            
+        }
     }
     .area2{
         @include setCont(100%, auto, block, relative, $gray50);
