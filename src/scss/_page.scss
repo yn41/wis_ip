@@ -147,10 +147,6 @@
             dt{
                 margin-right: 3px;
             }
-            .skeleton{
-                min-width: 65px;
-                min-height: 15px;
-            }
         }
         .a_top{
             .c_inner{
@@ -162,10 +158,6 @@
             }
             h1{
                 margin-bottom: 6px;
-                &.skeleton{
-                    min-width: 100%;
-                    min-height: 26px;
-                }
                 @include pc{
                     margin-bottom: 0;
                     @include fontPc(26);
@@ -280,7 +272,40 @@
             padding-bottom: 24px;
         }
         &.group_skeleton{
-            
+            .a_top{
+                h1{
+                    min-width: 100%;
+                    min-height: 26px;
+                    @include skeleton;
+                }
+                dl{
+                    dd{
+                        min-width: 65px;
+                        min-height: 15px;
+                        @include skeleton;
+                    }
+                }
+            }
+            .sw_pick .slide {
+                @include skeleton;
+                .p_label{
+                    opacity: 0;
+                }
+            }
+            .a_info{
+                .nm{
+                    min-width: 93px;
+                    min-height: 26px;
+                    display: inline-block;
+                    @include skeleton;
+                
+                }
+                .txt_point{
+                    min-width: 100%;
+                    min-height: 36px;
+                    @include skeleton;
+                }
+            }
         }
     }
     .area2{

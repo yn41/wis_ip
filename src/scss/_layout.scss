@@ -497,10 +497,6 @@
         top: 16px;
         left: 8px;
         z-index: 2;
-        &.skeleton{
-            min-width: 47px;
-            min-height: 19px;
-        }
     }
     .sw_pick {
         @include setCont(100%, auto);
@@ -520,10 +516,11 @@
         }
         .slide{
             @include setCont(252px, 179px, flex, relative);
-            width: calcVw(252);
-            height: calcVw(179);
-            max-width: 364px;
-            max-height: 258.55px;
+            // width: calcVw(252);
+            // height: calcVw(179);
+            // min-width: 252px;
+            // max-width: 364px;
+            // max-height: 250px;
             @include bgSvg(logoOver($s_gray200), no-repeat, 50% 50%, 80px auto);
             margin-left: 2px;
             align-items: center;
@@ -811,9 +808,19 @@ a.inventors_item{
             min-height: 23px;
             @include skeleton;
         }
-        .txt_point{
-            min-width: 52px;
-            min-height: 23px;
+        .c_right{
+            .txt_point{
+                min-width: 52px;
+                min-height: 23px;
+                display: inline-block;
+                @include skeleton;
+            }
+        }
+        .bx_tag{
+            @include skeleton;
+        }
+        .rank_chart{
+            @include skeleton;
         }
     }
 }
