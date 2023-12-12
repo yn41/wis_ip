@@ -44,6 +44,7 @@
     font-display: block;
     src: local("※"), url($font_url + $fileNm + ".woff2") format("woff2"),
       local("※"), url($font_url + $fileNm + ".woff") format("woff");
+    font-display: block;
   }
 }
 
@@ -228,6 +229,16 @@
   } 
 }
 
+
+@mixin skeleton {
+    background-color: $gray100 !important;
+    background: linear-gradient(to right,  rgba(247,247,247,1) 0%,rgba(254,254,254,1) 52%,rgba(247,247,247,1) 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+    background-size: 200% 100%;
+    animation: aniSkeleton 3400ms infinite;
+    color: $gray100 !important;
+    border-radius: 4px;
+    display: inline-block;
+}
 
 @mixin pc {
   @media (min-width: $pc) {

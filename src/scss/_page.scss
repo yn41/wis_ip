@@ -234,16 +234,22 @@
                         margin: 0 0 9px 0;
                     }
                 }
+                dd{
+                    width: 100%;
+                }
                 .nm{
                     @include font(22, normal, $gray800, $medi);
                     display: block;
-                    @include pc{
-                        @include fontPc(22);
-                    }
                     &+.nm{
                         margin-top: 8px;
                     }
+                    &.skeleton{
+                        min-width: 93px;
+                        min-height: 26px;
+                        display: inline-block;
+                    }
                     @include pc{
+                        @include fontPc(22);
                         display: inline-block;
                         &+.nm{
                             margin-left: 8px;
@@ -256,10 +262,50 @@
                 @include pc{
                     @include fontPc(30);
                 }
+                &.skeleton{
+                    min-width: 100%;
+                    min-height: 36px;
+                }
             }
         }
         .swiper-wrapper{
             padding-bottom: 24px;
+        }
+        &.group_skeleton{
+            .a_top{
+                h1{
+                    min-width: 100%;
+                    min-height: 26px;
+                    @include skeleton;
+                }
+                dl{
+                    dd{
+                        min-width: 65px;
+                        min-height: 15px;
+                        @include skeleton;
+                    }
+                }
+            }
+            .sw_pick .slide {
+                @include skeleton;
+                .p_label{
+                    opacity: 0;
+                }
+            }
+            .a_info{
+                .nm{
+                    min-width: 93px;
+                    min-height: 26px;
+                    display: inline-block;
+                    @include skeleton;
+                
+                }
+                .txt_point{
+                    min-width: 100%;
+                    min-height: 36px;
+                    @include skeleton;
+                }
+            }
         }
     }
     .area2{

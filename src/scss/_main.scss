@@ -30,37 +30,70 @@
         }
         .left{
             text-align: center;
+            position: relative;
             @include pc{
                 @include setCont(490px, 100%);
+            }
+            &::before{
+                @include setCont(90px, 50px, block, absolute);
+                @include bg("/main/img1_3.png", no-repeat, 0 0, 98px auto);
+                bottom: -82px;
+                left: -27px;
+                animation-name: aniMain2; 
+                animation-duration: 800ms;
+                animation-timing-function: linear;
+                animation-iteration-count: infinite ;
+                animation-direction:alternate;
+                z-index: 3;
+                @include pc{
+                    @include setCont(150px, 100px);
+                    top: 96px;
+                    right: -161px;
+                    background-size: 130px !important;
+                    left: unset;
+                    bottom: unset;
+                }
             }
         }
         .right{
             text-align: center;
             position: relative;
-            // &::before{
-            //     @include setCont(27px, 28px, block, absolute);
-            //     @include bg("/main/img1_1.png", no-repeat, -234px -137px, 285px auto);
-            //     top: 172px;
-            //     right: 24px;
-            //     animation-name: aniMain1; 
-            //     animation-duration: 3000ms;
-            //     animation-timing-function: linear;
-            //     animation-iteration-count: infinite ;
-            //     // animation-direction:reverser;
-            //     z-index: 2;
-            // }
-            // &::after{
-            //     @include setCont(42px, 42px, block, absolute);
-            //     @include bg("/main/img1_2.png", no-repeat, 0 0, 42px auto);
-            //     top: 134px;
-            //     right: -3px;
-            //     animation-name: aniMain1; 
-            //     animation-duration: 5000ms;
-            //     animation-timing-function: linear;
-            //     animation-iteration-count: infinite ;
-            //     // animation-direction:alternate;
-            //     z-index: 2;
-            // }
+            &::before{
+                @include setCont(27px, 28px, block, absolute);
+                @include bg("/main/img1_1.png", no-repeat, -234px -137px, 285px auto);
+                top: 172px;
+                right: 24px;
+                animation-name: aniMain1; 
+                animation-duration: 3000ms;
+                animation-timing-function: linear;
+                animation-iteration-count: infinite ;
+                animation-direction:reverser;
+                z-index: 2;
+                @include pc{
+                    @include setCont(39px, 40px);
+                    top: 189px;
+                    right: 32px;
+                    background-size: 394px auto !important;
+                    background-position: -323px -188px !important;
+                }
+            }
+            &::after{
+                @include setCont(42px, 42px, block, absolute);
+                @include bg("/main/img1_2.png", no-repeat, 0 0, 42px auto);
+                top: 134px;
+                right: -3px;
+                animation-name: aniMain1; 
+                animation-duration: 5000ms;
+                animation-timing-function: linear;
+                animation-iteration-count: infinite ;
+                z-index: 2;
+                @include pc{
+                    @include setCont(56px, 56px);
+                    top: 139px;
+                    right: -2px;
+                    background-size: 55px auto !important;
+                }
+            }
         }
         h1{
             @include font(22, normal, $point, $bold);
@@ -371,17 +404,13 @@
         transform: rotate(360deg)
     }
 }
-// @-webkit-keyframes aniMain2 {
-//     0% { 
-//         // transform: translateY(0);
-//         transform: scale(1)  translateY(0);
-//     }
-//     80%{
-//         transform: scale(1) translateY(-50px);
-//         // transform: translateY(-5px);
-//     }
-//     100%{
-//         transform: scale(1)  translateY(0);
-//         // transform: translateY(-5px);
-//     }
-// }
+@-webkit-keyframes aniMain2 {
+    0% { 
+        transform: translateY(0);
+        // transform: scale(1)  translateY(0);
+    }
+    100%{
+        // transform: scale(1)  translateY(0);
+        transform: translateY(-3px);
+    }
+}

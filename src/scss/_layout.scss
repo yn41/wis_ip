@@ -99,6 +99,7 @@
             // transition: all 400ms ease; 
             @include pc{
                 width: auto;
+                height: 100%;
                 max-height: 100vh;
                 display: flex;
                 padding: 0;
@@ -115,23 +116,26 @@
             opacity: 0;
             @include pc{
                 display: inline-block;
-                height: 100%;
+                // height: 100%;
+                // @include fontPc(16, 55);
+                @include fontPc(16,16);
+                height: 19px;
                 margin: 0 5.5px;
                 padding: 0 12px;
-                @include fontPc(16, 55);
                 background-color: $white;
+                overflow: visible;
                 opacity: 1;
             }
             &::before{
                 @include pc{
                     @include setCont(0, 1px, block, absolute, $gray800);
                     left: 50%;
-                    bottom: 0;
+                    bottom: -18px;
                     transform: translateX(-50%);
                     transition: width 300ms;
                 }
             }
-            &:hover:not(.on){
+            &:hover:not(.on), &:active:not(.on){
                 opacity: 0.6;
             }
             &.on{
@@ -462,7 +466,7 @@
             left: 50%;
             transform: rotate(90deg) translate(-50%, 38%);
         }
-        &:hover:not(.swiper-button-disabled){
+        &:hover:not(.swiper-button-disabled), &:active:not(.swiper-button-disabled){
             opacity: 0.6;
         }
         &.swiper-button-disabled{
@@ -512,10 +516,11 @@
         }
         .slide{
             @include setCont(252px, 179px, flex, relative);
-            width: calcVw(252);
-            height: calcVw(179);
-            max-width: 364px;
-            max-height: 258.55px;
+            // width: calcVw(252);
+            // height: calcVw(179);
+            // min-width: 252px;
+            // max-width: 364px;
+            // max-height: 250px;
             @include bgSvg(logoOver($s_gray200), no-repeat, 50% 50%, 80px auto);
             margin-left: 2px;
             align-items: center;
@@ -670,6 +675,10 @@ a.inventors_item{
     &+.inventors_item{
         margin-top: 8px;
     }
+    &.skeleton {
+        min-width: 100%;
+        min-height: 102px;
+    }
     @include pc{
         padding: 17px 15px;
     }
@@ -688,6 +697,9 @@ a.inventors_item{
             @include setCont(34px, 34px, block, absolute);
             top: 2px;
             left: 0;
+            &.skeleton{
+                border-radius: 50%;
+            }
         }
         .num{
             @include setCont(24px, 34px, flex, absolute);
@@ -704,12 +716,20 @@ a.inventors_item{
                 padding: 0;
                 @include fontPc(15);
             }
+            &.skeleton{
+                min-width: 80%;
+                min-height: 18px;
+            }
         }
         .desc{
             @include font(13, normal, $gray500);
             margin-top: 4px;
             @include pc{
                 @include fontPc(13);
+            }
+            &.skeleton{
+                min-width: 150px;
+                min-height: 15px;
             }
         }
     }
@@ -722,6 +742,10 @@ a.inventors_item{
             @include pc{
                 @include fontPc(16);
             }
+            &.skeleton{
+                min-width: 62px;
+                min-height: 23px;
+            }
         }
         .txt_gray{
             @include font(11, normal, $gray500);
@@ -732,6 +756,10 @@ a.inventors_item{
             @include font(19, normal, $point, $medi);
             @include pc{
                 @include fontPc(19);
+            }
+            &.skeleton{
+                min-width: 52px;
+                min-height: 23px;
             }
         }
     }
@@ -758,6 +786,41 @@ a.inventors_item{
         margin-top: 8px;
         @include pc{
             margin-top: 24px;
+        }
+    }
+    &.group_skeleton{
+        .icon{
+            @include skeleton;
+            border-radius: 50%;
+        }
+        h3{
+            min-width: 80%;
+            min-height: 18px;
+            @include skeleton;
+        }
+        .desc{
+            min-width: 150px;
+            min-height: 15px;
+            @include skeleton;
+        }
+        .txt_top{
+            min-width: 62px;
+            min-height: 23px;
+            @include skeleton;
+        }
+        .c_right{
+            .txt_point{
+                min-width: 52px;
+                min-height: 23px;
+                display: inline-block;
+                @include skeleton;
+            }
+        }
+        .bx_tag{
+            @include skeleton;
+        }
+        .rank_chart{
+            @include skeleton;
         }
     }
 }

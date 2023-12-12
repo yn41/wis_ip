@@ -1,0 +1,94 @@
+.popup{
+    @include setCont(100%, 101%, block, fixed, rgba(39, 43, 55, 0.16));
+    z-index: 10;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    display: none;
+    @include pc{
+        background-color: rgba(0,0,0,0);
+    }
+    .p_wrap{
+        @include setCont(100%, auto, block, absolute, $white);
+        max-height: 100vh;
+        overflow-y: auto;
+        bottom: 0;
+        left: 50%;
+        transform: translateX(-50%);
+        padding: 36px calcPercent(32) 52px;
+        border-radius: 38px 38px 0 0;
+        box-shadow: 0 2px 5px 1px rgba(0, 0, 0, 0.5);
+        @include pc{
+            @include setCont(620px, auto);
+            position: relative;
+            min-height: 486px;
+            max-height: 90%;
+            top: 50%;
+            bottom: unset;
+            transform: translate(-50%, -50%);
+            padding: 48px 38px;
+            border-radius: 10px;
+            box-shadow: 0 2px 6px 2px $gray400;
+        }
+        .btn_p_close{
+            @include setCont(64px, 4px, block, absolute, #f2f2f2);
+            @include blind;
+            top: 16px;
+            left: 50%;
+            transform: translateX(-50%);
+            z-index: 3;
+            @include pc{
+                @include setCont(16px, 16px);
+                background-color: unset;
+                top: 20px;
+                right: 20px;
+                left: unset;
+                transform: unset;
+                &:before, &:after{
+                    @include setCont(100%, 2px, block, absolute, $gray500);
+                    transform: rotate(-45deg);
+                }
+                &:after{
+                    transform: rotate(45deg);
+                }
+            }
+        }
+        .p_unit + .p_unit{
+            margin-top: 18px;;
+        }
+        .p_cont{
+            padding: 12px 0;
+        }
+        h1{
+            @include font(19, normal, $gray800, $medi);
+            margin-bottom: 4px;
+            @include pc{
+                @include fontPc(19);
+            }
+        }
+        h2{
+            @include font(16, normal, $gray800, $medi);
+            margin-bottom: 12px;
+            @include pc{
+                @include fontPc(16);
+            }
+        }
+        .bx_btn{
+            width: 100%;
+            margin-top: 28px;
+            @include pc{
+                margin-top: 36px;
+                text-align: center;
+            }
+            .btn{
+                width: 100%;
+                @include pc{
+                    width: 296px;
+                }
+            }
+        }
+    }
+    &.open{
+        display: block;
+    }
+}
