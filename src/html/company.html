@@ -9,7 +9,6 @@
 						<button type="button" class="btn_menu_close">menu close</button>
 						<a href="../html/home.html">Home</a>  
 						<a href="../html/university.html">University Rankings</a>  
-  
 						<a href="../html/company.html" class="on">Company Rankings</a>  
 						<a href="../html/patent.html">Patent Valuation</a>  
 						<a href="../html/Inventor.html">Inventor Tech Valuation</a>  
@@ -269,24 +268,4 @@
 		</div>
 		<include src="include/popupFilter.html"></include>
 	</body>
-	<script>
-		$(function(){ 
-			let scrollPosition = 0;
-			//menu
-			$(".btn_filter").click(function(){
-				$(".popup").addClass("open");
-				scrollPosition = $(document).scrollTop();
-				$("body").css({"overflow":"hidden", "top": (scrollPosition*-1)});
-			});
-			$(".btn_p_close").click(function(){
-				$("body").css({"overflow":"", "top":""});
-				scrollPosition = 0;
-			});
-			$(document).on("click", function(e){
-				// if(e.target.className === "bx_slct" || e.target.className === "slct_tit" || e.target.className === "slct_cont") {return false;}
-				// $(".bx_slct").removeClass("on");
-				$(".popup").removeClass("open");
-			});
-		});
-	</script>
 </html>

@@ -153,12 +153,15 @@ a, button, input{
     text-align: center;
     border: 1px solid $point;
     color: $point;
+    @include pc{
+        @include fontPc(13);
+        padding: 7px 10px;
+    }
     &.on{
         background-color: $point;
         color: $gray50 !important;
     }
     &:hover:not(.on), &:active:not(.on){
-        // background-color: #6737cc;
         background-color: $purple200;
         border: 1px solid $purple200;
         color: $gray50 !important;
