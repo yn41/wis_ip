@@ -16,7 +16,7 @@
         transform: translateX(-50%);
         border-radius: 38px 38px 0 0;
         opacity: 0;
-        transition: all 300ms;
+        transition: all 500ms;
         z-index: -1;
         @include pc{
             @include setCont(620px, auto);
@@ -30,6 +30,7 @@
         }
         .p_inner{
             padding: 36px calcPercent(32) 52px;
+            transition: all 500ms;
             @include pc{
                 padding: 48px 38px;
             }
@@ -111,10 +112,12 @@
                 left: unset;
                 bottom: 20px;
                 right: -44px;
+                transition: all 1000ms;
             }
         }
         .p_inner{
             @include pc{
+                opacity: 0;
                 padding: 48px 59px 0 44px;
             }
         }
@@ -194,10 +197,20 @@
             z-index: 21;
             overflow-y: auto;
             box-shadow: 0 2px 5px 1px rgba(0, 0, 0, 0.5);
+            transition: all 500ms;
             @include pc{
                 max-height: 90vh;
             }
         }
+        &.pop_share{
+            .p_wrap{
+                transition: all 1000ms;
+            }
+            .p_inner{
+                opacity: 1;
+            }
+        }
+
     }
 }
 .alert{
