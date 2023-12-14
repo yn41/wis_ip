@@ -1,4 +1,4 @@
-<div class="popup">
+<div class="popup pop_filter">
     <div class="p_wrap">
         <div class="p_inner">
             <button type="button" class="btn_p_close">close</button>
@@ -45,19 +45,25 @@
 <script>
     $(function(){ 
         let scrollPosition = 0;
-        $(".btn_filter").click(function(){
+        $(".btn_filter").click(function(e){
+            e.stopPropagation();
             scrollPosition = $(document).scrollTop();
-            $(".popup").addClass("open");
-            $("body").css({"overflow":"hidden", "top": (scrollPosition*-1)});
+            $(".pop_filter").addClass("open");
+            if($( window ).width() < 1004){
+                $("body").css({"overflow":"hidden", "top": (scrollPosition*-1)});
+            }
         });
-        $(".btn_p_close").click(function(){
-            $(".popup").removeClass("open");
+        $(".pop_filter .btn_p_close").click(function(e){
+            e.stopPropagation();
+            $(".pop_filter").removeClass("open");
             $("body").css({"overflow":"", "top":""});
             scrollPosition = 0;
         });
         $(document).on("click", function(e){
-            if(e.target.className === "popup open" || (e.target.className).indexOf("popup") > -1){
-                $(".popup").removeClass("open");
+            e.stopPropagation();
+            var temp = $(e.target).parents(".pop_filter");
+            if(temp[0] == undefined && (e.target.className).indexOf("pop_filter") > -1){
+                $(".pop_filter").removeClass("open");
                 $("body").css({"overflow":"", "top":""});
                 scrollPosition = 0;
             }

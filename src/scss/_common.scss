@@ -578,3 +578,74 @@ input.ipt{
         background-position: -200% 0;
     }
 }
+.btn_share{
+    @include setCont(100%, 100%);
+    @include bg("/icon/share.png", no-repeat, 50% 50%, 100% auto);
+    @include blind;
+    border-radius: 50%;
+    box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.5);
+    &:hover, &:active{
+        transform: scale(0.9);
+    }
+}
+.btn_app{
+    width: 40px;
+    position: relative;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    transition: all 300ms;
+    &::before{
+        @include setCont(100%, 40px, block, relative);
+    }
+    &+.btn_app{
+        margin-left: 40px;
+    }
+    span{
+        @include font(11, normal, $gray700);
+        display: block;
+        margin-top: 8px;
+    }
+    &:hover{
+        transform: scale(0.9);
+    }
+}
+.btn_instagram{
+    &::before{
+        @include bg("/icon/instagram.png", no-repeat, 50% 50%, 100% auto);
+    }
+}
+.btn_linkedIn{
+    &::before{
+        @include bg("/icon/linkedIn.png", no-repeat, 50% 50%, 100% auto);
+    }
+}
+.btn_gmail{
+    &::before{
+        @include bg("/icon/gmail.png", no-repeat, 50% 50%, 100% auto);
+    }
+}
+.btn_facebook{
+    &::before{
+        @include bg("/icon/facebook.png", no-repeat, 50% 50%, 100% auto);
+    }
+}
+.bx_chk{
+    .chk{
+        display: none;
+        &:checked+label{
+            @include bgSvg(chkFull(), no-repeat, 0 4px, 20px auto);
+        }
+    }
+    label{
+        display: block;
+        @include font(11,normal, $gray500);
+        padding: 6px 0 6px 32px;
+        @include bgSvg(chk(), no-repeat, 0 3px, 20px auto);
+        word-wrap: break-word;
+        transition: all 300ms;
+        &:hover, &:active{
+            color: $gray400;
+        }
+    }
+}

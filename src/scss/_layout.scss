@@ -116,10 +116,10 @@
             opacity: 0;
             @include pc{
                 display: inline-block;
-                // height: 100%;
-                // @include fontPc(16, 55);
-                @include fontPc(16,16);
-                height: 19px;
+                height: 100%;
+                @include fontPc(16, 55);
+                // @include fontPc(16,16);
+                // height: 19px;
                 margin: 0 5.5px;
                 padding: 0 12px;
                 background-color: $white;
@@ -593,7 +593,7 @@
             .cont{
                 @include setCont(100%, auto, block, relative, $gray50);
                 flex-grow: 1;
-                padding: 9.8px 9px 0;
+                padding: 9.8px 9px 34px;
                 .txt_point{
                     @include pc{
                         @include fontPc(16);
@@ -615,6 +615,14 @@
                         @include fontPc(11);
                         margin-bottom: 8px;
                     }
+                }
+                .tag{
+                    max-width: calc(100% - 18px);
+                    position: absolute;
+                    left: 9px;
+                    bottom: 15px;
+                    overflow: hidden;
+                    z-index: 2;
                 }
             }
             .p_label{

@@ -1,34 +1,38 @@
 .popup{
-    @include setCont(100%, 101%, block, fixed, rgba(39, 43, 55, 0.16));
-    z-index: 10;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    display: none;
-    @include pc{
-        background-color: rgba(0,0,0,0);
+    &::before{
+        @include setCont(0, 0, block, fixed, rgba(0,0,0,0));
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        z-index: -1;
+        transition: background-color 200ms;
     }
     .p_wrap{
-        @include setCont(100%, auto, block, absolute, $white);
-        max-height: 100vh;
-        overflow-y: auto;
+        @include setCont(100%, auto, block, fixed, $white);
+        max-height: 0;
+        overflow: hidden;
         bottom: 0;
         left: 50%;
         transform: translateX(-50%);
-        padding: 36px calcPercent(32) 52px;
         border-radius: 38px 38px 0 0;
-        box-shadow: 0 2px 5px 1px rgba(0, 0, 0, 0.5);
+        opacity: 0;
+        transition: all 300ms;
+        z-index: -1;
         @include pc{
             @include setCont(620px, auto);
-            position: relative;
-            min-height: 486px;
-            max-height: 90%;
+            max-height: 200vh;
+            left: 50%;
             top: 50%;
             bottom: unset;
+            transform: unset;
             transform: translate(-50%, -50%);
-            padding: 48px 38px;
             border-radius: 10px;
-            box-shadow: 0 2px 6px 2px $gray400;
+        }
+        .p_inner{
+            padding: 36px calcPercent(32) 52px;
+            @include pc{
+                padding: 48px 38px;
+            }
         }
         .btn_p_close{
             @include setCont(64px, 4px, block, absolute, #f2f2f2);
@@ -37,6 +41,12 @@
             left: 50%;
             transform: translateX(-50%);
             z-index: 3;
+            &:hover, &:active{
+                opacity: 0.5;
+                @include pc{
+                    transform: scale(0.9);
+                }
+            }
             @include pc{
                 @include setCont(16px, 16px);
                 background-color: unset;
@@ -54,7 +64,7 @@
             }
         }
         .p_unit + .p_unit{
-            margin-top: 18px;;
+            margin-top: 18px;
         }
         .p_cont{
             padding: 12px 0;
@@ -88,7 +98,168 @@
             }
         }
     }
+    &.pop_share{
+        @include pc{
+            position: absolute;
+        }
+        .p_wrap{
+            @include pc{
+                @include setCont(398px, 295px, block, absolute);
+                max-height: 0;
+                transform:unset;
+                top: unset;
+                left: unset;
+                bottom: 20px;
+                right: -44px;
+            }
+        }
+        .p_inner{
+            @include pc{
+                padding: 48px 59px 0 44px;
+            }
+        }
+        h1{
+            margin-bottom: 0;
+        }
+        .p_cont{
+            padding: 0;
+            .unit_app{
+                @include setCont(100%, auto, flex);
+                padding: 24px 0;
+                margin: 0 auto;
+                justify-content: space-between;
+                align-items: center;
+                max-width: 500px;
+            }
+        }
+        .unit_copy{
+            h2{
+                margin-bottom: 14px;
+            }
+            .bx_copy{
+                @include setCont(100%, 40px, flex, relative, #f2f2f2);
+                align-items: center;
+                box-shadow: 0 2px 4px 0 rgba(21, 25, 40, 0.29);
+                border-radius: 8px;
+                padding: 0 35px 0 15px;
+                span{
+                    display: block;
+                    @include font(11, normal, $gray800);
+                    @include ellipsis;
+                }
+                .btn_copy{
+                    @include setCont(15px, 18.5px, block);
+                    @include bg("/icon/copy.png", no-repeat, 50% 50%, 100% auto);
+                    @include blind;
+                    position: absolute;
+                    top: 50%;
+                    transform: translateY(-50%);
+                    right: 13px;
+                    z-index: 2;
+                    &:hover, &:active{
+                        opacity: 0.7;
+                    }
+                }
+            }
+        }
+    }
+    &.pop_updated{
+        h1{
+            margin-bottom: 0;
+        }
+        .p_cont{
+            padding: 0;
+            h2{
+                margin: 17px 0 16px;
+            }
+            .bx_chk{
+                margin: 16px 0 29px;
+            }
+        }
+    }
     &.open{
-        display: block;
+        &::before{
+            opacity: 1;
+            width: 100%;
+            height: 100vh;
+            background-color: rgba(39, 43, 55, 0.16);
+            z-index: 20;
+            @include pc{
+                background-color: rgba(39, 43, 55, 0);
+            }
+        }
+        .p_wrap{
+            max-height: 100vh;
+            opacity: 1;
+            z-index: 21;
+            overflow-y: auto;
+            box-shadow: 0 2px 5px 1px rgba(0, 0, 0, 0.5);
+            @include pc{
+                max-height: 90vh;
+            }
+        }
+    }
+}
+.alert{
+    &::before{
+        @include setCont(0, 0, block, fixed, rgba(0,0,0,0));
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        z-index: 10;
+        transition: background-color 400ms;
+    }
+    .a_wrap{
+        @include setCont(316px, auto, block, fixed, $white);
+        overflow-y: auto;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        border-radius: 10px;
+        opacity: 0;
+        transition: all 400ms;
+        .a_inner{
+            padding: 35px 28px 32px 27px;
+        }
+        h1{
+            @include font(19, normal, $gray800, $medi);
+            @include pc{
+                @include fontPc(19);
+            }
+        }
+        p{
+            @include font(15, normal);
+            margin: 16px 0 24px;
+            @include pc{
+                @include fontPc(15);
+            }
+        }
+        .btn{
+            width: 100%;
+        }
+    }
+    &.open{
+        &::before{
+            opacity: 1;
+            width: 100%;
+            height: 100vh;
+            background-color: rgba(39, 43, 55, 0.16);
+            z-index: 20;
+        }
+        .a_wrap{
+            box-shadow: 0 2px 6px 2px rgba(21, 25, 40, 0.29);
+            max-height: 90vh;
+            opacity: 1;
+            z-index: 21;
+        }
+    }
+}
+.area_popup_share{
+    @include setCont(44.2px, 44.2px, block, fixed);
+    right: 24px; 
+    bottom: 40px;
+    z-index: 11;
+    @include pc{
+        right: 38.8px;
     }
 }

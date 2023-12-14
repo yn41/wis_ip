@@ -8,6 +8,7 @@
 		  </header>
 		  <div class="ui_container">
 			<div class="ui_area">
+				<h2 class="ui_h2">Page</h2>
 			  <table class="ui_tbl">
 				<colgroup>
 				  <col>
@@ -22,8 +23,7 @@
 				<tbody>
 					<tr>
 					  	<td>
-							<a href="guide.html" target="_blank" class="ui_link">UI 가이드</a> <em class="ui_update">update</em>
-							<p class="ui_desc">아이콘, 배경값 추가</p>
+							<a href="guide.html" target="_blank" class="ui_link">UI 가이드</a> 
 						</td>
 					  <td>23.11.29</td>
 					</tr>
@@ -43,26 +43,26 @@
 					</tr>
 					<tr>
 						<td>
-							<a href="patentSpec_skeleton.html" target="_blank" class="ui_link">patent Spec (Patent2) 스켈레톤 로딩 적용 페이지</a> <em class="ui_new">new</em>
-							<p class="ui_desc">헤더 페이지 제목 추가</p>
+							<a href="patentSpec_skeleton.html" target="_blank" class="ui_link">patent Spec (Patent2) 스켈레톤 로딩 적용 페이지</a> 
 						</td>
 						<td>23.12.12</td>
 					</tr>
 					<tr>
 						<td>
-							<a href="company.html" target="_blank" class="ui_link">company</a> <em class="ui_update">update</em>
-							<p class="ui_desc">옵션 버튼을 누르면 나오는 팝업을 추가 했습니다.</p>
+							<a href="company.html" target="_blank" class="ui_link">company</a> 
 						</td>
 						<td>23.12.04</td>
 					</tr>
 					<tr>
-						<td><a href="companySpec.html" target="_blank" class="ui_link">company Spec (company2)</a></td>
+						<td>
+							<a href="companySpec.html" target="_blank" class="ui_link">company Spec (company2)</a><em class="ui_new">new</em>
+							<p class="ui_desc">공유 버튼 & 팝업 추가</p>
+						</td>
 						<td>23.12.08</td>
 					</tr>
 					<tr>
 						<td>
-							<a href="university.html" target="_blank" class="ui_link">university</a> <em class="ui_update">update</em>
-							<p class="ui_desc">옵션 버튼을 누르면 나오는 팝업을 추가 했습니다.</p>
+							<a href="university.html" target="_blank" class="ui_link">university</a> 
 						</td>
 						<td>23.12.04</td>
 					</tr>
@@ -85,8 +85,65 @@
 				</tbody>
 			  </table>
 			</div>
+			<div class="ui_area">
+				<h2 class="ui_h2">Popup</h2>
+			  <table class="ui_tbl">
+				<colgroup>
+				  <col>
+				  <col width="150">
+				</colgroup>
+				<thead>
+				  <tr>
+					<th>Title</th>
+					<th>완료/수정일</th>
+				  </tr>
+				</thead>
+				<tbody>
+					<tr>
+					  	<td>
+							<button type="button" onclick="fnOpenPopup('pop_filter');" class="ui_link">Filters Popup</button> <em class="ui_new">new</em>
+							<p class="ui_desc">popup에 pop_filter 클레스 추가<br/>스크립트 변경</p>
+						</td>
+					  	<td>23.12.13</td>
+					</tr>
+					<tr>
+					  	<td>
+							<button type="button" onclick="fnOpenPopup('pop_share');" class="ui_link">Share Popup</button> <em class="ui_new">new</em>
+						</td>
+					  	<td>23.12.13</td>
+					</tr>
+					<tr>
+					  	<td>
+							<button type="button" onclick="fnOpenPopup('pop_updated');" class="ui_link">Updated Popup</button> <em class="ui_new">new</em>
+						</td>
+					  	<td>23.12.14</td>
+					</tr>
+					<tr>
+					  	<td>
+							<button type="button" onclick="fnOpenPopup('alert');" class="ui_link">Alert</button> <em class="ui_new">new</em>
+						</td>
+					  	<td>23.12.14</td>
+					</tr>
+				</tbody>
+			  </table>
+			</div>
 		  </div>
 		</div>
+		<!-- s: 옵션 팝업 --->
+		<include src="include/popupFilter.html"></include>
+		<!-- e: 옵션 팝업 --->
+		<!-- s: 공유 팝업 --->
+		<div class="area_popup_share">
+			<include src="include/popupShare.html"></include>
+			<button type="button" class="btn_share">open share popup</button>
+			<!-- e: 공유 팝업 --->
+		</div>
+		<!-- s: 업데이트 팝업 --->
+			<include src="include/popupUpdated.html"></include>
+			<!-- e: 업데이트 팝업 --->
+			<!-- s: 경고창 --->
+			<include src="include/alert.html"></include>
+		<!-- e: 경고창 --->
 	</body>
 	<style>
 		.ui_wrap {
@@ -135,6 +192,9 @@
 			text-align: center;
 			width: 100%;
 		}
+		.ui_tbl col:last-child {
+			display: table-column;
+		}
 		.ui_tbl col:nth-child(2) {
 			width: 150px;
 		}
@@ -143,9 +203,6 @@
 				/* width: 50px; */
 				display: none;
 			}
-		}
-		.ui_tbl col:last-child {
-			display: table-column;
 		}
 		@media (max-width: 768px) {
 			.ui_tbl td:nth-child(2) {
@@ -219,12 +276,14 @@
 			font-size: 25px;
 		}
 		.ui_h2 {
-			color: #8145ff;
+			color: #313336;
 			font-size: 16px;
+			margin-bottom: 20px;
 		}
 		.ui_h3 {
+			font-size: 14px;
 			color: #8145ff;
-			margin-bottom: 10px;
+			margin-bottom: 15px;
 		}
 		.ui_link {
 			font-size: 12px;
@@ -259,4 +318,14 @@
 			color: #aaa;
 		}
 	</style>
+	<script>
+        let scrollPosition = 0;
+		function fnOpenPopup(nm){
+            scrollPosition = $(document).scrollTop();
+			$("."+nm).addClass("open");
+			if($( window ).width() < 1004 || nm == "alert"){
+				$("body").css({"overflow":"hidden", "top": (scrollPosition*-1)});
+			}
+		}
+	</script>
 </html>
