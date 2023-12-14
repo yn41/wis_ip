@@ -276,78 +276,79 @@
 			<button type="button" class="btn_share">open share popup</button>
 			<!-- e: 공유 팝업 --->
 		</div>
+		<!-- e 공유 팝업 --->
 		<!-- s: 업데이트 팝업 --->
-			<div class="popup pop_updated">
-			    <div class="p_wrap">
-			        <div class="p_inner">
-			            <button type="button" class="btn_p_close">close</button>
-			            <h1>Keep Me Updated</h1>
-			            <div class="p_cont">
-			                <div class="p_unit">
-			                    <h2>Where should we reach you?</h2>
-			                    <div class="bx_ipt">
-			                        <input type="text" class="ipt" placeholder="Your email">
-			                        <button type="button" class="btn_clear">delete</button>
-			                    </div>
-			                    <div class="bx_chk">
-			                        <input type="checkbox" id="chk1" class="chk">
-			                        <label for="chk1">I agree to the Terms of Service and Privacy Policy</label>
-			                    </div>
-			                </div>
-			                <div class="bx_btn">
-			                    <button type="button" class="btn s_large">Subscribe</button>
-			                </div>
-			            </div>
-			        </div>
-			    </div>
+		<div class="popup pop_updated">
+			<div class="p_wrap">
+				<div class="p_inner">
+					<button type="button" class="btn_p_close">close</button>
+					<h1>Keep Me Updated</h1>
+					<div class="p_cont">
+						<div class="p_unit">
+							<h2>Where should we reach you?</h2>
+							<div class="bx_ipt">
+								<input type="text" class="ipt" placeholder="Your email">
+								<button type="button" class="btn_clear">delete</button>
+							</div>
+							<div class="bx_chk">
+								<input type="checkbox" id="chk1" class="chk">
+								<label for="chk1">I agree to the Terms of Service and Privacy Policy</label>
+							</div>
+						</div>
+						<div class="bx_btn">
+							<button type="button" class="btn s_large">Subscribe</button>
+						</div>
+					</div>
+				</div>
 			</div>
-			<script>
-			    $(function(){ 
-			        let scrollPosition = 0;
-			        $(".pop_updated .btn_p_close").click(function(e){
-			            e.stopPropagation();
-			            $(".pop_updated").removeClass("open");
-			            $("body").css({"overflow":"", "top":""});
-			            scrollPosition = 0;
-			        });
-			        $(document).on("click", function(e){
-			            e.stopPropagation();
-			            var temp = $(e.target).parents(".pop_updated");
-			            if(temp[0] == undefined && (e.target.className).indexOf("pop_updated") > -1){
-			                $(".pop_updated").removeClass("open");
-			                $("body").css({"overflow":"", "top":""});
-			                scrollPosition = 0;
-			            }
-			        });
-			    });
-			</script>
-			<!-- e: 업데이트 팝업 --->
-			<!-- s: 경고창 --->
-			<div class="alert">
-			    <div class="a_wrap">
-			        <div class="a_inner">
-			            <div class="a_cont">
-			                <h1>Oops! Something went wrong.</h1>
-			                <p>Please try refreshing the page.</p>
-			            </div>
-			            <button type="button" class="btn s_large">Refresh</button>
-			        </div>
-			    </div>
+		</div>
+		<script>
+			$(function(){ 
+				let scrollPosition = 0;
+				$(".pop_updated .btn_p_close").click(function(e){
+					e.stopPropagation();
+					$(".pop_updated").removeClass("open");
+					$("body").css({"overflow":"", "top":""});
+					scrollPosition = 0;
+				});
+				$(document).on("click", function(e){
+					e.stopPropagation();
+					var temp = $(e.target).parents(".pop_updated");
+					if(temp[0] == undefined && (e.target.className).indexOf("pop_updated") > -1){
+						$(".pop_updated").removeClass("open");
+						$("body").css({"overflow":"", "top":""});
+						scrollPosition = 0;
+					}
+				});
+			});
+		</script>
+		<!-- e: 업데이트 팝업 --->
+		<!-- s: 경고창 --->
+		<div class="alert">
+			<div class="a_wrap">
+				<div class="a_inner">
+					<div class="a_cont">
+						<h1>Oops! Something went wrong.</h1>
+						<p>Please try refreshing the page.</p>
+					</div>
+					<button type="button" class="btn s_large">Refresh</button>
+				</div>
 			</div>
-			<script>
-			    $(function(){ 
-			        let scrollPosition = 0;
-			        $(document).on("click", function(e){
-			            e.stopPropagation();
-			            var temp = $(e.target).parents(".alert");
-			            if(temp[0] == undefined && (e.target.className).indexOf("alert") > -1){
-			                $(".alert").removeClass("open");
-			                $("body").css({"overflow":"", "top":""});
-			                scrollPosition = 0;
-			            }
-			        });
-			    });
-			</script>
+		</div>
+		<script>
+			$(function(){ 
+				let scrollPosition = 0;
+				$(document).on("click", function(e){
+					e.stopPropagation();
+					var temp = $(e.target).parents(".alert");
+					if(temp[0] == undefined && (e.target.className).indexOf("alert") > -1){
+						$(".alert").removeClass("open");
+						$("body").css({"overflow":"", "top":""});
+						scrollPosition = 0;
+					}
+				});
+			});
+		</script>
 		<!-- e: 경고창 --->
 	</body>
 	<style>
