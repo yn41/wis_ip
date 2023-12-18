@@ -586,6 +586,9 @@
                 align-items: center;
                 overflow: hidden;
                 flex-shrink: 1;
+                @include pc{
+                    height: 120px;
+                }
                 img{
                     @include setCont(auto, 100%);
                 }
@@ -610,10 +613,10 @@
                 .txt_gray{
                     display: block;
                     @include font(11, normal, $gray500);
-                    margin-bottom: 9px;
+                    // margin-bottom: 9px;
                     @include pc{
                         @include fontPc(11);
-                        margin-bottom: 8px;
+                        // margin-bottom: 8px;
                     }
                 }
                 .tag{
@@ -638,6 +641,31 @@
             &.swiper-slide-active{
                 .p_label{
                     background-color: $point;
+                }
+            }
+            &.group_skeleton{
+                .bx_img{
+                    @include skeleton;
+                }
+                .cont{
+                    .txt_point, .tit, .txt_gray, .tag{
+                        @include skeleton;
+                        display: block;
+                        min-height: 19px;
+                    }
+                    .txt_point{
+                        width: 60px;
+                    }
+                    .txt_gray{
+                        min-height: 13px;
+                    }
+                    .tit{
+                        width: 100%;
+                        min-height: 45px;
+                    }
+                    .tag{
+                        width: 100%;
+                    }
                 }
             }
         }
@@ -1135,6 +1163,22 @@ a.inventors_item{
             }
         }
     }
+    &.group_skeleton{
+        h2, .num, .txt_gray, dd b{
+            @include skeleton;
+            display: inline-block;
+            min-height: 19px;
+            width: 100px;
+            opacity: 0.6;
+        }
+        .num{
+            width: 40px;
+        }
+        .bx_icon{
+            @include skeleton;
+            border-radius: 50%;
+        }
+    }
 }
 .sectors_chart{
     @include setCont(100%, 29px, flex, relative);
@@ -1151,6 +1195,9 @@ a.inventors_item{
             flex-grow: 1;
             background-color: #d8d8d8;
         }
+    }
+    &.group_skeleton{
+        @include skeleton;
     }
 }
 .sectors_item{
@@ -1209,6 +1256,25 @@ a.inventors_item{
                     margin-top: 8px;
                 }
             }
+        }
+    }
+    &.group_skeleton{
+        h3, .desc, .c_right .txt{
+            @include skeleton;
+            min-height: 18px;
+            width: 100%;
+            display: block;
+        }
+        .desc{
+            min-height: 15px;
+        }
+        .c_right .txt{
+            width: 70px;
+            min-height: 18px;
+        }
+        .icon{
+            @include skeleton;
+            border-radius: 50%;
         }
     }
 }

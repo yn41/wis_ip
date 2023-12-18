@@ -649,3 +649,8 @@ input.ipt{
         }
     }
 }
+.txt_skeleton{
+    @include skeleton;
+    min-height: 20px;
+    display: inline-block;
+}

@@ -753,3 +753,38 @@
         }
     }
 }
+.error, .privacy{
+    .inner{
+        padding: 20px calcPercent(24) 60px !important;
+        @include font(16);
+        @include pc{
+            padding: 80px 0  150px !important;
+            @include fontPc(16);
+        }
+    }
+    h1{
+        @include font(26, normal, $gray800, $bold);
+        margin-bottom: 22px;
+        @include pc{
+            @include fontPc(26);
+            margin-bottom: 42px;
+        }
+    }
+    h2{
+        @include fontPc(16, normal, $gray800, $bold);
+        margin-bottom: 19px;
+        @include pc{
+            @include fontPc(16);
+        }
+    }
+    .btn{
+        min-width: 239px;
+        margin-top: 46px;
+    }
+    .unit+.unit{
+        margin-top: 20px;
+    }
+    p+p{
+        margin-top: 20px;
+    }
+}
