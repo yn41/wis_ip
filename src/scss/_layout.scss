@@ -643,34 +643,37 @@
                     background-color: $point;
                 }
             }
-            &.group_skeleton{
-                .bx_img{
-                    @include skeleton;
-                }
-                .cont{
-                    .txt_point, .tit, .txt_gray, .tag{
-                        @include skeleton;
-                        display: block;
-                        min-height: 19px;
-                    }
-                    .txt_point{
-                        width: 60px;
-                    }
-                    .txt_gray{
-                        min-height: 13px;
-                    }
-                    .tit{
-                        width: 100%;
-                        min-height: 45px;
-                    }
-                    .tag{
-                        width: 100%;
-                    }
-                }
-            }
         }
     }
 } 
+.area_swiper.group_skeleton{
+    .slide{
+        .bx_img{
+            @include skeleton;
+        }
+        .cont{
+            .txt_point, .tit, .txt_gray, .tag{
+                @include skeleton;
+                display: block;
+                min-height: 19px;
+            }
+            .txt_point{
+                width: 60px;
+            }
+            .txt_gray{
+                min-height: 13px;
+            }
+            .tit{
+                width: 100%;
+                min-height: 45px;
+            }
+            .tag{
+                width: 100%;
+            }
+        }
+    }
+
+}
 @-webkit-keyframes aniOpen {
     0% {
         opacity: 0;
@@ -711,10 +714,6 @@ a.inventors_item{
     &+.inventors_item{
         margin-top: 8px;
     }
-    &.skeleton {
-        min-width: 100%;
-        min-height: 102px;
-    }
     @include pc{
         padding: 17px 15px;
     }
@@ -733,9 +732,6 @@ a.inventors_item{
             @include setCont(34px, 34px, block, absolute);
             top: 2px;
             left: 0;
-            &.skeleton{
-                border-radius: 50%;
-            }
         }
         .num{
             @include setCont(24px, 34px, flex, absolute);
@@ -752,20 +748,12 @@ a.inventors_item{
                 padding: 0;
                 @include fontPc(15);
             }
-            &.skeleton{
-                min-width: 80%;
-                min-height: 18px;
-            }
         }
         .desc{
             @include font(13, normal, $gray500);
             margin-top: 4px;
             @include pc{
                 @include fontPc(13);
-            }
-            &.skeleton{
-                min-width: 150px;
-                min-height: 15px;
             }
         }
     }
@@ -778,10 +766,6 @@ a.inventors_item{
             @include pc{
                 @include fontPc(16);
             }
-            &.skeleton{
-                min-width: 62px;
-                min-height: 23px;
-            }
         }
         .txt_gray{
             @include font(11, normal, $gray500);
@@ -792,10 +776,6 @@ a.inventors_item{
             @include font(19, normal, $point, $medi);
             @include pc{
                 @include fontPc(19);
-            }
-            &.skeleton{
-                min-width: 52px;
-                min-height: 23px;
             }
         }
     }
@@ -824,7 +804,9 @@ a.inventors_item{
             margin-top: 24px;
         }
     }
-    &.group_skeleton{
+}
+.area_inventors.group_skeleton{
+    .inventors_item{
         .icon{
             @include skeleton;
             border-radius: 50%;

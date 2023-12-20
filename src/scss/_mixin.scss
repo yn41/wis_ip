@@ -240,6 +240,15 @@
     display: inline-block;
 }
 
+@keyframes aniSkeleton {
+  0% {
+        background-position: 200% 0;
+    }
+    100% {
+        background-position: -200% 0;
+    }
+}
+
 @mixin pc {
   @media (min-width: $pc) {
     @content;

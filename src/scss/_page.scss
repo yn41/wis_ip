@@ -73,11 +73,28 @@
         }
         .p_info{
             @include setCont(100%, auto, block, relative);
-            padding: 0 calcPercent(24) 10px calc(calcPercent(24) + 50px);
+            padding: 0 calcPercent(24) 20px calc(calcPercent(24) + 50px);
             @include pc{
                 padding: 0 0 39px 101px;
             }
-            .icon_electric{
+            &+.area_sw{
+                margin-top: -10px;
+                @include pc{
+                    margin-top: 0;
+                }
+            }
+            .icon{
+                @include setCont(34px, 34px, block, absolute);
+                @include blind;
+                border-radius: 50%;
+                z-index: 2;
+                img{
+                    width: 100%;
+                }
+                @include pc{
+                    @include setCont(69px, 69px, block, absolute);
+            
+                }
                 top: 0;
                 left: calcPercent(24);
                 @include pc{
@@ -94,6 +111,7 @@
             }
             p{
                 @include font(15, normal, $gray800, $medi);
+                position: relative;
                 width: 100%;
                 @include pc{
                     width: 100%;
@@ -106,6 +124,41 @@
 
             }
         }
+        &.group_skeleton{
+            .bx_thum, .icon, h3, p, .sw_pick .slide{
+                @include skeleton;
+            }
+            h3{
+                min-width: 80px;
+                min-height: 15px;
+                @include pc{
+                    min-height: 19px;
+                }
+            }
+            p{
+                min-height: 54px;
+                @include pc{
+                    min-height: 69px;
+                }
+                border-radius: 0;
+                &::before, &::after{
+                    @include setCont(100%, 5px , block, absolute, $white);
+                    left: 0;
+                }
+                &::before{
+                    top: calc(33.33% - 3px);
+                }
+                &::after{
+                    top: calc(66.66% - 2px);
+                }
+            }
+            .bx_thum{
+                background-size: 200% 100% !important;
+            }
+            .icon{
+                border-radius: 50%;
+            }
+        }
     }
     .area_search{
         border-top: 12px solid $gray100;
@@ -116,6 +169,11 @@
 }
 .patentSpec, .inventorSpec{
     .area1{
+        &.none_sw{
+            .inner{
+                padding-left: 0;
+            }
+        }
         .inner{
             @include setCont(100%, auto, flex, relative);
             flex-direction: column;
@@ -152,6 +210,7 @@
             .c_inner{
                 padding: 0 calcPercent(24) 16px;
                 @include pc{
+                    padding: 0 16px 16px;
                     @include setCont(100%, auto, flex, relative);
                     flex-wrap: wrap-reverse;
                 }
@@ -214,6 +273,9 @@
         .a_info{
             .c_inner{
                 padding: 0 calcPercent(24);
+                @include pc{
+                    padding: 0 16px;
+                }
             }
             dl{
                 flex-direction: column;
