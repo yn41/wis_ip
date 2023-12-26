@@ -66,7 +66,7 @@
         transform: translateX(-50%);
         overflow: hidden;
         opacity: 0;
-        transition: all 600ms ease; 
+        transition: all 600ms; 
         @include pc{
             @include setCont(auto, 100%, block, relative);
             top: 0;
@@ -91,12 +91,10 @@
         .g_inner{
             @include setCont(100%, auto, block, relative, $white);
             padding: $header 0 20px;
-            max-height: 0;
+            max-height: 100%;
             align-items: center;
             z-index: 12;
             overflow: hidden;
-            opacity: 0;
-            // transition: all 400ms ease; 
             @include pc{
                 width: auto;
                 height: 100%;
@@ -191,7 +189,8 @@
             top: 0;
             z-index: 11;
             opacity: 1;
-            transition: opacity 400ms ease; 
+            transition: opacity 400ms; 
+            // transition: all 400ms ease; 
             &::before{
                 height: 100vh;
                 opacity: 1;
@@ -199,8 +198,8 @@
                 transition: opacity 400ms ease; 
             }
             .g_inner{
-                max-height: 100vh;
-                opacity: 1;
+                // max-height: 100vh;
+                // opacity: 1;
             }
             a{
                 opacity: 1;
@@ -425,6 +424,9 @@
     }
 }
 .area_feadback{
+    form{
+        @include setCont(100%, 100%);
+    }
     .area_search{
         border-top: 12px solid $gray100;
         width: 100%;
@@ -931,6 +933,7 @@ a.inventors_item{
         top: 0;
         border-radius: 6px;
         right: 0;
+        transform: translatex(50%);
         @include pc{
             width: 36px;
         }
