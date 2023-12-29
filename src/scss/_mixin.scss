@@ -235,9 +235,13 @@
     background: linear-gradient(to right,  rgba(247,247,247,1) 0%,rgba(254,254,254,1) 52%,rgba(247,247,247,1) 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
     background-size: 200% 100%;
     animation: aniSkeleton 3400ms infinite;
-    color: $gray100 !important;
+    // color: $gray100 !important;
+    color: rgba(247,247,247, 0) !important;
     border-radius: 4px;
     display: inline-block;
+    img, .bar, div, em, span{
+      opacity: 0;
+    }
 }
 
 @keyframes aniSkeleton {
@@ -285,6 +289,69 @@
 //     @content;
 //   }
 // }
+@-webkit-keyframes aniMain1 {
+  0% { 
+      // transform: scale(1.1) translate(1px, -2px);
+      transform: rotate(0deg)
+  }
+  100%{
+      transform: rotate(360deg)
+  }
+}
+@-webkit-keyframes aniMain2 {
+  0% { 
+      transform: translateY(0);
+      // transform: scale(1)  translateY(0);
+  }
+  100%{
+      // transform: scale(1)  translateY(0);
+      transform: translateY(-5px) ;
+  }
+}
+@-webkit-keyframes aniMain3 {
+  0% { 
+      top: 502px;
+      opacity: 0;
+      right: -100px;
+      transform: rotate(-45deg);
+  }
+  20%{
+      top: 176px;
+      opacity: 1;
+      right: -59px;
+      transform: rotate(-5deg);
+  }
+  30%{
+      top: 205px;
+      transform: rotate(0deg);
+  }
+  40%{
+      top: 196px;
+  }
+  50%{
+      top: 205px;
+  }
+  60%{
+      top: 196px;
+  }
+  70%{
+      top: 205px;
+  }
+  80%{
+      top: 196px;
+      opacity: 1;
+  }
+  90%{
+      top: 120px;
+      opacity: 0;
+      right: -59px;
+  }
+  100%{
+      top: 120px;
+      opacity: 0;
+      right: -59px;
+  }
+}
 
 
 @keyframes ani1{
@@ -316,4 +383,42 @@
   100% {
     opacity: 1;
   }
+}
+@-webkit-keyframes aniMainLoading1 {
+    0% { 
+        opacity: 0;
+        transform: scale(0.9);
+    }
+    100%{
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+@-webkit-keyframes aniMainLoading2 {
+    0% { 
+        transform: translateX(-35vw);
+        opacity: 0;
+    }
+    100%{
+        transform: translateX(0);
+        opacity: 1;
+    }
+}
+@-webkit-keyframes aniMainLoading3 {
+    0% { 
+        transform: translateX(35vw);
+        opacity: 0;
+    }
+    100%{
+        transform: translateX(0);
+        opacity: 1;
+    }
+}
+@-webkit-keyframes aniMainLoading4 {
+    0% { 
+        opacity: 0;
+    }
+    100%{
+        opacity: 1;
+    }
 }

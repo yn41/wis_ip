@@ -28,10 +28,11 @@
         padding: 0 calcPercent(6) 0 calcPercent(16);
         justify-content: space-between;
         align-items: center;
-        max-width: 1004px;
+        max-width: 1280px;
         @include pc{
             padding: 0;
             justify-content: flex-start;
+            max-width: 1004px;
         }
     }
     .logo{
@@ -222,9 +223,10 @@
     .inner{
         @include setCont(100%, auto, block, relative);
         padding:  32px calcPercent(20) 86px;
-        max-width: 1004px;
+        max-width: 1280px;
         margin: 0 auto;
         @include pc{
+            max-width: 1004px;
             padding: 92px 0 102px;
             justify-content: flex-start;
         }
@@ -289,9 +291,14 @@
         @include pc{
             margin: 0;
         }
+        a{
+            &+a{
+                margin-top: 8px;
+            }
+        }
         .cop{
             @include font(13, normal, $gray400);
-            margin-top: 8px;
+            margin-top: 10px;
             @include pc{
                 @include fontPc(15, normal, $gray400);
             }
@@ -301,11 +308,12 @@
 .wrap{
     .container{
         .inner{
-            max-width: 1004px;
+            max-width: 1280px;
             margin: 0 auto;
             padding: 32px calcPercent(24);
             @include pc{
                 padding: 0;
+                max-width: 1004px;
             }
         }
     }
@@ -426,6 +434,12 @@
 .area_feadback{
     form{
         @include setCont(100%, 100%);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+    .form{
+        width: 100%;
     }
     .area_search{
         border-top: 12px solid $gray100;
@@ -543,7 +557,7 @@
                 }
             }
             .img{
-                min-height: 90%;
+                // min-height: 90%;
                 max-height: 100%;
             }
         }
@@ -578,8 +592,10 @@
             flex-direction: column;
             overflow: hidden;
             box-shadow: 0 2px 4px 0 rgba(39, 43, 55, 0.16);
+            margin-right: 12px;
             @include pc{
                 @include setCont(154px, 261px);
+                margin-right: 16px;
             }
             .bx_img{
                 @include setCont(100%, auto, flex, relative, $white);
@@ -587,6 +603,7 @@
                 justify-content: center;
                 align-items: center;
                 overflow: hidden;
+                @include bgSvg(logoOver($s_gray100), no-repeat, 50% 50%, 60px auto);
                 flex-shrink: 1;
                 @include pc{
                     height: 120px;
@@ -843,6 +860,28 @@ a.inventors_item{
             @include skeleton;
         }
     }
+    .sectors_chart{
+        @include skeleton;
+    }
+    .sectors_item{
+        h3, .desc, .c_right .txt{
+            @include skeleton;
+            min-height: 18px;
+            width: 100%;
+            display: block;
+        }
+        .desc{
+            min-height: 15px;
+        }
+        .c_right .txt{
+            width: 70px;
+            min-height: 18px;
+        }
+        .icon{
+            @include skeleton;
+            border-radius: 50%;
+        }
+    }
 }
 .pagination{
     @include setCont(100%, auto, flex, relative);
@@ -952,8 +991,9 @@ a.inventors_item{
         display: flex;
         position: relative;
         justify-content: center;
-        @include pc{
-        }
+        animation-name: aniMainLoading1;
+        animation-duration: 400ms;
+        animation-iteration-count: 1;
         .cont{
             margin-top: 14px;
             text-align: center;
@@ -984,10 +1024,12 @@ a.inventors_item{
     }
     &.type_info{
         min-height: 258px;
+        animation-name: unset;
         @include pc{
             height: 340px;
             .inner{
-                width: 675px;
+                // width: 675px;
+                padding: 0 100px 0 30px !important;
             }
         }
         .left{
@@ -1087,6 +1129,7 @@ a.inventors_item{
                 @include setCont(240px, 224px);
                 max-width: 9999px;
                 max-height: 9999px;
+                right: 100px;
             }
         }
     }
@@ -1099,6 +1142,8 @@ a.inventors_item{
             min-height: 0;
             .inner{
                 width: $pc;
+                padding: 0 0 0 10px !important;
+                justify-content: flex-start;
             }
         }
         .left {
@@ -1107,14 +1152,17 @@ a.inventors_item{
                 padding: 60px 0 40px;
                 // padding: 50px 0;
                 display: flex;
-                width: 640px;
+                width: auto;
+                min-width: 746px;
                 flex-shrink: 0;
+                justify-content: space-between;;
             }
             .c_info{
                 padding-bottom: 6px;
                 @include pc{
                     display: flex;
                     width: 340px;
+                    flex-shrink: 0;
                     padding: 0 10px 0 0;
                 }
                 .bx_txt{
@@ -1137,7 +1185,12 @@ a.inventors_item{
             }
             .c_info2{
                 @include pc{
-                    flex-grow: 1;
+                    .txt_point{
+                        word-break: break-all;
+                        display: block;
+                        max-width: 560px;
+                    }
+                    // flex-grow: 1;
                     dl{
                         margin-top: 0;
                         &+dl{
@@ -1180,9 +1233,6 @@ a.inventors_item{
             flex-grow: 1;
             background-color: #d8d8d8;
         }
-    }
-    &.group_skeleton{
-        @include skeleton;
     }
 }
 .sectors_item{
@@ -1241,25 +1291,6 @@ a.inventors_item{
                     margin-top: 8px;
                 }
             }
-        }
-    }
-    &.group_skeleton{
-        h3, .desc, .c_right .txt{
-            @include skeleton;
-            min-height: 18px;
-            width: 100%;
-            display: block;
-        }
-        .desc{
-            min-height: 15px;
-        }
-        .c_right .txt{
-            width: 70px;
-            min-height: 18px;
-        }
-        .icon{
-            @include skeleton;
-            border-radius: 50%;
         }
     }
 }

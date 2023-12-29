@@ -286,8 +286,8 @@ input.ipt{
         margin-left: 8px;
     }
     .btn_clear{
-        @include setCont(15.8px, 15.8px, block, absolute);
-        @include bgSvg(btnClose("121416"), no-repeat, 50% 50%, 100% auto);
+        @include setCont(17px, 17px, block, absolute);
+        @include bgSvg(btnClose("121416"), no-repeat, 50% 50%, 16px auto);
         @include blind;
         top: 50%;
         right: 11.7px;
@@ -335,7 +335,7 @@ input.ipt{
         }
     }
     .btn_clear{
-        @include bgSvg(btnClose($s_gray600), no-repeat, 50% 50%, 100% auto);
+        @include bgSvg(btnClose($s_gray600), no-repeat, 50% 50%, 16px auto);
         right: 8px;
         @include pc{
             right: 12px;
@@ -532,6 +532,7 @@ input.ipt{
     border-radius: 6px;
     vertical-align: top;
     background-color: $gray100;
+    // opacity: 0.2;
     @include pc{
         @include fontPc(13);
     }
@@ -553,6 +554,58 @@ input.ipt{
     &.bg_gray{
         background-color: #ebeced;
     }
+    &.w00001 {
+        background-color: rgba(109, 200, 42, 0.2) !important;
+    }
+    &.w00002 {
+        background-color: rgba(255, 101, 148 ,0.2) !important;
+    }
+    &.w00003 {
+        background-color: rgba(246, 93, 119 ,0.2) !important;
+    }
+    &.w00004 {
+        background-color: rgba(23, 206, 180 ,0.2) !important;
+    }
+    &.w00005 {
+        background-color: rgba(246, 183, 60 ,0.2) !important;
+    }
+    &.w00006 {
+        background-color: rgba(231, 170, 96 ,0.2) !important;
+    }
+    &.w00007 {
+        background-color: rgba(216, 114, 229 ,0.2) !important;
+    }
+    &.w00008 {
+        background-color: rgba(250, 215, 51 ,0.2) !important;
+    }
+    &.w00009 {
+        background-color: rgba(39, 205, 212 ,0.2) !important;
+    }
+    &.w00010 {
+        background-color: rgba(72, 148, 255 ,0.2) !important;
+    }
+    &.w00011 {
+        background-color: rgba(0, 171, 168 ,0.2) !important;
+    }
+    &.w00012 {
+        background-color: rgba(102, 192, 238 ,0.2) !important;
+    }
+    &.w00013 {
+        background-color: rgba(59, 130, 246 ,0.2) !important;
+    }
+    &.w00014 {
+        background-color: rgba(0, 171, 168 ,0.2) !important;
+    }
+    &.w00015 {
+        background-color: rgba(82, 204, 123 ,0.2) !important;
+    }
+    &.etc {
+        background-color: #d8d8d8
+    }
+
+
+
+
 }
 .txt_skeleton{
     background-color: $gray100 !important;

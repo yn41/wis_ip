@@ -54,6 +54,15 @@ $(function(){
 		$("body").css({"overflow":"", "top":""});
 		scrollPosition = 0;
 	});
+	$(document).on("click", function(e){
+		e.stopPropagation();
+		var temp = e.target.className;
+		if(temp.indexOf("gnb") > -1){
+			$(".header").removeClass("open");
+			$("body").css({"overflow":"", "top":""});
+			scrollPosition = 0;
+		}
+	});
 	
 	for (var i =0; i < $(".bx_slct").length; i++) {
 		var target = $(".bx_slct").eq(i);

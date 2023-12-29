@@ -66,7 +66,7 @@
                         </div>
 					</div>
 				</article>
-                <article class="area1 area_swiper group_skeleton"><!-- v:1219 .area_swiper , group_skeleton 클래스 위치 변경--->
+                <article class="area1 area_swiper group_skeleton">
                     <div class="inner">
                         <h2>Best Patents</h2>
                         <div class="area_sw"> 
@@ -162,7 +162,7 @@
                         </div>
                     </div>
                 </article>
-                <article class="area2 area_inventors group_skeleton"> <!-- v:1219 area_inventors, group_skeleton 클래스 추가 -->
+                <article class="area2 area_inventors group_skeleton"> 
                     <div class="inner">
                         <div class="c_inventors">
                             <h2>Best Patents</h2>
@@ -171,7 +171,7 @@
 									<div class="inventors_item">  
 										<div class="colb">
 											<div class="c_left">
-												<em class="icon"></em>
+												<em class="icon"><img src="../img/icon/rocket.png" alt="icon 회사"></em>
 												<h3></h3>
 												<p class="desc"></p>
 											</div>
@@ -216,9 +216,9 @@
                         <div class="c_sectors">
                             <h2>Best Sectors</h2>
 							<div class="sectors_wrap">
-                                <div class="sectors_chart group_skeleton"> </div>
+                                <div class="sectors_chart"> </div>
 								<div class="s_list">
-									<div class="sectors_item group_skeleton">
+									<div class="sectors_item">
 										<div class="s_inner">
 											<div class="c_left">
                                                 <em class="icon"></em>
@@ -232,7 +232,7 @@
 											</div>
 										</div>
 									</div>
-									<div class="sectors_item group_skeleton">
+									<div class="sectors_item">
 										<div class="s_inner">
 											<div class="c_left">
                                                 <em class="icon"></em>
@@ -246,7 +246,7 @@
 											</div>
 										</div>
 									</div>
-									<div class="sectors_item group_skeleton">
+									<div class="sectors_item">
 										<div class="s_inner">
 											<div class="c_left">
                                                 <em class="icon"></em>
@@ -260,7 +260,7 @@
 											</div>
 										</div>
 									</div>
-									<div class="sectors_item group_skeleton">
+									<div class="sectors_item">
 										<div class="s_inner">
 											<div class="c_left">
                                                 <em class="icon"></em>
@@ -274,7 +274,7 @@
 											</div>
 										</div>
 									</div>
-									<div class="sectors_item group_skeleton">
+									<div class="sectors_item">
 										<div class="s_inner">
 											<div class="c_left">
                                                 <em class="icon"></em>
@@ -404,7 +404,8 @@
 			            <a href="../html/Inventor.html">Inventor Tech Valuation</a>
 			        </div>
 			        <div class="comp">
-			            <a href="#">Privacy Policy</a>
+			            <a href="../html/privacy.html">Privacy Policy</a>
+			            <a href="../html/terms.html">Terms of Service</a><!-- v:1229 추가-->
 			            <p class="cop">Copyright © 2023 IPRankings.com <br/>Powered by Wisdomain</p>
 			        </div>
 			    </div>
@@ -416,7 +417,7 @@
 var swiper;
 $(function(){ 
 	swiper = new Swiper('.swiper-container', {
-		slidesPerView: "auto",
+		slidesPerView: "auto",// v:1229 크기 조정 1 => auto 변경 부탁드립니다.
 		spaceBetween: 16, 
         loop: false,
         navigation: {

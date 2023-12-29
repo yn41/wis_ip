@@ -1,3 +1,6 @@
+.wrap{
+    overflow-x: hidden;
+}
 .main{
     .container{
         padding-top: 0;
@@ -24,6 +27,9 @@
             flex-direction: column;
             align-items: center;
             transition: all 300ms;
+            animation-name: aniMainLoading1;
+            animation-duration: 400ms;
+            animation-iteration-count: 1;
             @include pc{
                 flex-direction: unset;
             }
@@ -50,6 +56,27 @@
                     top: 96px;
                     right: -161px;
                     background-size: 130px !important;
+                    left: unset;
+                    bottom: unset;
+                }
+            }
+            &::after{
+                @include setCont(50px, 75px, block, absolute);
+                @include bg("/main/img1_1.png", no-repeat, 2px -71px, 284.59px auto);
+                bottom: -196px;
+                left: -37px;
+                animation-name: aniMain3;
+                animation-duration: 4000ms;
+                animation-timing-function: linear;
+                animation-iteration-count: infinite ;
+                // animation-direction:alternate;
+                z-index: 1;
+                @include pc{
+                    @include setCont(60px, 100px);
+                    top: 196px;
+                    right: -59px;
+                    background-size: 394.5px !important;
+                    background-position: 2px -99px !important;
                     left: unset;
                     bottom: unset;
                 }
@@ -113,7 +140,8 @@
             display: block;
             width: 284.6px;
             margin: 35px auto 32px;
-            
+            position: relative;
+            z-index: 2;
             @include pc{
                 width: 394.5px;
                 margin: 0 auto;
@@ -121,9 +149,17 @@
         }
     }
     .area2{
+        position: relative;
+        z-index: 3;
+        background-color: $white;
+        width: 100%;
+        @include pc{
+            background-color: unset;
+        }
         .inner{
             padding-top: 30px;
             padding-bottom: 28px;
+            width: 100%;
             @include pc{
                 display: flex;
                 justify-content: space-between;
@@ -136,14 +172,29 @@
             display: flex;
             justify-content: space-between;
             flex-wrap: wrap;
+            animation-name: aniMainLoading4;
+            animation-duration: 400ms;
+            animation-iteration-count: 1;
             @include pc{
                 width: 50%;;
                 justify-content: flex-start;
             }
         }
+        .left{
+            @include pc{
+                animation-name: aniMainLoading2;
+                animation-duration: 600ms;
+                animation-iteration-count: 1;
+            }
+            
+        }
         .right{
             @include pc{
                 justify-content: flex-end;
+                align-content:space-between;
+                animation-name: aniMainLoading3;
+                animation-duration: 600ms;
+                animation-iteration-count: 1;
             }
         }
         .unit{
@@ -393,24 +444,5 @@
                 }
             }
         }
-    }
-}
-@-webkit-keyframes aniMain1 {
-    0% { 
-        // transform: scale(1.1) translate(1px, -2px);
-        transform: rotate(0deg)
-    }
-    100%{
-        transform: rotate(360deg)
-    }
-}
-@-webkit-keyframes aniMain2 {
-    0% { 
-        transform: translateY(0);
-        // transform: scale(1)  translateY(0);
-    }
-    100%{
-        // transform: scale(1)  translateY(0);
-        transform: translateY(-3px);
     }
 }

@@ -67,6 +67,11 @@
         .p_unit + .p_unit{
             margin-top: 18px;
         }
+        form{
+            &>.p_cont{
+                width: 100%;
+            }
+        }
         .p_cont{
             padding: 12px 0;
         }

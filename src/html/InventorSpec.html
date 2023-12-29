@@ -476,7 +476,7 @@
 var swiper;
 $(function(){ 
 	swiper = new Swiper('.swiper-container', {
-		slidesPerView: "auto",
+		slidesPerView: "5", // v:1229 마지막 여백 조정
 		spaceBetween: 16, 
         loop: false,
         navigation: {
@@ -489,6 +489,7 @@ $(function(){
         breakpoints: {
 			1004: {
         		spaceBetween: 12,
+				slidesPerView: "auto",
             },
         }
     });
