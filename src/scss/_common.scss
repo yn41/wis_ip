@@ -706,3 +706,18 @@ input.ipt{
 form{
     width: 100%;
 }
+.nodata{
+    @include setCont(100%, auto, flex);
+    align-items: center;
+    justify-content: center;
+    min-height: 100px;
+    @include pc{
+        min-height: 150px;
+    }
+    p{
+        @include font(14, 17, $gray400);
+        @include pc{
+            @include fontPc(14, 17);
+        }
+    }
+}

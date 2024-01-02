@@ -166,6 +166,9 @@
             padding: 31.5px calcPercent(24);
         }
     }
+    .nodata{
+        border-bottom: 1px solid $gray100;
+    }
 }
 .patentSpec, .inventorSpec{
     .area1{
