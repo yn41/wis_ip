@@ -1,1310 +1,1309 @@
 .wrap{
-    @include setCont(100%, 100vh, flex, relative);
-    min-height: 660px;
-    flex-direction: column;
+	@include setCont(100%, 100vh, flex, relative);
+	min-height: 660px;
+	flex-direction: column;
 }
 .header{
-    @include setCont(100%, $header, block, fixed);
-    top: 0;
-    left: 50%;
-    transform: translateX(-50%);
-    flex-shrink: 1;
-    // transition: all 500ms ease;
-    background-color:$white;
-    border-bottom: 1px solid rgba(255,255,255,0);
-    opacity: 1;
-    z-index: 10;
-    // overflow: hidden;
-    &.hidden{
-        transform: translate(-50%, $header*-1);
-        opacity: 0;
-    }
-    @include pc{
-        border-bottom: 1px solid $gray200;
-    }
-    .inner{
-        @include setCont(100%, 100%, flex);
-        margin: 0 auto;
-        padding: 0 calcPercent(6) 0 calcPercent(16);
-        justify-content: space-between;
-        align-items: center;
-        max-width: 1280px;
-        @include pc{
-            padding: 0;
-            justify-content: flex-start;
-            max-width: 1004px;
-        }
-    }
-    .logo{
-        position: relative;
-        z-index: 13;
-        &:hover{
-            opacity: 0.8;
-        }
-        @include pc{
-            margin: 0 21.5px 0 10px;
-        }
-    }
-    .left{
-        display: flex;
-        align-items: center;
-        h1{
-            @include font(19, normal, $gray500, $medi);
-            white-space: nowrap;
-            margin-left: 8px;
-            @include pc{
-                display: none;
-            }
-        }
-    }
-    .right{
-        height: 100%;
-    }
-    .gnb{
-        @include setCont(100%, 0, block, absolute);
-        top: -1px;
-        left: 50%;
-        transform: translateX(-50%);
-        overflow: hidden;
-        opacity: 0;
-        transition: all 600ms; 
-        @include pc{
-            @include setCont(auto, 100%, block, relative);
-            top: 0;
-            left: unset;
-            right: 0;
-            transform: unset;
-            transition: unset; 
-            opacity: 1;
-            z-index: 1;
-        }
-        &::before{
-            @include setCont(100%, 100vh, block, fixed, rgba(136, 136, 136, 0.50));
-            top: 0;
-            left: 0;
-            z-index: -1;
-            opacity: 0;
-            transition: opacity 200ms ease;
-            @include pc{
-                display: none;
-            }
-        }
-        .g_inner{
-            @include setCont(100%, auto, block, relative, $white);
-            padding: $header 0 20px;
-            max-height: 100%;
-            align-items: center;
-            z-index: 12;
-            overflow: hidden;
-            @include pc{
-                width: auto;
-                height: 100%;
-                max-height: 100vh;
-                display: flex;
-                padding: 0;
-                opacity: 1;
-            }
-        }
-        a{
-            @include font(16, normal, $gray800);
-            padding: 12px calcPercent(20);
-            display: block;
-            position: relative;
-            height: 43px;
-            overflow: hidden;
-            opacity: 0;
-            @include pc{
-                display: inline-block;
-                height: 100%;
-                @include fontPc(16, 55);
-                // @include fontPc(16,16);
-                // height: 19px;
-                margin: 0 5.5px;
-                padding: 0 12px;
-                background-color: $white;
-                overflow: visible;
-                opacity: 1;
-            }
-            &::before{
-                @include pc{
-                    @include setCont(0, 1px, block, absolute, $gray800);
-                    left: 50%;
-                    bottom: -18px;
-                    transform: translateX(-50%);
-                    transition: width 300ms;
-                }
-            }
-            &:hover:not(.on), &:active:not(.on){
-                opacity: 0.6;
-            }
-            &.on{
-                font-weight: $bold;
-                &::before{
-                    width: 100%;
-                }
-            }
-        }
-        .btn_menu_close{
-            @include setCont(20px, 20px, block, absolute);
-            @include blind;
-            top: 16px;
-            right: 20px;
-            display: none;
-            &::before, &:after{
-                @include setCont(18px, 1px, block, absolute, $gray500);
-                transition: all 300ms;
-                top: 50%;
-                left: 50%;
-                transform: translate(-50%, -50%) rotate(45deg);
-            }
-            &::after{
-                transform: translate(-50%, -50%) rotate(-45deg);
-            }
-            &:hover{
-                &::before, &:after{
-                    background-color: $gray700;
-                }
-            }
-        }
-    }
-    .btn_menu{
-        @include setCont(48px, 100%, block, relative);
-        @include bgSvg(btnMenu($s_gray400), no-repeat, 50% 50%, 100% auto);
-        transition: opacity transform 300ms;
-        &:hover{
-            transform: scale(1.025);
-            @include bgSvg(btnMenu($s_gray500), no-repeat, 50% 50%, 100% auto);
-        }
-        @include pc{
-            display: none;
-        }
-        span{
-            @include blind;
-        }
-    }
-    &.open{
-        overflow: unset;
-        .gnb{
-            @include setCont(100%, 100vh, block, fixed);
-            display: block;
-            top: 0;
-            z-index: 11;
-            opacity: 1;
-            transition: opacity 400ms; 
-            // transition: all 400ms ease; 
-            &::before{
-                height: 100vh;
-                opacity: 1;
-                z-index: 11;
-                transition: opacity 400ms ease; 
-            }
-            .g_inner{
-                // max-height: 100vh;
-                // opacity: 1;
-            }
-            a{
-                opacity: 1;
-            }
-            .btn_menu_close{
-                display: block;
-            }
-        }
-    }
+	@include setCont(100%, $header, block, fixed);
+	top: 0;
+	left: 50%;
+	transform: translateX(-50%);
+	flex-shrink: 1;
+	// transition: all 500ms ease;
+	background-color:$white;
+	border-bottom: 1px solid rgba(255,255,255,0);
+	opacity: 1;
+	z-index: 10;
+	// overflow: hidden;
+	&.hidden{
+		transform: translate(-50%, $header*-1);
+		opacity: 0;
+	}
+	@include pc{
+		border-bottom: 1px solid $gray200;
+	}
+	.inner{
+		@include setCont(100%, 100%, flex);
+		margin: 0 auto;
+		padding: 0 calcPercent(6) 0 calcPercent(16);
+		justify-content: space-between;
+		align-items: center;
+		max-width: 1280px;
+		@include pc{
+			padding: 0;
+			justify-content: flex-start;
+			max-width: 1004px;
+		}
+	}
+	.logo{
+		position: relative;
+		z-index: 13;
+		&:hover{
+			opacity: 0.8;
+		}
+		@include pc{
+			margin: 0 21.5px 0 10px;
+		}
+	}
+	.left{
+		display: flex;
+		align-items: center;
+		h1{
+			@include font(19, normal, $gray500, $medi);
+			white-space: nowrap;
+			margin-left: 8px;
+			@include pc{
+				display: none;
+			}
+		}
+	}
+	.right{
+		height: 100%;
+	}
+	.gnb{
+		@include setCont(100%, 0, block, absolute);
+		top: -1px;
+		left: 50%;
+		transform: translateX(-50%);
+		overflow: hidden;
+		opacity: 0;
+		transition: all 600ms; 
+		@include pc{
+			@include setCont(auto, 100%, block, relative);
+			top: 0;
+			left: unset;
+			right: 0;
+			transform: unset;
+			transition: unset; 
+			opacity: 1;
+			z-index: 1;
+		}
+		&::before{
+			@include setCont(100%, 100vh, block, fixed, rgba(136, 136, 136, 0.50));
+			top: 0;
+			left: 0;
+			z-index: -1;
+			opacity: 0;
+			transition: opacity 200ms ease;
+			@include pc{
+				display: none;
+			}
+		}
+		.g_inner{
+			@include setCont(100%, auto, block, relative, $white);
+			padding: $header 0 20px;
+			max-height: 100%;
+			align-items: center;
+			z-index: 12;
+			overflow: hidden;
+			@include pc{
+				width: auto;
+				height: 100%;
+				max-height: 100vh;
+				display: flex;
+				padding: 0;
+				opacity: 1;
+			}
+		}
+		a{
+			@include font(16, normal, $gray800);
+			padding: 12px calcPercent(20);
+			display: block;
+			position: relative;
+			height: 43px;
+			overflow: hidden;
+			opacity: 0;
+			@include pc{
+				display: inline-block;
+				height: 100%;
+				@include fontPc(16, 55);
+				// @include fontPc(16,16);
+				// height: 19px;
+				margin: 0 5.5px;
+				padding: 0 12px;
+				background-color: $white;
+				overflow: visible;
+				opacity: 1;
+			}
+			&::before{
+				@include pc{
+					@include setCont(0, 1px, block, absolute, $gray800);
+					left: 50%;
+					bottom: -18px;
+					transform: translateX(-50%);
+					transition: width 300ms;
+				}
+			}
+			&:hover:not(.on), &:active:not(.on){
+				opacity: 0.6;
+			}
+			&.on{
+				font-weight: $bold;
+				&::before{
+					width: 100%;
+				}
+			}
+		}
+		.btn_menu_close{
+			@include setCont(20px, 20px, block, absolute);
+			@include blind;
+			top: 16px;
+			right: 20px;
+			display: none;
+			&::before, &:after{
+				@include setCont(18px, 1px, block, absolute, $gray500);
+				transition: all 300ms;
+				top: 50%;
+				left: 50%;
+				transform: translate(-50%, -50%) rotate(45deg);
+			}
+			&::after{
+				transform: translate(-50%, -50%) rotate(-45deg);
+			}
+			&:hover{
+				&::before, &:after{
+					background-color: $gray700;
+				}
+			}
+		}
+	}
+	.btn_menu{
+		@include setCont(48px, 100%, block, relative);
+		@include bgSvg(btnMenu($s_gray400), no-repeat, 50% 50%, 100% auto);
+		transition: opacity transform 300ms;
+		&:hover{
+			transform: scale(1.025);
+			@include bgSvg(btnMenu($s_gray500), no-repeat, 50% 50%, 100% auto);
+		}
+		@include pc{
+			display: none;
+		}
+		span{
+			@include blind;
+		}
+	}
+	&.open{
+		overflow: unset;
+		.gnb{
+			@include setCont(100%, 100vh, block, fixed);
+			display: block;
+			top: 0;
+			z-index: 11;
+			opacity: 1;
+			transition: opacity 400ms; 
+			&::before{
+				height: 100vh;
+				opacity: 1;
+				z-index: 11;
+				transition: opacity 400ms ease; 
+			}
+			a{
+				opacity: 1;
+			}
+			.btn_menu_close{
+				display: block;
+			}
+		}
+	}
 }
 .container{
-    @include setCont(100%, auto, block);
-    flex-grow: 1;
-    max-width: 99999999px !important;
-    padding: $header 0  0!important;
+	@include setCont(100%, auto, block);
+	flex-grow: 1;
+	max-width: 99999999px !important;
+	padding: $header 0  0!important;
 }
 .footer{
-    width: 100%;
-    background-color:  $gray50;
-    .inner{
-        @include setCont(100%, auto, block, relative);
-        padding:  32px calcPercent(20) 86px;
-        max-width: 1280px;
-        margin: 0 auto;
-        @include pc{
-            max-width: 1004px;
-            padding: 92px 0 102px;
-            justify-content: flex-start;
-        }
-    }
-    a{
-        display: block;
-        @include font(13, normal, $gray500);
-        &:hover{
-            color: $gray400;
-        }
-        @include pc{
-            @include fontPc(15);
-        }
-    }
-    .bx_logo{
-        @include font(16, normal, $gray500, $bold);
-        display: flex;
-        align-items: center;
-        margin-bottom: 8px;
-        @include pc{
-            margin-bottom: 25px;
-            @include fontPc(23, normal, $gray500, $bold);
-        }
-        .logo{
-            @include setCont(32px, 32px, inline-block);
-            @include bgSvg(logoOver($s_gray500), no-repeat, 50% 50%, 100% auto);
-            min-width: 32px;
-            margin-right: 4px;
-            transition: all 300ms;
-            @include pc{
-                @include setCont(40px, 40px);
-                margin-right: 10px;
-            }
-        }
-        &:hover{
-            color: $gray400;
-            .logo{
-                @include bgSvg(logoOver($s_gray400), no-repeat, 50% 50%, 100% auto);
-            }
-        }
-    }
-    .f_menu{
-        margin: 0 0 48px calcPercent(5);
-        @include pc{
-            margin: 0 0 60px 0;
-        }
-        a{
-            @include font(15);
-            @include pc{
-                @include fontPc(19);
-            }
-            &+a{
-                margin-top: 13px;
-                @include pc{
-                    margin-top: 24px;
-                }
-            }
-        }
-    }
-    .comp{
-        margin: 0 0 0 calcPercent(5);
-        @include pc{
-            margin: 0;
-        }
-        a{
-            &+a{
-                margin-top: 8px;
-            }
-        }
-        .cop{
-            @include font(13, normal, $gray400);
-            margin-top: 10px;
-            @include pc{
-                @include fontPc(15, normal, $gray400);
-            }
-        }
-    }
+	width: 100%;
+	background-color:  $gray50;
+	.inner{
+		@include setCont(100%, auto, block, relative);
+		padding:  32px calcPercent(20) 86px;
+		max-width: 1280px;
+		margin: 0 auto;
+		@include pc{
+			max-width: 1004px;
+			padding: 92px 0 102px;
+			justify-content: flex-start;
+		}
+	}
+	a{
+		display: block;
+		@include font(13, normal, $gray500);
+		&:hover{
+			color: $gray400;
+		}
+		@include pc{
+			@include fontPc(15);
+		}
+	}
+	.bx_logo{
+		@include font(16, normal, $gray500, $bold);
+		display: flex;
+		align-items: center;
+		margin-bottom: 8px;
+		@include pc{
+			margin-bottom: 25px;
+			@include fontPc(23, normal, $gray500, $bold);
+		}
+		.logo{
+			@include setCont(32px, 32px, inline-block);
+			@include bgSvg(logoOver($s_gray500), no-repeat, 50% 50%, 100% auto);
+			min-width: 32px;
+			margin-right: 4px;
+			transition: all 300ms;
+			@include pc{
+				@include setCont(40px, 40px);
+				margin-right: 10px;
+			}
+		}
+		&:hover{
+			color: $gray400;
+			.logo{
+				@include bgSvg(logoOver($s_gray400), no-repeat, 50% 50%, 100% auto);
+			}
+		}
+	}
+	.f_menu{
+		margin: 0 0 48px calcPercent(5);
+		@include pc{
+			margin: 0 0 60px 0;
+		}
+		a{
+			@include font(15);
+			@include pc{
+				@include fontPc(19);
+			}
+			&+a{
+				margin-top: 13px;
+				@include pc{
+					margin-top: 24px;
+				}
+			}
+		}
+	}
+	.comp{
+		margin: 0 0 0 calcPercent(5);
+		@include pc{
+			margin: 0;
+		}
+		a{
+			&+a{
+				margin-top: 8px;
+			}
+		}
+		.cop{
+			@include font(13, normal, $gray400);
+			margin-top: 10px;
+			@include pc{
+				@include fontPc(15, normal, $gray400);
+			}
+		}
+	}
 }
 .wrap{
-    .container{
-        .inner{
-            max-width: 1280px;
-            margin: 0 auto;
-            padding: 32px calcPercent(24);
-            @include pc{
-                padding: 0;
-                max-width: 1004px;
-            }
-        }
-    }
+	.container{
+		.inner{
+			max-width: 1280px;
+			margin: 0 auto;
+			padding: 32px calcPercent(24);
+			@include pc{
+				padding: 0;
+				max-width: 1004px;
+			}
+		}
+	}
 }
 .main .area5, .area_feadback{
-    position: relative;
-    @include pc{
-        background-color: $gray100;
-        height: 446px;
-    }
-    .btn{
-        width: 100%;
-    }
-    .inner{
-        padding: 0 !important;
-        @include pc{
-            height: 100%;
-            display: flex;
-            justify-content: flex-start;
-            align-items: center;
-        }
-    }
-    .c_inner{
-        padding: 34px calcPercent(24);
-        margin: 0 auto;
-        @include pc{
-            padding: 0;
-        }
-    }
-    h2{
-        font-weight: $medi !important;
-        @include pc{
-            font-weight: $bold !important;
-        }
-    }
-    .left{
-        border-top: 12px solid $gray100;
-        @include pc{
-            @include setCont(calcPercent(648,1004), 383px, flex);
-            justify-content: space-between;
-            align-items: center;
-            padding-left: 0;
-            border-right: 1px solid $gray300;
-            border-top: 0;
-            .btn{
-                @include setCont(335px, 59px);
-            }
-        }
-        .c_inner{
-            padding-top: 32px;
-            padding-bottom: 27px;
-            @include pc{
-                padding: 0;
-            }
-        }
-        p{
-            margin: 16px auto 24px;
-            @include font(16, normal, $gray800);
-            @include pc{
-                margin-bottom: 36px;
-            }
-        }
-    }
-    .right{
-        background-color: $gray100;
-        @include pc{
-            padding: 0 49px 0 47px;
-        }
-        .c_inner{
-            padding-top: 32px;
-            padding-bottom: 28px;
-            @include pc{
-                width: 312px;
-                padding: 0;
-            }
-        }
-        h2{
-            @include pc{
-                @include fontPc(19);
-                font-weight: $medi !important;
-            }
-        }
-        p{
-            margin: 16px auto 24px;
-            @include font(16, normal, $gray800);
-            @include pc{
-                @include fontPc(16);
-            }
-        }
-        .link_email{
-            @include font(16, normal, $gray400, $medi);
-            text-align: right;
-            display: block;
-            &:hover{
-                color: $gray500;
-            }
-            @include pc{
-                @include fontPc(16);
-            }
-            &.txt_point{
-                font-weight: $bold;
-                text-align: left;
-                margin: -8px 0 25px;
-                &:hover{
-                    color: $purple300 !important;
-                }
-            }
-        }
-        .bx_textarea{
-            margin-bottom: 9px;
-        }
-        .btn{
-            margin: 24px 0 16px;
-            padding: 16px 34px;
-        }
-    }
+	position: relative;
+	@include pc{
+		background-color: $gray100;
+		height: 446px;
+	}
+	.btn{
+		width: 100%;
+	}
+	.inner{
+		padding: 0 !important;
+		@include pc{
+			height: 100%;
+			display: flex;
+			justify-content: flex-start;
+			align-items: center;
+		}
+	}
+	.c_inner{
+		padding: 34px calcPercent(24);
+		margin: 0 auto;
+		@include pc{
+			padding: 0;
+		}
+	}
+	h2{
+		font-weight: $medi !important;
+		@include pc{
+			font-weight: $bold !important;
+		}
+	}
+	.left{
+		border-top: 12px solid $gray100;
+		@include pc{
+			@include setCont(calcPercent(648,1004), 383px, flex);
+			justify-content: space-between;
+			align-items: center;
+			padding-left: 0;
+			border-right: 1px solid $gray300;
+			border-top: 0;
+			.btn{
+				@include setCont(335px, 59px);
+			}
+		}
+		.c_inner{
+			padding-top: 32px;
+			padding-bottom: 27px;
+			@include pc{
+				padding: 0;
+			}
+		}
+		p{
+			margin: 16px auto 24px;
+			@include font(16, normal, $gray800);
+			@include pc{
+				margin-bottom: 36px;
+			}
+		}
+	}
+	.right{
+		background-color: $gray100;
+		@include pc{
+			padding: 0 49px 0 47px;
+		}
+		.c_inner{
+			padding-top: 32px;
+			padding-bottom: 28px;
+			@include pc{
+				width: 312px;
+				padding: 0;
+			}
+		}
+		h2{
+			@include pc{
+				@include fontPc(19);
+				font-weight: $medi !important;
+			}
+		}
+		p{
+			margin: 16px auto 24px;
+			@include font(16, normal, $gray800);
+			@include pc{
+				@include fontPc(16);
+			}
+		}
+		.link_email{
+			@include font(16, normal, $gray400, $medi);
+			text-align: right;
+			display: block;
+			&:hover{
+				color: $gray500;
+			}
+			@include pc{
+				@include fontPc(16);
+			}
+			&.txt_point{
+				font-weight: $bold;
+				text-align: left;
+				margin: -8px 0 25px;
+				&:hover{
+					color: $purple300 !important;
+				}
+			}
+		}
+		.bx_textarea{
+			margin-bottom: 9px;
+		}
+		.btn{
+			margin: 24px 0 16px;
+			padding: 16px 34px;
+		}
+	}
 }
 .area_feadback{
-    form{
-        @include setCont(100%, 100%);
-        display: flex;
-        align-items: center;
-        justify-content: center;
-    }
-    .form{
-        width: 100%;
-    }
-    .area_search{
-        border-top: 12px solid $gray100;
-        width: 100%;
-        @include pc{
-            position: absolute;
-            left: 50%;
-            transform: translateX(-50%);
-            border: none;
-            z-index: 2;
-            .c_inner{
-                @include setCont(1004px, 100%, flex);
-                justify-content: center;
-                align-items: center;
-            }
-        }
-    }
+	form{
+		@include setCont(100%, 100%);
+		display: flex;
+		align-items: center;
+		justify-content: center;
+	}
+	.form{
+		width: 100%;
+	}
+	.area_search{
+		border-top: 12px solid $gray100;
+		width: 100%;
+		.c_inner{
+			@include setCont(100%, 100%);
+		}
+		@include pc{
+			position: absolute;
+			left: 50%;
+			transform: translateX(-50%);
+			border: none;
+			z-index: 2;
+			.c_inner{
+				@include setCont(1004px, 100%, flex);
+				justify-content: center;
+				align-items: center;
+			}
+		}
+	}
 }
 .area_top{
-    @include setCont(100%, auto, block, relative);
-    h2{
-        margin-bottom: 15.5px;
-    }
+	@include setCont(100%, auto, block, relative);
+	h2{
+		margin-bottom: 15.5px;
+	}
 }
 
 .area_sw{
-    @include setCont(100%, auto, block, relative);
-    .btn_prev, .btn_next{
-        @include setCont(69px, 0, block, absolute);
-        @include blind;
-        top: 7px;
-        overflow: hidden;
-        z-index: 5;
-        opacity: 0;
-        transition: all 200ms;
-        &::before{
-            @include setCont(15px, 15px, block, absolute);
-            @include bgSvg(arrDown("8a8c8f"), no-repeat, 50% 50%, 12px auto);
-            top: 50%;
-            left: 50%;
-            transform: rotate(90deg) translate(-50%, 38%);
-        }
-        &:hover:not(.swiper-button-disabled), &:active:not(.swiper-button-disabled){
-            opacity: 0.6;
-        }
-        &.swiper-button-disabled{
-            &::before{
-                @include bgSvg(arrDown("d0d2d5"), no-repeat, 50% 50%, 12px auto);
-            }
-        }
-        @include pc{
-            height: 233px;
-            opacity: 1;
-        }
-    }
-    .btn_prev{
-        left: 16px;
-    }
-    .btn_next{
-        right: 0;
-        &::before{
-            transform: rotate(-90deg) translate(41%, -50%);
-        }
-    }
-    .p_label{
-        @include font(13, normal, $gray600, $medi);
-        background-color: $gray300;
-        padding: 2px 10px 2px 11px;
-        border-radius: 8px;
-        position: absolute;
-        top: 16px;
-        left: 8px;
-        z-index: 2;
-    }
-    .sw_pick {
-        @include setCont(100%, auto);
-        padding:0 calcPercent(24);
-        @include pc{
-            margin-left: 98px;
-            padding: 0;
-            width: 356px;
-        }
-        .swiper-wrapper{
-            padding: 6px 2px 26px;
-            margin-left: -1px;
-            @include pc{
-                margin-left: -1px;
-                padding-bottom: 0
-            }
-        }
-        .slide{
-            @include setCont(252px, 179px, flex, relative);
-            // width: calcVw(252);
-            // height: calcVw(179);
-            // min-width: 252px;
-            // max-width: 364px;
-            // max-height: 250px;
-            @include bgSvg(logoOver($s_gray200), no-repeat, 50% 50%, 80px auto);
-            margin-left: 2px;
-            align-items: center;
-            justify-content: center;
-            overflow: hidden;
-            border-radius: 10px;
-            padding: 4px 4px 5px;
-            box-shadow: 0 2px 4px 0 $gray100;
-            @include pc{
-                width: 324px;
-                height: 233px;
-                margin-bottom: 6px;
-                &:first-child{
-                    transform: translateX(1px);
-                }
-                &:last-child{
-                    transform: translateX(-6px);
-                }
-            }
-            .img{
-                // min-height: 90%;
-                max-height: 100%;
-            }
-        }
-    }
-    .sw_patents{
-        padding: 0 calcPercent(24);
-        @include pc{
-            // padding: 0 75px 0 85px;
-            padding: 0;
-            margin: 0 83px;
-            padding-right: 5px;
-        }
-        .swiper-wrapper{
-            margin: 3px 0 5px 3px;
-            @include pc{
-                margin: 3px 3px 5px 3px;
-                padding-right: 20px;
-            }
-        }
-        a.slide{
-            &:hover{
-                transform: scale(0.95);
-            }
-        }
-        .slide{
-            width: calcVw(146);
-            height: 261px;
-            min-width: 146px;
-            max-width: 180px;
-            border-radius: 10px;
-            display: flex;
-            flex-direction: column;
-            overflow: hidden;
-            box-shadow: 0 2px 4px 0 rgba(39, 43, 55, 0.16);
-            margin-right: 12px;
-            @include pc{
-                @include setCont(154px, 261px);
-                margin-right: 16px;
-            }
-            .bx_img{
-                @include setCont(100%, auto, flex, relative, $white);
-                height: calcPercent(125, 261);
-                justify-content: center;
-                align-items: center;
-                overflow: hidden;
-                @include bgSvg(logoOver($s_gray100), no-repeat, 50% 50%, 60px auto);
-                flex-shrink: 1;
-                @include pc{
-                    height: 120px;
-                }
-                img{
-                    @include setCont(auto, 100%);
-                }
-            }
-            .cont{
-                @include setCont(100%, auto, block, relative, $gray50);
-                flex-grow: 1;
-                padding: 9.8px 9px 34px;
-                .txt_point{
-                    @include pc{
-                        @include fontPc(16);
-                    }
-                }
-                .tit{
-                    @include ellipsis("multi", 3);
-                    @include font(13);
-                    margin: 4px 0;
-                    @include pc{
-                        @include fontPc(13);
-                    }
-                }
-                .txt_gray{
-                    display: block;
-                    @include font(11, normal, $gray500);
-                    // margin-bottom: 9px;
-                    @include pc{
-                        @include fontPc(11);
-                        // margin-bottom: 8px;
-                    }
-                }
-                .tag{
-                    max-width: calc(100% - 18px);
-                    position: absolute;
-                    left: 9px;
-                    bottom: 15px;
-                    overflow: hidden;
-                    z-index: 2;
-                }
-            }
-            .p_label{
-                background-color: $purple300;
-                @include font(13, normal, $gray50, $medi);
-                top: 9.8px;
-                left: 6.7px;
-                padding: 2px 7.5px 2px;
-                @include pc{
-                    @include fontPc(13);
-                }
-            }
-            &.swiper-slide-active{
-                .p_label{
-                    background-color: $point;
-                }
-            }
-        }
-    }
+	@include setCont(100%, auto, block, relative);
+	.btn_prev, .btn_next{
+		@include setCont(69px, 0, block, absolute);
+		@include blind;
+		top: 7px;
+		overflow: hidden;
+		z-index: 5;
+		opacity: 0;
+		transition: all 200ms;
+		&::before{
+			@include setCont(15px, 15px, block, absolute);
+			@include bgSvg(arrDown("8a8c8f"), no-repeat, 50% 50%, 12px auto);
+			top: 50%;
+			left: 50%;
+			transform: rotate(90deg) translate(-50%, 38%);
+		}
+		&:hover:not(.swiper-button-disabled), &:active:not(.swiper-button-disabled){
+			opacity: 0.6;
+		}
+		&.swiper-button-disabled{
+			&::before{
+				@include bgSvg(arrDown("d0d2d5"), no-repeat, 50% 50%, 12px auto);
+			}
+		}
+		@include pc{
+			height: 233px;
+			opacity: 1;
+		}
+	}
+	.btn_prev{
+		left: 16px;
+	}
+	.btn_next{
+		right: 0;
+		&::before{
+			transform: rotate(-90deg) translate(41%, -50%);
+		}
+	}
+	.p_label{
+		@include font(13, normal, $gray600, $medi);
+		background-color: $gray300;
+		padding: 2px 10px 2px 11px;
+		border-radius: 8px;
+		position: absolute;
+		top: 16px;
+		left: 8px;
+		z-index: 2;
+	}
+	.sw_pick {
+		@include setCont(100%, auto);
+		padding:0 calcPercent(24);
+		@include pc{
+			margin-left: 98px;
+			padding: 0;
+			width: 356px;
+		}
+		.swiper-wrapper{
+			padding: 6px 2px 26px;
+			margin-left: -1px;
+			@include pc{
+				margin-left: -1px;
+				padding-bottom: 0
+			}
+		}
+		.slide{
+			@include setCont(252px, 179px, flex, relative);
+			// width: calcVw(252);
+			// height: calcVw(179);
+			// min-width: 252px;
+			// max-width: 364px;
+			// max-height: 250px;
+			@include bgSvg(logoOver($s_gray200), no-repeat, 50% 50%, 80px auto);
+			margin-left: 2px;
+			align-items: center;
+			justify-content: center;
+			overflow: hidden;
+			border-radius: 10px;
+			padding: 4px 4px 5px;
+			box-shadow: 0 2px 4px 0 $gray100;
+			@include pc{
+				width: 324px;
+				height: 233px;
+				margin-bottom: 6px;
+				&:first-child{
+					transform: translateX(1px);
+				}
+				&:last-child{
+					transform: translateX(-6px);
+				}
+			}
+			.img{
+				// min-height: 90%;
+				max-height: 100%;
+			}
+		}
+	}
+	.sw_patents{
+		padding: 0 calcPercent(24);
+		@include pc{
+			// padding: 0 75px 0 85px;
+			padding: 0;
+			margin: 0 83px;
+			padding-right: 5px;
+		}
+		.swiper-wrapper{
+			margin: 3px 0 5px 3px;
+			@include pc{
+				margin: 3px 3px 5px 3px;
+				padding-right: 20px;
+			}
+		}
+		a.slide{
+			&:hover{
+				transform: scale(0.95);
+			}
+		}
+		.slide{
+			width: calcVw(146);
+			height: 261px;
+			min-width: 146px;
+			max-width: 180px;
+			border-radius: 10px;
+			display: flex;
+			flex-direction: column;
+			overflow: hidden;
+			box-shadow: 0 2px 4px 0 rgba(39, 43, 55, 0.16);
+			margin-right: 12px;
+			@include pc{
+				@include setCont(154px, 261px);
+				margin-right: 16px;
+			}
+			.bx_img{
+				@include setCont(100%, auto, flex, relative, $white);
+				height: calcPercent(125, 261);
+				justify-content: center;
+				align-items: center;
+				overflow: hidden;
+				@include bgSvg(logoOver($s_gray100), no-repeat, 50% 50%, 60px auto);
+				flex-shrink: 1;
+				@include pc{
+					height: 120px;
+				}
+				img{
+					@include setCont(auto, 100%);
+				}
+			}
+			.cont{
+				@include setCont(100%, auto, block, relative, $gray50);
+				flex-grow: 1;
+				padding: 9.8px 9px 34px;
+				.txt_point{
+					@include pc{
+						@include fontPc(16);
+					}
+				}
+				.tit{
+					@include ellipsis("multi", 3);
+					@include font(13);
+					margin: 4px 0;
+					@include pc{
+						@include fontPc(13);
+					}
+				}
+				.txt_gray{
+					display: block;
+					@include font(11, normal, $gray500);
+					// margin-bottom: 9px;
+					@include pc{
+						@include fontPc(11);
+						// margin-bottom: 8px;
+					}
+				}
+				.tag{
+					max-width: calc(100% - 18px);
+					position: absolute;
+					left: 9px;
+					bottom: 15px;
+					overflow: hidden;
+					z-index: 2;
+				}
+			}
+			.p_label{
+				background-color: $purple300;
+				@include font(13, normal, $gray50, $medi);
+				top: 9.8px;
+				left: 6.7px;
+				padding: 2px 7.5px 2px;
+				@include pc{
+					@include fontPc(13);
+				}
+			}
+			&.swiper-slide-active{
+				.p_label{
+					background-color: $point;
+				}
+			}
+		}
+	}
 } 
 .area_swiper.group_skeleton{
-    .slide{
-        .bx_img{
-            @include skeleton;
-        }
-        .cont{
-            .txt_point, .tit, .txt_gray, .tag{
-                @include skeleton;
-                display: block;
-                min-height: 19px;
-            }
-            .txt_point{
-                width: 60px;
-            }
-            .txt_gray{
-                min-height: 13px;
-            }
-            .tit{
-                width: 100%;
-                min-height: 45px;
-            }
-            .tag{
-                width: 100%;
-            }
-        }
-    }
+	.slide{
+		.bx_img{
+			@include skeleton;
+		}
+		.cont{
+			.txt_point, .tit, .txt_gray, .tag{
+				@include skeleton;
+				display: block;
+				min-height: 19px;
+			}
+			.txt_point{
+				width: 60px;
+			}
+			.txt_gray{
+				min-height: 13px;
+			}
+			.tit{
+				width: 100%;
+				min-height: 45px;
+			}
+			.tag{
+				width: 100%;
+			}
+		}
+	}
 
 }
 @-webkit-keyframes aniOpen {
-    0% {
-        opacity: 0;
-    }
-    100% {
-        opacity: 1;
-    }
+	0% {
+		opacity: 0;
+	}
+	100% {
+		opacity: 1;
+	}
 }
 .ani_open{
-    animation-name: aniOpen;
-    animation-duration:300ms;
-    
+	animation-name: aniOpen;
+	animation-duration:300ms;
+	
 }
 .inventors_wrap{
-    .i_top{
-        @include setCont(100%, auto, flex, relative);
-        justify-content: space-between;
-        align-items: center;
-        h3{
-            @include font(13, normal, $gray600, $medi);
-            @include pc{
-                @include fontPc(13);
-            }
-        }
-    }
+	.i_top{
+		@include setCont(100%, auto, flex, relative);
+		justify-content: space-between;
+		align-items: center;
+		h3{
+			@include font(13, normal, $gray600, $medi);
+			@include pc{
+				@include fontPc(13);
+			}
+		}
+	}
 }
 a.inventors_item{
-    &:hover, &:active{
-        transform: scale(0.95);
-        background-color: $gray50;
-    }
+	&:hover, &:active{
+		transform: scale(0.95);
+		background-color: $gray50;
+	}
 }
 .inventors_item{
-    @include setCont(100%, auto, block, relative, $white);
-    padding: 16px calcPercent(19, 328) 17px calcPercent(16, 328);
-    box-shadow: 0 2px 4px 1px rgba(55, 55, 72, 0.05);  
-    border-radius: 10px;
-    &+.inventors_item{
-        margin-top: 8px;
-    }
-    @include pc{
-        padding: 17px 15px;
-    }
-    .colb{
-        align-items: flex-start !important;
-    }
-    .c_left{
-        flex-grow: 1;
-        padding-left: 50px;
-        position: relative;
-        @include pc{
-            padding-left: 50px;
-            // padding-left: 62.7px;
-        }
-        .icon{
-            @include setCont(34px, 34px, block, absolute);
-            top: 2px;
-            left: 0;
-        }
-        .num{
-            @include setCont(24px, 34px, flex, absolute);
-            @include font(19, normal, $gray700, $medi);
-            justify-content: center;
-            align-items: center;
-            top: 2px;
-            left: 0;
-        }
-        h3{
-            @include font(15, normal, $gray800, $medi);
-            padding: 0;
-            @include pc{
-                padding: 0;
-                @include fontPc(15);
-            }
-        }
-        .desc{
-            @include font(13, normal, $gray500);
-            margin-top: 4px;
-            @include pc{
-                @include fontPc(13);
-            }
-        }
-    }
-    .c_right{
-        flex-shrink: 0;
-        padding: 8px 0 0 10px;
-        text-align: right;
-        .txt_top{
-            @include font(16, normal, $gray800, $medi);
-            @include pc{
-                @include fontPc(16);
-            }
-        }
-        .txt_gray{
-            @include font(11, normal, $gray500);
-            display: block;
-            margin-bottom: 2.5px;
-        }
-        .txt_point{
-            @include font(19, normal, $point, $medi);
-            @include pc{
-                @include fontPc(19);
-            }
-        }
-    }
-    &.type1{
-        padding: 0 0 24px 0;
-        box-shadow: unset;  
-        border-radius: 0;
-        @include pc{
-            padding: 20px 0 24px !important;
-        }
-    }
-    &.type_rank, &.type_rank_num{
-        // padding: 20px;
-        .icon{
-            width: 34px;
-        }
-    }
-    &.type_rank_num{
-        h3, p{
-            margin-left: -12px;
-        }
-    }
-    .rank_chart{
-        margin-top: 8px;
-        @include pc{
-            margin-top: 24px;
-        }
-    }
+	@include setCont(100%, auto, block, relative, $white);
+	padding: 16px calcPercent(19, 328) 17px calcPercent(16, 328);
+	box-shadow: 0 2px 4px 1px rgba(55, 55, 72, 0.05);  
+	border-radius: 10px;
+	&+.inventors_item{
+		margin-top: 8px;
+	}
+	@include pc{
+		padding: 17px 15px;
+	}
+	.colb{
+		align-items: flex-start !important;
+	}
+	.c_left{
+		flex-grow: 1;
+		padding-left: 50px;
+		position: relative;
+		@include pc{
+			padding-left: 50px;
+			// padding-left: 62.7px;
+		}
+		.icon{
+			@include setCont(34px, 34px, block, absolute);
+			top: 2px;
+			left: 0;
+		}
+		.num{
+			@include setCont(24px, 34px, flex, absolute);
+			@include font(19, normal, $gray700, $medi);
+			justify-content: center;
+			align-items: center;
+			top: 2px;
+			left: 0;
+		}
+		h3{
+			@include font(15, normal, $gray800, $medi);
+			padding: 0;
+			@include pc{
+				padding: 0;
+				@include fontPc(15);
+			}
+		}
+		.desc{
+			@include font(13, normal, $gray500);
+			margin-top: 4px;
+			@include pc{
+				@include fontPc(13);
+			}
+		}
+	}
+	.c_right{
+		flex-shrink: 0;
+		padding: 8px 0 0 10px;
+		text-align: right;
+		.txt_top{
+			@include font(16, normal, $gray800, $medi);
+			@include pc{
+				@include fontPc(16);
+			}
+		}
+		.txt_gray{
+			@include font(11, normal, $gray500);
+			display: block;
+			margin-bottom: 2.5px;
+		}
+		.txt_point{
+			@include font(19, normal, $point, $medi);
+			@include pc{
+				@include fontPc(19);
+			}
+		}
+	}
+	&.type1{
+		padding: 0 0 24px 0;
+		box-shadow: unset;  
+		border-radius: 0;
+		@include pc{
+			padding: 20px 0 24px !important;
+		}
+	}
+	&.type_rank, &.type_rank_num{
+		// padding: 20px;
+		.icon{
+			width: 34px;
+		}
+	}
+	&.type_rank_num{
+		h3, p{
+			margin-left: -12px;
+		}
+	}
+	.rank_chart{
+		margin-top: 8px;
+		@include pc{
+			margin-top: 24px;
+		}
+	}
 }
 .area_inventors.group_skeleton{
-    .inventors_item{
-        .icon{
-            @include skeleton;
-            border-radius: 50%;
-        }
-        h3{
-            min-width: 80%;
-            min-height: 18px;
-            @include skeleton;
-        }
-        .desc{
-            min-width: 150px;
-            min-height: 15px;
-            @include skeleton;
-        }
-        .txt_top{
-            min-width: 62px;
-            min-height: 23px;
-            @include skeleton;
-        }
-        .c_right{
-            .txt_point{
-                min-width: 52px;
-                min-height: 23px;
-                display: inline-block;
-                @include skeleton;
-            }
-        }
-        .bx_tag{
-            @include skeleton;
-        }
-        .rank_chart{
-            @include skeleton;
-        }
-    }
-    .sectors_chart{
-        @include skeleton;
-    }
-    .sectors_item{
-        h3, .desc, .c_right .txt{
-            @include skeleton;
-            min-height: 18px;
-            width: 100%;
-            display: block;
-        }
-        .desc{
-            min-height: 15px;
-        }
-        .c_right .txt{
-            width: 70px;
-            min-height: 18px;
-        }
-        .icon{
-            @include skeleton;
-            border-radius: 50%;
-        }
-    }
+	.inventors_item{
+		.icon, .num{
+			@include setCont(34px, 34px);
+			@include skeleton;
+			border-radius: 50%;
+		}
+		h3{
+			min-width: 80%;
+			min-height: 18px;
+			@include skeleton;
+		}
+		.desc{
+			min-width: 150px;
+			min-height: 15px;
+			@include skeleton;
+		}
+		.txt_top{
+			min-width: 62px;
+			min-height: 23px;
+			@include skeleton;
+		}
+		.c_right{
+			.txt_point{
+				min-width: 52px;
+				min-height: 23px;
+				display: inline-block;
+				@include skeleton;
+			}
+		}
+		.bx_tag{
+			@include skeleton;
+		}
+		.rank_chart{
+			@include skeleton;
+		}
+	}
+	.sectors_chart{
+		@include skeleton;
+	}
+	.sectors_item{
+		h3, .desc, .c_right .txt{
+			@include skeleton;
+			min-height: 18px;
+			width: 100%;
+			display: block;
+		}
+		.desc{
+			min-height: 15px;
+		}
+		.c_right .txt{
+			width: 70px;
+			min-height: 18px;
+		}
+		.icon{
+			@include skeleton;
+			border-radius: 50%;
+		}
+	}
 }
 .pagination{
-    @include setCont(100%, auto, flex, relative);
-    justify-content: center;
-    align-items: center;
-    margin: 22px auto 0;
-    @include pc{
-        margin: 42px auto 0;
-    }
-    .num, a.num, .btn_page_prev, .btn_page_next{
-        @include setCont(32px, 32px, flex, relative);
-        @include font(16, normal, $gray500, $medi);
-        justify-content: center;
-        align-items: center;
-        border-radius: 25px;
-        &:hover{
-            background-color: $gray100;
-        }
-        &+.num, &+a.num, &+.btn_page_prev, &+.btn_page_next{
-            margin-left: 8px;
-        }
-        @include pc{
-            @include fontPc(16);
-        }
-    }
-    .btn_page_prev, .btn_page_next{
-        @include blind;
-        &::before{
-            @include setCont(15px, 15px, block);
-            @include bgSvg(arrDown("bcbec3"), no-repeat, 50% 50%, 7px auto);
-        }
-    }
-    .num, a.num{
-        &.on{
-            background-color: $gray200;
-            color: $gray800;
-        }
-    }
-    .btn_page_prev{
-        &::before{
-            transform: rotate(90deg);
-        }
-    }
-    .btn_page_next{
-        &::before{
-            transform: rotate(-90deg);
-        }
-    }
+	@include setCont(100%, auto, flex, relative);
+	justify-content: center;
+	align-items: center;
+	margin: 22px auto 0;
+	@include pc{
+		margin: 42px auto 0;
+	}
+	.num, a.num, .btn_page_prev, .btn_page_next{
+		@include setCont(32px, 32px, flex, relative);
+		@include font(16, normal, $gray500, $medi);
+		justify-content: center;
+		align-items: center;
+		border-radius: 25px;
+		&:hover{
+			background-color: $gray100;
+		}
+		&+.num, &+a.num, &+.btn_page_prev, &+.btn_page_next{
+			margin-left: 8px;
+		}
+		@include pc{
+			@include fontPc(16);
+		}
+	}
+	.btn_page_prev, .btn_page_next{
+		@include blind;
+		&::before{
+			@include setCont(15px, 15px, block);
+			@include bgSvg(arrDown("bcbec3"), no-repeat, 50% 50%, 7px auto);
+		}
+	}
+	.num, a.num{
+		&.on{
+			background-color: $gray200;
+			color: $gray800;
+		}
+	}
+	.btn_page_prev{
+		&::before{
+			transform: rotate(90deg);
+		}
+	}
+	.btn_page_next{
+		&::before{
+			transform: rotate(-90deg);
+		}
+	}
 }
 .coming_wrap{
-    @include setCont(100%, auto);
-    text-align: center;
-    .bx_coming{
-        @include setCont(100%, 163px, flex);
-        @include font(16, normal, $gray500, $medi);
-        flex-direction: column;
-        justify-content: flex-end;
-        align-items: center;
-        padding-bottom: 32px;
-        &::before{
-            @include setCont(38px, 47px, block);
-            @include bgSvg(iconComing("888"), no-repeat, 50% 50%, 100% auto);
-            margin-bottom: 12px;
-        }
-        @include pc{
-            height: 199px;
-            @include fontPc(16);   
-            padding-bottom: 36px;
-        }
-    }
-    .btn{
-        width: 100%;
-        @include pc{
-            width: unset;
-            padding: 13px 16px 14px;
-            @include fontPc(16);
-            margin: 0 auto;
-            border-radius: 10px;
-        }
-    }
+	@include setCont(100%, auto);
+	text-align: center;
+	.bx_coming{
+		@include setCont(100%, 163px, flex);
+		@include font(16, normal, $gray500, $medi);
+		flex-direction: column;
+		justify-content: flex-end;
+		align-items: center;
+		padding-bottom: 32px;
+		&::before{
+			@include setCont(38px, 47px, block);
+			@include bgSvg(iconComing("888"), no-repeat, 50% 50%, 100% auto);
+			margin-bottom: 12px;
+		}
+		@include pc{
+			height: 199px;
+			@include fontPc(16);   
+			padding-bottom: 36px;
+		}
+	}
+	.btn{
+		width: 100%;
+		@include pc{
+			width: unset;
+			padding: 13px 16px 14px;
+			@include fontPc(16);
+			margin: 0 auto;
+			border-radius: 10px;
+		}
+	}
 }
 .rank_chart{
-    @include setCont(100%, 20px,block, relative, $gray100);
-    border-radius: 6px;
-    .bar{
-        @include setCont(20px, 100%, block, absolute, $point);
-        @include blind;
-        top: 0;
-        border-radius: 6px;
-        right: 0;
-        transform: translatex(50%);
-        @include pc{
-            width: 36px;
-        }
-    }
+	@include setCont(100%, 20px,block, relative, $gray100);
+	border-radius: 6px;
+	.bar{
+		@include setCont(20px, 100%, block, absolute, $point);
+		@include blind;
+		top: 0;
+		border-radius: 6px;
+		right: 0;
+		transform: translatex(50%);
+		@include pc{
+			width: 36px;
+		}
+	}
 }
 .visual_wrap{
-    @include setCont(100%, auto, flex, relative);
-    background-image: linear-gradient(to bottom, rgba(255, 255, 255, 0) 0%, #e3dff4);
-    min-height: 276px;
-    @include pc{
-        min-height: 384px
-    }
-    .inner{
-        width: 100%;
-        padding: 0 !important;
-        display: flex;
-        position: relative;
-        justify-content: center;
-        animation-name: aniMainLoading1;
-        animation-duration: 400ms;
-        animation-iteration-count: 1;
-        .cont{
-            margin-top: 14px;
-            text-align: center;
-            @include pc{
-                margin-top: 46px;
-            }
-            .txt_point{
-                @include font(15, normal, $point, $medi);
-                @include pc{
-                    @include fontPc(15);
-                }
-            }
-            h1{
-                font-weight: $medi;
-                margin: 4px auto 19px;
-                @include pc{
-                    margin: 8px auto 34px;
-                    @include fontPc(22, normal, $gray800, $medi)
-                }
-            }
-            .img{
-                width: 278px;
-                @include pc{
-                    width: 362px;
-                }
-            }
-        }
-    }
-    &.type_info{
-        min-height: 258px;
-        animation-name: unset;
-        @include pc{
-            height: 340px;
-            .inner{
-                // width: 675px;
-                padding: 0 100px 0 30px !important;
-            }
-        }
-        .left{
-            width: 100%;
-            text-align: left;
-            padding: 16px calcPercent(24) 32px;
-            margin-top: 0;
-            @include pc{
-                padding: 70px 0 0;
-            }
-            .c_info{
-                width: 100%;
-                display: flex;
-                align-items: center;
-                .bx_txt{
-                    width: 100%;
-                    display: flex;
-                    flex-direction: column;
-                    flex-grow: 1;
-                }
-                .num{
-                    @include font(15, normal, $gray800, $medi);
-                    display: block;
-                    @include fontPc(15);
-                }
-                h2{
-                    width: 100% - calcPercent(118, 360);
-                    @include font(22, normal, $gray800, $medi);
-                    margin: 4px 0;
-                    word-wrap: break-word;
-                    word-break: keep-all;
-                    @include pc{
-                        @include fontPc(22);
-                    }
-                }
-                .txt_gray{
-                    display: block;
-                    @include font(16, normal, $gray500);
-                    @include pc{
-                        @include fontPc(16);
-                    }
-                }
-                .bx_icon{
-                    @include setCont(60px, 60px, block);
-                    min-width: 60px;
-                    flex-shrink: 1;
-                    .icon{
-                        @include setCont(100%, 100%, block);
-                        img{
-                            width: 100%;
-                        }
-                    }
-                }
-            }
-            dl{
-                margin-top: 16px;
-                dt{
-                    @include font(13, normal, $gray600, $medi);
-                    @include pc{
-                        @include fontPc(13);
-                    }
-                }
-                dd{
-                    margin-top: 5px;
-                    b{
-                        @include font(26, normal, $gray800, $medi);
-                        display: block;
-                        @include pc{
-                            @include fontPc(26);
-                        }
-                    }
-                    .txt_point{
-                        @include font(30, normal, $point, $bold);
-                        display: block;
-                        @include pc{
-                            @include fontPc(30);
-                        }
-                    }
-                }
-            }
-        }
-        .right{
-            width: calcPercent(118);
-            height: calcVw(109);
-            max-width: 200px;
-            max-height: 197px;
-            display: block;
-            position: absolute;
-            top:50%;
-            right: calcPercent(10);
-            transform: translateY(-50%);
-            margin: -10px -10px 0 0;
-            z-index: 2;
-            @include pc{
-                top: 49px;
-                transform:unset;
-                @include setCont(240px, 224px);
-                max-width: 9999px;
-                max-height: 9999px;
-                right: 100px;
-            }
-        }
-    }
-    &.bg_white{
-        background:unset;
-        background-color: $white;
-        border-bottom: 12px solid #f5f5f6;
-        @include pc{
-            height: auto;
-            min-height: 0;
-            .inner{
-                width: $pc;
-                padding: 0 0 0 10px !important;
-                justify-content: flex-start;
-            }
-        }
-        .left {
-            padding: 16px calcPercent(24) 32px;
-            @include pc{
-                padding: 60px 0 40px;
-                // padding: 50px 0;
-                display: flex;
-                width: auto;
-                min-width: 746px;
-                flex-shrink: 0;
-                justify-content: space-between;;
-            }
-            .c_info{
-                padding-bottom: 6px;
-                @include pc{
-                    display: flex;
-                    width: 340px;
-                    flex-shrink: 0;
-                    padding: 0 10px 0 0;
-                }
-                .bx_txt{
-                    padding-left: 16px;
-                    h2{
-                        width: 100%;
-                        @include font(19);
-                        margin: 1px 0 4px;
-                        @include pc{
-                            @include fontPc(19);
-                        }
-                    }
-                    .txt_gray{
-                        @include font(13);
-                        @include pc{
-                            @include fontPc(13);
-                        }
-                    }
-                }
-            }
-            .c_info2{
-                @include pc{
-                    .txt_point{
-                        word-break: break-all;
-                        display: block;
-                        max-width: 560px;
-                    }
-                    // flex-grow: 1;
-                    dl{
-                        margin-top: 0;
-                        &+dl{
-                            margin-top: 16px;
-                        }
-                    }
-                }
-            }
-        }
-    }
-    &.group_skeleton{
-        h2, .num, .txt_gray, dd b{
-            @include skeleton;
-            display: inline-block;
-            min-height: 19px;
-            width: 100px;
-            opacity: 0.6;
-        }
-        .num{
-            width: 40px;
-        }
-        .bx_icon{
-            @include skeleton;
-            border-radius: 50%;
-        }
-    }
+	@include setCont(100%, auto, flex, relative);
+	background-image: linear-gradient(to bottom, rgba(255, 255, 255, 0) 0%, #e3dff4);
+	min-height: 276px;
+	@include pc{
+		min-height: 384px
+	}
+	.inner{
+		width: 100%;
+		padding: 0 !important;
+		display: flex;
+		position: relative;
+		justify-content: center;
+		animation-name: aniMainLoading1;
+		animation-duration: 400ms;
+		animation-iteration-count: 1;
+		.cont{
+			margin-top: 14px;
+			text-align: center;
+			@include pc{
+				margin-top: 46px;
+			}
+			.txt_point{
+				@include font(15, normal, $point, $medi);
+				@include pc{
+					@include fontPc(15);
+				}
+			}
+			h1{
+				font-weight: $medi;
+				margin: 4px auto 19px;
+				@include pc{
+					margin: 8px auto 34px;
+					@include fontPc(22, normal, $gray800, $medi)
+				}
+			}
+			.img{
+				width: 278px;
+				@include pc{
+					width: 362px;
+				}
+			}
+		}
+	}
+	&.type_info{
+		min-height: 258px;
+		animation-name: unset;
+		@include pc{
+			height: 340px;
+			.inner{
+				// width: 675px;
+				padding: 0 100px 0 30px !important;
+			}
+		}
+		.left{
+			width: 100%;
+			text-align: left;
+			padding: 16px calcPercent(24) 32px;
+			margin-top: 0;
+			@include pc{
+				padding: 70px 0 0;
+			}
+			.c_info{
+				width: 100%;
+				display: flex;
+				align-items: center;
+				.bx_txt{
+					width: 100%;
+					display: flex;
+					flex-direction: column;
+					flex-grow: 1;
+				}
+				.num{
+					@include font(15, normal, $gray800, $medi);
+					display: block;
+					@include fontPc(15);
+				}
+				h2{
+					width: 100% - calcPercent(118, 360);
+					@include font(22, normal, $gray800, $medi);
+					margin: 4px 0;
+					word-wrap: break-word;
+					word-break: keep-all;
+					@include pc{
+						@include fontPc(22);
+					}
+				}
+				.txt_gray{
+					display: block;
+					@include font(16, normal, $gray500);
+					@include pc{
+						@include fontPc(16);
+					}
+				}
+				.bx_icon{
+					@include setCont(60px, 60px, block);
+					min-width: 60px;
+					flex-shrink: 1;
+					.icon{
+						@include setCont(100%, 100%, block);
+						img{
+							width: 100%;
+						}
+					}
+				}
+			}
+			dl{
+				margin-top: 16px;
+				dt{
+					@include font(13, normal, $gray600, $medi);
+					@include pc{
+						@include fontPc(13);
+					}
+				}
+				dd{
+					margin-top: 5px;
+					b{
+						@include font(26, normal, $gray800, $medi);
+						display: block;
+						@include pc{
+							@include fontPc(26);
+						}
+					}
+					.txt_point{
+						@include font(30, normal, $point, $bold);
+						display: block;
+						@include pc{
+							@include fontPc(30);
+						}
+					}
+				}
+			}
+		}
+		.right{
+			width: calcPercent(118);
+			height: calcVw(109);
+			max-width: 200px;
+			max-height: 197px;
+			display: block;
+			position: absolute;
+			top:50%;
+			right: calcPercent(10);
+			transform: translateY(-50%);
+			margin: -10px -10px 0 0;
+			z-index: 2;
+			@include pc{
+				top: 49px;
+				transform:unset;
+				@include setCont(240px, 224px);
+				max-width: 9999px;
+				max-height: 9999px;
+				right: 100px;
+			}
+		}
+	}
+	&.bg_white{
+		background:unset;
+		background-color: $white;
+		border-bottom: 12px solid #f5f5f6;
+		@include pc{
+			height: auto;
+			min-height: 0;
+			.inner{
+				width: $pc;
+				padding: 0 0 0 10px !important;
+				justify-content: flex-start;
+			}
+		}
+		.left {
+			padding: 16px calcPercent(24) 32px;
+			@include pc{
+				padding: 60px 0 40px;
+				// padding: 50px 0;
+				display: flex;
+				width: auto;
+				min-width: 746px;
+				flex-shrink: 0;
+				justify-content: space-between;;
+			}
+			.c_info{
+				padding-bottom: 6px;
+				@include pc{
+					display: flex;
+					width: 340px;
+					flex-shrink: 0;
+					padding: 0 10px 0 0;
+				}
+				.bx_txt{
+					padding-left: 16px;
+					h2{
+						width: 100%;
+						@include font(19);
+						margin: 1px 0 4px;
+						@include pc{
+							@include fontPc(19);
+						}
+					}
+					.txt_gray{
+						@include font(13);
+						@include pc{
+							@include fontPc(13);
+						}
+					}
+				}
+			}
+			.c_info2{
+				@include pc{
+					.txt_point{
+						word-break: break-all;
+						display: block;
+						max-width: 560px;
+					}
+					// flex-grow: 1;
+					dl{
+						margin-top: 0;
+						&+dl{
+							margin-top: 16px;
+						}
+					}
+				}
+			}
+		}
+	}
+	&.group_skeleton{
+		h2, .num, .txt_gray, dd b{
+			@include skeleton;
+			display: inline-block;
+			min-height: 19px;
+			width: 100px;
+			opacity: 0.6;
+		}
+		.num{
+			width: 40px;
+		}
+		.bx_icon{
+			@include skeleton;
+			border-radius: 50%;
+		}
+	}
 }
 .sectors_chart{
-    @include setCont(100%, 29px, flex, relative);
-    border-radius: 6px;
-    overflow: hidden;
-    margin-bottom: 27px;
-    .bar{
-        @include setCont(auto, 100%, block);
-        @include blind;
-        &+.bar{
-            border-left: 1px solid $gray50;
-        }
-        &.bg_other{
-            flex-grow: 1;
-            background-color: #d8d8d8;
-        }
-    }
+	@include setCont(100%, 29px, flex, relative, $gray100);
+	border-radius: 6px;
+	overflow: hidden;
+	margin-bottom: 27px;
+	.bar{
+		@include setCont(auto, 100%, block);
+		@include blind;
+		&+.bar{
+			border-left: 1px solid $gray50;
+		}
+		&.bg_other{
+			flex-grow: 1;
+			background-color: #d8d8d8;
+		}
+	}
 }
 .sectors_item{
-    @include setCont(100%, auto, block);
-    &+.sectors_item{
-        margin-top: 16.7px;
-        @include pc{
-            margin-top: 24px;
-        }
-    }
-    .s_inner{
-        @include setCont(100%, auto, flex, relative);
-        .c_left{
-            margin-right: 16px;
-            flex-shrink: 1;
-            @include pc{
-                margin-right: 26.7px;
-            }
-            .icon{
-                @include setCont(34px, 34px, block);
-                img{
-                    width: 100%;
-                }
-                @include pc{
-                    @include setCont(36px, 36px);
-                }
-            }
-        }
-        h3{
-            @include font(15, normal, $gray800, $medi);
-            margin-bottom: 4px;
-            @include pc{
-                @include fontPc(15)
-            }
-        }
-        .desc{
-            @include font(13, normal, $gray500);
-            @include pc{
-                 @include fontPc(13)
-            }
-        }
-        .c_center{
-            flex-grow: 1;
-        }
-        .c_right{
-            padding-left: 10px;
-            flex-shrink: 1;
-            min-width: 78px;
-            text-align: right;
-            b.txt{
-                display: block;
-                @include font(16, normal, $gray700, $medi);
-                margin-top: 9px;
-                @include pc{
-                    @include fontPc(16);
-                    margin-top: 8px;
-                }
-            }
-        }
-    }
+	@include setCont(100%, auto, block);
+	&+.sectors_item{
+		margin-top: 16.7px;
+		@include pc{
+			margin-top: 24px;
+		}
+	}
+	.s_inner{
+		@include setCont(100%, auto, flex, relative);
+		.c_left{
+			margin-right: 16px;
+			flex-shrink: 1;
+			@include pc{
+				margin-right: 26.7px;
+			}
+			.icon{
+				@include setCont(34px, 34px, block);
+				img{
+					width: 100%;
+				}
+				@include pc{
+					@include setCont(36px, 36px);
+				}
+			}
+		}
+		h3{
+			@include font(15, normal, $gray800, $medi);
+			margin-bottom: 4px;
+			@include pc{
+				@include fontPc(15)
+			}
+		}
+		.desc{
+			@include font(13, normal, $gray500);
+			@include pc{
+				 @include fontPc(13)
+			}
+		}
+		.c_center{
+			flex-grow: 1;
+		}
+		.c_right{
+			padding-left: 10px;
+			flex-shrink: 1;
+			min-width: 78px;
+			text-align: right;
+			b.txt{
+				display: block;
+				@include font(16, normal, $gray700, $medi);
+				margin-top: 9px;
+				@include pc{
+					@include fontPc(16);
+					margin-top: 8px;
+				}
+			}
+		}
+	}
 }
 .chart_wrap{
-    @include setCont(100%, auto, flex, relative, $white);
-    width: 100%;
-    min-height: 312px;
-    justify-content: center;
-    align-items: flex-start;
-    border-radius: 10px;
-    box-shadow: 0 2px 4px 0 $gray100;
-    overflow: hidden;
-    .temp{
-        width: auto;
-        height: 312px;
-    }
+	@include setCont(100%, auto, flex, relative, $white);
+	width: 100%;
+	min-height: 312px;
+	justify-content: center;
+	align-items: flex-start;
+	border-radius: 10px;
+	box-shadow: 0 2px 4px 0 $gray100;
+	overflow: hidden;
+	.temp{
+		width: auto;
+		height: 312px;
+	}
 }
