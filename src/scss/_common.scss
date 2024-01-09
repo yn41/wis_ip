@@ -536,6 +536,11 @@ input.ipt{
     @include pc{
         @include fontPc(13);
     }
+    &.show_pc{
+        @include pc{
+            display: inline-block !important;
+        }
+    }
     &.bg_grean{
         background-color: rgba(0, 171, 168, 0.15);
     }

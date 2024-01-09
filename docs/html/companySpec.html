@@ -463,7 +463,7 @@
 			        </div>
 			        <div class="comp">
 			            <a href="../html/privacy.html">Privacy Policy</a>
-			            <a href="../html/terms.html">Terms of Service</a><!-- v:1229 추가-->
+			            <a href="../html/terms.html">Terms of Service</a>
 			            <p class="cop">Copyright © 2023 IPRankings.com <br/>Powered by Wisdomain</p>
 			        </div>
 			    </div>
@@ -475,19 +475,22 @@
 var swiper;
 $(function(){ 
 	swiper = new Swiper('.swiper-container', {
-		slidesPerView: "auto",// v:1229 크기 조정 1 => auto 변경 부탁드립니다.
+		slidesPerView: "5",
 		spaceBetween: 16, 
         loop: false,
+		resistance : false,
         navigation: {
 			prevEl: '.btn_prev',
 			nextEl: '.btn_next',
         },
+		speed: "150ms",
 		observeParents :true,
 		observer : true,
         // 반응형
         breakpoints: {
 			1004: {
         		spaceBetween: 12,
+				slidesPerView: "auto",
             },
         }
     });

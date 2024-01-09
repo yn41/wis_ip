@@ -65,7 +65,10 @@ img {
   max-width: 100%;
   border: 0;
   vertical-align: top;
-  image-rendering: -webkit-optimize-contrast;
+  image-rendering: -moz-crisp-edges; /* firefox */
+  image-rendering: -o-crisp-edges; /* opera */
+  image-rendering: -webkit-optimize-contrast; /* chrome(비표준) */
+  image-rendering: crisp-edges;
   -webkit-perspective: 1;
 }
 

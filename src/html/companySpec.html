@@ -377,19 +377,22 @@
 var swiper;
 $(function(){ 
 	swiper = new Swiper('.swiper-container', {
-		slidesPerView: "auto",
+		slidesPerView: "5",
 		spaceBetween: 16, 
         loop: false,
+		resistance : false,
         navigation: {
 			prevEl: '.btn_prev',
 			nextEl: '.btn_next',
         },
+		speed: "150ms",
 		observeParents :true,
 		observer : true,
         // 반응형
         breakpoints: {
 			1004: {
         		spaceBetween: 12,
+				slidesPerView: "auto",
             },
         }
     });

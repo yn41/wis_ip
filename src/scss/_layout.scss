@@ -561,7 +561,8 @@
 		}
 	}
 	.sw_patents{
-		padding: 0 calcPercent(24);
+		// padding: 0 calcPercent(24);
+		padding: 0 24px;
 		@include pc{
 			// padding: 0 75px 0 85px;
 			padding: 0;
@@ -581,10 +582,9 @@
 			}
 		}
 		.slide{
-			width: calcVw(146);
+			width: 146px !important;
 			height: 261px;
-			min-width: 146px;
-			max-width: 180px;
+			// max-width: 180px;
 			border-radius: 10px;
 			display: flex;
 			flex-direction: column;
@@ -593,11 +593,13 @@
 			margin-right: 12px;
 			@include pc{
 				@include setCont(154px, 261px);
+				width: 154px !important;
 				margin-right: 16px;
 			}
 			.bx_img{
 				@include setCont(100%, auto, flex, relative, $white);
 				height: calcPercent(125, 261);
+				padding: 4px;
 				justify-content: center;
 				align-items: center;
 				overflow: hidden;
@@ -607,7 +609,8 @@
 					height: 120px;
 				}
 				img{
-					@include setCont(auto, 100%);
+					@include setCont(auto, auto);
+					max-height: 100%;
 				}
 			}
 			.cont{

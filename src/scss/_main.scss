@@ -1,8 +1,5 @@
-.wrap{
-    overflow-x: hidden;
-}
 .main{
-    .container{
+    &.container{
         padding-top: 0;
         .inner{
             padding: 34px calcPercent(24);
@@ -155,6 +152,8 @@
         width: 100%;
         @include pc{
             background-color: unset;
+            margin-top: -38px;
+            overflow-x: hidden;
         }
         .inner{
             padding-top: 30px;
@@ -163,7 +162,7 @@
             @include pc{
                 display: flex;
                 justify-content: space-between;
-                margin-top: -38px;
+                // margin-top: -38px;
                 padding: 0 0 100px;
             }
         }
