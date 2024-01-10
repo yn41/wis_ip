@@ -73,7 +73,7 @@
         }
         .p_info{
             @include setCont(100%, auto, block, relative);
-            padding: 0 calcPercent(24) 20px calc(calcPercent(24) + 50px);
+            padding: 0 calcPercent(24) 27px;
             @include pc{
                 padding: 0 0 39px 101px;
             }
@@ -81,6 +81,15 @@
                 margin-top: -10px;
                 @include pc{
                     margin-top: 0;
+                }
+            }
+            .p_link{
+                display: block;
+                padding-left:  50px;
+                position: relative;   
+                @include pc{
+                    padding-left:  0;
+                    position: unset;   
                 }
             }
             .icon{
@@ -96,7 +105,7 @@
             
                 }
                 top: 0;
-                left: calcPercent(24);
+                left: 0;
                 @include pc{
                     left: 16px;
                 }
@@ -120,8 +129,11 @@
                 }
             }
             .btn{
-                margin-top: 16px;
-
+                margin-top: 24px;
+                display: block;
+                @include pc{ 
+                    margin-top: 16px;
+                }
             }
         }
         &.group_skeleton{
@@ -808,7 +820,7 @@
                     padding: 0 0 15px 0;
                 }
             }
-            .unit.u2{
+            .unit+.unit{
                 padding-top: 31px;
                 border-top: 1px solid #f5f5f6;
             }

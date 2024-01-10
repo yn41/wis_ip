@@ -614,9 +614,9 @@
 				}
 			}
 			.cont{
-				@include setCont(100%, auto, block, relative, $gray50);
+				@include setCont(100%, 135px, block, relative, $gray50);
 				flex-grow: 1;
-				padding: 9.8px 9px 34px;
+				padding: 9.8px 9px 0;
 				.txt_point{
 					@include pc{
 						@include fontPc(16);
@@ -641,9 +641,10 @@
 				}
 				.tag{
 					max-width: calc(100% - 18px);
+					margin: 0;
 					position: absolute;
-					left: 9px;
-					bottom: 15px;
+					left: 6px;
+					bottom: 13px;
 					overflow: hidden;
 					z-index: 2;
 				}
@@ -987,6 +988,10 @@ a.inventors_item{
 	@include pc{
 		min-height: 384px
 	}
+	img{
+		opacity: 1;
+		transition: all 300ms;
+	}
 	.inner{
 		width: 100%;
 		padding: 0 !important;
@@ -1204,6 +1209,10 @@ a.inventors_item{
 		}
 	}
 	&.group_skeleton{
+		background-image: linear-gradient(to bottom, #fefefe, #fefefe);
+		img{
+			opacity: 0;
+		}
 		h2, .num, .txt_gray, dd b{
 			@include skeleton;
 			display: inline-block;
