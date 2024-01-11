@@ -31,15 +31,29 @@ $(function(){
 	//header 스크롤 올리면 보이고 내리면 사라지고
 	let prevScrollpos = $(document).scrollTop();
 	let scrollPosition = 0;
+	// v:240111 - s : 아이폰일떄 헤더 상단 노출 안되는 부분수정
+	let state="down";
 	$(window).on('scroll', function(){
 		var currentScrollPos = $(document).scrollTop();
 		if (prevScrollpos > currentScrollPos) {
 			$(".header").removeClass("hidden");
+			state="up";
 		} else {
 			$(".header").addClass("hidden").removeClass("open");
+			state="down";
+			if($(document).scrollTop() <= 0){
+				$(".header").removeClass("hidden");
+			}
 		}
 		prevScrollpos = currentScrollPos;
 	});
+
+	$(window).on("touchmove",function(e){	
+		e.stopPropagation();	
+		if(state=="up") $(".header").removeClass("hidden");
+	});
+	// v:240111 - e : 아이폰일떄 헤더 상단 노출 안되는 부분수정
+
 	$(".btn_clear").click(function(){
 		$(this).prev().val("").focus();
 	});

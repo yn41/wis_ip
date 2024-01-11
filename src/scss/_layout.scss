@@ -576,7 +576,7 @@
 				padding-right: 20px;
 			}
 		}
-		a.slide{
+		a.slide, button.slide{
 			&:hover{
 				transform: scale(0.95);
 			}
@@ -721,7 +721,7 @@
 		}
 	}
 }
-a.inventors_item{
+a.inventors_item, button.inventors_item{
 	&:hover, &:active{
 		transform: scale(0.95);
 		background-color: $gray50;
@@ -732,6 +732,7 @@ a.inventors_item{
 	padding: 16px calcPercent(19, 328) 17px calcPercent(16, 328);
 	box-shadow: 0 2px 4px 1px rgba(55, 55, 72, 0.05);  
 	border-radius: 10px;
+	text-align: left;
 	&+.inventors_item{
 		margin-top: 8px;
 	}

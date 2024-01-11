@@ -93,6 +93,9 @@ button {
   outline: none;
   margin: 0;
   padding: 0;
+  &:focus, &:hover, &:active{
+    box-shadow:unset !important;
+  }
 }
 
 iframe {
