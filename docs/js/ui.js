@@ -37,6 +37,9 @@ $(function(){
 			$(".header").removeClass("hidden");
 		} else {
 			$(".header").addClass("hidden").removeClass("open");
+			if($(document).scrollTop() == 0){
+				$(".header").removeClass("hidden");
+			}
 		}
 		prevScrollpos = currentScrollPos;
 	});
