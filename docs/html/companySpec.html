@@ -478,7 +478,8 @@ $(function(){
 		slidesPerView: "5",
 		spaceBetween: 16, 
         loop: false,
-		resistance : false,
+		threshold:10, //v:240111 - 잘못 터치되는 경우 수정
+		resistance : true, //v:240111 - 잘못 터치되는 경우 수정
         navigation: {
 			prevEl: '.btn_prev',
 			nextEl: '.btn_next',
@@ -490,6 +491,7 @@ $(function(){
         breakpoints: {
 			1004: {
         		spaceBetween: 12,
+				slidesPerView: "auto",
             },
         }
     });
