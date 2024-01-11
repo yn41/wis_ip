@@ -576,7 +576,7 @@
 				padding-right: 20px;
 			}
 		}
-		a.slide, button.slide{
+		a.slide, button.slide, .ac_link{
 			&:hover{
 				transform: scale(0.95);
 			}
@@ -721,7 +721,7 @@
 		}
 	}
 }
-a.inventors_item, button.inventors_item{
+a.inventors_item, button.inventors_item, .ac_link{
 	&:hover, &:active{
 		transform: scale(0.95);
 		background-color: $gray50;
