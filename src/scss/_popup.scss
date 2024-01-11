@@ -228,7 +228,7 @@
         transition: background-color 400ms;
     }
     .a_wrap{
-        @include setCont(316px, auto, block, fixed, $white);
+        @include setCont(316px, 0, block, fixed, $white);
         overflow-y: auto;
         top: 50%;
         left: 50%;
@@ -265,6 +265,7 @@
             z-index: 20;
         }
         .a_wrap{
+            height: auto;
             box-shadow: 0 2px 6px 2px rgba(21, 25, 40, 0.29);
             max-height: 90vh;
             opacity: 1;
