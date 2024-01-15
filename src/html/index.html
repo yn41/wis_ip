@@ -32,7 +32,7 @@
 						<td>23.11.23</td>
 					</tr>
 					<tr>
-						<td><a href="patent.html" target="_blank" class="ui_link">Patent</a><em class="ui_update">update</em></td>
+						<td><a href="patent.html" target="_blank" class="ui_link">Patent</a></td>
 						<td>23.11.27</td>
 					</tr>
 					<tr>
@@ -55,7 +55,7 @@
 					</tr>
 					<tr>
 						<td>
-							<a href="university.html" target="_blank" class="ui_link">university</a> <em class="ui_update">update</em>
+							<a href="university.html" target="_blank" class="ui_link">university</a> 
 						</td>
 						<td>23.12.04</td>
 					</tr>
@@ -68,7 +68,7 @@
 						<td>23.12.08</td>
 					</tr>
 					<tr>
-						<td><a href="InventorSearch.html" target="_blank" class="ui_link">Inventor Search</a><em class="ui_update">update</em></td>
+						<td><a href="InventorSearch.html" target="_blank" class="ui_link">Inventor Search</a></td>
 						<td>23.12.08</td>
 					</tr>
 					<tr>
@@ -123,31 +123,31 @@
 				<tbody>
 					<tr>
 						<td>
-							<a href="patent_skeleton.html" target="_blank" class="ui_link">patent </a>  <em class="ui_new">new</em>
+							<a href="patent_skeleton.html" target="_blank" class="ui_link">patent </a> 
 						</td>
 						<td>23.12.19</td>
 					</tr>
 					<tr>
 						<td>
-							<a href="patentSpec_skeleton.html" target="_blank" class="ui_link">patent Spec (Patent2)</a>  <em class="ui_update">update</em>
+							<a href="patentSpec_skeleton.html" target="_blank" class="ui_link">patent Spec (Patent2)</a>  
 						</td>
 						<td>23.12.19</td>
 					</tr>
 					<tr>
 						<td>
-							<a href="company_skeleton.html" target="_blank" class="ui_link">company</a> <em class="ui_update">update</em>
+							<a href="company_skeleton.html" target="_blank" class="ui_link">company</a> 
 						</td>
 						<td>23.12.19</td>
 					</tr>
 					<tr>
 						<td>
-							<a href="companySpec_skeleton.html" target="_blank" class="ui_link">company Spec (company2)</a> <em class="ui_update">update</em>
+							<a href="companySpec_skeleton.html" target="_blank" class="ui_link">company Spec (company2)</a> 
 						</td>
 						<td>23.12.19</td>
 					</tr>
 					<tr>
 						<td>
-							<a href="InventorSearch_skeleton.html" target="_blank" class="ui_link">Inventor Search </a>  <em class="ui_update">update</em>
+							<a href="InventorSearch_skeleton.html" target="_blank" class="ui_link">Inventor Search </a>  
 						</td>
 						<td>23.12.19</td>
 					</tr>
@@ -192,6 +192,12 @@
 						</td>
 					  	<td>23.12.14</td>
 					</tr>
+					<tr>
+					  	<td>
+							<button type="button" onclick="fnOpenPopup('alert_success');" class="ui_link">success popup</button> <em class="ui_new">new</em> 
+						</td>
+					  	<td>23.12.14</td>
+					</tr>
 				</tbody>
 			  </table>
 			</div>
@@ -211,7 +217,10 @@
 			<!-- e: 업데이트 팝업 --->
 			<!-- s: 경고창 --->
 			<include src="include/alert.html"></include>
-		<!-- e: 경고창 --->
+			<!-- e: 경고창 --->
+			<!-- v:240115 s: 성공팝업 --->
+			<include src="include/alertSuccess.html"></include>
+			<!-- v:240115 e: 성공팝업 --->
 	</body>
 	<style>
 		.ui_wrap {
@@ -391,8 +400,16 @@
 		function fnOpenPopup(nm){
             scrollPosition = $(document).scrollTop();
 			$("."+nm).addClass("open");
-			if($( window ).width() < 1004 || nm == "alert"){
+			if($( window ).width() < 1004 || nm == "alert" || nm == "alert_success"){
 				$("body").css({"overflow":"hidden", "top": (scrollPosition*-1)});
+			}
+			if(nm == "alert_success"){
+				//v:240115 s:경고창 오픈 1.5 초 뒤 자동 닫기
+				setTimeout(function(){
+					$(".alert_success").removeClass("open");
+					$("body").css({"overflow":"", "top":""});
+				}, 1500);
+				//v:240115 e:경고창 오픈 1.5 초 뒤 자동 닫기
 			}
 		}
 	</script>

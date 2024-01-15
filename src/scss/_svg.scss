@@ -39,3 +39,7 @@
   $url: "data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='20' height='20'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Crect width='20' height='20' fill='%23878990' stroke='%23878990' rx='3'/%3E%3Cpath fill='%23FCFCFC' fill-rule='nonzero' d='M15.767 5a.989.989 0 0 0-.73.327l-6.959 7.559-3.115-3.383a.979.979 0 0 0-1.46 0l-.202.22a1.196 1.196 0 0 0 0 1.586l3.997 4.342a1.046 1.046 0 0 0 1.56 0L16.7 7.133a1.196 1.196 0 0 0 0-1.586l-.203-.22a.989.989 0 0 0-.73-.327z'/%3E%3C/g%3E%3C/svg%3E";
   @return url($url);
 }
+@function chkFull2() {
+  $url: "data:image/svg+xml,%3Csvg width='20' height='20' viewBox='0 0 20 20' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M10 20a10 10 0 1 0 0-20 10 10 0 0 0 0 20zm-5.19-9.736a.909.909 0 0 1 1.28 0l2.092 2.09 5.263-5.263a.909.909 0 0 1 1.282 1.282l-5.909 5.909a.909.909 0 0 1-1.282 0L4.81 11.555a.91.91 0 0 1 0-1.291z' fill='%2314CB00' fill-rule='nonzero'/%3E%3C/svg%3E%0A";
+  @return url($url);
+}
