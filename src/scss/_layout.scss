@@ -577,6 +577,7 @@
 			}
 		}
 		a.slide, button.slide, .ac_link{
+			text-align: left;
 			&:hover{
 				transform: scale(0.95);
 			}
@@ -722,6 +723,7 @@
 	}
 }
 a.inventors_item, button.inventors_item, .ac_link{
+	text-align: left;
 	&:hover, &:active{
 		transform: scale(0.95);
 		background-color: $gray50;

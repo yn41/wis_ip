@@ -374,7 +374,8 @@
 var swiper;
 $(function(){ 
 	swiper = new Swiper('.swiper-container', {
-		slidesPerView: "5",
+		slidesPerView: 5, //v:240117 pc 슬라이드 개수  
+		slidesPerGroup: 5, //v:240117 pc 한번에 슬라이딩 될 개수  
 		spaceBetween: 16, 
         loop: false,
 		threshold:10, 

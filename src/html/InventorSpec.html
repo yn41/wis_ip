@@ -48,7 +48,7 @@
                                 <div class="swiper-wrapper">
 									<!-- 링크 안사용하면 div로 상용해주세요 -->
                                     <!-- <div class="swiper-slide slide"> -->
-                                    <a href="#" class="swiper-slide slide">
+                                    <button class="swiper-slide slide">
                                         <em class="p_label">#1</em>
                                         <div class="bx_img">
                                             <img src="../img/sub/company/temp1.jpg" class="img" alt="#2"/>
@@ -59,7 +59,7 @@
                                             <span class="txt_gray">US7591801</span>
                                             <span class="tag bg_pink2">Semiconductor</span>
                                         </div>
-                                    </a>
+                                    </button>
                                     <a href="#" class="swiper-slide slide">
                                         <em class="p_label">#2</em>
                                         <div class="bx_img">
@@ -476,7 +476,8 @@
 var swiper;
 $(function(){ 
 	swiper = new Swiper('.swiper-container', {
-		slidesPerView: "5", 
+		slidesPerView: 5, //v:240117 pc 슬라이드 개수  
+		slidesPerGroup: 5, //v:240117 pc 한번에 슬라이딩 될 개수  
 		spaceBetween: 16, 
         loop: false,
 		threshold:10,
