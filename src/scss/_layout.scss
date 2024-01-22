@@ -610,7 +610,7 @@
 					height: 120px;
 				}
 				img{
-					@include setCont(auto, auto);
+					display: block;
 					max-height: 100%;
 				}
 			}
