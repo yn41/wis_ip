@@ -476,8 +476,8 @@
 var swiper;
 $(function(){ 
 	swiper = new Swiper('.swiper-container', {
-		slidesPerView: 5, //v:240117 pc 슬라이드 개수  
-		slidesPerGroup: 5, //v:240117 pc 한번에 슬라이딩 될 개수  
+		slidesPerView: 5,
+		slidesPerGroup: 5, 
 		spaceBetween: 16, 
         loop: false,
 		threshold:10, 
@@ -494,6 +494,7 @@ $(function(){
 			1004: {
         		spaceBetween: 12,
 				slidesPerView: "auto",
+				slidesPerGroup: 1, //v:240122 모바일 한번에 슬라이딩 될 개수  
             },
         }
     });
