@@ -551,13 +551,16 @@
                     margin-top: 32px;
                 }
             }
+            .area_filter_search{
+		        padding-top: 15.5px;
+                @include pc{
+                    padding-top: 40px;
+                }
+            }
             .area_search{
                 border: none;
                 .c_inner{
                     padding-top: 15.5px;
-                    @include pc{
-                        padding-top: 42px;
-                    }
                 }
             }
         }
@@ -660,7 +663,7 @@
     .area_feadback{
         @include pc{
             position: relative;
-            margin-top: 119px;
+            margin-top: 103px;
         }
         .area_search{
             @include pc{
@@ -670,6 +673,22 @@
                     @include setCont(1004px, 100%, flex);
                     justify-content: center;
                     align-items: center;
+                }
+            }
+        }
+        .area_search, .area_filter_search{
+            @include pc{
+                @include setCont(1004px, 103px, block, absolute);
+                margin: 0 auto;
+                transform: translateX(-50%);
+                border: none;
+                top: -103px;
+                padding-left: 0;
+                padding-right: 0;
+                left: 50%;
+                .c_inner{
+                    // justify-content: center;
+                    // align-items: center;
                 }
             }
         }
@@ -802,9 +821,13 @@
         }
     }
     .area3{
+        @include pc{
+            border-bottom: 12px solid #f5f5f6;
+        }
         .inner{
             @include pc{
-                padding-bottom:48px;
+                // padding-bottom:48px;
+                padding-bottom:0;
             }
         }
         .left{
@@ -821,20 +844,17 @@
                     padding: 0 0 15px 0;
                 }
             }
-            .unit+.unit{
-                padding-top: 31px;
-                border-top: 1px solid #f5f5f6;
+            .unit{
+                // &:last-child{
+                //     border-bottom: 1px solid #f5f5f6;
+                // }
+                &+.unit{
+                    padding-top: 31px;
+                    border-top: 1px solid #f5f5f6;
+                }
             }
             .btn_txt{
                 display: block;
-            }
-        }
-    }
-    .area_feadback{
-        @include pc{
-            margin-top:0;
-            .area_search{
-                display: none;
             }
         }
     }

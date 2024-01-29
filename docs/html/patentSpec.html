@@ -27,8 +27,7 @@
 			            <h1>Patent Valuation</h1>
 			        </div>
 			        <div class="right">
-			            <button type="button" class="btn_menu"><span class="blind">menu button</span></button>
-			                     
+			             
 				<nav class="gnb">
 					<div class="g_inner">
 						<button type="button" class="btn_menu_close">menu close</button>
@@ -41,6 +40,27 @@
 					</div>
 				</nav>
 			
+			            <!-- v:240126 - s:통합검색 추가 -->
+			            <div class="area_filter_search">
+			                <form action="" class="c_inner">
+			                    <div class="bx_slct">
+			                        <button class="slct_tit" type="button">Company</button>
+			                        <ul class="slct_cont">
+			                            <li class="slct_item select"><button type="button">Company</button></li>
+			                            <li class="slct_item"><button  type="button">University</button></li>
+			                            <li class="slct_item"><button  type="button">Patent</button></li>
+			                            <li class="slct_item"><button type="button">Inventor</button></li>
+			                        </ul>
+			                    </div>
+			                    <div class="bx_search bx_gray">
+			                        <input type="text" class="ipt" placeholder="Search…">
+			                        <button type="button" class="btn_search">search button</button>
+			                    </div>
+			                </form>
+			            </div>
+			            <button class="btn_search_open">검색창 오픈 버튼</button>
+			            <!-- v:240126 - e:통합검색 추가 -->
+			            <button type="button" class="btn_menu"><span class="blind">menu button</span></button>
 			        </div>
 			    </div>
 			</header>
@@ -328,17 +348,25 @@
 								<button type="button" class="btn">Keep Me Updated</button>
 							</div>
 						</article>
-						<article class="area_search">
-							<div class="c_inner">
-								<form action="">
-									<div class="bx_search bx_gray">
-										<button type="button" class="btn_search">search button</button>
-										<input type="text" class="ipt" placeholder="Search Patent Number">
-										<button type="button" class="btn_clear">delete</button>
-									</div>
-								</form>
-							</div>
-						</article>
+						<!-- v:240126 - s:통합검색으로 변경 -->
+						<div class="area_filter_search full">
+							<form action="" class="c_inner">
+								<div class="bx_slct">
+									<button class="slct_tit" type="button">Company</button>
+									<ul class="slct_cont">
+										<li class="slct_item select"><button type="button">Company</button></li>
+										<li class="slct_item"><button  type="button">University</button></li>
+										<li class="slct_item"><button  type="button">Patent</button></li>
+										<li class="slct_item"><button type="button">Inventor</button></li>
+									</ul>
+								</div>
+								<div class="bx_search bx_gray">
+									<input type="text" class="ipt" placeholder="Search…">
+									<button type="button" class="btn_search">search button</button>
+								</div>
+							</form>
+						</div>	
+						<!-- v:240126 - e:통합검색으로 변경 -->
 						<article class="right">
 							<div class="c_inner">
 								<h2>Have Feedback?</h2>

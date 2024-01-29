@@ -31,7 +31,6 @@ $(function(){
 	//header 스크롤 올리면 보이고 내리면 사라지고
 	let prevScrollpos = $(document).scrollTop();
 	let scrollPosition = 0;
-	// v:240111 - s : 아이폰일떄 헤더 상단 노출 안되는 부분수정
 	let state="down";
 	$(window).on('scroll', function(){
 		var currentScrollPos = $(document).scrollTop();
@@ -52,7 +51,6 @@ $(function(){
 		e.stopPropagation();	
 		if(state=="up") $(".header").removeClass("hidden");
 	});
-	// v:240111 - e : 아이폰일떄 헤더 상단 노출 안되는 부분수정
 
 	$(".btn_clear").click(function(){
 		$(this).prev().val("").focus();
@@ -103,6 +101,17 @@ $(function(){
 		if(e.target.className === "bx_slct" || e.target.className === "slct_tit" || e.target.className === "slct_cont") {return false;}
 		$(".bx_slct").removeClass("on");
 	});
+	// v:240126 - s:통합검색 추가
+	$(".btn_search_open").on("click", function(){
+		$("header .area_filter_search").addClass("on");
+	});
+	// 검색 영역 외 클릭시 검색창 닫기
+	$(document).on("click", function(e){
+		if($(e.target).parents(".area_filter_search").length > 0 || e.target.className === "btn_search_open") {return false;}
+		console.log("e.target.className");
+		$("header .area_filter_search").removeClass("on");
+	});
+	// v:240126 - e:통합검색 추가
 });
 $(window).resize(function(){
 	if($( window ).width() > 1003 && $(".header").hasClass("open")){

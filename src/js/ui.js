@@ -101,6 +101,17 @@ $(function(){
 		if(e.target.className === "bx_slct" || e.target.className === "slct_tit" || e.target.className === "slct_cont") {return false;}
 		$(".bx_slct").removeClass("on");
 	});
+	// v:240126 - s:통합검색 추가
+	$(".btn_search_open").on("click", function(){
+		$("header .area_filter_search").addClass("on");
+	});
+	// 검색 영역 외 클릭시 검색창 닫기
+	$(document).on("click", function(e){
+		if($(e.target).parents(".area_filter_search").length > 0 || e.target.className === "btn_search_open") {return false;}
+		console.log("e.target.className");
+		$("header .area_filter_search").removeClass("on");
+	});
+	// v:240126 - e:통합검색 추가
 });
 $(window).resize(function(){
 	if($( window ).width() > 1003 && $(".header").hasClass("open")){

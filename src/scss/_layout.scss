@@ -42,14 +42,15 @@
 			opacity: 0.8;
 		}
 		@include pc{
-			margin: 0 21.5px 0 10px;
+			margin: 0 27px 0 0;
 		}
 	}
 	.left{
 		display: flex;
 		align-items: center;
+		flex-shrink: 1;
 		h1{
-			@include font(19, normal, $gray500, $medi);
+			@include font(18, normal, $gray500, $medi);
 			white-space: nowrap;
 			margin-left: 8px;
 			@include pc{
@@ -59,6 +60,14 @@
 	}
 	.right{
 		height: 100%;
+		display: flex;
+		flex-grow: 1;
+		align-items: center;
+		justify-content: flex-end;
+		@include pc{
+			position: relative;
+			justify-content: space-between;
+		}
 	}
 	.gnb{
 		@include setCont(100%, 0, block, absolute);
@@ -116,10 +125,7 @@
 			@include pc{
 				display: inline-block;
 				height: 100%;
-				@include fontPc(16, 55);
-				// @include fontPc(16,16);
-				// height: 19px;
-				margin: 0 5.5px;
+				@include fontPc(15, 55, 500);
 				padding: 0 12px;
 				background-color: $white;
 				overflow: visible;
@@ -129,7 +135,7 @@
 				@include pc{
 					@include setCont(0, 1px, block, absolute, $gray800);
 					left: 50%;
-					bottom: -18px;
+					bottom: 0;
 					transform: translateX(-50%);
 					transition: width 300ms;
 				}
@@ -138,7 +144,7 @@
 				opacity: 0.6;
 			}
 			&.on{
-				font-weight: $bold;
+				// font-weight: $bold;
 				&::before{
 					width: 100%;
 				}
@@ -204,6 +210,237 @@
 				display: block;
 			}
 		}
+	}
+	.area_filter_search{
+		position: absolute;
+		max-width: 0;
+		opacity: 0;
+		overflow: hidden;
+		top: 50%;
+		transform: translateY(-50%);
+		right: calc(calcPercent(6) + 52px);
+		width: calc(100% - calcPercent(22)  - 106px);
+		// min-width: 230px;
+		@include pc{
+			width: 206px;
+			right: 0;
+		}
+		&.on{
+			max-width: 100vw;
+			opacity: 1;
+			overflow: visible;
+			&+.btn_search_open{
+				opacity: 0;
+			}
+		}
+	}
+	@media (max-width: 320px) {
+		.area_filter_search, .btn_search_open{
+			display: none;
+		}
+	}
+}
+.area_filter_search{
+	@include setCont(auto, 36px, flex, relative, $white);
+	flex-grow: 1;
+	align-items: center;
+	z-index: 3;
+	transition: all 600ms ease-in-out;
+	@include pc{
+		@include setCont(206px, 24px);
+		flex-grow: 0;
+	}
+	.c_inner{
+		@include setCont(100%, 100%, flex);
+		padding: 2px 0 2px 4px;
+		border: solid 1px $gray400;
+		border-radius: 4px;
+		@include pc{
+			padding: 2px 0 2px 3px;
+		}
+	}
+    .bx_slct{
+		width: calcPercent(72, 230);
+		min-width: 72px;
+		max-width: 170px;
+		height: 100%;
+		flex-shrink: 1;
+		@include pc{
+			width: 68px;
+			min-width: 68px;
+		}
+		.slct_tit{
+			@include setCont(100%, 100%);
+			@include font(11,11, $purple300);
+			border-radius: 4px;
+			padding: 3px calcPercent(4, 72) 3px calcPercent(5, 72);
+			background-color: $gray200;
+			border: none;
+			@include pc{
+				@include fontPc(11);
+				padding: 3px 4px 2px;
+			}
+            &:after{
+				@include setCont(7px, 100%);
+                @include bgSvg(arrDown($s_purple300), no-repeat, 50% 55%, 6px auto);
+				right: calcPercent(3, 72) ;
+				@include pc{
+					right: 3px;
+				}
+            }
+		}
+		.slct_cont{
+			width: calcPercent(86, 72);
+			height: auto;
+			max-height: 0;
+			top:43px;
+			border: none;
+			border-radius: 4px;
+			box-shadow: 0 2px 4px 0 rgba(27, 32, 45, 0.09);
+			padding: 0;
+			left: -2px;
+			@include pc{
+				width: 86px;
+				top:25px;
+				left: 0;
+			}
+			.slct_item{
+				&.select{
+					display: none;
+				}
+				button{
+					padding: 8px 10px;
+					height: auto;
+					@include font(11, 13, $gray600);
+					@include pc{
+						padding: 4px 10px;
+						@include fontPc(11);
+					}
+				}
+			}
+		}
+		&.on .slct_cont{
+			height: auto;
+			max-height: 100vh;
+			padding: 7px 0 7px 0;
+			@include pc{
+				padding: 0 0 3px 0;
+			}
+		}
+    }
+	.bx_search {
+		@include setCont(auto, 100%);
+		flex-grow: 1;
+		.ipt{
+			border: none;
+			background-color: unset;
+			@include font(12, 12, $gray400);
+			padding: 0 28px 0 8px;
+			&::placeholder{
+				@include font(12, 12, $gray400);
+			}
+			@include pc{
+				@include fontPc(11);
+				padding: 0 27px 0 4px ;
+				&::placeholder{
+					@include fontPc(11);
+				}
+			}
+		}
+		.btn_search{
+			@include setCont(16px, 100%, block, absolute);
+			@include bgSvg(btnSearch($s_gray400), no-repeat, 50% 50%, 16px auto);
+			left: unset;
+			right: 8px;
+			@include pc{
+				@include setCont(14px, 100%, block, absolute);
+				background-size: 12px auto !important;
+			}
+		}
+	}
+	&.full{
+		@include setCont(100%, auto);;
+		border: none;
+		.c_inner{
+			height: 40px;
+			padding: 5px 0 5px 8px;
+			background-color: $gray100;
+			border:none;
+		}
+		&.bg_white{
+			.c_inner{
+				background-color: $white;
+				border: solid 1px $gray400;
+			}
+		}
+		.bx_slct{
+			@include pc{
+				width: 93px;
+			}
+			.slct_tit{
+				@include pc{
+					padding: 0  24px 0 10px;
+					@include fontPc(13, 13, $purple400);
+				}
+				&:after{
+					@include setCont(8px, 100%);
+					@include pc{
+						right: 12px;
+					}
+				}
+			}
+			.slct_cont{
+				@include pc{
+					width: 109px;
+					top: 40px;
+				}
+				.slct_item{
+					&.select{
+						display: none;
+					}
+					button{
+						@include pc{
+						    padding: 8px 10px;
+						}
+					}
+				}
+			}
+		}
+		.bx_search {
+			@include setCont(auto, 100%);
+			flex-grow: 1;
+			.ipt{
+				padding: 0 33px 0 8px ;
+				@include pc{
+					@include fontPc(16);
+					padding: 0 44px 0 8px ;
+					&::placeholder{
+						@include fontPc(16);
+					}
+				}
+			}
+			.btn_search{
+				right: 10px;
+				@include pc{
+					@include setCont(16px, 100%, block, absolute);
+					background-size: 16px auto !important;
+					right: 20px;
+				}
+			}
+		}
+	}
+}
+.btn_search_open{
+	@include setCont(18px, 18px, block);
+	@include bgSvg(btnSearch($s_gray400), no-repeat, 50% 50%, 16px auto);
+	@include blind;
+	opacity: 1;
+	margin-right: 4px;
+	transition: all 600ms ease-in-out;
+	@include pc{
+		@include setCont(16px, 16px);
+		background-size: 14px auto;
+		margin-right: 0;
 	}
 }
 .container{
@@ -455,6 +692,10 @@
 			}
 		}
 	}
+	.area_filter_search {
+		border-top: 12px solid $gray100;
+		padding: 31.5px calcPercent(24);
+	}
 }
 .area_top{
 	@include setCont(100%, auto, block, relative);
@@ -596,6 +837,9 @@
 				@include setCont(154px, 261px);
 				width: 154px !important;
 				margin-right: 16px;
+				&:last-child{
+					margin-left: -2px;
+				}
 			}
 			.bx_img{
 				@include setCont(100%, auto, flex, relative, $white);
