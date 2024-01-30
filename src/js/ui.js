@@ -108,10 +108,19 @@ $(function(){
 	// 검색 영역 외 클릭시 검색창 닫기
 	$(document).on("click", function(e){
 		if($(e.target).parents(".area_filter_search").length > 0 || e.target.className === "btn_search_open") {return false;}
-		console.log("e.target.className");
 		$("header .area_filter_search").removeClass("on");
 	});
 	// v:240126 - e:통합검색 추가
+	// v:20240130 - s:리스트 검색 추가
+	$(".btn_search_sm_open").on("click", function(){
+		$(".area_search_sm").addClass("on");
+	});
+	// 검색 영역 외 클릭시 검색창 닫기
+	$(document).on("click", function(e){
+		if($(e.target).parents(".area_search_sm").length > 0 || e.target.className === "btn_search_sm_open") {return false;}
+		$(".area_search_sm").removeClass("on");
+	});
+	// v:20240130 - e:리스트검색 추가
 });
 $(window).resize(function(){
 	if($( window ).width() > 1003 && $(".header").hasClass("open")){

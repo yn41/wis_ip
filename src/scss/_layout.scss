@@ -430,7 +430,7 @@
 		}
 	}
 }
-.btn_search_open{
+.btn_search_open, .btn_search_sm_open{
 	@include setCont(18px, 18px, block);
 	@include bgSvg(btnSearch($s_gray400), no-repeat, 50% 50%, 16px auto);
 	@include blind;
@@ -442,6 +442,11 @@
 		background-size: 14px auto;
 		margin-right: 0;
 	}
+}
+.btn_reset{
+	@include setCont(18px, 18px, block);
+	@include bgSvg(btnReset($s_gray500), no-repeat, 50% 50%, 16px auto);
+	@include blind;
 }
 .container{
 	@include setCont(100%, auto, block);
@@ -953,6 +958,44 @@
 	animation-duration:300ms;
 	
 }
+.area_search_sm{
+	position: relative;
+	z-index: 3;
+	max-width: 0;
+	overflow: hidden;
+	opacity: 0;
+	transition: all 300ms;
+	&.on{
+		opacity: 1;
+		max-width: 300px;
+		margin-right: -16px;
+	}
+	.bx_search{
+		width: 232px;
+		.ipt{
+			padding: 0 35px 0 12px;
+			border: none;
+			background-color: $gray100;
+			&:focus{
+				padding-right: 55px;
+			}
+			&:hover{
+				&::placeholder{
+					color: $gray300;
+				}
+			}
+		}
+		.btn_clear{
+			right:33px;
+		}
+		.btn_search{
+			@include setCont(18px, 20px);
+			left: unset;
+			right: 10px;
+			background-size: 16px auto !important;
+		}
+	}
+}
 .inventors_wrap{
 	.i_top{
 		@include setCont(100%, auto, flex, relative);
@@ -960,9 +1003,20 @@
 		align-items: center;
 		h3{
 			@include font(13, normal, $gray600, $medi);
+			flex-shrink: 0;
 			@include pc{
 				@include fontPc(13);
 			}
+		}
+		.i_right{
+			@include setCont(auto, auto, flex, relative);
+			align-items: center;
+		}
+		.btn_search_sm_open{
+			@include bgSvg(btnSearch($s_gray500), no-repeat, 50% 50%, 16px auto);
+		}
+		.btn_reset{
+			margin: 0 20px;
 		}
 	}
 }
@@ -988,12 +1042,26 @@ a.inventors_item, button.inventors_item, .ac_link{
 	.colb{
 		align-items: flex-start !important;
 	}
+	.c_icon{
+		// min-width: 50px;
+		flex-shrink: 0;
+		height: 38px;
+		padding-right: 15px;
+		.num{
+			height: 100%;
+			line-height: 38px;
+			display: block;
+			padding: 0 0 0 7px;
+		}
+		.icon{
+			@include setCont(34px, 34px, block);
+		}
+	}
 	.c_left{
 		flex-grow: 1;
-		padding-left: 50px;
 		position: relative;
 		@include pc{
-			padding-left: 50px;
+			// padding-left: 50px;
 			// padding-left: 62.7px;
 		}
 		.icon{
@@ -1058,12 +1126,12 @@ a.inventors_item, button.inventors_item, .ac_link{
 	&.type_rank, &.type_rank_num{
 		// padding: 20px;
 		.icon{
-			width: 34px;
+			// width: 34px;
 		}
 	}
 	&.type_rank_num{
 		h3, p{
-			margin-left: -12px;
+			// margin-left: -12px;
 		}
 	}
 	.rank_chart{
@@ -1225,6 +1293,16 @@ a.inventors_item, button.inventors_item, .ac_link{
 		transform: translatex(50%);
 		@include pc{
 			width: 36px;
+		}
+	}
+}
+a.visual_wrap{
+	.inner{
+		transition: all 300ms;
+	}
+	&:hover{
+		.inner{
+			transform: scale(0.95);
 		}
 	}
 }
