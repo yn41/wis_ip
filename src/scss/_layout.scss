@@ -842,6 +842,9 @@
 				@include setCont(154px, 261px);
 				width: 154px !important;
 				margin-right: 16px;
+				&:nth-child(5n){
+					margin-left: -2px;
+				}
 				&:last-child{
 					margin-left: -2px;
 				}
@@ -1285,12 +1288,13 @@ a.inventors_item, button.inventors_item, .ac_link{
 	@include setCont(100%, 20px,block, relative, $gray100);
 	border-radius: 6px;
 	.bar{
-		@include setCont(20px, 100%, block, absolute, $point);
+		@include setCont(36px, 100%, block, absolute);
+		@include bgSvg(bar($s_point), no-repeat, 50% 50%, 100% auto);
 		@include blind;
 		top: 0;
 		border-radius: 6px;
 		right: 0;
-		transform: translatex(50%);
+		transform: translateX(50%);
 		@include pc{
 			width: 36px;
 		}

@@ -107,7 +107,13 @@ $(function(){
 	});
 	// 검색 영역 외 클릭시 검색창 닫기
 	$(document).on("click", function(e){
+		if ((e.target.className).indexOf("btn_search") > -1) { return true }
 		if($(e.target).parents(".area_filter_search").length > 0 || e.target.className === "btn_search_open") {return false;}
+		$("header .area_filter_search").removeClass("on");
+	});
+	$(document).on("click", function (e) {
+		if (e.target.className === "btn_search") { return true }
+		if ($(e.target).parents(".area_filter_search").length > 0 || e.target.className === "btn_search_open") { return false; }
 		$("header .area_filter_search").removeClass("on");
 	});
 	// v:240126 - e:통합검색 추가
@@ -117,6 +123,7 @@ $(function(){
 	});
 	// 검색 영역 외 클릭시 검색창 닫기
 	$(document).on("click", function(e){
+		if ((e.target.className).indexOf("btn_search") > -1) { return true }
 		if($(e.target).parents(".area_search_sm").length > 0 || e.target.className === "btn_search_sm_open") {return false;}
 		$(".area_search_sm").removeClass("on");
 	});

@@ -446,7 +446,7 @@
                     overflow: visible;
                     opacity: 1;
                     &::before{
-                        @include setCont(495px, 1px, block, absolute, $gray100);
+                        @include setCont(105%, 1px, block, absolute, $gray100);
                         top: 0;
                         left: 0;
                     }
