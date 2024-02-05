@@ -1126,17 +1126,6 @@ a.inventors_item, button.inventors_item, .ac_link{
 			padding: 20px 0 24px !important;
 		}
 	}
-	&.type_rank, &.type_rank_num{
-		// padding: 20px;
-		.icon{
-			// width: 34px;
-		}
-	}
-	&.type_rank_num{
-		h3, p{
-			// margin-left: -12px;
-		}
-	}
 	.rank_chart{
 		margin-top: 8px;
 		@include pc{

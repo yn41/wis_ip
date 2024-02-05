@@ -101,7 +101,6 @@ $(function(){
 		if(e.target.className === "bx_slct" || e.target.className === "slct_tit" || e.target.className === "slct_cont") {return false;}
 		$(".bx_slct").removeClass("on");
 	});
-	// v:240126 - s:통합검색 추가
 	$(".btn_search_open").on("click", function(){
 		$("header .area_filter_search").addClass("on");
 	});
@@ -116,8 +115,6 @@ $(function(){
 		if ($(e.target).parents(".area_filter_search").length > 0 || e.target.className === "btn_search_open") { return false; }
 		$("header .area_filter_search").removeClass("on");
 	});
-	// v:240126 - e:통합검색 추가
-	// v:20240130 - s:리스트 검색 추가
 	$(".btn_search_sm_open").on("click", function(){
 		$(".area_search_sm").addClass("on");
 	});
@@ -127,7 +124,6 @@ $(function(){
 		if($(e.target).parents(".area_search_sm").length > 0 || e.target.className === "btn_search_sm_open") {return false;}
 		$(".area_search_sm").removeClass("on");
 	});
-	// v:20240130 - e:리스트검색 추가
 });
 $(window).resize(function(){
 	if($( window ).width() > 1003 && $(".header").hasClass("open")){
