@@ -281,10 +281,6 @@
 		            $("body").css({"overflow":"", "top":""});
 		            scrollPosition = 0;
 		        });
-		        $(window).on("touchmove",function(e){	
-		            e.stopPropagation();	
-		            if(state=="up") $(".header").removeClass("hidden");
-		        });
 		        $(document).on("click", function(e){
 		            e.stopPropagation();
 		            var temp = $(e.target).parents(".pop_filter");
