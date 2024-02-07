@@ -524,7 +524,7 @@ input.ipt{
         min-width: 100%;
     }
     &::after{
-        @include setCont(60px, 20px, block, absolute);
+        @include setCont(60px, 101%, block, absolute);
         /* Permalink - use to edit and share this gradient: https://colorzilla.com/gradient-editor/#ffffff+0,ffffff+100&0+0,0.6+51,0.6+99 */
         background: linear-gradient(to right,  rgba(255,255,255,0) 0%,rgba(255,255,255,0.9) 85%,rgba(255,255,255,1) 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
         top: 0;
