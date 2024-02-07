@@ -126,9 +126,9 @@ $(function(){
 	});
 
 	//v:20240207 - s:터치 이벤트 닫기 추가
-	let initialX = null;
-	let initialY = null;
-	let touchState = null;
+	var initialX = null;
+	var initialY = null;
+	var touchState = null;
 	
 	function initTouch(e) {
 		initialX = `${e.touches ? e.touches[0].clientX : e.clientX}`;
@@ -140,7 +140,7 @@ $(function(){
 			const currentX = `${e.touches ? e.touches[0].clientX : e.clientX}`,
 			currentY = `${e.touches ? e.touches[0].clientY : e.clientY}`;
 		
-			let diffX = initialX - currentX,
+			var diffX = initialX - currentX,
 			diffY = initialY - currentY;
 		
 			touchState = Math.abs(diffX) > Math.abs(diffY)? (0 < diffX? "top":"right"): (0 < diffY? "up": "down")
@@ -157,7 +157,8 @@ $(function(){
 		}
 	});
 	window.addEventListener("touchend", function(e){
-		if(touchState=="down"){
+		var view = window.innerWidth >= 1080? "pc" : "mobile";
+		if(touchState=="down" && view == "mobile"){
 			$(".pop_filter").removeClass("open")
 			touchState = null;
 		}
