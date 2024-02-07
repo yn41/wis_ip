@@ -516,7 +516,7 @@ input.ipt{
     }
 }
 .bx_tag{
-    @include setCont(100%, 20px, block, relative);
+    @include setCont(100%, 22px, block, relative);
     @include ellipsis;
     margin-top: 12px;
     margin-left: -2px;
