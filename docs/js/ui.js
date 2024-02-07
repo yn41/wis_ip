@@ -101,26 +101,69 @@ $(function(){
 		if(e.target.className === "bx_slct" || e.target.className === "slct_tit" || e.target.className === "slct_cont") {return false;}
 		$(".bx_slct").removeClass("on");
 	});
-	// v:240126 - s:통합검색 추가
 	$(".btn_search_open").on("click", function(){
 		$("header .area_filter_search").addClass("on");
 	});
 	// 검색 영역 외 클릭시 검색창 닫기
 	$(document).on("click", function(e){
+		if ((e.target.className).indexOf("btn_search") > -1) { return true }
 		if($(e.target).parents(".area_filter_search").length > 0 || e.target.className === "btn_search_open") {return false;}
 		$("header .area_filter_search").removeClass("on");
 	});
-	// v:240126 - e:통합검색 추가
-	// v:20240130 - s:리스트 검색 추가
+	$(document).on("click", function (e) {
+		if (e.target.className === "btn_search") { return true }
+		if ($(e.target).parents(".area_filter_search").length > 0 || e.target.className === "btn_search_open") { return false; }
+		$("header .area_filter_search").removeClass("on");
+	});
 	$(".btn_search_sm_open").on("click", function(){
 		$(".area_search_sm").addClass("on");
 	});
 	// 검색 영역 외 클릭시 검색창 닫기
 	$(document).on("click", function(e){
+		if ((e.target.className).indexOf("btn_search") > -1) { return true }
 		if($(e.target).parents(".area_search_sm").length > 0 || e.target.className === "btn_search_sm_open") {return false;}
 		$(".area_search_sm").removeClass("on");
 	});
-	// v:20240130 - e:리스트검색 추가
+
+	//v:20240207 - s:터치 이벤트 닫기 추가
+	let initialX = null;
+	let initialY = null;
+	let touchState = null;
+	
+	function initTouch(e) {
+		initialX = `${e.touches ? e.touches[0].clientX : e.clientX}`;
+		initialY = `${e.touches ? e.touches[0].clientY : e.clientY}`;
+	};
+	
+	function swipeDirection(e) {
+		if (initialX !== null && initialY !== null) {
+			const currentX = `${e.touches ? e.touches[0].clientX : e.clientX}`,
+			currentY = `${e.touches ? e.touches[0].clientY : e.clientY}`;
+		
+			let diffX = initialX - currentX,
+			diffY = initialY - currentY;
+		
+			touchState = Math.abs(diffX) > Math.abs(diffY)? (0 < diffX? "top":"right"): (0 < diffY? "up": "down")
+		
+			initialX = null;
+			initialY = null;
+		}
+	}
+	
+	window.addEventListener("touchstart", initTouch);
+	window.addEventListener("touchmove", function(e){
+		if($(".pop_filter").hasClass("open")){
+			swipeDirection(e);
+		}
+	});
+	window.addEventListener("touchend", function(e){
+		if(touchState=="down"){
+			$(".pop_filter").removeClass("open")
+			touchState = null;
+		}
+	});
+	//v:20240207 - e:터치 이벤트 닫기 추가
+
 });
 $(window).resize(function(){
 	if($( window ).width() > 1003 && $(".header").hasClass("open")){
