@@ -525,7 +525,7 @@ input.ipt{
     }
 }
 .tag{
-    // display: inline-block;
+    display: inline-block;
     display: revert;
     @include font(13, normal, $gray800);
     margin: 0 2px;
