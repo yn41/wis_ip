@@ -6,7 +6,7 @@
 		<meta http-equiv="X-UA-Compatible" content="ie=edge">
 		<meta name="theme-color" content="#ffffff">
 		<meta name="Description" content="IPRankings">
-		<meta property="og:image" content="../img/main.jpg"> <!-- v:240115 공유시 노출 이미지 변경-->
+		<meta property="og:image" content="../img/main.jpg">
 		<title>index | IPRankings </title>
 		<link rel="icon" href="../img/favicon.ico" type="image/x-icon"> 
 		<link rel="stylesheet" type="text/css" href="../css/style.css?v=231212">
@@ -281,6 +281,10 @@
 		            $("body").css({"overflow":"", "top":""});
 		            scrollPosition = 0;
 		        });
+		        $(window).on("touchmove",function(e){	
+		            e.stopPropagation();	
+		            if(state=="up") $(".header").removeClass("hidden");
+		        });
 		        $(document).on("click", function(e){
 		            e.stopPropagation();
 		            var temp = $(e.target).parents(".pop_filter");
@@ -427,7 +431,7 @@
 			</script>
 
 			<!-- e: 경고창 --->
-			<!-- v:240115 s: 성공팝업 --->
+			<!-- s: 성공팝업 --->
 			<div class="alert_success">
 			    <div class="a_wrap">
 			        <div class="a_inner">
@@ -441,7 +445,7 @@
 			<script>
 			</script>
 
-			<!-- v:240115 e: 성공팝업 --->
+			<!-- e: 성공팝업 --->
 	</body>
 	<style>
 		.ui_wrap {
@@ -625,12 +629,10 @@
 				$("body").css({"overflow":"hidden", "top": (scrollPosition*-1)});
 			}
 			if(nm == "alert_success"){
-				//v:240115 s:경고창 오픈 1.5 초 뒤 자동 닫기
 				setTimeout(function(){
 					$(".alert_success").removeClass("open");
 					$("body").css({"overflow":"", "top":""});
 				}, 1500);
-				//v:240115 e:경고창 오픈 1.5 초 뒤 자동 닫기
 			}
 		}
 	</script>
