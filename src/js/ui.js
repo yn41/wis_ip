@@ -124,6 +124,46 @@ $(function(){
 		if($(e.target).parents(".area_search_sm").length > 0 || e.target.className === "btn_search_sm_open") {return false;}
 		$(".area_search_sm").removeClass("on");
 	});
+
+	//v:20240207 - s:터치 이벤트 닫기 추가
+	let initialX = null;
+	let initialY = null;
+	let touchState = null;
+	
+	function initTouch(e) {
+		initialX = `${e.touches ? e.touches[0].clientX : e.clientX}`;
+		initialY = `${e.touches ? e.touches[0].clientY : e.clientY}`;
+	};
+	
+	function swipeDirection(e) {
+		if (initialX !== null && initialY !== null) {
+			const currentX = `${e.touches ? e.touches[0].clientX : e.clientX}`,
+			currentY = `${e.touches ? e.touches[0].clientY : e.clientY}`;
+		
+			let diffX = initialX - currentX,
+			diffY = initialY - currentY;
+		
+			touchState = Math.abs(diffX) > Math.abs(diffY)? (0 < diffX? "top":"right"): (0 < diffY? "up": "down")
+		
+			initialX = null;
+			initialY = null;
+		}
+	}
+	
+	window.addEventListener("touchstart", initTouch);
+	window.addEventListener("touchmove", function(e){
+		if($(".pop_filter").hasClass("open")){
+			swipeDirection(e);
+		}
+	});
+	window.addEventListener("touchend", function(e){
+		if(touchState=="down"){
+			$(".pop_filter").removeClass("open")
+			touchState = null;
+		}
+	});
+	//v:20240207 - e:터치 이벤트 닫기 추가
+
 });
 $(window).resize(function(){
 	if($( window ).width() > 1003 && $(".header").hasClass("open")){
