@@ -980,7 +980,7 @@
 		}
 	}
 	.bx_search{
-		width: 220px;
+		width: 210px;
 		@include pc{
 			width: 232px;
 		}
@@ -1256,6 +1256,10 @@ a.inventors_item, button.inventors_item, .ac_link{
 		}
 	}
 	.num, a.num{
+		width: auto;
+		min-width: 32px;
+		padding: 0 10px;
+		letter-spacing: -1px;
 		&.on{
 			background-color: $gray200;
 			color: $gray800;
