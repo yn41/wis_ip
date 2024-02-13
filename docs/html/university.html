@@ -292,8 +292,8 @@
 									</div>
 								</a>
 							</div>
-							<div class="pagination disable">
-								<button type="button" class="btn_page_start">start page to go button</button> <!-- v:20240207 - 맨앞 버튼 추가 -->
+							<div class="pagination">
+								<button type="button" class="btn_page_start">start page to go button</button> 
 								<button type="button" class="btn_page_prev">previous button</button>
 								<a href="#" class="num on">1</a>
 								<a href="#" class="num">2</a>
@@ -304,7 +304,7 @@
 								<button type="button" class="num">3</button>
 								<button type="button" class="num">4</button> -->
 								<button type="button" class="btn_page_next">nex buttont</button>
-								<button type="button" class="btn_page_end">start page to go button</button><!-- v:20240207 - 맨뒤 버튼 추가 -->
+								<button type="button" class="btn_page_end">start page to go button</button>
 							</div>
 							<div class="area_filter_search full">
 								<form action="" class="c_inner">
@@ -381,7 +381,11 @@
 		<div class="popup pop_filter">
 		    <div class="p_wrap">
 		        <div class="p_inner">
-		            <button type="button" class="btn_p_close">close</button>
+		            <!-- v:20240213 - s:터치 이벤트 닫기 영역 조정 -->
+		            <div class="area_close">
+		                <button type="button" class="btn_p_close">close</button>
+		            </div>
+		            <!-- v:20240213 - e:터치 이벤트 닫기 영역 조정 -->
 		            <h1>Filters</h1>
 		            <div class="p_cont">
 		                <div class="p_unit">

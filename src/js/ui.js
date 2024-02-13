@@ -125,10 +125,11 @@ $(function(){
 		$(".area_search_sm").removeClass("on");
 	});
 
-	//v:20240207 - s:터치 이벤트 닫기 추가
+	//s:터치 이벤트 닫기
 	var initialX = null;
 	var initialY = null;
 	var touchState = null;
+	var touchStart = false;
 	
 	function initTouch(e) {
 		initialX = `${e.touches ? e.touches[0].clientX : e.clientX}`;
@@ -149,21 +150,28 @@ $(function(){
 			initialY = null;
 		}
 	}
-	
-	window.addEventListener("touchstart", initTouch);
+	//v:20240213 - s:터치 이벤트 닫기 영역 조정
+	window.addEventListener("touchstart", function(e){
+		initTouch(e);
+		if(e.target.className == "area_close" || e.target.className  == "btn_p_close") touchStart = true;
+	});
 	window.addEventListener("touchmove", function(e){
-		if($(".pop_filter").hasClass("open")){
+		if($(".pop_filter").hasClass("open") && touchStart== true){
 			swipeDirection(e);
 		}
 	});
+	//v:20240213 - e:터치 이벤트 닫기 영역 조정
 	window.addEventListener("touchend", function(e){
 		var view = window.innerWidth >= 1080? "pc" : "mobile";
 		if(touchState=="down" && view == "mobile"){
-			$(".pop_filter").removeClass("open")
+			$(".pop_filter").removeClass("open");
+            $("body").css({"overflow":"", "top":""});
+            scrollPosition = 0;
 			touchState = null;
+			touchStart = false;
 		}
 	});
-	//v:20240207 - e:터치 이벤트 닫기 추가
+	//s:터치 이벤트 닫기
 
 });
 $(window).resize(function(){

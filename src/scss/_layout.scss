@@ -732,6 +732,7 @@
 		&.swiper-button-disabled{
 			&::before{
 				@include bgSvg(arrDown("d0d2d5"), no-repeat, 50% 50%, 12px auto);
+				opacity: 0;
 			}
 		}
 		@include pc{
@@ -948,7 +949,6 @@
 			}
 		}
 	}
-
 }
 @-webkit-keyframes aniOpen {
 	0% {
@@ -1242,6 +1242,9 @@ a.inventors_item, button.inventors_item, .ac_link{
 			@include setCont(100%, 100%, block);
 			@include bgSvg(arrStart($s_gray400), no-repeat, 50% 50%, 32px auto);
 		}
+		&.disable{
+			opacity: 0;
+		}
 	} .btn_page_end{
 		margin-left: 8px;
 		&::before{
@@ -1253,6 +1256,9 @@ a.inventors_item, button.inventors_item, .ac_link{
 		&::before{
 			@include setCont(15px, 15px, block);
 			@include bgSvg(arrDown($s_gray400), no-repeat, 50% 50%, 7px auto);
+		}
+		&.disable{
+			opacity: 0;
 		}
 	}
 	.num, a.num{

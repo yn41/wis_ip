@@ -156,7 +156,7 @@
 								</a>
 							</div>
 							<div class="pagination">
-								<button type="button" class="btn_page_start">start page to go button</button>
+								<button type="button" class="btn_page_start disable">start page to go button</button>
 								<button type="button" class="btn_page_prev">previous button</button>
 								<a href="#" class="num on">1</a>
 								<a href="#" class="num">2</a>
@@ -236,7 +236,11 @@
 		<div class="popup pop_filter">
 		    <div class="p_wrap">
 		        <div class="p_inner">
-		            <button type="button" class="btn_p_close">close</button>
+		            <!-- v:20240213 - s:터치 이벤트 닫기 영역 조정 -->
+		            <div class="area_close">
+		                <button type="button" class="btn_p_close">close</button>
+		            </div>
+		            <!-- v:20240213 - e:터치 이벤트 닫기 영역 조정 -->
 		            <h1>Filters</h1>
 		            <div class="p_cont">
 		                <div class="p_unit">

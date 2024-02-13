@@ -35,6 +35,13 @@
                 padding: 48px 38px;
             }
         }
+        .area_close{
+            @include setCont(100%, 26px, block, absolute);
+            top: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            z-index: 3;
+        }
         .btn_p_close{
             @include setCont(64px, 4px, block, absolute, #f2f2f2);
             @include blind;
@@ -43,7 +50,9 @@
             transform: translateX(-50%);
             z-index: 3;
             &:hover, &:active{
-                opacity: 0.5;
+                &::before{
+                    opacity: 0.5;
+                }
                 @include pc{
                     transform: scale(0.9);
                 }
@@ -58,6 +67,10 @@
                 &:before, &:after{
                     @include setCont(100%, 2px, block, absolute, $gray500);
                     transform: rotate(-45deg);
+                }
+                &:before{
+                    top: unset;
+                    left: unset;
                 }
                 &:after{
                     transform: rotate(45deg);
