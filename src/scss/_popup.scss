@@ -210,7 +210,7 @@
             }
         }
         .p_wrap{
-            max-height: 100vh;
+            max-height: calc(100vh - 60px);
             opacity: 1;
             z-index: 21;
             overflow-y: auto;
