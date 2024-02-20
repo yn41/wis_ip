@@ -29,7 +29,7 @@
             border-radius: 10px;
         }
         .p_inner{
-            padding: 36px calcPercent(32) 52px;
+            padding: 36px calcPercent(32) 38px;
             transition: all 500ms;
             @include pc{
                 padding: 48px 38px;
@@ -203,14 +203,16 @@
             opacity: 1;
             width: 100%;
             height: 100vh;
-            background-color: rgba(39, 43, 55, 0.16);
+            // background-color: rgba(39, 43, 55, 0.16);
+            background-color: rgba(64, 110, 249, 0.3);
             z-index: 20;
             @include pc{
                 background-color: rgba(39, 43, 55, 0);
             }
         }
         .p_wrap{
-            max-height: calc(100vh - 60px);
+            // max-height: calc(100vh - 60px);
+            max-height: 100%;
             opacity: 1;
             z-index: 21;
             overflow-y: auto;
