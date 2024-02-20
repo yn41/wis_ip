@@ -299,7 +299,7 @@ input.ipt{
     .btn_search{
         @include setCont(36px, 100%, block, absolute);
         @include bg("/icon/search.png", no-repeat, 50% 50%, 12px auto);
-        @include bgSvg(btnSearch($s_gray500), no-repeat, 50% 50%, 12px auto);
+        // @include bgSvg(btnSearch($s_gray500), no-repeat, 50% 50%, 12px auto);
         @include blind;
         top: 50%;
         left: 0;
@@ -511,7 +511,7 @@ input.ipt{
 .btn_filter{
     @include setCont(20px, 15px, block,  relative, $gray100);
     @include bg("/icon/filter.png", no-repeat, 50% 50%, 19.5px auto);
-    @include bgSvg(btnFilter($s_gray500), no-repeat, 50% 50%, 100% auto);
+    // @include bgSvg(btnFilter($s_gray500), no-repeat, 50% 50%, 100% auto);
     @include blind;
     &:hover{
         opacity: 0.6;
