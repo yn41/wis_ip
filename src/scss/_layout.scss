@@ -1686,7 +1686,7 @@ a.visual_wrap{
 	@include setCont(100%, auto, block, relative, $white);
 	width: 100%;
 	min-height: 330px;
-	padding: 20px 20px 40px;
+	padding: 10px 0 20px;
 	border-radius: 10px;
 	box-shadow: 0 2px 4px 0 $gray100;
 	overflow: hidden;
