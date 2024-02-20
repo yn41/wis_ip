@@ -5,6 +5,7 @@
 }
 .header{
 	@include setCont(100%, $header, block, fixed);
+    background: red;
 	top: 0;
 	left: 50%;
 	transform: translateX(-50%);
@@ -449,6 +450,7 @@
 }
 .btn_reset{
 	@include setCont(18px, 18px, block);
+    @include bg("/icon/refresh.png", no-repeat, 50% 50%, 16px auto);
 	@include bgSvg(btnReset($s_gray500), no-repeat, 50% 50%, 16px auto);
 	@include blind;
 	&:hover{
@@ -1036,6 +1038,7 @@
 			justify-content: flex-end;
 		}
 		.btn_search_sm_open{
+			@include bg("/icon/search.png", no-repeat, 50% 50%, 16px auto);
 			@include bgSvg(btnSearch($s_gray500), no-repeat, 50% 50%, 16px auto);
 			margin-right: 0;
 		}
