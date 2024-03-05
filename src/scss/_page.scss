@@ -694,7 +694,7 @@
         }
     }
 }
-.inventor{
+.inventor, .total_search{
     h2{
         font-weight: $medi;
         @include pc{
@@ -738,6 +738,7 @@
         .left, .right{
             @include pc{
                 width: 494px;
+                width: 100%;
             }
         }
         .right{
@@ -757,7 +758,6 @@
             margin-top: -36.5px;
             padding-top: 16px;
             display: block;
-            max-width: 664px;
             @include pc{
                 margin-top: -27.5px;
                 padding-top: 32px;
@@ -857,6 +857,44 @@
                 display: block;
             }
         }
+    }
+}
+.total_search{
+    h2.tit{
+        @include font(13, 16, $gray600, $medi);
+        margin-bottom: 26px;
+        @include pc{
+            @include fontPc(13, 16);
+            margin-bottom: 36px;
+        }
+    }
+    h3{
+        @include font(19, 22, $gray800, $normal);
+        @include pc{
+            @include fontPc(19, 22);
+        }
+    }
+    .area_top{
+        .inner{
+            padding: 79.5px 0 35.5px;
+        }
+    }
+    .area1{
+        padding-bottom: 79.5px;
+        .inventors_wrap{
+            padding-bottom: 36px;
+        }
+        .unit{
+            border-bottom: 1px solid $gray100;
+            &+.unit{
+                padding-top: 42.5px;
+            }
+        }
+    }
+    .btn_txt{
+        border-top: none;
+        padding: 0;
+        margin: 35px 0 -10px;
     }
 }
 .error, .privacy{

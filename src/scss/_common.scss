@@ -499,6 +499,14 @@ input.ipt{
     @include pc{
         @include fontPc(16);
     }
+    &.b_more{
+        &::after{
+            @include setCont(19px, 12px, inline-block);
+            @include bgSvg(arrDown($s_purple500), no-repeat, 50% 50%, 8px auto);
+            transform: translateY(4.5px) rotate(-90deg);
+            margin-left: 2.5px;
+        }
+    }
 }
 .btn_more{
     @include setCont(100%, 38px, block);

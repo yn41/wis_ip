@@ -175,11 +175,12 @@
 	}
 	.btn_menu{
 		@include setCont(48px, 100%, block, relative);
-		@include bgSvg(btnMenu($s_gray400), no-repeat, 50% 50%, 100% auto);
+		@include bgSvg(btnMenu($s_gray500), no-repeat, 50% 50%, 100% auto);
+		opacity: 0.6;
 		transition: opacity transform 300ms;
 		&:hover{
 			transform: scale(1.025);
-			@include bgSvg(btnMenu($s_gray500), no-repeat, 50% 50%, 100% auto);
+			@include bgSvg(btnMenu($s_gray600), no-repeat, 50% 50%, 100% auto);
 		}
 		@include pc{
 			display: none;
@@ -432,7 +433,9 @@
 }
 .btn_search_open, .btn_search_sm_open{
 	@include setCont(18px, 18px, block);
-	@include bgSvg(btnSearch($s_gray400), no-repeat, 50% 50%, 16px auto);
+	// @include bgSvg(btnSearch($s_gray400), no-repeat, 50% 50%, 16px auto);
+	@include bg("/icon/search.png", no-repeat, 50% 50%, 16px auto);
+	opacity: 0.6;
 	@include blind;
 	opacity: 1;
 	margin-right: 4px;
@@ -1037,7 +1040,7 @@
 			justify-content: flex-end;
 		}
 		.btn_search_sm_open{
-			@include bg("/icon/search.png", no-repeat, 50% 50%, 16px auto);
+			// @include bg("/icon/search.png", no-repeat, 50% 50%, 16px auto);
 			@include bgSvg(btnSearch($s_gray500), no-repeat, 50% 50%, 16px auto);
 			margin-right: 0;
 		}
@@ -1083,6 +1086,7 @@ a.inventors_item, button.inventors_item, .ac_link{
 			line-height: 38px;
 			display: block;
 			padding: 0 0 0 7px;
+			font-weight: $medi;
 		}
 		.icon{
 			@include setCont(34px, 34px, block);
@@ -1686,7 +1690,6 @@ a.visual_wrap{
 	@include setCont(100%, auto, block, relative, $white);
 	width: 100%;
 	min-height: 330px;
-	padding: 10px 0 20px;
 	border-radius: 10px;
 	box-shadow: 0 2px 4px 0 $gray100;
 	overflow: hidden;
