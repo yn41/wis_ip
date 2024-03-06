@@ -862,21 +862,26 @@
 .total_search{
     h2.tit{
         @include font(13, 16, $gray600, $medi);
-        margin-bottom: 26px;
+        padding: 0 calcPercent(16) 26px;
         @include pc{
             @include fontPc(13, 16);
-            margin-bottom: 36px;
+            padding: 0 0 36px;
         }
     }
     h3{
         @include font(19, 22, $gray800, $normal);
+        padding: 0 calcPercent(16);
         @include pc{
             @include fontPc(19, 22);
+            padding: 0
         }
     }
     .area_top{
         .inner{
-            padding: 79.5px 0 35.5px;
+            padding: 35.5px calcPercent(16) ;
+            @include pc{
+                padding: 79.5px 0 35.5px;
+            }
         }
     }
     .area1{
@@ -887,14 +892,20 @@
         .unit{
             border-bottom: 1px solid $gray100;
             &+.unit{
-                padding-top: 42.5px;
+                padding-top: 25.5px;
+                @include pc{
+                    padding-top: 42.5px;
+                }
             }
         }
     }
     .btn_txt{
         border-top: none;
         padding: 0;
-        margin: 35px 0 -10px;
+        margin: 20px 0 -15px;
+        @include pc{
+            margin: 35px 0 -10px;
+        }
     }
 }
 .error, .privacy{
