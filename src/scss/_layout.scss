@@ -248,14 +248,23 @@
 	z-index: 3;
 	transition: all 600ms ease-in-out;
 	@include pc{
-		@include setCont(206px, 24px);
+		width: 206px;
+		// @include setCont(206px, 24px);
 		flex-grow: 0;
 	}
 	.c_inner{
 		@include setCont(100%, 100%, flex);
 		padding: 2px 0 2px 4px;
-		border: solid 1px $gray400;
-		border-radius: 4px;
+		border: solid 1px $gray200;
+		// border: solid 1px $gray400;
+		border-radius: 8px;
+		&:hover, &:active{
+			border: 1px solid #d0d2d5;
+			// border: 1px solid #636567;
+		}
+		&:focus{
+			border: 1px solid #636567;
+		}
 		@include pc{
 			padding: 2px 0 2px 3px;
 		}
@@ -335,27 +344,31 @@
 		.ipt{
 			border: none;
 			background-color: unset;
-			@include font(12, 12, $gray400);
+			@include font(16, 16);
 			padding: 0 28px 0 8px;
 			&::placeholder{
-				@include font(12, 12, $gray400);
+				@include font(16, 16);
+			}
+			&:hover, &:active,&:focus{
+				&::placeholder{
+					color: #121416;
+				}
 			}
 			@include pc{
-				@include fontPc(11);
-				padding: 0 27px 0 4px ;
+				@include fontPc(16);
 				&::placeholder{
-					@include fontPc(11);
+					@include fontPc(16);
 				}
 			}
 		}
 		.btn_search{
 			@include setCont(16px, 100%, block, absolute);
-			@include bgSvg(btnSearch($s_gray400), no-repeat, 50% 50%, 16px auto);
+			// @include bgSvg(btnSearch($s_gray400), no-repeat, 50% 50%, 14px auto);
+			@include bgSvg(btnSearch($s_gray500), no-repeat, 50% 50%, 14px auto);
 			left: unset;
-			right: 8px;
+			right: 12px;
 			@include pc{
-				@include setCont(14px, 100%, block, absolute);
-				background-size: 12px auto !important;
+				right: 10px;
 			}
 		}
 	}
