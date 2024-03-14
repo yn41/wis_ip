@@ -55,3 +55,27 @@
   $url: "data:image/svg+xml,%3Csvg width='37' height='20' viewBox='0 0 37 20' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M3.438 0h26.434a6 6 0 0 1 3.85 1.4c1.963 1.646 2.945 4.512 2.945 8.6s-.982 6.954-2.946 8.599v.001a6 6 0 0 1-3.85 1.4H3.439c-6.235 0 0-7.03 0-10 0-2.97-6.235-10 0-10z' fill='%23"+$color+"'  fill-rule='evenodd'/%3E%3C/svg%3E%0A";
   @return url($url);
 }
+@function chartGrade1($color) {
+  $url: "data:image/svg+xml,%3Csvg width='53' height='54' viewBox='0 0 53 54' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='m30.746 3.082 21.164 43.74A5 5 0 0 1 47.41 54H5.08a5 5 0 0 1-4.5-7.178l21.164-43.74a5 5 0 0 1 9.002 0z' fill='%23"+$color+"' fill-rule='evenodd'/%3E%3C/svg%3E%0A";
+  @return url($url);
+}
+@function chartGrade2($color) {
+  $url: "data:image/svg+xml,%3Csvg width='86' height='30' viewBox='0 0 86 30' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='m75.685 2.822 9.677 20a5 5 0 0 1-4.5 7.178H5.627a5 5 0 0 1-4.5-7.178l9.677-20A5 5 0 0 1 15.305 0h55.879a5 5 0 0 1 4.5 2.822z' fill='%23"+$color+"' fill-rule='evenodd'/%3E%3C/svg%3E%0A";
+  @return url($url);
+}
+@function chartGrade3($color) {
+  $url: "data:image/svg+xml,%3Csvg width='129' height='40' viewBox='0 0 129 40' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='m113.136 2.822 14.516 30a5 5 0 0 1-4.5 7.178H5.337a5 5 0 0 1-4.5-7.178l14.515-30A5 5 0 0 1 19.854 0h88.781a5 5 0 0 1 4.5 2.822z' fill='%23"+$color+"' fill-rule='evenodd'/%3E%3C/svg%3E%0A";
+  @return url($url);
+}
+@function chartGrade4($color) {
+  $url: "data:image/svg+xml,%3Csvg width='176' height='45' viewBox='0 0 176 45' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='m158.426 2.822 16.936 35A5 5 0 0 1 170.86 45H5.628a5 5 0 0 1-4.5-7.178l16.935-35A5 5 0 0 1 22.563 0h131.363a5 5 0 0 1 4.5 2.822z' fill='%23"+$color+"' fill-rule='evenodd'/%3E%3C/svg%3E%0A";
+  @return url($url);
+}
+@function chartGrade5($color) {
+  $url: "data:image/svg+xml,%3Csvg width='224' height='45' viewBox='0 0 224 45' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='m206.136 2.822 16.935 35a5 5 0 0 1-4.5 7.178H5.918a5 5 0 0 1-4.5-7.178l16.934-35A5 5 0 0 1 22.854 0h178.781a5 5 0 0 1 4.5 2.822z' fill='%23"+$color+"' fill-rule='evenodd'/%3E%3C/svg%3E%0A";
+  @return url($url);
+}
+@function chartGrade6($color) {
+  $url: "data:image/svg+xml,%3Csvg width='355' height='132' viewBox='0 0 355 132' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='m294.845 2.822 58.927 121.78a5 5 0 0 1-4.501 7.178H5.219a5 5 0 0 1-4.501-7.178L59.644 2.822A5 5 0 0 1 64.144 0h226.2a5 5 0 0 1 4.501 2.822z' fill='%23"+$color+"' fill-rule='evenodd'/%3E%3C/svg%3E%0A";
+  @return url($url);
+}

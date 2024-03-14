@@ -530,8 +530,195 @@
                 flex-shrink: 0;
             }
         }
+        .full{
+            width: 100%;
+            padding : 32px calcPercent(24);
+            @include pc{
+                padding : 36px 0 64px;
+            }
+        }
     }
 }
+.patentSpec{
+    .area1{
+        .inner{
+            padding-bottom: 56px;
+        }
+        .area_sw{
+            @include pc{
+                top: 109px;
+            }
+        }
+        .a_info dd{
+            .inventors_item{
+                margin-top: 7px;
+                .txt_point{
+                    @include font(19);
+                    @include pc{
+                        @include fontPc(19);
+                    }
+                }
+            }
+            .f22{
+                @include font(22);
+                font-weight: $medi;
+                @include pc{
+                    @include fontPc(22);
+                }
+            }
+        }
+        .swiper-pagination{
+            @include font(16, 19, $gray500);
+            margin-top: 0;
+            text-align: center;
+            position: relative;
+            margin-bottom: 15px;
+            @include pc{
+                @include fontPc(16);
+                margin-bottom: 0;
+            }
+        }
+    }
+    .area5{
+        border-top: 12px solid $gray100;
+        .inner{
+            @include setCont(100%, auto, block);
+            padding:  32px calcPercent(20);
+            @include pc{
+                display: flex;
+                padding: 65px 0 86px;
+            }
+        }
+        .left{
+            width: 100%;
+            @include pc{
+                width: 509px;
+                flex-shrink: 0;
+            }
+        }
+        .right{
+            width: 100%;
+            @include pc{
+                padding-top: 50px;
+                flex-grow: 1;
+            }
+            .tit_chart{
+                margin-bottom: 20px;
+            }
+        }
+        .chart_wrap{
+            box-shadow: none;
+            border-radius: 0;
+        }
+        h2{
+            @include font(22,26, $gray800, $medi);
+            margin-bottom: 24px;
+            @include pc{
+                @include fontPc(22);
+            }
+        }
+        h3{
+            @include font(19, 23, $gray800, $medi);
+            @include pc{
+                @include fontPc(19);
+            }
+            span{
+                display: block;
+                @include font(16, 19, $gray800, $normal);
+                margin-bottom: 9px;
+                @include pc{
+                    @include fontPc(16);
+                }
+            }
+            b{
+                display: block;
+                font-weight: $medi;
+                margin-bottom: 24px;
+            }
+        }
+        .tit_chart{
+            @include font(16, 19, $gray800, $normal);
+            @include pc{
+                @include fontPc(16);
+            }
+
+        }
+    }
+    .area6{
+        background-color: #faf8fd;
+        .inner{
+            padding:  32px calcPercent(20);
+            @include pc{
+                padding: 57px 0 60px;
+            }
+        }
+        .h2{
+            @include font(22, 22, $gray800, $medi);
+            margin-bottom: 24px;
+            @include pc{
+                @include fontPc(22);
+            }
+        }
+        .h3{
+            @include font(19, 19, $gray800, $medi);
+            margin-bottom: 24px;
+            @include pc{
+                @include fontPc(19);
+            }
+        }
+        .btn_more{
+            margin-top: 24px;
+        }
+    }
+    .area7{
+        .inner{
+            @include setCont(100%, auto, block);
+            padding:  32px calcPercent(20);
+            @include pc{
+                display: flex;
+                padding: 65px 0 60px;
+            }
+        }
+        .h2{
+            @include font(22, 22, $gray800, $medi);
+            margin-bottom: 22px;
+            @include pc{
+                @include fontPc(22);
+                margin-bottom: 4px;
+            }
+        }
+        .h3{
+            margin-bottom: 40px;
+        }
+        .left{
+            width: 100%;
+            @include pc{
+                width: 511px;
+                flex-shrink: 0;
+                padding-right: 59.5px;
+            }
+            .inventors_item{
+                margin-bottom: 25px;
+            }
+        }
+        .right{
+            width: 100%;
+            @include pc{
+                padding-top: 50px;
+                flex-grow: 1;
+            }
+            .chart_info{
+                margin-bottom: 40px;
+                height: 48px;
+            }
+        }
+        .chart_wrap{
+            box-shadow: none;
+            border-radius: 0;
+        }
+    }
+}
+
 .company, .university{
     .area1{
         .inner{

@@ -42,6 +42,9 @@ a, button, input{
 .f14{
     @include font(14);
 }
+.f22{
+    @include font(22);
+}
 
 .txt_point{
     color: $point  !important;
@@ -745,6 +748,156 @@ form{
         @include font(14, 17, $gray400);
         @include pc{
             @include fontPc(14, 17);
+        }
+    }
+}
+.chart_grade{
+    width: 100%;
+    padding: 0 0 0;
+    @include pc{
+        padding: 43.8px 0 0;
+    }
+    .label_txt{
+        @include setCont(80px, auto, block, absolute);
+        top: 50%;
+        left: -80px;
+        transform: translateY(-52%);
+        text-align: right;
+        @include font(13,13,$gray400);
+        @include pc{
+            @include fontPc(13);
+        }
+    }
+    .txt{
+        @include setCont(100%, 100%, flex);
+        align-items: center;
+        justify-content: center;
+        @include font(22,22,$gray50, $medi);
+        @include pc{
+            @include fontPc(22);
+        }
+    }
+    .c_inner{
+        @include setCont(100%, auto, flex);
+        transform: scale(0.72);
+        margin-left: -29px;
+        @include pc{
+            width: 360px;
+            transform: scale(1);
+            margin-left: 0;
+        }
+        flex-direction: column;
+        align-items: center;
+    }
+    .item{
+        border-top: 2px solid #fff;
+        border-bottom: 2px solid #fff;
+        box-sizing: initial;
+        &:first-child{
+            border-top: none;
+        }
+        &:last-child{
+            border-bottom: none;
+        }
+        &.on{
+            .label_txt{
+                color: $gray800;
+                font-weight: $bold;
+            }
+        }
+    }
+    .g1{
+        @include setCont(59px, 54px, block, relative);
+        @include bgSvg(chartGrade1("babbbf"), no-repeat, 50% 50%, 53px auto);
+        .label_txt{
+            transform: translateY(-50%);
+        }
+    }
+    .g2{
+        @include setCont(92px, 30px, block, relative);
+        @include bgSvg(chartGrade2("c9c9cd"), no-repeat, 50% 50%, 86px auto);
+        &.on{
+            @include bgSvg(chartGrade2($s_point), no-repeat, 50% 50%, 86px auto);
+        }
+    }
+    .g3{
+        @include setCont(134px, 40px, block, relative);
+        @include bgSvg(chartGrade3("c9c9cd"), no-repeat, 50% 50%, 129px auto);
+        &.on{
+            @include bgSvg(chartGrade3($s_point), no-repeat, 50% 50%, 129px auto);
+        }
+    }
+    .g4{
+        @include setCont(182px, 45px, block, relative);
+        @include bgSvg(chartGrade4("d5d5d8"), no-repeat, 50% 50%, 181px auto);
+        &.on{
+            @include bgSvg(chartGrade4($s_point), no-repeat, 50% 50%, 181px auto);
+        }
+    }
+    .g5{
+        @include setCont(229px, 45px, block, relative);
+       @include bgSvg(chartGrade5("d5d5d8"), no-repeat, 50% 50%, 228.6px auto);
+       &.on{
+           @include bgSvg(chartGrade5($s_point), no-repeat, 50% 50%, 228.6px auto);
+       }
+    }
+    .g6{
+        @include setCont(360px, 132px, block, relative);
+        @include bgSvg(chartGrade6("E3E3E5"), no-repeat, 50% 50%, 355px auto);
+        &.on{
+            @include bgSvg(chartGrade6($s_point), no-repeat, 50% 50%, 355px auto);
+        }
+    }
+    .t_detail{
+        @include setCont(198px, 157px, block, absolute, #fff);
+        top: -26px;
+        right: -237px;
+        border: 1px solid $point;
+        border-radius: 31px;
+        z-index: 3;
+        &::before{
+            @include setCont(56px, 1px, block, absolute, $point);
+            z-index: 2;
+            top: 50px;
+            left: -56px;
+        }
+        .t_inner{
+            @include setCont(153px, auto, flex);
+            flex-direction: column;
+            align-items: center;
+            padding: 14px 12.9px 0;
+        }
+        .item{
+            .label_txt{
+                left: unset;
+                right: -80px;
+                text-align: left;
+            }
+        }
+        .tg1{
+            @include setCont(53px, 51px, block, relative);
+            @include bgSvg(chartGrade1("babbbf"), no-repeat, 50% 50%, 50px auto);
+            &.on{
+                @include bgSvg(chartGrade1($s_point), no-repeat, 50% 50%, 50px auto);
+            }
+            .txt{
+                align-items: flex-end;
+                padding-bottom: 5px;
+            }
+        }
+        .tg2{
+            @include setCont(84px, 28px, block, relative);
+            @include bgSvg(chartGrade2("dbdcdd"), no-repeat, 50% 50%, 79px auto);
+            &.on{
+                @include bgSvg(chartGrade2($s_point), no-repeat, 50% 50%, 79px auto);
+            }
+        }
+        .tg3{
+            @include setCont(123px, 38px, block, relative);
+            @include bgSvg(chartGrade3("dbdcdd"), no-repeat, 50% 50%, 119px auto);
+            &.on{
+                @include bgSvg(chartGrade3($s_point), no-repeat, 50% 50%, 119px auto);
+            }
         }
     }
 }
