@@ -765,7 +765,7 @@
         }
     }
 }
-.company_spec, .universitySpec{
+.company_spec, .universitySpec, .company_spec_unlisted{
     h2{
         font-weight: $medi;
         @include pc{
@@ -846,7 +846,7 @@
         }
     }
 }
-.patentSpec, .company_spec, .universitySpec, .inventorSpec{
+.patentSpec, .company_spec, .universitySpec, .inventorSpec, .company_spec_unlisted{
     .area_feadback{
         @include pc{
             position: relative;
@@ -877,6 +877,123 @@
                     // justify-content: center;
                     // align-items: center;
                 }
+            }
+        }
+    }
+}
+.company_spec_unlisted{
+    .area1{
+        .inner{
+            padding: 36px 0 31px;
+            @include pc{
+                padding: 58px 0 63px;
+            }
+        }
+    }
+    .area2{
+        .c_evaluation{
+            @include setCont(100%, auto, block, relative);
+            padding: 35px calcPercent(24) 62px;
+            @include pc{
+                padding: 70px 20px 53px 0;
+                flex-grow: 1;
+            }
+        }
+    }
+    .area{
+        @include setCont(100%, auto, block, relative);
+        .inner{
+            @include setCont(100%, auto, block);
+            @include pc{
+                display: flex;
+                justify-content: space-between;
+            }
+        }
+        .left{
+            width: 100%;
+            @include pc{
+                width: 409px;
+            }
+        }
+        .right{
+            width: 100%;
+            @include pc{
+                width: 494px;
+            }
+        }
+    }
+    .a3{
+        background-color: #faf8fd;
+        .inner{
+            @include setCont(100%, auto);
+            padding: 0;
+            @include pc{
+                padding: 49px 0 65px;
+            }
+        }
+        .c_inventors{
+            padding-top: 73px;
+            padding: 0 calcPercent(16) 41px;
+            @include pc{
+                padding: 0;
+            }
+        }
+        .c_chart{
+            padding: 40px calcPercent(24) 18px;
+            @include pc{
+                padding: 0 35px 0 0;
+            }
+            .bx_chart{
+                padding-top: 47.5px;
+            }
+        }
+    }
+    .a4{
+        .inner{
+            padding: 60px calcPercent(24) 71px;
+            @include pc{
+                padding: 60px 0 71px;
+            }
+        }
+        .c_sectors {
+            padding-bottom: 60px;
+            @include pc{
+                padding: 0;
+            }
+        }
+        h2{
+            margin-bottom: 32px;
+        }
+    }
+    .a5{
+        background-color: $gray50;
+        .inner{
+            padding: 43px calcPercent(24) 37px;
+            @include pc{
+                padding: 60px 0 71px;
+            }
+        }
+        .left {
+            padding-bottom: 60px;
+            @include pc{
+                padding: 0;
+            }
+        }
+        h2{
+            margin-bottom: 25px;
+        }
+    }
+    .area_feadback{
+        .area_filter_search{
+            border: none;
+            &+.left{
+                border-top: 12px solid #f5f5f6;
+            }
+        }
+        .left{
+            border: none;
+            &+.area_filter_search{
+                border-top: 12px solid #f5f5f6;
             }
         }
     }

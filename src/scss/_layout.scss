@@ -1148,8 +1148,9 @@ a.inventors_item, button.inventors_item, .ac_link{
 	}
 	.c_right{
 		flex-shrink: 0;
-		padding: 8px 0 0 10px;
+		padding: 8px 0 0 8px;
 		text-align: right;
+		letter-spacing: -0.5px;
 		.txt_top{
 			@include font(16, normal, $gray800, $medi);
 			@include pc{
@@ -1531,6 +1532,146 @@ a.visual_wrap{
 				max-width: 9999px;
 				max-height: 9999px;
 				right: 100px;
+			}
+		}
+	}
+	&.type_unlisted{
+		min-height: 0;
+		background:unset;
+		display: block;
+		.v_area1, .v_area2{
+			@include setCont(100%, auto);
+		}
+		.v_area1{
+			.inner .cont{
+				width: 100%;
+				text-align: left;
+				padding: 16px calcPercent(24) 32px;
+				margin-top: 0;
+				@include pc{
+					padding: 60px 0 48px;
+				}
+				.c_info{
+					width: 100%;
+					display: flex;
+					align-items: center;
+					.bx_txt{
+						width: 100%;
+						display: flex;
+						flex-direction: column;
+						flex-grow: 1;
+						padding-left: 16px;
+					}
+					.num{
+						@include font(15, normal, $gray800, $medi);
+						display: block;
+						@include fontPc(15);
+					}
+					h2{
+						width: 100%;
+						@include font(22, normal, $gray800, $medi);
+						margin: 4px 0;
+						word-wrap: break-word;
+						word-break: keep-all;
+						@include pc{
+							@include fontPc(22);
+						}
+					}
+					.txt_gray{
+						display: block;
+						@include font(16, normal, $gray500);
+						@include pc{
+							@include fontPc(16);
+						}
+					}
+					.bx_icon{
+						@include setCont(60px, 60px, block);
+						min-width: 60px;
+						flex-shrink: 1;
+						.icon{
+							@include setCont(100%, 100%, block);
+							img{
+								width: 100%;
+							}
+						}
+					}
+				}
+			}
+		}
+		.v_area2{
+			background-color: #faf8fd;
+			
+			.inner .cont{
+				@include setCont(100%, auto, block);
+				margin: 0;
+				@include pc{
+					padding: 35px 0 43px;
+					display: flex;
+					justify-content: space-between;
+				}
+				.c_left, .c_right{
+					width: 100%;
+					@include pc{
+						padding: 0;
+						width: 50%;
+					}
+				}
+				.c_left{
+					padding: 30px calcPercent(24) 23px;
+					@include pc{
+						padding: 0 10px 0 0;
+					}
+				}
+				.c_right{
+					background-color: $white;
+					padding: 13px calcPercent(24) 23px;
+					border-bottom: 12px solid $gray50;
+					@include pc{
+						background-color: unset;
+						border:none;
+					}
+					@include pc{
+						padding: 0 0 0 10px;
+					}
+				}
+			}
+		}
+		.inner{
+			display: block;
+			animation-name: unset;
+			dl{
+				width: 100%;
+				text-align: left;
+				&+dl{
+					margin-top: 16px;
+				}
+				@include pc{
+					margin-top: 16px;
+				}
+				dt{
+					@include font(13, normal, $gray600, $medi);
+					@include pc{
+						@include fontPc(13);
+					}
+				}
+				dd{
+					margin-top: 5px;
+					b{
+						@include font(26, normal, $gray800, $medi);
+						display: block;
+						@include pc{
+							@include fontPc(26);
+						}
+					}
+					.txt_point{
+						@include font(30, normal, $point, $bold);
+						display: inline-block;
+						vertical-align: middle;
+						@include pc{
+							@include fontPc(30);
+						}
+					}
+				}
 			}
 		}
 	}

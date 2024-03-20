@@ -11,6 +11,7 @@ document.createElement("main");
 getInternetExplorerVersion();
 function getInternetExplorerVersion() {
 	var rv = -1; // Return value assumes failure.
+	$("html").addClass(navigator.appName);
 	if (navigator.appName != "Microsoft Internet Explorer"){
 		return;
 	}
@@ -26,6 +27,7 @@ function getInternetExplorerVersion() {
 	}
 	$("html").addClass("ie"+rv);
 }
+
 
 $(function(){ 
 	//header 스크롤 올리면 보이고 내리면 사라지고
@@ -150,7 +152,7 @@ $(function(){
 			initialY = null;
 		}
 	}
-	//v:20240213 - s:터치 이벤트 닫기 영역 조정
+	//s:터치 이벤트 닫기 영역 조정
 	window.addEventListener("touchstart", function(e){
 		initTouch(e);
 		if(e.target.className == "area_close" || e.target.className  == "btn_p_close") touchStart = true;
@@ -160,7 +162,7 @@ $(function(){
 			swipeDirection(e);
 		}
 	});
-	//v:20240213 - e:터치 이벤트 닫기 영역 조정
+	//e:터치 이벤트 닫기 영역 조정
 	window.addEventListener("touchend", function(e){
 		var view = window.innerWidth >= 1080? "pc" : "mobile";
 		if(touchState=="down" && view == "mobile"){
@@ -171,7 +173,32 @@ $(function(){
 			touchStart = false;
 		}
 	});
-	//s:터치 이벤트 닫기
+	//e:터치 이벤트 닫기
+	//v:20240319 - s:툴팁 동작
+	$(".tooltip").mouseover(function(e){
+		if(!fnCheckDevice()) $(e.target).parents(".tooltip").addClass("on");
+	});
+	$(".tooltip").mouseleave(function(e){
+		if(!fnCheckDevice()) $(e.target).parents(".tooltip").removeClass("on");
+	});
+	$(".btn_tooltip").click(function(e){
+		var target = $(e.target).parents(".tooltip");
+		if(fnCheckDevice()){
+			if (!target.hasClass("on")){
+				$(".tooltip").removeClass("on");
+				target.addClass("on");
+			}
+			else target.removeClass("on");
+		}
+	});
+	$(document).on("click", function(e){
+		if(fnCheckDevice() && $(".tooltip.on").length>0){
+			if($(e.target).parents(".tooltip").length == 0){
+				$(".tooltip").removeClass("on");
+			}
+		}
+	});
+	//v:20240319 - e:툴팁 동작
 
 });
 $(window).resize(function(){
@@ -181,3 +208,9 @@ $(window).resize(function(){
 		scrollPosition = 0;
 	}
 });
+//v:20240319 - s:툴팁 동작
+function fnCheckDevice(){
+	var isMobile = /Android|webOS|iPhone|iPad|iPod|BlackBerry/i.test(navigator.userAgent) ? true : false;
+	return isMobile;
+}
+//v:20240319 - e:툴팁 동작
