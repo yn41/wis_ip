@@ -765,7 +765,7 @@
         }
     }
 }
-.company_spec, .universitySpec, .company_spec_unlisted{
+.company_spec, .universitySpec, .company_spec_unlisted, .company_spec_listed{
     h2{
         font-weight: $medi;
         @include pc{
@@ -846,7 +846,7 @@
         }
     }
 }
-.patentSpec, .company_spec, .universitySpec, .inventorSpec, .company_spec_unlisted{
+.patentSpec, .company_spec, .universitySpec, .inventorSpec, .company_spec_unlisted, .company_spec_listed{
     .area_feadback{
         @include pc{
             position: relative;
@@ -881,7 +881,7 @@
         }
     }
 }
-.company_spec_unlisted{
+.company_spec_unlisted, .company_spec_listed{
     .area1{
         .inner{
             padding: 36px 0 31px;
@@ -995,6 +995,32 @@
             &+.area_filter_search{
                 border-top: 12px solid #f5f5f6;
             }
+        }
+    }
+}
+.company_spec_listed{
+    .visual_wrap {
+        &.type_unlisted .v_area2 .inner{
+            .cont {
+                @include pc{
+                    padding: 35px 0 45px;
+                }
+                .c_left{
+                    padding: 24px calcPercent(24) 36px;
+                    @include pc{
+                        padding: 0;
+                    }
+                }
+                .c_right{
+                    padding: 25px calcPercent(24) 41px;
+                    @include pc{
+                        padding: 0;
+                    }
+                }
+            }
+        }
+        .tooltip .desc{
+            right: -75px;
         }
     }
 }

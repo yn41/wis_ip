@@ -1046,7 +1046,7 @@ form{
             align-items: center;
             overflow: hidden;
             .unit{
-                @include setCont(auto, 80px, flex, relative);
+                @include setCont(auto, 80px, flex, relative, $gray50);
                 align-items: center;
                 justify-content: center;
                 &.bg_purple{

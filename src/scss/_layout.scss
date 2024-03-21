@@ -1535,7 +1535,7 @@ a.visual_wrap{
 			}
 		}
 	}
-	&.type_unlisted{
+	&.type_unlisted, &.type_listed{
 		min-height: 0;
 		background:unset;
 		display: block;
@@ -1556,7 +1556,7 @@ a.visual_wrap{
 					display: flex;
 					align-items: center;
 					.bx_txt{
-						width: 100%;
+						width: auto;
 						display: flex;
 						flex-direction: column;
 						flex-grow: 1;
@@ -1588,6 +1588,12 @@ a.visual_wrap{
 						@include setCont(60px, 60px, block);
 						min-width: 60px;
 						flex-shrink: 1;
+						&.rk1{
+							@include setCont(75px, 70px, block);
+							@include pc{
+								@include setCont(98px, 91px);
+							}
+						}
 						.icon{
 							@include setCont(100%, 100%, block);
 							img{
@@ -1600,7 +1606,6 @@ a.visual_wrap{
 		}
 		.v_area2{
 			background-color: #faf8fd;
-			
 			.inner .cont{
 				@include setCont(100%, auto, block);
 				margin: 0;
@@ -1635,6 +1640,129 @@ a.visual_wrap{
 					}
 				}
 			}
+			.ptr_wrap{
+				@include setCont(100%, auto);
+				dl{
+					dt{
+						@include font(13,15,$gray700, $medi);
+						text-align: left;
+						margin-bottom: 16px;
+						@include pc{
+							@include fontPc(13,15);
+							margin-bottom: 12px;
+						}
+					}
+					dd{
+						@include setCont(100%, auto, flex);
+						align-items: center;
+						text-align: left;
+						.bx_txt{
+							@include font(22,26,$white, $bold);
+							@include pc{
+								@include fontPc(22,26);
+							}
+							display: inline-block;
+							padding: 5px 14px;
+							margin-right: 11px;
+							border-radius: 5px;
+							&.bg_green{
+								background-color: #91dc5a;
+							}
+							&.bg_yellow{
+								background-color: #ffd570;
+							}
+							&.bg_pink{
+								background-color: #ff7373;
+							}
+						}
+					}
+				}
+				.ptr_chart{
+					// @include setCont(calcVw(300, 3.6), calcVw(85, 3.6), block, relative);
+					@include setCont(calcPercent(300, 312), 85px, block, relative);
+					margin-top: 52.8px;
+					margin: 52.8px auto 0;
+					padding:  0 0 46px;
+					@include pc{
+						@include setCont(300px, 85px, block, relative);
+						margin: 49px 0 0;
+					}
+					.bx_bars{
+						@include setCont(100%, 17px, flex, absolute);
+						&::before{
+							@include setCont(100%, 1px, block, absolute, #dbdcdd);
+							top: 26px;
+							left: 0;
+						}
+						.bar{
+							@include setCont(auto, 100%, block, relative);
+							.nm{
+								@include setCont(100%, auto, block, absolute);
+								@include font(16, 19, $gray500);
+								top: 46px;
+								left: 50%;
+								transform: translateX(-50%);
+								text-align: left;
+								@include pc{
+									@include fontPc(16, 19, $gray500);
+								}
+							}
+							&.bg_green{
+								width: calcPercent(125, 300);
+								border-radius: 17px 0 0 17px;
+								background-color: #91dc5a;
+								@include pc{
+									width: 125px;
+								}
+								&::before{
+									@include setCont(1px, 13px, block, absolute, #dbdcdd);
+									top: 26px;
+									left: 0;
+								}
+							}
+							&.bg_yellow{
+								// width: calcPercent(65, 300);
+								background-color: #ffd570;
+								flex-grow: 1;
+								&::before{
+									@include setCont(1px, 13px, block, absolute, #dbdcdd);
+									top: 26px;
+									left: 50%;
+									transform: translateX(-50%);
+								}
+								.nm{
+									text-align: center;
+									min-width: 60px;
+								}
+							}
+							&.bg_pink{
+								width: calcPercent(125, 300);
+								border-radius: 0 17px 17px 0;
+								background-color: #ff7373;
+								@include pc{
+									width: 125px;
+								}
+								&::before{
+									@include setCont(1px, 13px, block, absolute, #dbdcdd);
+									top: 26px;
+									right: 0;
+								}
+								.nm{
+									text-align: right;
+								}
+							}
+						}
+					}
+					.point{
+						@include setCont(13px, 11px, block, absolute);
+						@include bgSvg(arrDown1($s_point), no-repeat, 50% 50%, 100% auto);
+						top: -17px;
+						left: 0;
+						transform: translateX(-50%);
+						z-index: 2;
+					}
+				}
+			}
 		}
 		.inner{
 			display: block;
@@ -1646,7 +1774,7 @@ a.visual_wrap{
 					margin-top: 16px;
 				}
 				@include pc{
-					margin-top: 16px;
+					margin-top: 0;
 				}
 				dt{
 					@include font(13, normal, $gray600, $medi);
@@ -1655,7 +1783,7 @@ a.visual_wrap{
 					}
 				}
 				dd{
-					margin-top: 5px;
+					margin-top: 7px;
 					b{
 						@include font(26, normal, $gray800, $medi);
 						display: block;
