@@ -621,13 +621,13 @@ input.ipt{
         background-color: rgba(102, 192, 238 ,0.2) !important;
     }
     &.w00013 {
-        background-color: rgba(59, 130, 246 ,0.2) !important;
-    }
-    &.w00014 {
         background-color: rgba(0, 171, 168 ,0.2) !important;
     }
-    &.w00015 {
+    &.w00014 {
         background-color: rgba(82, 204, 123 ,0.2) !important;
+    }
+    &.w00015 {
+        background-color: rgba(59, 130, 246 ,0.2) !important;
     }
     &.etc {
         background-color: #d8d8d8
@@ -1073,6 +1073,190 @@ form{
                     @include pc{
                         @include fontPc(13,15);
                     }
+                }
+            }
+        }
+    }
+}
+.bx_chart{
+    width: 100%;
+    position: relative;
+    margin: 0 auto;
+    max-width: 500px;
+    height: 310px;
+    @include pc{
+        height: auto;
+    }
+    .c_inner{
+        margin-left: 20px !important;
+        min-width: 350px;
+        @include pc{
+            width: 525px !important;
+            height: 325px !important;
+            margin-left: 40px !important;
+        }
+    }
+    .cover_arr{
+        @include setCont(100%, 100%, block, absolute);
+        top: -2px;
+        left: -23px;
+        @include pc{
+            top: 0;
+            left: 0;
+        }
+        .nm{
+            display: block;
+            text-align: center;
+            @include font(16, 19, $gray400);
+            @include pc{
+                @include fontPc(16);
+            }
+        }
+        .arr_vertical{
+            @include setCont(1px, 260px, block, absolute, $gray300);
+            left: 47px;
+            bottom: 27px;
+            @include pc{
+                left: 37px;
+                height: 280px;
+            }
+            &::before, &::after{
+                @include setCont(1px, 8px, block, absolute, $gray300);
+                top: 0;
+            }
+            &::before{
+                transform: rotate(25deg);
+                left: -2px;
+            }
+            &::after{
+                transform: rotate(-25deg);
+                left: 2px;
+
+            }
+            .nm{
+                @include setCont(284px,auto, block, absolute);
+                transform: rotate(-90deg);
+                top: 138px;
+                left: -163px;
+            }
+        }
+        .arr_horizontal{
+            @include setCont(100%, 1px, block, absolute, $gray300);
+            width: calc(100% - 35px);
+            min-width: 295px;
+            bottom: 26px;
+            left: 47px;
+            @include pc{
+                width: 460px;
+                left: 37px;
+            }
+            .nm{
+                display: block;
+                text-align: center;
+                margin-top: 15px;
+            }
+            &::before, &::after{
+                @include setCont(8px, 1px, block, absolute, $gray300);
+                right: 0;
+            }
+            &::before{
+                transform: rotate(25deg);
+                top: -2px;
+            }
+            &::after{
+                transform: rotate(-25deg);
+                top: 2px;
+            }
+        }
+    }
+    &.chart_sector{
+        .am5-layer-0{
+            width: calc(100% + 30px) !important;
+            @media (max-width: 400px) {
+                width: 100% !important;
+            }
+        }
+        @include pc{
+            transform: translateX(0);
+        }
+    }
+    &.chart_landscape{
+        padding: 23px 0 0 0 !important;
+        max-width: 500px;
+        margin: 0 auto 50px;
+        height: 300px;
+        @include pc{
+            padding: 17px 27px 0 0 !important;
+            height: auto;
+        }
+        .c_inner{
+            min-width: 0;
+            @include pc{
+                margin-left: 30px !important;
+                width: 380px !important;
+                height: 515px !important;
+            }
+        }
+        .cover_arr{
+            top: 25px;
+            left: -23px;
+            @include pc{
+                top: 23px;
+                left: 0;
+            }
+            .unit_nm{
+                @include font(16, 16, $white, $medi);
+                display: block;
+                position: absolute;
+                z-index: 3;
+                @include pc{
+                    @include fontPc(20);
+                }
+                &.top{
+                    top: 19px;
+                    left: 75px;
+                    @include pc{
+                        left:60px;
+                    }
+                }
+                &.top_right{
+                    top: 19px;
+                    right: -10px;
+                    @include pc{
+                        right: 30px;
+                    }
+                }
+                &.bottom{
+                    bottom: 46px;
+                    left: 75px;
+                    @include pc{
+                        left:60px;
+                    }
+                }
+                &.bottom_right{
+                    bottom: 46px;
+                    right: -10px;
+                    @include pc{
+                        right: 30px;
+                    }
+                }
+            }
+            .arr_vertical{
+                @include pc{
+                    height: 494px;
+                }
+                .nm{
+                    top: 120px;
+                    left: -163px;
+                    @include pc{
+                        top: 235px;
+                    }
+                }
+            }
+            .arr_horizontal{
+                width: calc(100% - 24px);
+                @include pc{
+                    width: 355px;
                 }
             }
         }

@@ -941,14 +941,12 @@
         .c_chart{
             padding: 40px calcPercent(24) 18px;
             @include pc{
-                padding: 0 35px 0 0;
-            }
-            .bx_chart{
-                padding-top: 47.5px;
+                padding: 0 ;
             }
         }
     }
     .a4{
+        overflow: hidden;
         .inner{
             padding: 60px calcPercent(24) 71px;
             @include pc{
@@ -962,7 +960,10 @@
             }
         }
         h2{
-            margin-bottom: 32px;
+            margin-bottom: 12px;
+            @include pc{
+                margin-bottom: 32px;
+            }
         }
     }
     .a5{
