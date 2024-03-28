@@ -68,6 +68,22 @@
 			position: relative;
 			justify-content: space-between;
 		}
+		.r_group{
+			height: 100%;
+			display: flex;
+			align-items: center;
+			.link_login{
+				display: none;		
+				&:hover{
+					opacity: 0.6;
+				}
+				@include pc{
+					display: block;		
+					@include fontPc(16, 19, $point, $medi);
+					margin-left: 32px;
+				}
+			}
+		}
 	}
 	.gnb{
 		@include setCont(100%, 0, block, absolute);
@@ -144,9 +160,18 @@
 				opacity: 0.6;
 			}
 			&.on{
-				// font-weight: $bold;
+				font-weight: $bold;			
 				&::before{
 					width: 100%;
+				}
+			}
+			&.link_login{
+				height: auto;
+				padding-top: 36px;
+				color: $point;
+				font-weight: $bold;			
+				@include pc{
+					display: none;
 				}
 			}
 		}
@@ -507,7 +532,7 @@
 		@include font(16, normal, $gray500, $bold);
 		display: flex;
 		align-items: center;
-		margin-bottom: 8px;
+		margin-bottom: 15px;
 		@include pc{
 			margin-bottom: 25px;
 			@include fontPc(23, normal, $gray500, $bold);
@@ -531,7 +556,7 @@
 		}
 	}
 	.f_menu{
-		margin: 0 0 48px calcPercent(5);
+		margin: 0 0 48px 3px;
 		@include pc{
 			margin: 0 0 60px 0;
 		}
@@ -549,7 +574,7 @@
 		}
 	}
 	.comp{
-		margin: 0 0 0 calcPercent(5);
+		margin: 0 0 0 3px;
 		@include pc{
 			margin: 0;
 		}
@@ -602,6 +627,7 @@
 		padding: 34px calcPercent(24);
 		margin: 0 auto;
 		@include pc{
+			margin: 0;
 			padding: 0;
 		}
 	}
@@ -614,7 +640,7 @@
 	.left{
 		border-top: 12px solid $gray100;
 		@include pc{
-			@include setCont(calcPercent(648,1004), 383px, flex);
+			@include setCont(555px, 383px, flex);
 			justify-content: space-between;
 			align-items: center;
 			padding-left: 0;
@@ -629,6 +655,7 @@
 			padding-bottom: 27px;
 			@include pc{
 				padding: 0;
+				margin: 0 0 0 93px;
 			}
 		}
 		p{
@@ -650,6 +677,7 @@
 			@include pc{
 				width: 312px;
 				padding: 0;
+				// 47px
 			}
 		}
 		h2{
