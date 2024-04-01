@@ -1262,3 +1262,34 @@ form{
         }
     }
 }
+
+.coln,.colb,.col2,.col3,.col4 {
+  display: flex !important;
+  flex-wrap: wrap;
+  .shrink {
+    flex-shrink: 0;
+  }
+}
+.coln {
+  .col {
+    flex-grow: 1;
+  }
+}
+.colb {
+  justify-content: space-between;
+}
+.col2 {
+  .col {
+    width: 50%;
+  }
+}
+.col3 {
+  .col {
+    width: 33.3%;
+  }
+}
+.col4 {
+  .col {
+    width: 25%;
+  }
+}
