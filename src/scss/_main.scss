@@ -401,12 +401,13 @@
             padding-bottom: 60px;
             @include pc{
                 padding-top: 45px;
-                padding-bottom: 66px;
+                padding-bottom: 56px;
             }
         }
         .top{
             margin-bottom: 24px;
             @include pc{
+                margin-bottom: 14px;
                 @include setCont(100%, auto, flex);
                 justify-content: space-between;
                 align-items: center;
@@ -448,30 +449,32 @@
             margin-left: -8px;
             flex-wrap: wrap;
             justify-content: space-between;
+            margin: 0 auto;
+            max-width: 660px;
+            @include pc{
+                max-width: 200%;
+            }
         }
         .unit{
-            @include setCont(40%, auto, block);
-            min-width: 290px;
+            width: 312px;
             margin: 0 8px 32px;
-            flex-grow: 1;
+            margin: 0 auto 32px;
+            transform: translateX(-8px);
             @include pc{
                 width: 324px;
-                min-width: 290px;
-                margin: 0 8px;
-                flex-grow: unset;
+                margin: 10px 8px;
+                transform: translateX(0px);
             }
             .thum{
-                @include setCont(100%, calcVw(180), block);
-                min-height: 180px;
-                max-height: 220px;
+                @include setCont(100%, 169px, block);
                 border-radius: 10px;
                 background-repeat: no-repeat !important;
-                background-size: 100%  auto !important;
-                background-position: 50% 50% !important;
+                background-size: 100% auto;
+                background-position: 50% 50%;
                 box-shadow: 0 2px 4px 0 rgba(39, 43, 55, 0.16);
                 transition: all 300ms;
                 @include pc{
-                    height: 187px
+                    height: 177px
                 }
             }
             h3{
@@ -497,41 +500,9 @@
                 .date{
                     color: $gray300;
                 }
-                &.u1{
-                    .thum{
-                        background-size: 110%  auto !important;
-                    } 
-                }
-                &.u2{
-                    .thum{
-                        background-size: auto 195% !important;
-                    }     
-                }
-                &.u3{
-                    .thum{
-                        background-size: auto 150% !important;
-                    }       
-                }
-            }
-            &.u1{
                 .thum{
-                    background-size: 100%  auto !important;
-                    background-position: 50% 50% !important;
-                    background-color: $white;
-                }
-            }
-            &.u2{
-                .thum{
-                    background-position: 50% 36% !important;
-                    background-size: auto 185% !important;
-                    background-color: $white;
-                }
-            }
-            &.u3{
-                .thum{
-                    background-position: 50% 45% !important;
-                    background-size: auto 140% !important;
-                }
+                    background-size: 110%  auto !important;
+                } 
             }
         }
     }

@@ -1116,6 +1116,7 @@ a.inventors_item, button.inventors_item, .ac_link{
 	}
 	.colb{
 		align-items: flex-start !important;
+		flex-wrap: unset !important;
 	}
 	.c_icon{
 		// min-width: 50px;
