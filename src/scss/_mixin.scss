@@ -310,53 +310,45 @@
 }
 @-webkit-keyframes aniMain3 {
   0% { 
-      top: 480px;
-      opacity: 0;
-      right: -100px;
-      transform: rotate(-45deg);
+    top: 480px;
+    opacity: 0;
+    right: -100px;
+    transform: rotate(-45deg);
   }
   20%{
-      top: 126px;
-      opacity: 1;
-      right: -59px;
-      transform: rotate(-5deg);
+    top: 126px;
+    opacity: 1;
+    right: -59px;
+    transform: rotate(-5deg);
   }
   30%{
-      top: 166px;
-      // transform: rotate(0deg);
+    top: 166px;
   }
   40%{
-      // top: 196px;
-      top: 146px;
-    }
-    50%{
-      // top: 205px;
-      top: 166px;
-    }
-    60%{
-      // top: 196px;
-      top: 146px;
-    }
-    70%{
-      // top: 205px;
-      top: 166px;
+    top: 146px;
+  }
+  50%{
+    top: 166px;
+  }
+  60%{
+    top: 146px;
+  }
+  70%{
+    top: 166px;
   }
   80%{
-      // top: 196px;
-      top: 146px;
-      opacity: 1;
+    top: 146px;
+    opacity: 1;
   }
   90%{
-      // top: 120px;
-      top: 80px;
-      opacity: 0;
-      right: -59px;
-    }
-    100%{
-      // top: 120px;
-      top: 80px;
-      opacity: 0;
-      right: -59px;
+    top: 80px;
+    opacity: 0;
+    right: -59px;
+  }
+  100%{
+    top: 80px;
+    opacity: 0;
+    right: -59px;
   }
 }
 
