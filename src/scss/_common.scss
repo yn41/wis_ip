@@ -1,1295 +1,1316 @@
 h1{
-    @include font(22, normal, $gray800, $bold);
-    line-height: normal;
-    @include pc{
-        @include font(30);
-    }
+	@include font(22, normal, $gray800, $bold);
+	line-height: normal;
+	@include pc{
+		@include font(30);
+	}
 }
 h2{
-    @include font(19, normal, $gray800, $bold);
-    @include pc{
-        @include fontPc(28);
-    }
+	@include font(19, normal, $gray800, $bold);
+	@include pc{
+		@include fontPc(28);
+	}
 }
 a, button, input{
-    transition: all 300ms;
+	transition: all 300ms;
 }
 .hide{
-    opacity: 0;
-    transition: all 400ms ease;
+	opacity: 0;
+	transition: all 400ms ease;
 }
 .ellipsis {
-    @include ellipsis;
+	@include ellipsis;
 }
 .ellipsis2 {
-    @include ellipsis("multi", 2);
+	@include ellipsis("multi", 2);
 }
 .ellipsis3 {
-    @include ellipsis("multi", 3);
+	@include ellipsis("multi", 3);
 }
 .ellipsis4 {
-    @include ellipsis("multi", 4);
+	@include ellipsis("multi", 4);
 }
 .f11{
-    @include font(11);
+	@include font(11);
 }
 .f12{
-    @include font(12);
+	@include font(12);
 }
 .f13{
-    @include font(13);
+	@include font(13);
 }
 .f14{
-    @include font(14);
+	@include font(14);
 }
 .f22{
-    @include font(22);
+	@include font(22);
 }
 
 .txt_point{
-    color: $point  !important;
+	color: $point	!important;
 }
 .txt_red{
-    color: #b3261e !important;
+	color: #b3261e !important;
 }
 .txt_black{
-    color: #121416 !important;
+	color: #121416 !important;
 }
 .txt_yellow{
-    color: #e9a802 !important;
+	color: #e9a802 !important;
 }
 .txt_grean{
-    color: #00b54a !important;
+	color: #00b54a !important;
 }
 .txt_gray{
-    color: $gray600 !important;
+	color: $gray600 !important;
 }
 .txt_light_gray{
-    color: $gray400 !important;
+	color: $gray400 !important;
 }
 .f_medi{
-    font-weight: $medi !important;
+	font-weight: $medi !important;
 }
 .f_bold{
-    font-weight: $bold !important;
+	font-weight: $bold !important;
 }
 
 .logo{
-    @include setCont(48px, 48px, inline-block);
-    min-width: 48px;
-    @include bgSvg(logo(), no-repeat, 50% 50%, 100% auto);
-    span{
-        @include blind;
-    }
+	@include setCont(48px, 48px, inline-block);
+	min-width: 48px;
+	@include bgSvg(logo(), no-repeat, 50% 50%, 100% auto);
+	span{
+		@include blind;
+	}
 }
 .btn, a.btn{
-    background-color: $point;;
-    @include font(16, 19, $gray50, $medi);
-    padding: 17px 34px 18px;
-    border-radius: 14px;
-    text-align: center;
-    &:hover, &:active{
-        background-color: #6737cc;
-        color: $gray50 !important;
-    }
-    &+.btn{
-        margin-left: 8px;
-    }
-    &.dis, &:disabled{
-        background-color: $purple200;
-    }
-    &.full{
-        width: 100%;
-        &+.btn{
-            margin-left: 0;
-        }
-    }
-    &.half{
-        width: 50%;
-    }
-    &.s_large{
-       padding: 13px 26px 14px;
-       border-radius: 10px;
-       @include pc{
-           @include fontPc(16);
-       }
-    }
-    &.s_medi{
-        padding: 10px 18px;
-        border-radius: 8px;
-        @include pc{
-            @include fontPc(16);
-        }
-    }
-    &.s_tiny{
-        @include font(13);
-        padding: 10px 12.5px 9px;
-        border-radius: 6px;
-        @include pc{
-            @include fontPc(13);
-        }
-    }
-    &.l_purple{
-        background-color: $purple50;
-        color: $point;
-        &:hover, &:active, &:focus{
-            background-color: $purple200;
-            color: $point !important;
-            box-shadow: unset;
-        }
-        &.dis, &:disabled{
-            background-color: $purple50;
-            color: $purple200;
-        }
-    }
+	background-color: $point;;
+	@include font(16, 19, $gray50, $medi);
+	padding: 17px 34px 18px;
+	border-radius: 14px;
+	text-align: center;
+	&:hover, &:active{
+		background-color: #6737cc;
+		color: $gray50 !important;
+	}
+	&+.btn{
+		margin-left: 8px;
+	}
+	&.dis, &:disabled{
+		background-color: $purple200;
+	}
+	&.full{
+		width: 100%;
+		&+.btn{
+			margin-left: 0;
+		}
+	}
+	&.half{
+		width: 50%;
+	}
+	&.s_large{
+		 padding: 13px 26px 14px;
+		 border-radius: 10px;
+		 @include pc{
+			 @include fontPc(16);
+		 }
+	}
+	&.s_medi{
+		padding: 10px 18px;
+		border-radius: 8px;
+		@include pc{
+			@include fontPc(16);
+		}
+	}
+	&.s_tiny{
+		@include font(13);
+		padding: 10px 12.5px 9px;
+		border-radius: 6px;
+		@include pc{
+			@include fontPc(13);
+		}
+	}
+	&.l_purple{
+		background-color: $purple50;
+		color: $point;
+		&:hover, &:active, &:focus{
+			background-color: $purple200;
+			color: $point !important;
+			box-shadow: unset;
+		}
+		&.dis, &:disabled{
+			background-color: $purple50;
+			color: $purple200;
+		}
+	}
 }
 .bx_option{
-    @include setCont(100%, auto, flex);
-    width: calc(100% + 8px);
-    margin-left: -4px;
-    flex-wrap: wrap;
+	@include setCont(100%, auto, flex);
+	width: calc(100% + 8px);
+	margin-left: -4px;
+	flex-wrap: wrap;
 }
 .btn_option, a.btn_option{
-    @include font(13, normal, $gray50, $medi);
-    padding: 7px 11px;
-    margin: 6px 4px;
-    border-radius: 6px;
-    text-align: center;
-    border: 1px solid $point;
-    color: $point;
-    @include pc{
-        @include fontPc(13);
-        padding: 7px 10px;
-    }
-    &.on{
-        background-color: $point;
-        color: $gray50 !important;
-    }
-    &:hover:not(.on), &:active:not(.on){
-        background-color: $purple200;
-        border: 1px solid $purple200;
-        color: $gray50 !important;
-    }
+	@include font(13, normal, $gray50, $medi);
+	padding: 7px 11px;
+	margin: 6px 4px;
+	border-radius: 6px;
+	text-align: center;
+	border: 1px solid $point;
+	color: $point;
+	@include pc{
+		@include fontPc(13);
+		padding: 7px 10px;
+	}
+	&.on{
+		background-color: $point;
+		color: $gray50 !important;
+	}
+	&:hover:not(.on), &:active:not(.on){
+		background-color: $purple200;
+		border: 1px solid $purple200;
+		color: $gray50 !important;
+	}
 }
 .icon_electric{
-    @include setCont(34px, 34px, block, absolute);
-    @include bg("/icon/electric.svg", no-repeat, 50% 50%, 100% auto);
-    @include blind;
-    z-index: 2;
-    @include pc{
-        @include setCont(69px, 69px, block, absolute);
+	@include setCont(34px, 34px, block, absolute);
+	@include bg("/icon/electric.svg", no-repeat, 50% 50%, 100% auto);
+	@include blind;
+	z-index: 2;
+	@include pc{
+		@include setCont(69px, 69px, block, absolute);
 
-    }
+	}
 }
 
 .colb{
-    display: flex;
-    justify-content: space-between;
+	display: flex;
+	justify-content: space-between;
 }
 input.ipt, .textarea{
-    @include setCont(100%, 40px, block, relative, $white);
-    border-radius: 8px;
-    border: 1px solid $gray200;
-    transition: all 300ms;
-    &:hover, &:active{
-        border: 1px solid #d0d2d5;
-        &::placeholder{
-            color: #121416;
-        }
-    }
-    &:focus{
-        border: 1px solid #636567;
-        color: #121416;
-    }
-    &.red{
-        color: $red;
-        border: 1px solid $red;
-        &::placeholder{
-            color: $red;
-        }
-    }
-    &.yellow{
-        border-color: #e9a802;
-        color: #121416;
-        &::placeholder{
-            color: #121416;
-        }
-    }
-    &.grean{
-        border-color: #00b54a;
-        color: #121416;
-        &::placeholder{
-            color: #121416;
-        }
-    }
+	@include setCont(100%, 40px, block, relative, $white);
+	border-radius: 8px;
+	border: 1px solid $gray200;
+	transition: all 300ms;
+	&:hover, &:active{
+		border: 1px solid #d0d2d5;
+		&::placeholder{
+			color: #121416;
+		}
+	}
+	&:focus{
+		border: 1px solid #636567;
+		color: #121416;
+	}
+	&.red{
+		color: $red;
+		border: 1px solid $red;
+		&::placeholder{
+			color: $red;
+		}
+	}
+	&.yellow{
+		border-color: #e9a802;
+		color: #121416;
+		&::placeholder{
+			color: #121416;
+		}
+	}
+	&.grean{
+		border-color: #00b54a;
+		color: #121416;
+		&::placeholder{
+			color: #121416;
+		}
+	}
 }
 .textarea{
-    height: 104px;
-    @include font(16, normal, $gray400);
-    padding: 16px 18px;
-    resize: none;
-    @include pc{
-        @include fontPc(16);
-    }
-    &::placeholder{
-        @include font(16, normal, $gray400);
-        @include pc{
-            @include fontPc(16, 16);
-        }
-    }
-    &.dis, &:disabled{
-        color: #e1e3e7;
-        border: 1px solid #e1e3e7;
-        &::placeholder{
-            color: #e1e3e7;
-        }
-    }
+	height: 104px;
+	@include font(16, normal, $gray400);
+	padding: 16px 18px;
+	resize: none;
+	@include pc{
+		@include fontPc(16);
+	}
+	&::placeholder{
+		@include font(16, normal, $gray400);
+		@include pc{
+			@include fontPc(16, 16);
+		}
+	}
+	&.dis, &:disabled{
+		color: #e1e3e7;
+		border: 1px solid #e1e3e7;
+		&::placeholder{
+			color: #e1e3e7;
+		}
+	}
 }
 input.ipt{
-    height: 40px;
-    @include font(16, 16, $gray400);
-    padding: 0 18px;
-    @include pc{
-        @include fontPc(16, 16);
-    }
-    &::placeholder{
-        @include font(16, 16, $gray400);
-        @include pc{
-            @include fontPc(16, 16);
-        }
-    }
-    &.dis, &:disabled{
-        color: #e1e3e7;
-        border: 1px solid #e1e3e7;
-        &::placeholder{
-            color: #e1e3e7;
-        }
-    }
+	height: 40px;
+	@include font(16, 16, $gray400);
+	padding: 0 18px;
+	@include pc{
+		@include fontPc(16, 16);
+	}
+	&::placeholder{
+		@include font(16, 16, $gray400);
+		@include pc{
+			@include fontPc(16, 16);
+		}
+	}
+	&.dis, &:disabled{
+		color: #e1e3e7;
+		border: 1px solid #e1e3e7;
+		&::placeholder{
+			color: #e1e3e7;
+		}
+	}
 }
 .bx_ipt, .bx_textarea, .bx_search{
-    @include setCont(100%, 40px, block, relative);
-    .ipt, .textarea{
-        height: 100%;
-        &:focus {
-            padding-right: 35px;
-            &+.btn_clear {
-                opacity: 1;
-            }
-        }
-        &.dis, &:disabled{
-            color: #505254;
-            border: 1px solid #edeff2;
-            background-color: #edeff2;
-            &::placeholder{
-                color: #505254;
-            }
-        }
-    }
-    &+.btn{
-        margin-left: 8px;
-    }
-    .btn_clear{
-        @include setCont(17px, 17px, block, absolute);
-        @include bgSvg(btnClose("121416"), no-repeat, 50% 50%, 16px auto);
-        @include blind;
-        top: 50%;
-        right: 11.7px;
-        transform: translateY(-50%);
-        opacity: 0;
-        transition: all 300ms;
-        z-index: 2;
-    }
-    .btn_search{
-        @include setCont(36px, 100%, block, absolute);
-        @include bg("/icon/search.png", no-repeat, 50% 50%, 12px auto);
-        // @include bgSvg(btnSearch($s_gray500), no-repeat, 50% 50%, 12px auto);
-        @include blind;
-        top: 50%;
-        left: 0;
-        transform: translateY(-50%);
-        transition: all 300ms;
-        z-index: 2;
-        &:hover{
-            opacity: 0.7;
-        }
-    }
+	@include setCont(100%, 40px, block, relative);
+	.ipt, .textarea{
+		height: 100%;
+		&:focus {
+			padding-right: 35px;
+			&+.btn_clear {
+				opacity: 1;
+			}
+		}
+		&.dis, &:disabled{
+			color: #505254;
+			border: 1px solid #edeff2;
+			background-color: #edeff2;
+			&::placeholder{
+				color: #505254;
+			}
+		}
+	}
+	&+.btn{
+		margin-left: 8px;
+	}
+	.btn_clear{
+		@include setCont(17px, 17px, block, absolute);
+		@include bgSvg(btnClose("121416"), no-repeat, 50% 50%, 16px auto);
+		@include blind;
+		top: 50%;
+		right: 11.7px;
+		transform: translateY(-50%);
+		opacity: 0;
+		transition: all 300ms;
+		z-index: 2;
+	}
+	.btn_search{
+		@include setCont(36px, 100%, block, absolute);
+		@include bg("/icon/search.png", no-repeat, 50% 50%, 12px auto);
+		// @include bgSvg(btnSearch($s_gray500), no-repeat, 50% 50%, 12px auto);
+		@include blind;
+		top: 50%;
+		left: 0;
+		transform: translateY(-50%);
+		transition: all 300ms;
+		z-index: 2;
+		&:hover{
+			opacity: 0.7;
+		}
+	}
 }
 .bx_textarea{
-    height: 104px;
-    .textarea{
-        &:focus {
-            padding-right: 18px;
-            &+.btn_clear {
-                opacity: 1;
-            }
-        }
-    }
-    .btn_clear{
-        top:5px;
-        right: 6px;
-        transform: unset;
-    }
+	height: 104px;
+	.textarea{
+		&:focus {
+			padding-right: 18px;
+			&+.btn_clear {
+				opacity: 1;
+			}
+		}
+	}
+	.btn_clear{
+		top:5px;
+		right: 6px;
+		transform: unset;
+	}
 }
 .bx_search{
-    .ipt{
-        border-color: $gray200;
-        padding: 0 30px 0 36px;
-        &:focus {
-            padding-right: 30px;
-        }
-    }
-    .btn_clear{
-        @include bgSvg(btnClose($s_gray600), no-repeat, 50% 50%, 16px auto);
-        right: 8px;
-        @include pc{
-            right: 12px;
-        }
-    }
-    &.bx_gray{
-        .ipt{
-            border-color: $gray100;
-            background-color: $gray100;
-            &::placeholder{
-                color: $gray400;
-            }
-        }
-        .btn_search{
-            @include bgSvg(btnSearch($s_gray500), no-repeat, 50% 50%, 12px auto);
-        }
-    }
+	.ipt{
+		border-color: $gray200;
+		padding: 0 30px 0 36px;
+		&:focus {
+			padding-right: 30px;
+		}
+	}
+	.btn_clear{
+		@include bgSvg(btnClose($s_gray600), no-repeat, 50% 50%, 16px auto);
+		right: 8px;
+		@include pc{
+			right: 12px;
+		}
+	}
+	&.bx_gray{
+		.ipt{
+			border-color: $gray100;
+			background-color: $gray100;
+			&::placeholder{
+				color: $gray400;
+			}
+		}
+		.btn_search{
+			@include bgSvg(btnSearch($s_gray500), no-repeat, 50% 50%, 12px auto);
+		}
+	}
 }
 .bx_slct{
-    @include setCont(267px, auto, inline-block, relative);
-    transition: all 300ms;
-    &:hover{
-        .slct_tit{
-            color: #121416;
-        }
-    }
-    &.dis{
-        border-color: #d0d2d5;
-        .slct_tit{
-            background-color: #f6f7f9;
-            border-color: #f6f7f9;
-            color: #505254;
-            cursor: context-menu;
-            &:after{
-                @include bgSvg(arrDown("8a8c8f"), no-repeat, 50% 50%, 100% auto);
-            }
-        }
-    }
-    &.red{
-        .slct_tit{
-            color: #b3261e;
-            border-color: #b3261e;
-            &:after{
-                @include bgSvg(arrDown("b3261e"), no-repeat, 50% 50%, 100% auto);
-            }
-        }
-    }
-    .slct_tit{
-        @include setCont(100%, 40px, flex, relative, $white);
-        @include font(14, 14, #505254);
-        padding: 0 15px 0 16px;
-        align-items: center;
-        transition: all 300ms;
-        border: 1px solid #d0d2d5;
-        border-radius: 8px;
-        @include pc{
-            @include fontPc(14, 14);
-        }
-        &:after{
-            @include setCont(11px, 7px, block, absolute);
-            @include bgSvg(arrDown("8a8c8f"), no-repeat, 50% 50%, 100% auto);
-            transform: translateY(-50%);
-            top: 50%;
-            right: 15px;
-            transition: all 300ms;
-        }
-    }
-    .slct_cont{
-        @include setCont(100%, 0, inline-block, absolute, $white);
-        padding: 0 8px;
-        top: 40px;
-        z-index: 5;
-        border: 0 solid rgba(255, 255, 255, 0);
-        transition: all 300ms;
-        overflow: hidden;
-        &::-webkit-scrollbar-thumb {
-            background: $gray500;
-        }
-        .slct_item{
-            button{
-                @include setCont(100%, 40px, block, relative);
-                @include font(14,24,#505254, normal);
-                @include ellipsis;
-                padding: 8px 16px;
-                text-align: left;
-                @include pc{
-                    @include fontPc(14,24);
-                }
-                &:hover{
-                    background-color: $gray100;
-                    color: $gray500;
-                }
-            }
-            &.select{
-                button{
-                    background-color: #edeff2;
-                }
-            }
-        }
-    }
-    &.on{
-        .slct_tit{
-            border-radius: 8px 8px 0 0;
-            border-color : #636567;
-            &:after{
-                transform: translateY(-50%) rotate(180deg);
-            }
-        }
-        .slct_cont{
-            height: 128px;
-            padding: 4px 8px;
-            overflow: auto;
-            border-radius: 0 0 8px 8px;
-            border: 1px solid #636567;
-            border-top: none;
-        }
-        &.red{
-            .slct_tit{
-                color: #b3261e;
-                border-color: #b3261e;
-                &:after{
-                    @include bgSvg(arrDown("b3261e"), no-repeat, 50% 50%, 100% auto);
-                }
-            }
-            .slct_cont{
-                border: 1px solid #b3261e;
-                border-top: none;
-            }
-        }
-    }
+	@include setCont(267px, auto, inline-block, relative);
+	transition: all 300ms;
+	&:hover{
+		.slct_tit{
+			color: #121416;
+		}
+	}
+	&.dis{
+		border-color: #d0d2d5;
+		.slct_tit{
+			background-color: #f6f7f9;
+			border-color: #f6f7f9;
+			color: #505254;
+			cursor: context-menu;
+			&:after{
+				@include bgSvg(arrDown("8a8c8f"), no-repeat, 50% 50%, 100% auto);
+			}
+		}
+	}
+	&.red{
+		.slct_tit{
+			color: #b3261e;
+			border-color: #b3261e;
+			&:after{
+				@include bgSvg(arrDown("b3261e"), no-repeat, 50% 50%, 100% auto);
+			}
+		}
+	}
+	.slct_tit{
+		@include setCont(100%, 40px, flex, relative, $white);
+		@include font(14, 14, #505254);
+		padding: 0 15px 0 16px;
+		align-items: center;
+		transition: all 300ms;
+		border: 1px solid #d0d2d5;
+		border-radius: 8px;
+		@include pc{
+			@include fontPc(14, 14);
+		}
+		&:after{
+			@include setCont(11px, 7px, block, absolute);
+			@include bgSvg(arrDown("8a8c8f"), no-repeat, 50% 50%, 100% auto);
+			transform: translateY(-50%);
+			top: 50%;
+			right: 15px;
+			transition: all 300ms;
+		}
+	}
+	.slct_cont{
+		@include setCont(100%, 0, inline-block, absolute, $white);
+		padding: 0 8px;
+		top: 40px;
+		z-index: 5;
+		border: 0 solid rgba(255, 255, 255, 0);
+		transition: all 300ms;
+		overflow: hidden;
+		&::-webkit-scrollbar-thumb {
+			background: $gray500;
+		}
+		.slct_item{
+			button{
+				@include setCont(100%, 40px, block, relative);
+				@include font(14,24,#505254, normal);
+				@include ellipsis;
+				padding: 8px 16px;
+				text-align: left;
+				@include pc{
+					@include fontPc(14,24);
+				}
+				&:hover{
+					background-color: $gray100;
+					color: $gray500;
+				}
+			}
+			&.select{
+				button{
+					background-color: #edeff2;
+				}
+			}
+		}
+	}
+	&.on{
+		.slct_tit{
+			border-radius: 8px 8px 0 0;
+			border-color : #636567;
+			&:after{
+				transform: translateY(-50%) rotate(180deg);
+			}
+		}
+		.slct_cont{
+			height: 128px;
+			padding: 4px 8px;
+			overflow: auto;
+			border-radius: 0 0 8px 8px;
+			border: 1px solid #636567;
+			border-top: none;
+		}
+		&.red{
+			.slct_tit{
+				color: #b3261e;
+				border-color: #b3261e;
+				&:after{
+					@include bgSvg(arrDown("b3261e"), no-repeat, 50% 50%, 100% auto);
+				}
+			}
+			.slct_cont{
+				border: 1px solid #b3261e;
+				border-top: none;
+			}
+		}
+	}
 }
 .area_top{
-    .inner{
-        padding-bottom: 0;
-    }
-    h2{
-        margin-bottom: 15.5px;
-    }
+	.inner{
+		padding-bottom: 0;
+	}
+	h2{
+		margin-bottom: 15.5px;
+	}
 }
 .show_mobile{
-    @include pc{
-        display: none !important;
-    }
+	@include pc{
+		display: none !important;
+	}
 }
 .show_pc{
-    display: none !important;
-    @include pc{
-        display: block !important;
-    }
+	display: none !important;
+	@include pc{
+		display: block !important;
+	}
 }
 .btn_txt{
-    @include setCont(100%, auto, flex, relative);
-    @include font(16,19, $point, $medi);
-    justify-content: center;
-    padding:17px 16px 18px;
-    border-top: 1px solid $gray100;
-    &:hover{
-        opacity: 0.6;
-    }
-    @include pc{
-        @include fontPc(16);
-    }
-    &.b_more{
-        &::after{
-            @include setCont(19px, 12px, inline-block);
-            @include bgSvg(arrDown($s_purple500), no-repeat, 50% 50%, 8px auto);
-            transform: translateY(4.5px) rotate(-90deg);
-            margin-left: 2.5px;
-        }
-    }
+	@include setCont(100%, auto, flex, relative);
+	@include font(16,19, $point, $medi);
+	justify-content: center;
+	padding:17px 16px 18px;
+	border-top: 1px solid $gray100;
+	&:hover{
+		opacity: 0.6;
+	}
+	@include pc{
+		@include fontPc(16);
+	}
+	&.b_more{
+		&::after{
+			@include setCont(19px, 12px, inline-block);
+			@include bgSvg(arrDown($s_purple500), no-repeat, 50% 50%, 8px auto);
+			transform: translateY(4.5px) rotate(-90deg);
+			margin-left: 2.5px;
+		}
+	}
 }
 .btn_more{
-    @include setCont(100%, 38px, block);
-    @include bgSvg(arrDown($s_gray400), no-repeat, 50% 50%, 14px auto);
-    @include blind;
-    &:hover{
-        opacity: 0.6;
-    }
+	@include setCont(100%, 38px, block);
+	@include bgSvg(arrDown($s_gray400), no-repeat, 50% 50%, 14px auto);
+	@include blind;
+	&:hover{
+		opacity: 0.6;
+	}
 }
 .btn_filter{
-    @include setCont(20px, 15px, block,  relative, $gray100);
-    @include bg("/icon/filter.png", no-repeat, 50% 50%, 19.5px auto);
-    // @include bgSvg(btnFilter($s_gray500), no-repeat, 50% 50%, 100% auto);
-    @include blind;
-    &:hover{
-        opacity: 0.6;
-    }
+	@include setCont(20px, 15px, block,	relative, $gray100);
+	@include bg("/icon/filter.png", no-repeat, 50% 50%, 19.5px auto);
+	// @include bgSvg(btnFilter($s_gray500), no-repeat, 50% 50%, 100% auto);
+	@include blind;
+	&:hover{
+		opacity: 0.6;
+	}
 }
 .bx_tag{
-    @include setCont(100%, 22px, block, relative);
-    @include ellipsis;
-    margin-top: 12px;
-    margin-left: -2px;
-    &.skeleton {
-        min-width: 100%;
-    }
-    &::after{
-        @include setCont(60px, 101%, block, absolute);
-        /* Permalink - use to edit and share this gradient: https://colorzilla.com/gradient-editor/#ffffff+0,ffffff+100&0+0,0.6+51,0.6+99 */
-        background: linear-gradient(to right,  rgba(255,255,255,0) 0%,rgba(255,255,255,0.9) 85%,rgba(255,255,255,1) 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
-        top: 0;
-        right: 0;
-        @include pc{
-            width: 40px;
-        }
-    }
+	@include setCont(100%, 22px, block, relative);
+	@include ellipsis;
+	margin-top: 12px;
+	margin-left: -2px;
+	&.skeleton {
+		min-width: 100%;
+	}
+	&::after{
+		@include setCont(60px, 101%, block, absolute);
+		/* Permalink - use to edit and share this gradient: https://colorzilla.com/gradient-editor/#ffffff+0,ffffff+100&0+0,0.6+51,0.6+99 */
+		background: linear-gradient(to right,	rgba(255,255,255,0) 0%,rgba(255,255,255,0.9) 85%,rgba(255,255,255,1) 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+		top: 0;
+		right: 0;
+		@include pc{
+			width: 40px;
+		}
+	}
 }
 .tag{
-    display: inline-block;
-    display: inline;
-    @include font(13, normal, $gray800);
-    margin: 0 2px;
-    padding: 2px 10px;
-    border-radius: 6px;
-    vertical-align: top;
-    background-color: $gray100;
-    vertical-align: middle;
-    // opacity: 0.2;
-    @include pc{
-        @include fontPc(13);
-    }
-    &.show_pc{
-        @include pc{
-            display: inline-block !important;
-        }
-    }
-    &.bg_grean{
-        background-color: rgba(0, 171, 168, 0.15);
-    }
-    &.bg_pink{
-        background-color: rgba(216, 114, 229, 0.15);
-    }
-    &.bg_yellow{
-        background-color: rgba(250, 215, 51, 0.15);
-    }
-    &.bg_grean2{
-        background-color: rgba(145, 220, 90, 0.15);
-    }
-    &.bg_pink2{
-        background-color: rgba(255, 101, 148, 0.15);
-    } 
-    &.bg_gray{
-        background-color: #ebeced;
-    }
-    &.w00001 {
-        background-color: rgba(109, 200, 42, 0.2) !important;
-    }
-    &.w00002 {
-        background-color: rgba(255, 101, 148 ,0.2) !important;
-    }
-    &.w00003 {
-        background-color: rgba(246, 93, 119 ,0.2) !important;
-    }
-    &.w00004 {
-        background-color: rgba(23, 206, 180 ,0.2) !important;
-    }
-    &.w00005 {
-        background-color: rgba(246, 183, 60 ,0.2) !important;
-    }
-    &.w00006 {
-        background-color: rgba(231, 170, 96 ,0.2) !important;
-    }
-    &.w00007 {
-        background-color: rgba(216, 114, 229 ,0.2) !important;
-    }
-    &.w00008 {
-        background-color: rgba(250, 215, 51 ,0.2) !important;
-    }
-    &.w00009 {
-        background-color: rgba(39, 205, 212 ,0.2) !important;
-    }
-    &.w00010 {
-        background-color: rgba(72, 148, 255 ,0.2) !important;
-    }
-    &.w00011 {
-        background-color: rgba(22, 137, 252, 0.2) !important;
-    }
-    &.w00012 {
-        background-color: rgba(102, 192, 238 ,0.2) !important;
-    }
-    &.w00013 {
-        background-color: rgba(0, 171, 168 ,0.2) !important;
-    }
-    &.w00014 {
-        background-color: rgba(82, 204, 123 ,0.2) !important;
-    }
-    &.w00015 {
-        background-color: rgba(59, 130, 246 ,0.2) !important;
-    }
-    &.etc {
-        background-color: #d8d8d8
-    }
+	display: inline-block;
+	display: inline;
+	@include font(13, normal, $gray800);
+	margin: 0 2px;
+	padding: 2px 10px;
+	border-radius: 6px;
+	vertical-align: top;
+	background-color: $gray100;
+	vertical-align: middle;
+	// opacity: 0.2;
+	@include pc{
+		@include fontPc(13);
+	}
+	&.show_pc{
+		@include pc{
+			display: inline-block !important;
+		}
+	}
+	&.bg_grean{
+		background-color: rgba(0, 171, 168, 0.15);
+	}
+	&.bg_pink{
+		background-color: rgba(216, 114, 229, 0.15);
+	}
+	&.bg_yellow{
+		background-color: rgba(250, 215, 51, 0.15);
+	}
+	&.bg_grean2{
+		background-color: rgba(145, 220, 90, 0.15);
+	}
+	&.bg_pink2{
+		background-color: rgba(255, 101, 148, 0.15);
+	} 
+	&.bg_gray{
+		background-color: #ebeced;
+	}
+	&.w00001 {
+		background-color: rgba(109, 200, 42, 0.2) !important;
+	}
+	&.w00002 {
+		background-color: rgba(255, 101, 148 ,0.2) !important;
+	}
+	&.w00003 {
+		background-color: rgba(246, 93, 119 ,0.2) !important;
+	}
+	&.w00004 {
+		background-color: rgba(23, 206, 180 ,0.2) !important;
+	}
+	&.w00005 {
+		background-color: rgba(246, 183, 60 ,0.2) !important;
+	}
+	&.w00006 {
+		background-color: rgba(231, 170, 96 ,0.2) !important;
+	}
+	&.w00007 {
+		background-color: rgba(216, 114, 229 ,0.2) !important;
+	}
+	&.w00008 {
+		background-color: rgba(250, 215, 51 ,0.2) !important;
+	}
+	&.w00009 {
+		background-color: rgba(39, 205, 212 ,0.2) !important;
+	}
+	&.w00010 {
+		background-color: rgba(72, 148, 255 ,0.2) !important;
+	}
+	&.w00011 {
+		background-color: rgba(22, 137, 252, 0.2) !important;
+	}
+	&.w00012 {
+		background-color: rgba(102, 192, 238 ,0.2) !important;
+	}
+	&.w00013 {
+		background-color: rgba(0, 171, 168 ,0.2) !important;
+	}
+	&.w00014 {
+		background-color: rgba(82, 204, 123 ,0.2) !important;
+	}
+	&.w00015 {
+		background-color: rgba(59, 130, 246 ,0.2) !important;
+	}
+	&.etc {
+		background-color: #d8d8d8
+	}
 
 
 
 
 }
 .txt_skeleton{
-    background-color: $gray100 !important;
-    background: linear-gradient(to right,  rgba(247,247,247,1) 0%,rgba(254,254,254,1) 52%,rgba(247,247,247,1) 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
-    background-size: 200% 100%;
-    animation: aniSkeleton 3400ms infinite;
-    color: $gray100 !important;
-    border-radius: 4px;
-    display: inline-block;
+	background-color: $gray100 !important;
+	background: linear-gradient(to right,	rgba(247,247,247,1) 0%,rgba(254,254,254,1) 52%,rgba(247,247,247,1) 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+	background-size: 200% 100%;
+	animation: aniSkeleton 3400ms infinite;
+	color: $gray100 !important;
+	border-radius: 4px;
+	display: inline-block;
 }
 .area_chart.group_skeleton{
-    .chart_wrap{
-        background-color: $gray100 !important;
-        background: linear-gradient(to right,  rgba(247,247,247,1) 0%,rgba(254,254,254,1) 52%,rgba(247,247,247,1) 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
-        background-size: 200% 100%;
-        animation: aniSkeleton 3400ms infinite;
-        color: $gray100 !important;
-        border-radius: 4px;
-        display: inline-block;
-    }
+	.chart_wrap{
+		background-color: $gray100 !important;
+		background: linear-gradient(to right,	rgba(247,247,247,1) 0%,rgba(254,254,254,1) 52%,rgba(247,247,247,1) 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+		background-size: 200% 100%;
+		animation: aniSkeleton 3400ms infinite;
+		color: $gray100 !important;
+		border-radius: 4px;
+		display: inline-block;
+	}
 }
 .btn_share{
-    @include setCont(100%, 100%);
-    @include bg("/icon/share.png", no-repeat, 50% 50%, 100% auto);
-    @include blind;
-    border-radius: 50%;
-    box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.5);
-    &:hover, &:active{
-        transform: scale(0.9);
-    }
+	@include setCont(100%, 100%);
+	@include bg("/icon/share.png", no-repeat, 50% 50%, 100% auto);
+	@include blind;
+	border-radius: 50%;
+	box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.5);
+	&:hover, &:active{
+		transform: scale(0.9);
+	}
 }
 .btn_app{
-    width: 40px;
-    position: relative;
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    transition: all 300ms;
-    &::before{
-        @include setCont(100%, 40px, block, relative);
-    }
-    &+.btn_app{
-        margin-left: 40px;
-    }
-    span{
-        @include font(11, normal, $gray700);
-        display: block;
-        margin-top: 8px;
-    }
-    &:hover{
-        transform: scale(0.9);
-    }
+	width: 40px;
+	position: relative;
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: center;
+	transition: all 300ms;
+	&::before{
+		@include setCont(100%, 40px, block, relative);
+	}
+	&+.btn_app{
+		margin-left: 40px;
+	}
+	span{
+		@include font(11, normal, $gray700);
+		display: block;
+		margin-top: 8px;
+	}
+	&:hover{
+		transform: scale(0.9);
+	}
 }
 .btn_instagram{
-    &::before{
-        @include bg("/icon/instagram.png", no-repeat, 50% 50%, 100% auto);
-    }
+	&::before{
+		@include bg("/icon/instagram.png", no-repeat, 50% 50%, 100% auto);
+	}
 }
 .btn_linkedIn{
-    &::before{
-        @include bg("/icon/linkedIn.png", no-repeat, 50% 50%, 100% auto);
-    }
+	&::before{
+		@include bg("/icon/linkedIn.png", no-repeat, 50% 50%, 100% auto);
+	}
 }
 .btn_gmail{
-    &::before{
-        @include bg("/icon/gmail.png", no-repeat, 50% 50%, 100% auto);
-    }
+	&::before{
+		@include bg("/icon/gmail.png", no-repeat, 50% 50%, 100% auto);
+	}
 }
 .btn_facebook{
-    &::before{
-        @include bg("/icon/facebook.png", no-repeat, 50% 50%, 100% auto);
-    }
+	&::before{
+		@include bg("/icon/facebook.png", no-repeat, 50% 50%, 100% auto);
+	}
 }
 .bx_chk{
-    .chk{
-        display: none;
-        &:checked+label{
-            @include bgSvg(chkFull(), no-repeat, 0 4px, 20px auto);
-        }
-    }
-    label{
-        display: block;
-        @include font(11,normal, $gray500);
-        padding: 6px 0 6px 32px;
-        @include bgSvg(chk(), no-repeat, 0 3px, 20px auto);
-        word-wrap: break-word;
-        transition: all 300ms;
-        &:hover, &:active{
-            color: $gray400;
-        }
-    }
+	.chk{
+		display: none;
+		&:checked+label{
+			@include bgSvg(chkFull(), no-repeat, 0 4px, 20px auto);
+		}
+	}
+	label{
+		display: block;
+		@include font(11,normal, $gray500);
+		padding: 6px 0 6px 32px;
+		@include bgSvg(chk(), no-repeat, 0 3px, 20px auto);
+		word-wrap: break-word;
+		transition: all 300ms;
+		&:hover, &:active{
+			color: $gray400;
+		}
+	}
 }
 .txt_skeleton{
-    @include skeleton;
-    min-height: 20px;
-    display: inline-block;
+	@include skeleton;
+	min-height: 20px;
+	display: inline-block;
 }
 form{
-    width: 100%;
+	width: 100%;
 }
 .nodata{
-    @include setCont(100%, auto, flex);
-    align-items: center;
-    justify-content: center;
-    min-height: 100px;
-    @include pc{
-        min-height: 150px;
-    }
-    p{
-        @include font(14, 17, $gray400);
-        @include pc{
-            @include fontPc(14, 17);
-        }
-    }
+	@include setCont(100%, auto, flex);
+	align-items: center;
+	justify-content: center;
+	min-height: 100px;
+	@include pc{
+		min-height: 150px;
+	}
+	p{
+		@include font(14, 17, $gray400);
+		@include pc{
+			@include fontPc(14, 17);
+		}
+	}
 }
 .chart_grade{
-    width: 100%;
-    padding: 0 0 0;
-    @include pc{
-        padding: 43.8px 0 0;
-    }
-    .label_txt{
-        @include setCont(80px, auto, block, absolute);
-        top: 50%;
-        left: -80px;
-        transform: translateY(-52%);
-        text-align: right;
-        @include font(13,13,$gray400);
-        @include pc{
-            @include fontPc(13);
-        }
-    }
-    .txt{
-        @include setCont(100%, 100%, flex);
-        align-items: center;
-        justify-content: center;
-        @include font(22,22,$gray50, $medi);
-        @include pc{
-            @include fontPc(22);
-        }
-    }
-    .c_inner{
-        @include setCont(100%, auto, flex);
-        transform: scale(0.72);
-        margin-left: -29px;
-        @include pc{
-            width: 360px;
-            transform: scale(1);
-            margin-left: 0;
-        }
-        flex-direction: column;
-        align-items: center;
-    }
-    .item{
-        border-top: 2px solid #fff;
-        border-bottom: 2px solid #fff;
-        box-sizing: initial;
-        &:first-child{
-            border-top: none;
-        }
-        &:last-child{
-            border-bottom: none;
-        }
-        &.on{
-            .label_txt{
-                color: $gray800;
-                font-weight: $bold;
-            }
-        }
-    }
-    .g1{
-        @include setCont(59px, 54px, block, relative);
-        @include bgSvg(chartGrade1("babbbf"), no-repeat, 50% 50%, 53px auto);
-        .label_txt{
-            transform: translateY(-50%);
-        }
-    }
-    .g2{
-        @include setCont(92px, 30px, block, relative);
-        @include bgSvg(chartGrade2("c9c9cd"), no-repeat, 50% 50%, 86px auto);
-        &.on{
-            @include bgSvg(chartGrade2($s_point), no-repeat, 50% 50%, 86px auto);
-        }
-    }
-    .g3{
-        @include setCont(134px, 40px, block, relative);
-        @include bgSvg(chartGrade3("c9c9cd"), no-repeat, 50% 50%, 129px auto);
-        &.on{
-            @include bgSvg(chartGrade3($s_point), no-repeat, 50% 50%, 129px auto);
-        }
-    }
-    .g4{
-        @include setCont(182px, 45px, block, relative);
-        @include bgSvg(chartGrade4("d5d5d8"), no-repeat, 50% 50%, 181px auto);
-        &.on{
-            @include bgSvg(chartGrade4($s_point), no-repeat, 50% 50%, 181px auto);
-        }
-    }
-    .g5{
-        @include setCont(229px, 45px, block, relative);
-       @include bgSvg(chartGrade5("d5d5d8"), no-repeat, 50% 50%, 228.6px auto);
-       &.on{
-           @include bgSvg(chartGrade5($s_point), no-repeat, 50% 50%, 228.6px auto);
-       }
-    }
-    .g6{
-        @include setCont(360px, 132px, block, relative);
-        @include bgSvg(chartGrade6("E3E3E5"), no-repeat, 50% 50%, 355px auto);
-        &.on{
-            @include bgSvg(chartGrade6($s_point), no-repeat, 50% 50%, 355px auto);
-        }
-    }
-    .t_detail{
-        @include setCont(198px, 157px, block, absolute, #fff);
-        top: -26px;
-        right: -237px;
-        border: 1px solid $point;
-        border-radius: 31px;
-        z-index: 3;
-        &::before{
-            @include setCont(56px, 1px, block, absolute, $point);
-            z-index: 2;
-            top: 50px;
-            left: -56px;
-        }
-        .t_inner{
-            @include setCont(153px, auto, flex);
-            flex-direction: column;
-            align-items: center;
-            padding: 14px 12.9px 0;
-        }
-        .item{
-            .label_txt{
-                left: unset;
-                right: -80px;
-                text-align: left;
-            }
-        }
-        .tg1{
-            @include setCont(53px, 51px, block, relative);
-            @include bgSvg(chartGrade1("babbbf"), no-repeat, 50% 50%, 50px auto);
-            &.on{
-                @include bgSvg(chartGrade1($s_point), no-repeat, 50% 50%, 50px auto);
-            }
-            .txt{
-                align-items: flex-end;
-                padding-bottom: 5px;
-            }
-        }
-        .tg2{
-            @include setCont(84px, 28px, block, relative);
-            @include bgSvg(chartGrade2("dbdcdd"), no-repeat, 50% 50%, 79px auto);
-            &.on{
-                @include bgSvg(chartGrade2($s_point), no-repeat, 50% 50%, 79px auto);
-            }
-        }
-        .tg3{
-            @include setCont(123px, 38px, block, relative);
-            @include bgSvg(chartGrade3("dbdcdd"), no-repeat, 50% 50%, 119px auto);
-            &.on{
-                @include bgSvg(chartGrade3($s_point), no-repeat, 50% 50%, 119px auto);
-            }
-        }
-    }
+	width: 100%;
+	padding: 0 0 0;
+	animation-name: aniOpacity;
+	animation-duration:1200ms;
+	animation-iteration-count:1;
+	animation-fill-mode:forwards;
+	opacity: 0;
+	@include pc{
+		padding: 43.8px 0 0;
+	}
+	.label_txt{
+		@include setCont(80px, auto, block, absolute);
+		top: 50%;
+		left: -80px;
+		transform: translateY(-52%);
+		text-align: right;
+		@include font(13,13,$gray400);
+		@include pc{
+			@include fontPc(13);
+		}
+	}
+	.txt{
+		@include setCont(100%, 100%, flex);
+		align-items: center;
+		justify-content: center;
+		@include font(22,22,$gray50, $medi);
+		@include pc{
+			@include fontPc(22);
+		}
+	}
+	.c_inner{
+		@include setCont(100%, auto, flex);
+		transform: scale(0.72);
+		margin-left: -29px;
+		@include pc{
+			width: 360px;
+			transform: scale(1);
+			margin-left: 0;
+		}
+		flex-direction: column;
+		align-items: center;
+	}
+	.item{
+		border-top: 2px solid #fff;
+		border-bottom: 2px solid #fff;
+		box-sizing: initial;
+		animation-name: aniOpacity;
+		animation-duration:100ms;
+		animation-iteration-count:1;
+		animation-fill-mode:forwards;
+		opacity: 0;
+		&:first-child{
+			border-top: none;
+		}
+		&:last-child{
+			border-bottom: none;
+		}
+		&.on{
+			.label_txt{
+				color: $gray800;
+				font-weight: $bold;
+			}
+		}
+	}
+	.g1{
+		@include setCont(59px, 54px, block, relative);
+		@include bgSvg(chartGrade1("babbbf"), no-repeat, 50% 50%, 53px auto);
+		animation-delay:250ms;		
+		.label_txt{
+			transform: translateY(-50%);
+		}
+	}
+	.g2{
+		@include setCont(92px, 30px, block, relative);
+		@include bgSvg(chartGrade2("c9c9cd"), no-repeat, 50% 50%, 86px auto);
+		animation-delay:200ms;		
+		&.on{
+			@include bgSvg(chartGrade2($s_point), no-repeat, 50% 50%, 86px auto);
+		}
+	}
+	.g3{
+		@include setCont(134px, 40px, block, relative);
+		@include bgSvg(chartGrade3("c9c9cd"), no-repeat, 50% 50%, 129px auto);
+		animation-delay:150ms;		
+		&.on{
+			@include bgSvg(chartGrade3($s_point), no-repeat, 50% 50%, 129px auto);
+		}
+	}
+	.g4{
+		@include setCont(182px, 45px, block, relative);
+		@include bgSvg(chartGrade4("d5d5d8"), no-repeat, 50% 50%, 181px auto);
+		animation-delay:100ms;		
+		&.on{
+			@include bgSvg(chartGrade4($s_point), no-repeat, 50% 50%, 181px auto);
+		}
+	}
+	.g5{
+		@include setCont(229px, 45px, block, relative);
+		@include bgSvg(chartGrade5("d5d5d8"), no-repeat, 50% 50%, 228.6px auto);
+		animation-delay:50ms;		
+		&.on{
+			@include bgSvg(chartGrade5($s_point), no-repeat, 50% 50%, 228.6px auto);
+		}
+	}
+	.g6{
+		@include setCont(360px, 132px, block, relative);
+		@include bgSvg(chartGrade6("E3E3E5"), no-repeat, 50% 50%, 355px auto);
+		&.on{
+			@include bgSvg(chartGrade6($s_point), no-repeat, 50% 50%, 355px auto);
+		}
+	}
+	.t_detail{
+		@include setCont(198px, 157px, block, absolute, #fff);
+		top: -26px;
+		right: -237px;
+		border: 1px solid $point;
+		border-radius: 31px;
+		z-index: 3;
+		opacity: 0;
+		animation-name: aniOpacity;
+		animation-duration:150ms;
+		animation-iteration-count:1;
+		animation-fill-mode:forwards;
+		animation-delay:300ms;		
+		&::before{
+			@include setCont(56px, 1px, block, absolute, $point);
+			z-index: 2;
+			top: 50px;
+			left: -56px;
+		}
+		.t_inner{
+			@include setCont(153px, auto, flex);
+			flex-direction: column;
+			align-items: center;
+			padding: 14px 12.9px 0;
+		}
+		.item{
+			.label_txt{
+				left: unset;
+				right: -80px;
+				text-align: left;
+			}
+		}
+		.tg1{
+			@include setCont(53px, 51px, block, relative);
+			@include bgSvg(chartGrade1("babbbf"), no-repeat, 50% 50%, 50px auto);
+			&.on{
+				@include bgSvg(chartGrade1($s_point), no-repeat, 50% 50%, 50px auto);
+			}
+			.txt{
+				align-items: flex-end;
+				padding-bottom: 5px;
+			}
+		}
+		.tg2{
+			@include setCont(84px, 28px, block, relative);
+			@include bgSvg(chartGrade2("dbdcdd"), no-repeat, 50% 50%, 79px auto);
+			&.on{
+				@include bgSvg(chartGrade2($s_point), no-repeat, 50% 50%, 79px auto);
+			}
+		}
+		.tg3{
+			@include setCont(123px, 38px, block, relative);
+			@include bgSvg(chartGrade3("dbdcdd"), no-repeat, 50% 50%, 119px auto);
+			&.on{
+				@include bgSvg(chartGrade3($s_point), no-repeat, 50% 50%, 119px auto);
+			}
+		}
+	}
 }
 .tooltip{
-    display: inline-block;
-    vertical-align: middle;
-    position: relative;
-    margin-left: 4px;
-    .btn_tooltip{
-        @include setCont(20px, 20px, block, relative, $gray500);
-        @include fontPc(16, 20, #faf8fd, $bold);
-        text-align: center;
-        border-radius: 25px;
-        text-align: center;
-        cursor: pointer;
-        &::before{
-            @include setCont(100%, 0, block, absolute, rgba(255,255,255,0));
-            top: 20px;
-            right: 0;
-            z-index: 2;
-        }
-    }
-    .desc{
-        @include setCont(auto, auto, block, absolute, $white);
-        @include font(15, 18, $gray600);
-        max-height: 0;
-        width: 271px;
-        padding: 0 15px;
-        border-radius: 6px;
-        z-index: 3;
-        opacity: 0;
-        overflow: hidden;
-        transition: all 300ms;
-        top: 32px;
-        right: 0;
-        @include pc{
-            @include fontPc(15, 18);
-        }
-    }
-    &.on{
-        .btn_tooltip{
-            &::before{
-                @include setCont(30px, 12px);
-            }
-        }
-        .desc{
-            padding: 15px 15px 14px;
-            max-height: 500px;
-            opacity: 1;
-            border: 1px solid $gray500;
-        }
-    }
+	display: inline-block;
+	vertical-align: middle;
+	position: relative;
+	margin-left: 4px;
+	.btn_tooltip{
+		@include setCont(20px, 20px, block, relative, $gray500);
+		@include fontPc(16, 20, #faf8fd, $bold);
+		text-align: center;
+		border-radius: 25px;
+		text-align: center;
+		cursor: pointer;
+		&::before{
+			@include setCont(100%, 0, block, absolute, rgba(255,255,255,0));
+			top: 20px;
+			right: 0;
+			z-index: 2;
+		}
+	}
+	.desc{
+		@include setCont(auto, auto, block, absolute, $white);
+		@include font(15, 18, $gray600);
+		max-height: 0;
+		width: 271px;
+		padding: 0 15px;
+		border-radius: 6px;
+		z-index: 3;
+		opacity: 0;
+		overflow: hidden;
+		transition: all 300ms;
+		top: 32px;
+		right: 0;
+		@include pc{
+			@include fontPc(15, 18);
+		}
+	}
+	&.on{
+		.btn_tooltip{
+			&::before{
+				@include setCont(30px, 12px);
+			}
+		}
+		.desc{
+			padding: 15px 15px 14px;
+			max-height: 500px;
+			opacity: 1;
+			border: 1px solid $gray500;
+		}
+	}
 }
 .evaluation_wrap{
-    width: 100%;
-    margin-top: 40px;
-    .e_grade{
-        @include setCont(100%, auto, flex);
-        align-items: center;
-        &+.e_grade{
-            margin-top: 4px;
-        }
-        em{
-            @include setCont(88px, auto, block, relative, $gray300);
-            width: calcPercent(88, 314);
-            border-radius: 10px;
-            padding: 2px 0;
-            text-align: center;
-            @include font(22,26,$gray50,$medi);
-            @include pc{
-                width: 152px;
-                @include fontPc(22,26);
-            }
-        }
-        span{
-            display: block;
-            margin-left: calcPercent(16, 314);
-            @include font(22,26,$gray300,$medi);
-            @include pc{
-                @include fontPc(22,26);
-                margin-left: 24px;
-            }
-        }
-        &.on{
-            em{
-                background-color: $point;
-            }
-            span{
-                color: $point;
-                font-weight: $bold;
-            }
-        }
-    }
+	width: 100%;
+	margin-top: 40px;
+	.e_grade{
+		@include setCont(100%, auto, flex);
+		align-items: center;
+		&+.e_grade{
+			margin-top: 4px;
+		}
+		em{
+			@include setCont(88px, auto, block, relative, $gray300);
+			width: calcPercent(88, 314);
+			border-radius: 10px;
+			padding: 2px 0;
+			text-align: center;
+			@include font(22,26,$gray50,$medi);
+			@include pc{
+				width: 152px;
+				@include fontPc(22,26);
+			}
+		}
+		span{
+			display: block;
+			margin-left: calcPercent(16, 314);
+			@include font(22,26,$gray300,$medi);
+			@include pc{
+				@include fontPc(22,26);
+				margin-left: 24px;
+			}
+		}
+		&.on{
+			em{
+				background-color: $point;
+			}
+			span{
+				color: $point;
+				font-weight: $bold;
+			}
+		}
+	}
 }
 .barchart_wrap{
-    @include setCont(100%, auto, block, relative);
-    .chart_legend{
-        @include setCont(100%, auto, flex, relative);
-        margin-bottom: 33px;
-        text-align: center;
-        .unit{
-            &+.unit{
-                margin-left: 25px;
-            }
-            .nm{
-                display: inline-block;
-                @include font(16,19,$gray800);
-                @include pc{
-                    @include fontPc(16,19);
-                }
-                &::before{
-                    margin-right: 10px;
-                    vertical-align: middle;
-                    margin-top: -1px;
-                }
-                &.bg_purple::before{
-                    @include setCont(11px, 4px, inline-block, relative, $point);
-                    border-radius: 11px;
-                }
-                &.bg_pink::before{
-                    @include setCont(11px, 4px, inline-block, relative, #ff7373);
-                    border-radius: 11px;
-                }
-                &.bg_blue::before{
-                    @include setCont(11px, 4px, inline-block, relative, #66c0ee);
-                    border-radius: 11px;
-                }
-            }
-        }
-    }
-    .bx_barchart{
-        &+.bx_barchart{
-            margin-top: 24px;
-        }
-        h3{
-            margin-bottom: 12px;
-            @include font(13,15,$gray700,$medi);
-            text-align: center;
-            @include pc{
-                @include fontPc(13,15);
-            }
-        }
-        .b_inner{
-            @include setCont(100%, 80px, flex, relative);
-            border-radius: 24px;
-            align-items: center;
-            overflow: hidden;
-            .unit{
-                @include setCont(auto, 80px, flex, relative, $gray50);
-                align-items: center;
-                justify-content: center;
-                &.bg_purple{
-                    background-color: $point;
-                }
-                &.bg_pink{
-                    background-color: #ff7373;
-                }
-                &.bg_blue{
-                    background-color: #66c0ee;
-                }
-                &.bg_purple2{
-                    background-color: #ad8fee;
-                }
-                &.bg_pink2{
-                    background-color: #fda0a0;
-                }
-                &.bg_blue2{
-                    background-color: #8ad2f7;
-                }
-                span{
-                    display: block;
-                    @include font(13,15,$gray50, $medi);
-                    @include pc{
-                        @include fontPc(13,15);
-                    }
-                }
-            }
-        }
-    }
+	@include setCont(100%, auto, block, relative);
+	.chart_legend{
+		@include setCont(100%, auto, flex, relative);
+		margin-bottom: 33px;
+		text-align: center;
+		.unit{
+			&+.unit{
+				margin-left: 25px;
+			}
+			.nm{
+				display: inline-block;
+				@include font(16,19,$gray800);
+				@include pc{
+					@include fontPc(16,19);
+				}
+				&::before{
+					margin-right: 10px;
+					vertical-align: middle;
+					margin-top: -1px;
+				}
+				&.bg_purple::before{
+					@include setCont(11px, 4px, inline-block, relative, $point);
+					border-radius: 11px;
+				}
+				&.bg_pink::before{
+					@include setCont(11px, 4px, inline-block, relative, #ff7373);
+					border-radius: 11px;
+				}
+				&.bg_blue::before{
+					@include setCont(11px, 4px, inline-block, relative, #66c0ee);
+					border-radius: 11px;
+				}
+			}
+		}
+	}
+	.bx_barchart{
+		&+.bx_barchart{
+			margin-top: 24px;
+		}
+		h3{
+			margin-bottom: 12px;
+			@include font(13,15,$gray700,$medi);
+			text-align: center;
+			@include pc{
+				@include fontPc(13,15);
+			}
+		}
+		.b_inner{
+			@include setCont(100%, 80px, flex, relative);
+			border-radius: 24px;
+			align-items: center;
+			overflow: hidden;
+			.unit{
+				@include setCont(auto, 80px, flex, relative, $gray50);
+				align-items: center;
+				justify-content: center;
+				&.bg_purple{
+					background-color: $point;
+				}
+				&.bg_pink{
+					background-color: #ff7373;
+				}
+				&.bg_blue{
+					background-color: #66c0ee;
+				}
+				&.bg_purple2{
+					background-color: #ad8fee;
+				}
+				&.bg_pink2{
+					background-color: #fda0a0;
+				}
+				&.bg_blue2{
+					background-color: #8ad2f7;
+				}
+				span{
+					display: block;
+					@include font(13,15,$gray50, $medi);
+					@include pc{
+						@include fontPc(13,15);
+					}
+				}
+			}
+		}
+	}
 }
 .bx_chart{
-    width: 100%;
-    position: relative;
-    margin: 0 auto;
-    max-width: 500px;
-    height: 310px;
-    @include pc{
-        height: auto;
-    }
-    .c_inner{
-        margin-left: 20px !important;
-        min-width: 350px;
-        @include pc{
-            width: 525px !important;
-            height: 325px !important;
-            margin-left: 40px !important;
-        }
-    }
-    .cover_arr{
-        @include setCont(100%, 100%, block, absolute);
-        top: -2px;
-        left: -23px;
-        @include pc{
-            top: 0;
-            left: 0;
-        }
-        .nm{
-            display: block;
-            text-align: center;
-            @include font(16, 19, $gray400);
-            @include pc{
-                @include fontPc(16);
-            }
-        }
-        .arr_vertical{
-            @include setCont(1px, 260px, block, absolute, $gray300);
-            left: 47px;
-            bottom: 27px;
-            @include pc{
-                left: 37px;
-                height: 280px;
-            }
-            &::before, &::after{
-                @include setCont(1px, 8px, block, absolute, $gray300);
-                top: 0;
-            }
-            &::before{
-                transform: rotate(25deg);
-                left: -2px;
-            }
-            &::after{
-                transform: rotate(-25deg);
-                left: 2px;
+	width: 100%;
+	position: relative;
+	margin: 0 auto;
+	max-width: 500px;
+	height: 310px;
+	@include pc{
+		height: auto;
+	}
+	.c_inner{
+		margin-left: 20px !important;
+		min-width: 350px;
+		@include pc{
+			width: 525px !important;
+			height: 325px !important;
+			margin-left: 40px !important;
+		}
+	}
+	.cover_arr{
+		@include setCont(100%, 100%, block, absolute);
+		top: -2px;
+		left: -23px;
+		@include pc{
+			top: 0;
+			left: 0;
+		}
+		.nm{
+			display: block;
+			text-align: center;
+			@include font(16, 19, $gray400);
+			@include pc{
+				@include fontPc(16);
+			}
+		}
+		.arr_vertical{
+			@include setCont(1px, 260px, block, absolute, $gray300);
+			left: 47px;
+			bottom: 27px;
+			@include pc{
+				left: 37px;
+				height: 280px;
+			}
+			&::before, &::after{
+				@include setCont(1px, 8px, block, absolute, $gray300);
+				top: 0;
+			}
+			&::before{
+				transform: rotate(25deg);
+				left: -2px;
+			}
+			&::after{
+				transform: rotate(-25deg);
+				left: 2px;
 
-            }
-            .nm{
-                @include setCont(284px,auto, block, absolute);
-                transform: rotate(-90deg);
-                top: 138px;
-                left: -163px;
-            }
-        }
-        .arr_horizontal{
-            @include setCont(100%, 1px, block, absolute, $gray300);
-            width: calc(100% - 35px);
-            min-width: 295px;
-            bottom: 26px;
-            left: 47px;
-            @include pc{
-                width: 460px;
-                left: 37px;
-            }
-            .nm{
-                display: block;
-                text-align: center;
-                margin-top: 15px;
-            }
-            &::before, &::after{
-                @include setCont(8px, 1px, block, absolute, $gray300);
-                right: 0;
-            }
-            &::before{
-                transform: rotate(25deg);
-                top: -2px;
-            }
-            &::after{
-                transform: rotate(-25deg);
-                top: 2px;
-            }
-        }
-    }
-    &.chart_sector{
-        .am5-layer-0{
-            width: calc(100% + 30px) !important;
-            @media (max-width: 400px) {
-                width: 100% !important;
-            }
-        }
-        @include pc{
-            transform: translateX(0);
-        }
-    }
-    &.chart_landscape{
-        padding: 23px 0 0 0 !important;
-        max-width: 500px;
-        margin: 0 auto 50px;
-        height: 300px;
-        @include pc{
-            padding: 17px 27px 0 0 !important;
-            height: auto;
-        }
-        .c_inner{
-            min-width: 0;
-            @include pc{
-                margin-left: 30px !important;
-                width: 380px !important;
-                height: 515px !important;
-            }
-        }
-        .cover_arr{
-            top: 25px;
-            left: -23px;
-            @include pc{
-                top: 23px;
-                left: 0;
-            }
-            .unit_nm{
-                @include font(16, 16, $white, $medi);
-                display: block;
-                position: absolute;
-                z-index: 3;
-                @include pc{
-                    @include fontPc(20);
-                }
-                &.top{
-                    top: 19px;
-                    left: 75px;
-                    @include pc{
-                        left:60px;
-                    }
-                }
-                &.top_right{
-                    top: 19px;
-                    right: -10px;
-                    @include pc{
-                        right: 30px;
-                    }
-                }
-                &.bottom{
-                    bottom: 46px;
-                    left: 75px;
-                    @include pc{
-                        left:60px;
-                    }
-                }
-                &.bottom_right{
-                    bottom: 46px;
-                    right: -10px;
-                    @include pc{
-                        right: 30px;
-                    }
-                }
-            }
-            .arr_vertical{
-                @include pc{
-                    height: 494px;
-                }
-                .nm{
-                    top: 120px;
-                    left: -163px;
-                    @include pc{
-                        top: 235px;
-                    }
-                }
-            }
-            .arr_horizontal{
-                width: calc(100% - 24px);
-                @include pc{
-                    width: 355px;
-                }
-            }
-        }
-    }
+			}
+			.nm{
+				@include setCont(284px,auto, block, absolute);
+				transform: rotate(-90deg);
+				top: 138px;
+				left: -163px;
+			}
+		}
+		.arr_horizontal{
+			@include setCont(100%, 1px, block, absolute, $gray300);
+			width: calc(100% - 35px);
+			min-width: 295px;
+			bottom: 26px;
+			left: 47px;
+			@include pc{
+				width: 460px;
+				left: 37px;
+			}
+			.nm{
+				display: block;
+				text-align: center;
+				margin-top: 15px;
+			}
+			&::before, &::after{
+				@include setCont(8px, 1px, block, absolute, $gray300);
+				right: 0;
+			}
+			&::before{
+				transform: rotate(25deg);
+				top: -2px;
+			}
+			&::after{
+				transform: rotate(-25deg);
+				top: 2px;
+			}
+		}
+	}
+	&.chart_sector{
+		.am5-layer-0{
+			width: calc(100% + 30px) !important;
+			@media (max-width: 400px) {
+				width: 100% !important;
+			}
+		}
+		@include pc{
+			transform: translateX(0);
+		}
+	}
+	&.chart_landscape{
+		padding: 23px 0 0 0 !important;
+		max-width: 500px;
+		margin: 0 auto 50px;
+		height: 300px;
+		@include pc{
+			padding: 17px 27px 0 0 !important;
+			height: auto;
+		}
+		.c_inner{
+			min-width: 0;
+			@include pc{
+				margin-left: 30px !important;
+				width: 380px !important;
+				height: 515px !important;
+			}
+		}
+		.cover_arr{
+			top: 25px;
+			left: -23px;
+			@include pc{
+				top: 23px;
+				left: 0;
+			}
+			.unit_nm{
+				@include font(16, 16, $white, $medi);
+				display: block;
+				position: absolute;
+				z-index: 3;
+				@include pc{
+					@include fontPc(20);
+				}
+				&.top{
+					top: 19px;
+					left: 75px;
+					@include pc{
+						left:60px;
+					}
+				}
+				&.top_right{
+					top: 19px;
+					right: -10px;
+					@include pc{
+						right: 30px;
+					}
+				}
+				&.bottom{
+					bottom: 46px;
+					left: 75px;
+					@include pc{
+						left:60px;
+					}
+				}
+				&.bottom_right{
+					bottom: 46px;
+					right: -10px;
+					@include pc{
+						right: 30px;
+					}
+				}
+			}
+			.arr_vertical{
+				@include pc{
+					height: 494px;
+				}
+				.nm{
+					top: 120px;
+					left: -163px;
+					@include pc{
+						top: 235px;
+					}
+				}
+			}
+			.arr_horizontal{
+				width: calc(100% - 24px);
+				@include pc{
+					width: 355px;
+				}
+			}
+		}
+	}
 }
 
 .coln,.colb,.col2,.col3,.col4 {
-  display: flex !important;
-  flex-wrap: wrap;
-  .shrink {
-    flex-shrink: 0;
-  }
+	display: flex !important;
+	flex-wrap: wrap;
+	.shrink {
+		flex-shrink: 0;
+	}
 }
 .coln {
-  .col {
-    flex-grow: 1;
-  }
+	.col {
+		flex-grow: 1;
+	}
 }
 .colb {
-  justify-content: space-between;
+		justify-content: space-between;
 }
 .col2 {
-  .col {
-    width: 50%;
-  }
+	.col {
+		width: 50%;
+	}
 }
 .col3 {
-  .col {
-    width: 33.3%;
-  }
+	.col {
+		width: 33.3%;
+	}
 }
 .col4 {
-  .col {
-    width: 25%;
-  }
+	.col {
+		width: 25%;
+	}
 }
