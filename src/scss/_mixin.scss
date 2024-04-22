@@ -393,6 +393,58 @@
 		// max-height: 200px;
 	}
 }
+@keyframes aniRankChart{
+	0% {
+		opacity: 0;
+		width: 0;
+		// max-height: 0;
+	}
+	100% {
+		width: 100%;
+		opacity: 1;
+		// max-height: 200px;
+	}
+}
+@keyframes aniRankChart2{
+	0% {
+		opacity: 0;
+		width: 0;
+		// max-height: 0;
+	}
+	100% {
+		opacity: 1;
+		width: 36px;
+		// max-height: 200px;
+	}
+}
+@keyframes sectorsChart{
+	0% {
+		opacity: 0;
+		height: 0;
+	}
+	100% {
+		opacity: 1;
+		height: 100px;
+	}
+}
+@keyframes bx_chart{
+	0% {
+		opacity: 0;
+	}
+	100% {
+		opacity: 1;
+	}
+}
+@keyframes evaluationChart{
+	0% {
+		opacity: 0;
+		height: 0;
+	}
+	100% {
+		opacity: 1;
+		height: 320px;
+	}
+}
 @-webkit-keyframes aniMainLoading1 {
 		0% { 
 				opacity: 0;
@@ -431,7 +483,3 @@
 				opacity: 1;
 		}
 }
-// @mixin aniOpacity($ms:400ms) {
-//	 transition: all $ms;
-//	 transition-timing-function: cubic-bezier(0.3, 0.08, 0.77, 0.29);
-// }

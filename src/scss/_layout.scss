@@ -1380,16 +1380,27 @@ a.inventors_item, button.inventors_item, .ac_link{
 	}
 }
 .rank_chart{
-	@include setCont(100%, 20px,block, relative, $gray100);
+	@include setCont(0, 20px,block, relative, $gray100);
 	border-radius: 6px;
+	animation-name: aniRankChart;
+	animation-duration:300ms;
+	animation-iteration-count:1;
+	animation-fill-mode:forwards;
+	opacity: 0;
 	.bar{
-		@include setCont(36px, 100%, block, absolute);
+		@include setCont(0, 100%, block, absolute);
 		@include bgSvg(bar($s_point), no-repeat, 50% 50%, 100% auto);
 		@include blind;
 		top: 0;
 		border-radius: 6px;
 		right: 0;
 		transform: translateX(50%);
+		animation-name: aniRankChart2;
+		animation-delay:300ms;		
+		animation-duration:300ms;
+		animation-iteration-count:1;
+		animation-fill-mode:forwards;
+		opacity: 0;
 		@include pc{
 			width: 36px;
 		}
@@ -1721,6 +1732,10 @@ a.visual_wrap{
 					}
 					.bx_bars{
 						@include setCont(100%, 17px, flex, absolute);
+						animation-name: aniRankChart;
+						animation-duration:600ms;
+						animation-iteration-count:1;
+						animation-fill-mode:forwards;
 						&::before{
 							@include setCont(100%, 1px, block, absolute, #dbdcdd);
 							top: 26px;
@@ -1930,10 +1945,16 @@ a.visual_wrap{
 	}
 }
 .sectors_chart{
-	@include setCont(100%, 29px, flex, relative, $gray100);
+	@include setCont(0, 29px, flex, relative, $gray100);
 	border-radius: 6px;
 	overflow: hidden;
 	margin-bottom: 27px;
+	animation-name: aniRankChart;
+	animation-duration:300ms;
+	animation-iteration-count:1;
+	animation-fill-mode:forwards;
+	overflow: hidden;
+	opacity: 0;
 	.bar{
 		@include setCont(auto, 100%, block);
 		@include blind;
