@@ -67,6 +67,15 @@ a, button, input{
 .txt_light_gray{
 	color: $gray400 !important;
 }
+.txt_right{
+	text-align: left;
+}
+.txt_right{
+	text-align: right;
+}
+.txt_center{
+	text-align: center;
+}
 .f_medi{
 	font-weight: $medi !important;
 }
@@ -169,6 +178,56 @@ a, button, input{
 		background-color: $purple200;
 		border: 1px solid $purple200;
 		color: $gray50 !important;
+	}
+}
+
+.btn_linkedin, .btn_apple, .btn_google{
+	@include setCont(100%, auto, block);
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	min-height: 46px;
+    padding: 13px 15px;
+	border-radius: 10px;
+}
+.btn_linkedin{
+	background-color: #2867b2;
+	&::before{
+		@include setCont(21px, 20px, block);
+		@include bg("/icon/logo_linkedin.svg", no-repeat, 50% 50%, 100% auto);
+		margin-right: 20px;
+	}
+	&:hover{
+		background-color: #2b61a4;
+		color: #efefef !important;
+	}
+}
+.btn_apple{
+	background-color: #000;
+	&::before{
+		@include setCont(16px, 20px, block);
+		@include bg("/icon/logo_apple.svg", no-repeat, 50% 50%, 100% auto);
+		margin-right: 21px;
+	}
+	&:hover{
+		background-color: #212121;
+		color: #efefef !important;
+	}
+	
+}
+.btn_google{
+	background-color: #fff;
+	border: 1px solid $gray400;
+	color: $gray500;
+	&::before{
+		@include setCont(16px, 16px, block);
+		@include bg("/icon/logo_google.svg", no-repeat, 50% 50%, 100% auto);
+		margin-right: 20px;
+	}
+	&:hover{
+		background-color: $white;
+		border-color: $gray200;
+		color: $gray400 !important;
 	}
 }
 .icon_electric{
