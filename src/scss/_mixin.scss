@@ -41,6 +41,7 @@
 	@font-face {
 		font-family: $nm;
 		font-weight: $weight;
+		letter-spacing: normal;
 		font-display: block;
 		src: local("※"), url($font_url + $fileNm + ".woff2") format("woff2"),
 			local("※"), url($font_url + $fileNm + ".woff") format("woff");

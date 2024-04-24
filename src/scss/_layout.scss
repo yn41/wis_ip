@@ -1838,7 +1838,7 @@ a.visual_wrap{
 					b{
 						@include font(24, normal, $gray800, $medi);
 						display: block;
-						letter-spacing: -1.5px;
+						word-break: break-all;
 						@include pc{
 							@include fontPc(26);
 						}
@@ -1846,6 +1846,7 @@ a.visual_wrap{
 					.txt_point{
 						@include font(30, normal, $point, $bold);
 						display: inline-block;
+						display: inline;
 						vertical-align: middle;
 						@include pc{
 							@include fontPc(30);
