@@ -3,15 +3,27 @@
 		.inner{
 			width: 100%;
 			padding: 0 24px;
-			max-width: 500px;
+			max-width: 450px;
+			@include pc{
+				max-width: 890px;
+				padding: 0;
+			}
 		}
 		h2{
 			@include font(19, 23, $gray800);
 			text-align: center;
 			padding:  28px 0;
+			@include pc{
+				@include fontPc(26, 31, $gray800);
+				padding: 97px 0 80.5px;
+			}
 		}
 		.colb{
 			width: 100%;
+			@include pc{
+				align-items: flex-start;
+				padding-bottom: 132px;
+			}
 		}
 		.btn{
 			&+.btn{
@@ -19,21 +31,24 @@
 			}
 		}
 	}
-	.area_easy, .area_normal{
-		width: 100%;
-	}
 	.area_easy{
 		@include setCont(100%, auto, block, relative);
 		padding: 0 0 40px 0;
-	}
-	.area_normal{
-		@include setCont(100%, auto, block, relative);
-		padding: 38.5px 0 56px 0;
+		@include pc{
+			width: 50%;
+			padding-right: 127px;
+			padding: 16.5px 0;
+		}
 		&::before{
 			@include setCont(100%, 1px, block, absolute, $gray200);
 			z-index: 1;
-			top: 0;
+			bottom: 0;
 			left: 0;
+			@include pc{
+				@include setCont(1px, 100%);
+				left: unset;
+				right: 0;
+			}
 		}
 		&::after{
 			content: "OR";
@@ -43,23 +58,57 @@
 			@include font(15,18, $gray400);
 			z-index: 2;
 			position: absolute;
-			top: -9px;
+			bottom: -9px;
 			left: 50%;
 			transform: translateX(-50%);
+			@include pc{
+				@include fontPc(15, 18);
+				transform: translateY(-50%);
+				top: 50%;
+				right: -10px;
+				left: unset;
+				bottom:unset;
+				padding: 8px 0;
+			}
+		}
+		.btn{
+			@include pc{
+				width: 312px;
+			}
+		}
+	}
+	.area_normal{
+		@include setCont(100%, auto, block, relative);
+		padding: 38.5px 0 56px 0;
+		@include pc{
+			width: 50%;
+			padding: 0 0 0 133px;
 		}
 		.ipt{
+			@include pc{
+				width: 312px;
+			}
 			&+.ipt{
 				margin-top: 16px;
 			}
 		}
 		.btn{
 			margin-top: 24px;
+			@include pc{
+				width: 312px;
+			}
 		}
 		p{
 			margin-top: 16px;
 			@include font(15, 18);
+			@include pc{
+				@include fontPc(15, 18);
+			}
 			a{
 				@include font(15, 18, $gray400);
+				@include pc{
+					@include fontPc(15, 18);
+				}
 				&.txt_point{
 					text-decoration: underline;
 				}

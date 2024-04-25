@@ -9,8 +9,8 @@
 		<meta property="og:image" content="../img/main.jpg">
 		<title>home | IPRankings </title>
 		<link rel="icon" href="../img/favicon.ico" type="image/x-icon"> 
-		<link rel="stylesheet" type="text/css" href="../css/style.css?v=240418">
-		<!-- <link rel="stylesheet" type="text/css" href="../css/style_qc.css?v=240411"> -->
+		<!-- <link rel="stylesheet" type="text/css" href="../css/style.css?v=240418"> -->
+		<link rel="stylesheet" type="text/css" href="../css/style_qc.css?v=240411">
 		<link rel="stylesheet" type="text/css" href="../css/animate.min.css"> 
 		<link rel="stylesheet" type="text/css" href="../css/swiper.min.css">
 		<script src = "../js/jquery-3.7.1.min.js"></script>
@@ -27,7 +27,6 @@
 			            <a href="../html/home.html"  class="logo"><span>ip logo</span></a>
 			            <h1></h1>
 			        </div>
-			        <!-- v:240327 - 구조 및 링크 변경 -->
 			        <div class="right">
 			            
 				<nav class="gnb">
@@ -37,8 +36,13 @@
 						<a href="../html/university.html">University</a>  
 						<a href="../html/company.html">Company</a>    
 						<a href="../html/patent.html" >Patent</a>  
-						<a href="/html/Inventor.html" >Inventor</a>  
-						<!-- <a href="#" class="link_login">Login</a>   -->  
+						<a href="../html/Inventor.html" >Inventor</a>  
+						<!-- v:240425 - S:회원가입 로그인 추가 -->
+						<div class="bx_mem">
+							<a href="../html/login.html" class="btn s_medi">Create Free Account</a>    
+							<a href="../html/login.html" class="link_login">Login</a>    
+						</div>
+						<!-- v:240425 - E:회원가입 로그인 추가 -->  
 					</div>
 				</nav>
 			
@@ -52,28 +56,30 @@
 			                    </form>
 			                </div>
 			                <button class="btn_search_open">검색창 오픈 버튼</button>
-			                <!-- <a href="#" class="link_login">Login</a>     -->
+			                <!-- v:240425 - S:회원가입 로그인 추가 -->
+			                <div class="bx_mem">
+			                    <a href="../html/login.html" class="link_login">Login</a>    
+			                    <a href="../html/login.html" class="btn s_medi">Create Free Account</a>    
+			                </div>
+			                <!-- v:240425 - E:회원가입 로그인 추가 -->
 			                <button type="button" class="btn_menu"><span class="blind">menu button</span></button>
 			            </div>
 			        </div>
-			        <!-- v:240327 - e:구조 및 링크 변경 -->
 			    </div>
 			</header>
 			<section class="container main">
-				<!-- v:240327 - s: 전체 변경 -->
 				<article class="area_visual">
 					<div class="inner">
 						<div class="content">
 							<h1>Patent Value Made Easy</h1>
 							<h2>The first real-time AI patent valuation tool</h2>
 							<p>Instant company valuation, inventor portfolio vaulation, and other powerful, data-driven insights at your fingertips.</p>
-							<!-- <button type="button" class="btn s_large">Create Free Account</button> -->
-							<!-- <a href="#" class="btn s_large">Create Free Account</a> -->
+                			<!-- v:240425 - S:회원가입 로그인 추가 -->
+							<a href="#" class="btn s_large">Create Free Account</a>
+                			<!-- v:240425 - E:회원가입 로그인 추가 -->
 						</div>
 					</div>
-					<!-- v:240327 - e:전체 변경 -->
 				</article>
-				<!-- v:240327 - s: 전체 변경 -->
 				<article class="area_menu">
 					<div class="inner">
 						<div class="content">
@@ -96,8 +102,6 @@
 						</div>
 					</div>
 				</article>
-				<!-- v:240327 - e:전체 변경 -->
-				<!-- v:240327 - s:전체 변경 -->
 				<article class="area_news">
 					<div class="inner">
 						<div class="top">
@@ -105,7 +109,6 @@
 							<a href="#" class="link">See All</a>
 						</div>
 						<div class="content">
-							<!-- u1~u3 클래스 모두 제거해주세요 -->
 							<a href="#" class="unit">
 								<div class="thum" style="background-image:url('https://media.licdn.com/dms/image/D5612AQHAT2-2WdleUw/article-cover_image-shrink_720_1280/0/1712553804656?e=1718236800&v=beta&t=hitIV6P3XC5SbuXxdGjcTAKfan4EnkKTA0AeRchR1GY');"></div>
 								<div class="desc">
@@ -139,8 +142,7 @@
 						</div>
 					</div>
 				</article>
-				<!-- v:240327 - e:전체 변경 -->
-				<article class="area_team"><!-- v:240327 - class 변경 -->
+				<article class="area_team">
 					<div class="inner">
 						<h2>Our Team</h2>
 						<div class="content">
@@ -174,7 +176,6 @@
 									<span>Coordinator</span>
 								</p>
 							</div>
-							<!-- v:240327 - s: 맴버 추가 -->
 							<div class="team_mem">
 								<img src="../img/main/mem_jpril.png" alt="Jpril">
 								<h3>Jpril</h3>
@@ -188,7 +189,6 @@
 								<p>
 									<span>QA Engineer</span>
 								</p>
-							<!-- v:240327 - s: 맴버 추가 -->
 							</div>
 						</div>
 					</div>

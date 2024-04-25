@@ -181,7 +181,7 @@ a, button, input{
 	}
 }
 
-.btn_linkedin, .btn_apple, .btn_google{
+.btn_linkedin1, .btn_apple1, .btn_google1{
 	@include setCont(100%, auto, block);
 	display: flex;
 	justify-content: center;
@@ -189,8 +189,11 @@ a, button, input{
 	min-height: 46px;
     padding: 13px 15px;
 	border-radius: 10px;
+	@include pc{
+		@include fontPc(16,19);
+	}
 }
-.btn_linkedin{
+.btn_linkedin1{
 	background-color: #2867b2;
 	&::before{
 		@include setCont(21px, 20px, block);
@@ -202,7 +205,7 @@ a, button, input{
 		color: #efefef !important;
 	}
 }
-.btn_apple{
+.btn_apple1{
 	background-color: #000;
 	&::before{
 		@include setCont(16px, 20px, block);
@@ -215,7 +218,7 @@ a, button, input{
 	}
 	
 }
-.btn_google{
+.btn_google1{
 	background-color: #fff;
 	border: 1px solid $gray400;
 	color: $gray500;
@@ -237,7 +240,6 @@ a, button, input{
 	z-index: 2;
 	@include pc{
 		@include setCont(69px, 69px, block, absolute);
-
 	}
 }
 
