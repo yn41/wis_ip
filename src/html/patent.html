@@ -65,6 +65,7 @@
 									</div>
 									<button type="button" class="btn_prev"><span>이전</span></button>
 									<button type="button" class="btn_next"><span>다음</span></button>
+									<div class="swiper-pagination"></div><!-- s:v20240312 - pagination 추가 -->
 								</div>
 							</div>
 						</div>
@@ -129,6 +130,10 @@ $(function(){
 		// slidesPerView: 1,
 		spaceBetween: 85, 
         loop: false,
+		pagination: {
+			el: ".swiper-pagination",
+			type: "fraction",
+		},
         navigation: {
 			prevEl: '.btn_prev',
 			nextEl: '.btn_next',
