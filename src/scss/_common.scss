@@ -1014,6 +1014,40 @@ form{
 		}
 	}
 }
+.chart_legend_type1{
+	@include setCont(100%, auto, block, relative);
+	margin: 15px 0 0;
+	text-align: left;
+	animation-name: aniOpacity;
+	animation-duration:600ms;
+	animation-iteration-count:1;
+	animation-fill-mode:forwards;
+	.unit{
+		@include setCont(100%, auto, flex, relative);
+		align-items: flex-start;
+		&+.unit{
+			margin-top: 5px;
+			@include pc{
+				margin-top: 7px;
+			}
+		}
+		.bar{
+			@include setCont(14px, 3px, block, relative, $point);
+			margin: 7px 10px 0 0;
+			flex-shrink: 0;
+			@include pc{
+				width: 20px;
+			}
+		}
+		.nm{
+			display: inline-block;
+			@include font(13, 17, $gray800);
+			@include pc{
+				@include fontPc(13,17);
+			}
+		}
+	}
+}
 .barchart_wrap{
 	@include setCont(100%, auto, block, relative);
 	.chart_legend{
