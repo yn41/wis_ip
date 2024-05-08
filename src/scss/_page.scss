@@ -195,18 +195,6 @@
     .nodata{
         border-bottom: 1px solid $gray100;
     }
-	.swiper-pagination{
-		@include font(16, 19, $gray500);
-		margin-top: 0;
-		text-align: center;
-		position: relative;
-		margin-bottom: 15px;
-		bottom: -12px;
-		@include pc{
-			@include fontPc(16);
-			margin-bottom: 0;
-		}
-	}
 }
 .patentSpec, .inventorSpec{
     .area1{
