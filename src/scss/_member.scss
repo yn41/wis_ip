@@ -122,3 +122,306 @@
 		}
 	}
 }
+.my{
+	h1{
+		text-align: center;
+		margin: 98px auto 155px;
+		@include fontPc(26, 31, $gray800, $bold);
+	}
+	h4{
+		@include font(19, 26, $gray800, $medi);
+		position: relative;
+		margin-bottom: 15px;
+		padding-left: 28px;
+		@include pc{
+			@include fontPc(19, 26);
+			margin-bottom: 18.5px;
+		}
+		.num{
+			top: 0;
+			left: 0;
+			position: absolute;
+		}
+	}
+	.icon_check{
+		@include setCont(22px,22px, inline-block);
+		@include bgSvg(iconCheck($s_point), no-repeat, 0 2px, 20px auto);
+		@include blind;
+		vertical-align: middle;
+		margin-top: -4px;
+	}
+	.icon_link{
+		@include setCont(20px,22px, inline-block);
+		@include bgSvg(iconLink($s_gray400), no-repeat, 0 2px, 20px auto);
+		@include blind;
+		vertical-align: middle;
+		margin: -4px 6px 0;
+	}
+	&.container{
+		.inner{
+			padding: 26px calcPercent(24) 60px;
+			@include pc{
+				padding: 0;
+			}
+			h2{
+				@include font(19, 23, $gray800);
+				width: 100%;
+				text-align: center;
+				margin-bottom: 42px;
+			}
+		}
+	}
+	.my_wrap{
+		width: 100%;
+		@include pc{
+			display: flex;
+		}
+		.lnb{
+			display: none;			
+			@include pc{
+				@include setCont(244px, auto, block);
+			}
+			padding-right: 20px;
+			flex-shrink: 0;
+			.link, a.link {
+				@include fontPc(19, 23, $gray400, $bold);
+				width: 100%;
+				text-align: left;
+				&+.link{
+					margin-top: 32px;
+				}
+				&.on{
+					color: $point;
+				}
+				&:hover:not(.on), &:active:not(.on){
+					opacity: 0.7;
+				}
+			}
+		}
+		.contents{
+			@include setCont(100%, auto, block);
+			@include pc{
+				width: 760px;
+			}
+			flex-grow: 1;
+			.h3{
+				@include font(16, 19, $gray800, $medi);
+				margin-bottom: 7.5px;
+				@include pc{
+					@include fontPc(16); 
+					margin-bottom: 11.5px;
+				}
+			}
+			.bx_ipt{
+				width: 100%;
+				margin: 8px 0;
+				@include pc{
+					width: 312px;
+					margin: 12px 0;
+				}
+			}
+			.ipt, .textarea{
+				border: 1px solid $gray300;
+			}
+			.btn{
+				margin-top: 5px;
+				padding: 13px 16px 14px;
+				@include pc{
+					margin-top: 20.5px;
+				}
+			}
+			.bx_chk{
+				margin: 8px 0 12px;
+				@include pc{
+					margin: 12px 0;
+				}
+				display: flex;
+				align-items: center;
+				.chk{
+					&:checked+label{
+						@include bgSvg(chkFull3(), no-repeat, 0 2px, 20px auto);
+					}
+				}
+				label{
+					@include bgSvg(chk("dbdcdd"), no-repeat, 0 2px, 20px auto);
+					padding: 0 0 0 35px;
+					@include font(16, 23, $gray600);
+					@include pc{
+						@include fontPc(16, 23);
+					}
+				}
+			}
+			.bx_txt{
+				@include font(16,21);
+				margin-top: 10px;
+				@include pc{
+					@include fontPc(19,28); 
+					margin: 18px 0 106px;
+				}
+				p{
+					font-weight: $medi;
+				}
+			}
+			.area{
+				&+.area{
+					margin-top: 42px;
+					@include pc{
+						margin-top: 66px;
+					}
+				}
+				&.a1{
+					width: 100%;
+					margin-bottom: 66px;
+					.cont{
+						@include setCont(100%, auto, flex);
+						flex-wrap: wrap;
+						.bx_ipt, .bx_chk{
+							&:nth-child(2n){
+								@include pc{
+									margin-left: 24px;
+								}
+							}
+						}
+					}
+					.bx_chk{
+						width: 100%;
+						@include pc{
+							width: 312px;
+						}
+					}
+				}
+				&.a2{
+					.cont{
+						display: flex;
+						flex-direction: column;
+						align-items: flex-start;
+					}
+					.btn{
+						margin: 5px 0 0;
+						@include pc{
+							margin-top: 20.5px;
+						}
+					}
+				}
+				&.a3{
+					margin-top: 48px;
+					@include pc{
+						margin-top: 66px;
+					}
+					.h3{
+						font-weight: $bold;
+						margin-bottom: 24px;
+					}
+					.cont1{
+						margin-top: 26px;
+						@include pc{
+							margin-top: 29px;
+						}
+						.bx_search{
+							width: 100%;
+						}
+						.inventors_wrap{
+							margin-top: 31.5px;
+							@include pc{
+								margin-top: 65px;
+							}
+						}
+					}
+				}
+			}
+		}
+	}
+	.inventors_wrap{
+		.i_top{
+			width: 100%;
+			display: flex;
+			justify-content: space-between;
+			align-items: center;
+			margin-bottom: 16px;
+			@include pc{
+				width: 700px;
+				margin-bottom: 20px;
+			}
+			.i_right {
+				min-width: 0;
+				strong{
+					@include font(16, 19, $gray800, $medi);
+					@include pc{
+						@include fontPc(16, 19);
+					}
+				}
+			}
+			.i_left{
+				h3.tit{
+					@include font(13, 15, $gray600, $medi);
+					margin-bottom: 0;
+					@include pc{
+						@include fontPc(13);
+					}
+				}
+			}
+		}
+		.link_new{
+			@include setCont(100%,auto, block);
+			@include font(16,19, $point, $medi);
+			margin: 14px 0 16px;
+			text-align: center;
+			@include pc{
+				@include setCont(26px,27px, block);
+				@include bgSvg(iconLink($s_gray400), no-repeat, 0 2px, 26px auto);
+				@include blind;
+				transition: all 400ms;
+				flex-shrink: 0;
+				margin-left: 31px;
+			}
+			&:hover{
+				@include bgSvg(iconLink($s_gray300), no-repeat, 0 2px, 26px auto);
+			}
+		}
+		.inventors_unit{
+			width: 100%;
+			align-items: center;
+			@include pc{
+				display: flex;
+			}
+			&+.inventors_unit{
+				margin-top: 8px;
+			}
+		}
+		.inventors_item{
+			@include pc{
+				padding: 17px 16px 17px 17px;
+			}
+			.c_right{
+				padding-top: 0;
+			}
+			&.select{
+				border: 2px solid $point;
+				&:hover{
+					transform: scale(1);
+				}
+			}
+		}
+		.pagination{
+			margin-top: 36px;
+		}
+	}
+	.cont2{
+		margin: 82px 0 0;
+		@include pc{
+			margin: 72px 0 163px;
+		}
+		h4{
+			margin-bottom: 0;
+		}
+		.btn{
+			margin-top: 16px !important;
+			width: 100%;
+			@include pc{
+				width: auto;
+				min-width: 312px;
+				margin-top: 32px !important;
+			}
+		}
+	}
+}

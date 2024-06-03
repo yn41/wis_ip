@@ -261,6 +261,12 @@
 			@include blind;
 		}
 	}
+	.btn_profile{
+		@include setCont(26px, 26px, block);
+		@include blind;
+		@include bgSvg(iconProfile($s_gray500), no-repeat, 50% 55%, 26px auto);
+		margin-left: 24px;
+	}
 	&.open{
 		overflow: unset;
 		.gnb{
@@ -1171,6 +1177,8 @@ a.inventors_item, button.inventors_item, .ac_link{
 		flex-shrink: 0;
 		height: 38px;
 		padding-right: 15px;
+		display: flex;
+		align-items: center;
 		.num{
 			height: 100%;
 			line-height: 38px;

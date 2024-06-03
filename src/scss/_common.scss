@@ -781,7 +781,7 @@ input.ipt{
 		display: block;
 		@include font(11,normal, $gray500);
 		padding: 6px 0 6px 32px;
-		@include bgSvg(chk(), no-repeat, 0 3px, 20px auto);
+		@include bgSvg(chk("dbdcdd"), no-repeat, 0 3px, 20px auto);
 		word-wrap: break-word;
 		transition: all 300ms;
 		&:hover, &:active{
