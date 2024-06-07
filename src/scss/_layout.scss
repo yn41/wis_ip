@@ -1179,6 +1179,7 @@ a.inventors_item, button.inventors_item, .ac_link{
 		padding-right: 15px;
 		display: flex;
 		align-items: center;
+		border-radius: 0;
 		.num{
 			height: 100%;
 			line-height: 38px;
@@ -1188,6 +1189,11 @@ a.inventors_item, button.inventors_item, .ac_link{
 		}
 		.icon{
 			@include setCont(34px, 34px, block);
+		}
+		.bx_profile{
+			@include setCont(35px, 35px, block);
+			margin-right: 0;
+			border-radius: 7px;
 		}
 	}
 	.c_left{
@@ -1205,6 +1211,9 @@ a.inventors_item, button.inventors_item, .ac_link{
 			@include setCont(34px, 34px, block, absolute);
 			top: 2px;
 			left: 0;
+		}
+		.icon_check{
+			margin-left: 4px;
 		}
 		.num{
 			@include setCont(24px, 34px, flex, absolute);
@@ -1547,6 +1556,9 @@ a.visual_wrap{
 					@include pc{
 						@include fontPc(22);
 					}
+					.icon_check{
+						margin-left: 4px;
+					}
 				}
 				.txt_gray{
 					display: block;
@@ -1565,6 +1577,46 @@ a.visual_wrap{
 							width: 100%;
 						}
 					}
+				}
+				.bx_profile{
+					margin-right: 8px;
+				}
+			}
+			.c_msg{
+				@include font(16,23,$gray700);
+				border: 1px solid $gray300;
+				padding: 16px 18px;
+				border-radius: 8px;
+				margin-top: 22px;
+				position: relative;
+				text-align: left;
+				@include pc{
+					@include fontPc(16,19);
+					width: 648px;
+					margin-top: 29px;
+				}
+				&::before{
+					content: "";
+					position: absolute;
+					top: -6.5px;
+					left: 27px;
+					width: 0;
+					height: 0;
+					border-bottom: 8px solid $white;
+					border-left: 8px solid transparent;
+					border-right: 8px solid transparent;
+					z-index: 2;
+				}
+				&::after{
+					content: "";
+					position: absolute;
+					top: -8px;
+					left: 27px;
+					width: 0;
+					height: 0;
+					border-bottom: 8px solid $gray300;
+					border-left: 8px solid transparent;
+					border-right: 8px solid transparent;
 				}
 			}
 		}
@@ -2045,6 +2097,35 @@ a.visual_wrap{
 				@include pc{
 					margin: 40px 0 27px;
 					padding: 0;
+				}
+				&.colb{
+					display: block !important;
+					@include pc{
+						display: flex !important;
+						align-items: center;
+						justify-content: space-between;
+						flex-wrap:nowrap;
+					}
+					.c_info{
+						width: auto;
+					}
+					.c_right{
+						text-align: right;
+						flex-shrink: 1;
+						margin-top: 8px;
+						@include pc{
+							margin-top: 0;
+						}
+					}
+					.btn_txt{
+						@include font(16, 19, $point, $medi);
+						display: inline-block;
+						padding: 0;
+						width: auto;
+						@include pc{
+							@include fontPc(16, 19);
+						}
+					}
 				}
 			}
 			.c_info {

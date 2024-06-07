@@ -1,0 +1,322 @@
+<!DOCTYPE html>
+<html lang="ko">
+	<include src="include/head.html" title="Inventor Profile"></include>
+	<body>
+		<div class="wrap">
+			<include src="include/header.html" title="My Account">
+				<nav class="gnb">
+					<div class="g_inner">
+						<button type="button" class="btn_menu_close">menu close</button>
+						<a href="../html/home.html"  class="on">Home</a>  
+						<a href="../html/university.html">University</a>  
+						<a href="../html/company.html">Company</a>    
+						<a href="../html/patent.html" >Patent</a>  
+						<a href="/html/Inventor.html" >Inventor</a>  
+						<div class="bx_mem">
+							<a href="../html/login.html" class="btn s_medi">Create Free Account</a>    
+							<a href="../html/login.html" class="link_login">Login</a>    
+						</div>
+					</div>
+				</nav>
+			</include>
+			<section class="container my my_profile">
+				<div class="inner">
+					<h1 class="show_pc">My Account</h1>
+					<div class="my_wrap">
+						<div class="lnb">
+							<a href="#" class="link">Account Settings</a>
+							<a href="#" class="link on">Inventor Profile <em class="icon_check"></em></a>
+							<button class="link">Logout</button>
+						</div>
+						<div class="contents">
+							<form action="">
+								<!-- <h2 class="show_mobile">Inventor Profile</h2> -->
+								<div class="area">
+									<div class="cont">
+										<h2 class="h2">Profile Image</h2>
+										<div class="u_file">
+											<h3 class="h3">Upload File</h3>
+											<div class="coln">
+												<!-- <div class="bx_profile" style="background-image:url('경로를 넣어주세요');"></div> -->
+												<div class="bx_profile"></div>
+												<div class="bx_file">
+													<input type="text" name="" class="ipt" placeholder="png, jpg files up to 2MB">
+													<input type="file" name="" id="i_file" class="ipt_file">
+													<label for="i_file" class="btn_txt">Choose File</label>
+													<!-- <button type="button" class="btn_txt">Delete</button> -->
+												</div>
+											</div>
+										</div>
+										<div class="u_icon">
+											<h3 class="h3">Choose an Icon</h3>
+											<div class="icons">
+												<div class="row">
+													<button type="button" class="icon on"><img src="../img/icon/icon1.svg" alt="icon img"></button>
+													<button type="button" class="icon"><img src="../img/icon/icon2.svg" alt="icon img"></button>
+													<button type="button" class="icon"><img src="../img/icon/icon3.svg" alt="icon img"></button> 
+												</div>
+												<div class="row">
+													<button type="button" class="icon"><img src="../img/icon/icon4.svg" alt="icon img"></button>
+													<button type="button" class="icon"><img src="../img/icon/icon5.svg" alt="icon img"></button>
+													<button type="button" class="icon"><img src="../img/icon/icon6.svg" alt="icon img"></button>
+												</div>
+											</div>
+										</div>
+									</div>
+								</div>
+								<div class="area">
+									<h2 class="h2">Display Name</h2>
+									<div class="cont">
+										<div class="col2">
+											<div class="bx_ipt half">
+												<input type="type" class="ipt" placeholder="" value="Steve" />
+												<button type="button" class="btn_clear">delete</button>
+											</div>
+											<div class="bx_ipt half">
+												<input type="type" class="ipt" placeholder="" value="Wozniak"/>
+												<button type="button" class="btn_clear">delete</button>
+											</div>
+										</div>
+									</div>
+								</div>
+								<div class="area a3">
+									<h2 class="h2">Anything you want to say?</h2>
+									<div class="bx_textarea">
+										<textarea name="" id="" class="textarea" placeholder="Career history, favorite projects, contact information, name of your pet..."></textarea>
+										<span class="txt_length">0/140</span>
+									</div>
+								</div>
+								<div class="area a4">
+									<h2 class="h2">Select up to 3 Associated Entities to display on your profile.</h2>
+									<div class="inventors_wrap i1">
+										<div class="i_list">
+											<div class="inventors_unit">
+												<div class="inventors_item type_rank_num">
+													<div class="colb">
+														<div class="c_icon">
+															<em class="num">4</em>
+														</div>
+														<div class="c_left">
+															<h3>Toyota Jidosha K.K.</h3>
+															<p class="desc">Japan</p>
+														</div>
+														<div class="c_right">
+															<b class="txt_point">3.6M</b>
+														</div>
+													</div>
+													<div class="bx_tag">
+														<span class="tag bg_gray">Electrics</span>
+														<span class="tag">Mech Eng</span>
+														<span class="tag">Consumer</span>
+														<span class="tag bg_gray">Electrics</span>
+														<span class="tag bg_gray">Electrics</span>
+													</div>
+												</div>
+												<a href="#" class="btn_trash">Delete</a>
+											</div>
+											<div class="inventors_unit">
+												<div class="inventors_item type_rank_num">
+													<div class="colb">
+														<div class="c_icon">
+															<em class="num">4</em>
+														</div>
+														<div class="c_left">
+															<h3>Toyota Jidosha K.K.</h3>
+															<p class="desc">Japan</p>
+														</div>
+														<div class="c_right">
+															<b class="txt_point">3.6M</b>
+														</div>
+													</div>
+													<div class="bx_tag">
+														<span class="tag bg_gray">Electrics</span>
+														<span class="tag">Mech Eng</span>
+														<span class="tag">Consumer</span>
+														<span class="tag bg_gray">Electrics</span>
+														<span class="tag bg_gray">Electrics</span>
+													</div>
+												</div>
+												<a href="#" class="btn_trash">Delete</a>
+											</div>
+										</div>
+									</div>
+									<div class="bx_search">
+										<input type="text" class="ipt" placeholder="Steve Wozniak">
+										<button type="button" class="btn_clear">delete</button>
+										<button type="button" class="btn_search">search button</button>
+									</div>
+									<div class="inventors_wrap i2">
+										<div class="i_top">
+											<div class="i_left">
+												<h3 class="tit">Search Results</h3>
+											</div>
+											<div class="i_right">
+												<strong>Selected: 1</strong>
+											</div>
+										</div>
+										<div class="i_list">
+											<div class="inventors_unit">
+												<button type="button" class="inventors_item select">
+													<div class="colb">
+														<div class="c_icon">
+															<em class="icon">
+																<img src="../img/icon/icon6.svg" alt="icon img">
+															</em>
+														</div>
+														<div class="c_left">
+															<em class="icon">
+															</em>
+															<h3>Steve Wozniak</h3>
+															<p class="desc">Apple Inc</p>
+														</div>
+														<div class="c_right">
+															<span class="txt_gray">Patents</span>
+															<b class="txt_point">2</b>
+														</div>
+													</div>
+													<div class="bx_tag">
+														<span class="tag bg_gray">Biochemistry</span>
+														<span class="tag">ICT</span>
+														<span class="tag">Biomedical</span>
+													</div>
+												</button>
+												<a href="#" class="link_new">Open in new tab</a>
+											</div>
+											<div class="inventors_unit">
+												<button type="button" class="inventors_item">
+													<div class="colb">
+														<div class="c_icon">
+															<em class="icon">
+																<img src="../img/icon/icon4.svg" alt="icon img">
+															</em>
+														</div>
+														<div class="c_left">
+															<em class="icon">
+															</em>
+															<h3>Steven Wozniak</h3>
+															<p class="desc">Gatorcrocs LLC</p>
+														</div>
+														<div class="c_right">
+															<span class="txt_gray">Patents</span>
+															<b class="txt_point">35</b>
+														</div>
+													</div>
+													<div class="bx_tag">
+														<span class="tag bg_gray">Biochemistry</span>
+														<span class="tag">ICT</span>
+														<span class="tag">Pharmaceuticals</span>
+													</div>
+												</button>
+												<a href="#" class="link_new">Open in new tab</a>
+											</div>
+											<div class="inventors_unit">
+												<button type="button" class="inventors_item">
+													<div class="colb">
+														<div class="c_icon">
+															<em class="icon">
+																<img src="../img/icon/icon3.svg" alt="icon img">
+															</em>
+														</div>
+														<div class="c_left">
+															<h3>Stephen B. Wozniak</h3>
+															<p class="desc">Terrarosa</p>
+														</div>
+														<div class="c_right">
+															<span class="txt_gray">Patents</span>
+															<b class="txt_point">2</b>
+														</div>
+													</div>
+													<div class="bx_tag">
+														<span class="tag bg_gray">Biotech</span>
+														<span class="tag">Pharma</span>
+														<span class="tag">Biomedical</span>
+													</div>
+												</button>
+												<a href="#" class="link_new">Open in new tab</a>
+											</div>
+											<div class="inventors_unit">
+												<button type="button" class="inventors_item">
+													<div class="colb">
+														<div class="c_icon">
+															<em class="icon">
+																<img src="../img/icon/icon4.svg" alt="icon img">
+															</em>
+														</div>
+														<div class="c_left">
+															<h3>Stevens Wozniak</h3>
+															<p class="desc">Wisdomain</p>
+														</div>
+														<div class="c_right">
+															<span class="txt_gray">Patents</span>
+															<b class="txt_point">312</b>
+														</div>
+													</div>
+													<div class="bx_tag">
+														<span class="tag bg_gray">Biochemistry</span>
+														<span class="tag">ICT</span>
+														<span class="tag">Biomedical & Pharmaceuticals</span>
+													</div>
+												</button>
+												<a href="#" class="link_new">Open in new tab</a>
+											</div>
+											<div class="inventors_unit">
+												<button type="button" class="inventors_item">
+													<div class="colb">
+														<div class="c_icon">
+															<em class="icon">
+																<img src="../img/icon/icon1.svg" alt="icon img">
+															</em>
+														</div>
+														<div class="c_left">
+															<h3>Stephan Wozniak</h3>
+															<p class="desc">Aiseesoft</p>
+														</div>
+														<div class="c_right">
+															<span class="txt_gray">Patents</span>
+															<b class="txt_point">320</b>
+														</div>
+													</div>
+													<div class="bx_tag">
+														<span class="tag bg_gray">Biochemistry</span>
+														<span class="tag">ICT</span>
+														<span class="tag">Biomedical & Pharmaceuticals</span>
+													</div>
+												</button>
+												<a href="#" class="link_new">Open in new tab</a>
+											</div>
+										</div>
+										<div class="pagination">
+											<button type="button" class="btn_page_start">start page to go button</button> 
+											<button type="button" class="btn_page_prev">previous button</button>
+											<a href="#" class="num on">1</a>
+											<a href="#" class="num">2</a>
+											<a href="#" class="num">3</a>
+											<a href="#" class="num">4</a>
+											<!-- <button type="button" class="num">1</button>
+											<button type="button" class="num">2</button>
+											<button type="button" class="num">3</button>
+											<button type="button" class="num">4</button> -->
+											<button type="button" class="btn_page_next">nex buttont</button>
+											<button type="button" class="btn_page_end">start page to go button</button>
+										</div>
+									</div>
+									<button type="button" class="btn">Save Changes</button>
+								</div>
+								<div class="colr">
+									<!-- <button type="text" class="btn_txt_arr">Go to Inventor Profile</button> -->
+									<a href="#" class="btn_txt_arr">Go to Inventor Profile</a>
+								</div>
+							</form>
+						</div>
+					</div>
+				</div>
+			</section>
+			<include src="include/footer.html" title="home"></include>
+		</div>
+	</body>
+</html>
+<script>
+	
+$(function(){ 
+});
+</script>

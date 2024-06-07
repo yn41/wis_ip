@@ -1436,3 +1436,19 @@ form{
 		width: 25%;
 	}
 }
+.icon_check{
+	@include setCont(22px,22px, inline-block);
+	@include bgSvg(iconCheck($s_point), no-repeat, 0 2px, 20px auto);
+	@include blind;
+	vertical-align: middle;
+	margin-top: -4px;
+}
+.bx_profile{
+	@include setCont(72px, 72px, block);
+	@include bgSvg(imgProfile(), no-repeat, 50% 50%);
+	border-radius: 20px;
+	overflow: hidden;
+	background-size: 100% auto !important;
+	flex-shrink: 0;
+	margin-right: 8px;
+}

@@ -1,183 +1,183 @@
 .patent{
-    .btn{
-        width: 100%;
-    }
-    .area_top{
-        h2{
-            font-weight: $medi;
-            @include pc{
-                @include fontPc(26, normal, null, $bold);
-            }
-        }
-        .inner{
-            padding-bottom: 0;
-            @include pc{
-                padding-top: 80px;
-            }
-        }
-    }
-    .area_pick{
-        .inner{
-            padding: 31.5px 0 0;
-            @include pc{
-                padding: 79.5px 0 80px;
-            }
-        }
-        h2{
-            font-weight: $medi;
-            padding: 0 calcPercent(24) 16px;
-            @include pc{
-                padding: 0 0 24px;
-                @include fontPc(26, normal, null, $bold);
-            }
-        }
-        .content{
-            width: 100%;
-            display: block;
-            @include pc{
-                display: flex;
-            }
-        }
-        .left{
-            @include setCont(100%, calcVw(218));
-            min-height: 218px;
-            max-height: 400px;
-            @include pc{
-                @include setCont(494px, 445px);
-                max-height: unset; 
-            }
-        }
-        .right{
-            margin-top: 25px;
-            flex-grow: 1;
-            @include pc{
-                margin-top: 0;
-                width: 510px;
-            }
-        }
-        .bx_thum{
-            width: 100%;
-            height: 100%;
-            display: block;
-            position: relative;
-            left: 50%;
-            transform: translateX(-50%);
-            background-size: auto 100% !important;
-            &:hover{
-                background-size: auto 105% !important;
-            }
-            @include pc{
-                @include setCont(494px, 445px);
-                border-radius: 10px;
-            }
-        }
-        .p_info{
-            @include setCont(100%, auto, block, relative);
-            padding: 0 calcPercent(24) 27px;
-            @include pc{
-                padding: 0 0 39px 101px;
-            }
-            &+.area_sw{
-                margin-top: -10px;
-                @include pc{
-                    margin-top: 0;
-                }
-            }
-            .p_link{
-                display: block;
-                padding-left:  50px;
-                position: relative;   
-                @include pc{
-                    padding-left:  0;
-                    position: unset;   
-                }
-            }
-            .icon{
-                @include setCont(34px, 34px, block, absolute);
-                @include blind;
-                border-radius: 50%;
-                z-index: 2;
-                img{
-                    width: 100%;
-                }
-                @include pc{
-                    @include setCont(69px, 69px, block, absolute);
-            
-                }
-                top: 0;
-                left: 0;
-                @include pc{
-                    left: 16px;
-                }
-            }
-            h3{
-                @include font(13, normal, $gray500, $normal);
-                margin-bottom: 8px;
-                @include pc{
-                    margin-bottom: 16px;
-                    @include fontPc(16);
-                }
-            }
-            p{
-                @include font(15, normal, $gray800, $medi);
-                position: relative;
-                width: 100%;
-                @include pc{
-                    width: 100%;
-                    @include fontPc(19);
-                    @include ellipsis("multi", 3);
-                }
-            }
-            .btn{
-                margin-top: 24px;
-                display: block;
-                @include pc{ 
-                    margin-top: 16px;
-                }
-            }
-        }
-        &.group_skeleton{
-            .bx_thum, .icon, h3, p, .sw_pick .slide{
-                @include skeleton;
-            }
-            h3{
-                min-width: 80px;
-                min-height: 15px;
-                @include pc{
-                    min-height: 19px;
-                }
-            }
-            p{
-                min-height: 54px;
-                @include pc{
-                    min-height: 69px;
-                }
-                border-radius: 0;
-                &::before, &::after{
-                    @include setCont(100%, 5px , block, absolute, $white);
-                    left: 0;
-                }
-                &::before{
-                    top: calc(33.33% - 3px);
-                }
-                &::after{
-                    top: calc(66.66% - 2px);
-                }
-            }
-            .bx_thum{
-                background-size: 200% 100% !important;
-            }
-            .icon{
-                border-radius: 50%;
-            }
-        }
-    }
-    .area_search{
-        border-top: 12px solid $gray100;
-        .c_inner{
-            padding: 31.5px calcPercent(24);
-        }
-    }
+	.btn{
+		width: 100%;
+	}
+	.area_top{
+		h2{
+			font-weight: $medi;
+			@include pc{
+				@include fontPc(26, normal, null, $bold);
+			}
+		}
+		.inner{
+			padding-bottom: 0;
+			@include pc{
+				padding-top: 80px;
+			}
+		}
+	}
+	.area_pick{
+		.inner{
+			padding: 31.5px 0 0;
+			@include pc{
+				padding: 79.5px 0 80px;
+			}
+		}
+		h2{
+			font-weight: $medi;
+			padding: 0 calcPercent(24) 16px;
+			@include pc{
+				padding: 0 0 24px;
+				@include fontPc(26, normal, null, $bold);
+			}
+		}
+		.content{
+			width: 100%;
+			display: block;
+			@include pc{
+				display: flex;
+			}
+		}
+		.left{
+			@include setCont(100%, calcVw(218));
+			min-height: 218px;
+			max-height: 400px;
+			@include pc{
+				@include setCont(494px, 445px);
+				max-height: unset; 
+			}
+		}
+		.right{
+			margin-top: 25px;
+			flex-grow: 1;
+			@include pc{
+				margin-top: 0;
+				width: 510px;
+			}
+		}
+		.bx_thum{
+			width: 100%;
+			height: 100%;
+			display: block;
+			position: relative;
+			left: 50%;
+			transform: translateX(-50%);
+			background-size: auto 100% !important;
+			&:hover{
+				background-size: auto 105% !important;
+			}
+			@include pc{
+				@include setCont(494px, 445px);
+				border-radius: 10px;
+			}
+		}
+		.p_info{
+			@include setCont(100%, auto, block, relative);
+			padding: 0 calcPercent(24) 27px;
+			@include pc{
+				padding: 0 0 39px 101px;
+			}
+			&+.area_sw{
+				margin-top: -10px;
+				@include pc{
+					margin-top: 0;
+				}
+			}
+			.p_link{
+				display: block;
+				padding-left:  50px;
+				position: relative;   
+				@include pc{
+					padding-left:  0;
+					position: unset;   
+				}
+			}
+			.icon{
+				@include setCont(34px, 34px, block, absolute);
+				@include blind;
+				border-radius: 50%;
+				z-index: 2;
+				img{
+					width: 100%;
+				}
+				@include pc{
+					@include setCont(69px, 69px, block, absolute);
+			
+				}
+				top: 0;
+				left: 0;
+				@include pc{
+					left: 16px;
+				}
+			}
+			h3{
+				@include font(13, normal, $gray500, $normal);
+				margin-bottom: 8px;
+				@include pc{
+					margin-bottom: 16px;
+					@include fontPc(16);
+				}
+			}
+			p{
+				@include font(15, normal, $gray800, $medi);
+				position: relative;
+				width: 100%;
+				@include pc{
+					width: 100%;
+					@include fontPc(19);
+					@include ellipsis("multi", 3);
+				}
+			}
+			.btn{
+				margin-top: 24px;
+				display: block;
+				@include pc{ 
+					margin-top: 16px;
+				}
+			}
+		}
+		&.group_skeleton{
+			.bx_thum, .icon, h3, p, .sw_pick .slide{
+				@include skeleton;
+			}
+			h3{
+				min-width: 80px;
+				min-height: 15px;
+				@include pc{
+					min-height: 19px;
+				}
+			}
+			p{
+				min-height: 54px;
+				@include pc{
+					min-height: 69px;
+				}
+				border-radius: 0;
+				&::before, &::after{
+					@include setCont(100%, 5px , block, absolute, $white);
+					left: 0;
+				}
+				&::before{
+					top: calc(33.33% - 3px);
+				}
+				&::after{
+					top: calc(66.66% - 2px);
+				}
+			}
+			.bx_thum{
+				background-size: 200% 100% !important;
+			}
+			.icon{
+				border-radius: 50%;
+			}
+		}
+	}
+	.area_search{
+		border-top: 12px solid $gray100;
+		.c_inner{
+			padding: 31.5px calcPercent(24);
+		}
+	}
 	.swiper-pagination{
 		@include font(16, 19, $gray500);
 		margin-top: 0;
@@ -185,1107 +185,1126 @@
 		position: relative;
 		margin-bottom: 20px;
 		bottom: 0;
-        z-index: 1;
+		z-index: 1;
 		@include pc{
-            @include fontPc(16);
+			@include fontPc(16);
 			margin-bottom: 0;
-            bottom: -12px;
+			bottom: -12px;
 		}
 	}
-    .nodata{
-        border-bottom: 1px solid $gray100;
-    }
+	.nodata{
+		border-bottom: 1px solid $gray100;
+	}
 }
 .patentSpec, .inventorSpec{
-    .area1{
-        &.none_sw{
-            .inner{
-                padding-left: 0;
-                min-height: 253px;
-            }
-        }
-        .inner{
-            @include setCont(100%, auto, flex, relative);
-            flex-direction: column;
-            padding: 23px 0 24px;
-            min-height: 369px;
-            @include pc{
-                padding: 80px 0;
-                padding-left: 510px;
-            }
-        }
-        h1{
-            font-weight: $medi;
-            @include pc{
-                font-weight: $bold;
-            }
-        }
-        dl{
-            @include setCont(100%, auto, flex,);
-            align-items: center;
-            justify-content: flex-start;
-            &+dl{
-                margin-top: 5px;
-            }
-            dt, dd{
-                @include font(13, normal, $gray500);
-                @include pc{
-                    @include fontPc(16);
-                }
-            }
-            dt{
-                margin-right: 3px;
-            }
-        }
-        .a_top{
-            .c_inner{
-                padding: 0 calcPercent(24) 16px;
-                @include pc{
-                    padding: 0 16px 16px;
-                    @include setCont(100%, auto, flex, relative);
-                    flex-wrap: wrap-reverse;
-                }
-            }
-            h1{
-                margin-bottom: 6px;
-                @include pc{
-                    margin-bottom: 0;
-                    @include fontPc(26);
-                }
-            }
-            .bx_desc{
-                @include pc{
-                    width: 100%;
-                    display: flex;
-                    flex-wrap: wrap;
-                    margin-bottom: 8px;
-                }
-            }
-            dl{
-                &+dl{
-                    margin-top: 5px;
-                }
-                @include pc{
-                    width: auto;
-                    &+dl{
-                        margin-top: 0;
-                        margin-left: 16px;
-                    }
-                    dt, dd{
-                        @include fontPc(13);
-                    }
-                }
-            }
-        }
-        .area_sw{
-            @include pc{
-                position: absolute;
-                top: 80px;
-                left: 0;
-                width: 494px;
-                margin-right: 0;
-            }
-            .sw_pick{
-                @include pc{
-                    // width: 324px;
-                    width: 339px;
-                    padding-right: 15px;
-                }
-            }
-            .slide{
-                @include pc{
-                    height: 233px;
-                }
-            }
-            .btn_next{
-                right: -16px;
-            }
-        }
-        .a_info{
-            .c_inner{
-                padding: 0 calcPercent(24);
-                @include pc{
-                    padding: 0 16px;
-                }
-            }
-            dl{
-                flex-direction: column;
-                align-items:flex-start;
-                &+dl{
-                    margin-top: 21px;
-                }
-                dt, dd{
-                    @include font(13, normal, $gray600, $medi,);
-                    @include pc{
-                        @include fontPc(16);
-                        font-weight: $normal;
-                    }
-                }
-                dt{
-                    margin: 0 0 5px 0;
-                    @include pc{
-                        margin: 0 0 9px 0;
-                    }
-                }
-                dd{
-                    width: 100%;
-                }
-                .nm{
-                    @include font(22, normal, $gray800, $medi);
-                    display: block;
-                    &+.nm{
-                        margin-top: 8px;
-                    }
-                    &.skeleton{
-                        min-width: 93px;
-                        min-height: 26px;
-                        display: inline-block;
-                    }
-                    @include pc{
-                        @include fontPc(22);
-                        display: inline-block;
-                        &+.nm{
-                            margin-left: 8px;
-                        }
-                    }
-                }
-            }
-            .txt_point{
-                @include font(30, normal, $point, $bold);
-                @include pc{
-                    @include fontPc(30);
-                }
-                &.skeleton{
-                    min-width: 100%;
-                    min-height: 36px;
-                }
-            }
-        }
-        .swiper-wrapper{
-            padding-bottom: 24px;
-        }
-        &.group_skeleton{
-            .a_top{
-                h1{
-                    min-width: 100%;
-                    min-height: 26px;
-                    @include skeleton;
-                }
-                dl{
-                    dd{
-                        min-width: 65px;
-                        min-height: 15px;
-                        @include skeleton;
-                    }
-                }
-            }
-            .sw_pick .slide {
-                @include skeleton;
-                .p_label{
-                    opacity: 0;
-                }
-            }
-            .a_info{
-                .nm{
-                    min-width: 93px;
-                    min-height: 26px;
-                    display: inline-block;
-                    @include skeleton;
-                
-                }
-                .txt_point{
-                    min-width: 100%;
-                    min-height: 36px;
-                    @include skeleton;
-                }
-            }
-        }
-    }
-    .area2{
-        @include setCont(100%, auto, block, relative, $gray50);
-        border-top: 12px solid $gray100;
-        @include pc{
-            border: none;
-        }
-        h2{
-            font-weight: $medi;
-            margin-bottom: 19px;
-            @include font(22);
-            @include pc{
-                @include fontPc(22);
-            }
-        }
-        .inner{
-            padding-bottom:39px;
-            @include pc{
-                border: none;
-                padding: 36px 0 53px;
-            }
-        }
-    }
-    .area3{
-        .inner{
-            padding: 0;
-            @include pc{
-                display: flex;
-                justify-content: space-between;
-            }
-        }
-        h2{
-           padding : 32px calcPercent(24) 32.7px;
-           font-weight: $medi;
-           @include pc{
-               padding : 60px 0 16px;
-                @include fontPc(22);
-                font-weight: $medi;
-           }
-        }
-        .left{
-            @include pc{
-                width: 409px;
-            }
-            .inventors_item.type1 {
-                padding : 0 calcPercent(24) 24px;
-            }
-            .cont_more{
-                @include setCont(100%, auto, block, relative);
-                max-height: 0;
-                overflow: hidden;
-                padding : 0 calcPercent(16);
-                opacity: 0;
-                transition: all 400ms;
-                @include pc{
-                    padding : 0;
-                    max-height: unset;
-                    overflow: visible;
-                    opacity: 1;
-                    &::before{
-                        @include setCont(105%, 1px, block, absolute, $gray100);
-                        top: 0;
-                        left: 0;
-                    }
-                }
-                .c_tit{
-                    @include font(15, normal, $gray800, $medi);
-                    padding : 12px calcPercent(8) 12px;
-                    @include pc{
-                        @include fontPc(16);
-                        padding : 32px 0 20px;
-                    }
-                }
-                .inventors_wrap{
-                    padding-bottom: 24px;
-                }
-                &.open{
-                    opacity: 1;
-                    max-height: 9999px;
-                }
-            }
-            .btn_txt{
-                @include pc{
-                    display: none;
-                }
-            }
-        }
-        .right{
-            @include setCont(100%, auto, block, relative, $gray50);
-            @include pc{
-                width: 494px;
-                background-color: $white;
-            }
-            h2{
-                padding-bottom: 20px;
-            }
-            .inventors_wrap{
-                padding : 0 calcPercent(16) 17px;
-                @include pc{
-                    padding : 0 0 63px;
-                }
-                .i_list{
-                    margin-bottom: 25px;
-                }
-            }
-        }
-    }
-    .area4{
-        @include setCont(100%, auto, block, relative);
-        border-top: 12px solid $gray100;
-        @include pc{
-            border-top: none;
-            background-color: $gray50;
-        }
-        h2{
-            font-weight: $medi;
-            @include pc{
-                @include fontPc(22, normal, $gray800);   
-            }
-        }
-        .inner{
-            padding: 0;
-            @include pc{
-                display: flex;
-            }
-        }
-        .c_inner{
-            padding : 32px calcPercent(24);
-            @include pc{
-                padding : 36px 0 64px;
-            }
-        }
-        .right{
-            background-color: $gray50;
-            @include pc{
-                flex-grow: 1;
-            }
-        }
-        .left{
-            @include pc{
-                width: 600px;
-                flex-shrink: 0;
-            }
-        }
-        .full{
-            width: 100%;
-            padding : 32px calcPercent(24);
-            @include pc{
-                padding : 36px 0 64px;
-            }
-        }
-    }
+	.area1{
+		&.none_sw{
+			.inner{
+				padding-left: 0;
+				min-height: 253px;
+			}
+		}
+		.inner{
+			@include setCont(100%, auto, flex, relative);
+			flex-direction: column;
+			padding: 23px 0 24px;
+			min-height: 369px;
+			@include pc{
+				padding: 80px 0;
+				padding-left: 510px;
+			}
+		}
+		h1{
+			font-weight: $medi;
+			@include pc{
+				font-weight: $bold;
+			}
+		}
+		dl{
+			@include setCont(100%, auto, flex,);
+			align-items: center;
+			justify-content: flex-start;
+			&+dl{
+				margin-top: 5px;
+			}
+			dt, dd{
+				@include font(13, normal, $gray500);
+				@include pc{
+					@include fontPc(16);
+				}
+			}
+			dt{
+				margin-right: 3px;
+			}
+		}
+		.a_top{
+			.c_inner{
+				padding: 0 calcPercent(24) 16px;
+				@include pc{
+					padding: 0 16px 16px;
+					@include setCont(100%, auto, flex, relative);
+					flex-wrap: wrap-reverse;
+				}
+			}
+			h1{
+				margin-bottom: 6px;
+				@include pc{
+					margin-bottom: 0;
+					@include fontPc(26);
+				}
+			}
+			.bx_desc{
+				@include pc{
+					width: 100%;
+					display: flex;
+					flex-wrap: wrap;
+					margin-bottom: 8px;
+				}
+			}
+			dl{
+				&+dl{
+					margin-top: 5px;
+				}
+				@include pc{
+					width: auto;
+					&+dl{
+						margin-top: 0;
+						margin-left: 16px;
+					}
+					dt, dd{
+						@include fontPc(13);
+					}
+				}
+			}
+		}
+		.area_sw{
+			@include pc{
+				position: absolute;
+				top: 80px;
+				left: 0;
+				width: 494px;
+				margin-right: 0;
+			}
+			.sw_pick{
+				@include pc{
+					// width: 324px;
+					width: 339px;
+					padding-right: 15px;
+				}
+			}
+			.slide{
+				@include pc{
+					height: 233px;
+				}
+			}
+			.btn_next{
+				right: -16px;
+			}
+		}
+		.a_info{
+			.c_inner{
+				padding: 0 calcPercent(24);
+				@include pc{
+					padding: 0 16px;
+				}
+			}
+			dl{
+				flex-direction: column;
+				align-items:flex-start;
+				&+dl{
+					margin-top: 21px;
+				}
+				dt, dd{
+					@include font(13, normal, $gray600, $medi,);
+					@include pc{
+						@include fontPc(16);
+						font-weight: $normal;
+					}
+				}
+				dt{
+					margin: 0 0 5px 0;
+					@include pc{
+						margin: 0 0 9px 0;
+					}
+				}
+				dd{
+					width: 100%;
+				}
+				.nm{
+					@include font(22, normal, $gray800, $medi);
+					display: block;
+					&+.nm{
+						margin-top: 8px;
+					}
+					&.skeleton{
+						min-width: 93px;
+						min-height: 26px;
+						display: inline-block;
+					}
+					@include pc{
+						@include fontPc(22);
+						display: inline-block;
+						&+.nm{
+							margin-left: 8px;
+						}
+					}
+				}
+			}
+			.txt_point{
+				@include font(30, normal, $point, $bold);
+				@include pc{
+					@include fontPc(30);
+				}
+				&.skeleton{
+					min-width: 100%;
+					min-height: 36px;
+				}
+			}
+		}
+		.swiper-wrapper{
+			padding-bottom: 24px;
+		}
+		&.group_skeleton{
+			.a_top{
+				h1{
+					min-width: 100%;
+					min-height: 26px;
+					@include skeleton;
+				}
+				dl{
+					dd{
+						min-width: 65px;
+						min-height: 15px;
+						@include skeleton;
+					}
+				}
+			}
+			.sw_pick .slide {
+				@include skeleton;
+				.p_label{
+					opacity: 0;
+				}
+			}
+			.a_info{
+				.nm{
+					min-width: 93px;
+					min-height: 26px;
+					display: inline-block;
+					@include skeleton;
+				
+				}
+				.txt_point{
+					min-width: 100%;
+					min-height: 36px;
+					@include skeleton;
+				}
+			}
+		}
+	}
+	.area2{
+		@include setCont(100%, auto, block, relative, $gray50);
+		border-top: 12px solid $gray100;
+		@include pc{
+			border: none;
+		}
+		h2{
+			font-weight: $medi;
+			margin-bottom: 19px;
+			@include font(22);
+			@include pc{
+				@include fontPc(22);
+			}
+		}
+		.inner{
+			padding-bottom:39px;
+			@include pc{
+				border: none;
+				padding: 36px 0 53px;
+			}
+		}
+	}
+	.area3{
+		.inner{
+			padding: 0;
+			@include pc{
+				display: flex;
+				justify-content: space-between;
+			}
+		}
+		h2{
+		   padding : 32px calcPercent(24) 32.7px;
+		   font-weight: $medi;
+		   @include pc{
+			   padding : 60px 0 16px;
+				@include fontPc(22);
+				font-weight: $medi;
+		   }
+		}
+		.left{
+			@include pc{
+				width: 409px;
+			}
+			.inventors_item.type1 {
+				padding : 0 calcPercent(24) 24px;
+			}
+			.cont_more{
+				@include setCont(100%, auto, block, relative);
+				max-height: 0;
+				overflow: hidden;
+				padding : 0 calcPercent(16);
+				opacity: 0;
+				transition: all 400ms;
+				@include pc{
+					padding : 0;
+					max-height: unset;
+					overflow: visible;
+					opacity: 1;
+					&::before{
+						@include setCont(105%, 1px, block, absolute, $gray100);
+						top: 0;
+						left: 0;
+					}
+				}
+				.c_tit{
+					@include font(15, normal, $gray800, $medi);
+					padding : 12px calcPercent(8) 12px;
+					@include pc{
+						@include fontPc(16);
+						padding : 32px 0 20px;
+					}
+				}
+				.inventors_wrap{
+					padding-bottom: 24px;
+				}
+				&.open{
+					opacity: 1;
+					max-height: 9999px;
+				}
+			}
+			.btn_txt{
+				@include pc{
+					display: none;
+				}
+			}
+		}
+		.right{
+			@include setCont(100%, auto, block, relative, $gray50);
+			@include pc{
+				width: 494px;
+				background-color: $white;
+			}
+			h2{
+				padding-bottom: 20px;
+			}
+			.inventors_wrap{
+				padding : 0 calcPercent(16) 17px;
+				@include pc{
+					padding : 0 0 63px;
+				}
+				.i_list{
+					margin-bottom: 25px;
+				}
+			}
+		}
+	}
+	.area4{
+		@include setCont(100%, auto, block, relative);
+		border-top: 12px solid $gray100;
+		@include pc{
+			border-top: none;
+			background-color: $gray50;
+		}
+		h2{
+			font-weight: $medi;
+			@include pc{
+				@include fontPc(22, normal, $gray800);   
+			}
+		}
+		.inner{
+			padding: 0;
+			@include pc{
+				display: flex;
+			}
+		}
+		.c_inner{
+			padding : 32px calcPercent(24);
+			@include pc{
+				padding : 36px 0 64px;
+			}
+		}
+		.right{
+			background-color: $gray50;
+			@include pc{
+				flex-grow: 1;
+			}
+		}
+		.left{
+			@include pc{
+				width: 600px;
+				flex-shrink: 0;
+			}
+		}
+		.full{
+			width: 100%;
+			padding : 32px calcPercent(24);
+			@include pc{
+				padding : 36px 0 64px;
+			}
+		}
+	}
 }
 .patentSpec{
-    .area1{
-        .inner{
-            padding-bottom: 56px;
-        }
-        .area_sw{
-            @include pc{
-                top: 109px;
-            }
-        }
-        .a_info dd{
-            .inventors_item{
-                margin-top: 7px;
-                .txt_point{
-                    @include font(19);
-                    @include pc{
-                        @include fontPc(19);
-                    }
-                }
-            }
-            .f22{
-                @include font(22);
-                font-weight: $medi;
-                @include pc{
-                    @include fontPc(22);
-                }
-            }
-        }
-        .swiper-pagination{
-            @include font(16, 19, $gray500);
-            margin-top: 0;
-            text-align: center;
-            position: relative;
-            margin-bottom: 15px;
-            z-index: 1;
-            @include pc{
-                @include fontPc(16);
-                margin-bottom: 0;
-            }
-        }
-    }
-    .area5{
-        border-top: 12px solid $gray100;
-        .inner{
-            @include setCont(100%, auto, block);
-            padding:  32px calcPercent(20);
-            @include pc{
-                display: flex;
-                padding: 65px 0 86px;
-            }
-        }
-        .left{
-            width: 100%;
-            @include pc{
-                width: 509px;
-                flex-shrink: 0;
-            }
-        }
-        .right{
-            width: 100%;
-            @include pc{
-                padding-top: 50px;
-                flex-grow: 1;
-            }
-            .tit_chart{
-                margin-bottom: 20px;
-            }
-        }
-        .chart_wrap{
-            box-shadow: none;
-            border-radius: 0;
-        }
-        h2{
-            @include font(22,26, $gray800, $medi);
-            margin-bottom: 24px;
-            @include pc{
-                @include fontPc(22);
-            }
-        }
-        h3{
-            @include font(19, 23, $gray800, $medi);
-            @include pc{
-                @include fontPc(19);
-            }
-            span{
-                display: block;
-                @include font(16, 19, $gray800, $normal);
-                margin-bottom: 9px;
-                @include pc{
-                    @include fontPc(16);
-                }
-            }
-            b{
-                display: block;
-                font-weight: $medi;
-                margin-bottom: 24px;
-            }
-        }
-        .tit_chart{
-            @include font(16, 19, $gray800, $normal);
-            @include pc{
-                @include fontPc(16);
-            }
+	.area1{
+		.inner{
+			padding-bottom: 56px;
+		}
+		.area_sw{
+			@include pc{
+				top: 109px;
+			}
+		}
+		.a_info dd{
+			.inventors_item{
+				margin-top: 7px;
+				.txt_point{
+					@include font(19);
+					@include pc{
+						@include fontPc(19);
+					}
+				}
+			}
+			.f22{
+				@include font(22);
+				font-weight: $medi;
+				@include pc{
+					@include fontPc(22);
+				}
+			}
+		}
+		.swiper-pagination{
+			@include font(16, 19, $gray500);
+			margin-top: 0;
+			text-align: center;
+			position: relative;
+			margin-bottom: 15px;
+			z-index: 1;
+			@include pc{
+				@include fontPc(16);
+				margin-bottom: 0;
+			}
+		}
+	}
+	.area5{
+		border-top: 12px solid $gray100;
+		.inner{
+			@include setCont(100%, auto, block);
+			padding:  32px calcPercent(20);
+			@include pc{
+				display: flex;
+				padding: 65px 0 86px;
+			}
+		}
+		.left{
+			width: 100%;
+			@include pc{
+				width: 509px;
+				flex-shrink: 0;
+			}
+		}
+		.right{
+			width: 100%;
+			@include pc{
+				padding-top: 50px;
+				flex-grow: 1;
+			}
+			.tit_chart{
+				margin-bottom: 20px;
+			}
+		}
+		.chart_wrap{
+			box-shadow: none;
+			border-radius: 0;
+		}
+		h2{
+			@include font(22,26, $gray800, $medi);
+			margin-bottom: 24px;
+			@include pc{
+				@include fontPc(22);
+			}
+		}
+		h3{
+			@include font(19, 23, $gray800, $medi);
+			@include pc{
+				@include fontPc(19);
+			}
+			span{
+				display: block;
+				@include font(16, 19, $gray800, $normal);
+				margin-bottom: 9px;
+				@include pc{
+					@include fontPc(16);
+				}
+			}
+			b{
+				display: block;
+				font-weight: $medi;
+				margin-bottom: 24px;
+			}
+		}
+		.tit_chart{
+			@include font(16, 19, $gray800, $normal);
+			@include pc{
+				@include fontPc(16);
+			}
 
-        }
-    }
-    .area6{
-        background-color: #faf8fd;
-        .inner{
-            padding:  32px calcPercent(20);
-            @include pc{
-                padding: 57px 0 60px;
-            }
-        }
-        .h2{
-            @include font(22, 22, $gray800, $medi);
-            margin-bottom: 24px;
-            @include pc{
-                @include fontPc(22);
-            }
-        }
-        .h3{
-            @include font(19, 19, $gray800, $medi);
-            margin-bottom: 24px;
-            @include pc{
-                @include fontPc(19);
-            }
-        }
-        .btn_more{
-            margin-top: 24px;
-        }
-    }
-    .area7{
-        .inner{
-            @include setCont(100%, auto, block);
-            padding:  32px calcPercent(20);
-            @include pc{
-                display: flex;
-                padding: 65px 0 60px;
-            }
-        }
-        .h2{
-            @include font(22, 22, $gray800, $medi);
-            margin-bottom: 22px;
-            @include pc{
-                @include fontPc(22);
-                margin-bottom: 4px;
-            }
-        }
-        .h3{
-            margin-bottom: 40px;
-        }
-        .left{
-            width: 100%;
-            @include pc{
-                width: 511px;
-                flex-shrink: 0;
-                padding-right: 59.5px;
-            }
-            .inventors_item{
-                margin-bottom: 25px;
-            }
-        }
-        .right{
-            width: 100%;
-            @include pc{
-                padding-top: 50px;
-                flex-grow: 1;
-            }
-            .chart_info{
-                margin-bottom: 40px;
-                height: 48px;
-            }
-        }
-        .chart_wrap{
-            box-shadow: none;
-            border-radius: 0;
-        }
-    }
+		}
+	}
+	.area6{
+		background-color: #faf8fd;
+		.inner{
+			padding:  32px calcPercent(20);
+			@include pc{
+				padding: 57px 0 60px;
+			}
+		}
+		.h2{
+			@include font(22, 22, $gray800, $medi);
+			margin-bottom: 24px;
+			@include pc{
+				@include fontPc(22);
+			}
+		}
+		.h3{
+			@include font(19, 19, $gray800, $medi);
+			margin-bottom: 24px;
+			@include pc{
+				@include fontPc(19);
+			}
+		}
+		.btn_more{
+			margin-top: 24px;
+		}
+	}
+	.area7{
+		.inner{
+			@include setCont(100%, auto, block);
+			padding:  32px calcPercent(20);
+			@include pc{
+				display: flex;
+				padding: 65px 0 60px;
+			}
+		}
+		.h2{
+			@include font(22, 22, $gray800, $medi);
+			margin-bottom: 22px;
+			@include pc{
+				@include fontPc(22);
+				margin-bottom: 4px;
+			}
+		}
+		.h3{
+			margin-bottom: 40px;
+		}
+		.left{
+			width: 100%;
+			@include pc{
+				width: 511px;
+				flex-shrink: 0;
+				padding-right: 59.5px;
+			}
+			.inventors_item{
+				margin-bottom: 25px;
+			}
+		}
+		.right{
+			width: 100%;
+			@include pc{
+				padding-top: 50px;
+				flex-grow: 1;
+			}
+			.chart_info{
+				margin-bottom: 40px;
+				height: 48px;
+			}
+		}
+		.chart_wrap{
+			box-shadow: none;
+			border-radius: 0;
+		}
+	}
 }
 
 .company, .university{
-    .area1{
-        .inner{
-            padding: 16px calcPercent(16) 27.5px;
-            @include pc{
-                padding: 32px 0 59.5px;
-            }
-        }
-        .inventors_wrap {
-            margin: 0 auto;
-            @include pc{
-                width: 100%;
-            }
-            .i_list{
-                margin-top: 12px;
-                @include pc{
-                    margin-top: 32px;
-                }
-            }
-            .area_filter_search{
-		        padding-top: 15.5px;
-                @include pc{
-                    padding-top: 40px;
-                }
-            }
-            .area_search{
-                border: none;
-                .c_inner{
-                    padding-top: 15.5px;
-                }
-            }
-        }
-    }
+	.area1{
+		.inner{
+			padding: 16px calcPercent(16) 27.5px;
+			@include pc{
+				padding: 32px 0 59.5px;
+			}
+		}
+		.inventors_wrap {
+			margin: 0 auto;
+			@include pc{
+				width: 100%;
+			}
+			.i_list{
+				margin-top: 12px;
+				@include pc{
+					margin-top: 32px;
+				}
+			}
+			.area_filter_search{
+				padding-top: 15.5px;
+				@include pc{
+					padding-top: 40px;
+				}
+			}
+			.area_search{
+				border: none;
+				.c_inner{
+					padding-top: 15.5px;
+				}
+			}
+		}
+	}
 }
 .university{
-    .area1{
-        .inventors_wrap {
-            .i_list{
-                margin-top: 16px;
-                @include pc{
-                    margin-top: 32px;
-                }
-            }
-        }
-    }
+	.area1{
+		.inventors_wrap {
+			.i_list{
+				margin-top: 16px;
+				@include pc{
+					margin-top: 32px;
+				}
+			}
+		}
+	}
 }
 .company_spec, .universitySpec, .company_spec_unlisted, .company_spec_listed{
-    h2{
-        font-weight: $medi;
-        @include pc{
-            @include fontPc(22, normal, $gray800, $medi);
-        }
-    }
-    .area1{
-        @include setCont(100%, auto, block);
-        .inner{
-            padding: 32px 0 26px 0;
-            @include pc{
-                padding: 80px 0 63px 0;
-            }
-        }
-        h2{
-            margin-bottom: 20.2px;
-            padding-left: calcPercent(24);
-            @include pc{
-                margin-bottom: 40px;
-                padding-left: 0;
-            }
-        }
-        .area_sw {
-            .btn_prev {
-                left: 0;
-            }
-        }
-    }
-    .area2{
-        @include setCont(100%, auto);
-        @include pc{
-            background-color: $gray50;
-            justify-content: space-between;
-        }
-        .inner{
-            padding: 0;
-            @include pc{
-                display: flex;
-                flex-direction: row-reverse;
-                justify-content: space-between;
-            }
-        }
-        .c_inventors{
-            @include setCont(100%, auto, block, relative, $gray50);
-            padding: 32px 0 17px;
-            @include pc{
-                background-color: unset;
-                width: 495px;
-                padding: 70px 0 53px;
-            }
-            h2{
-                padding: 0 calcPercent(24);
-                @include pc{
-                    padding: 0
-                }
-            }
-        }
-        .c_sectors{
-            @include setCont(100%, auto, block, relative);
-            padding: 32px calcPercent(24) 43px;
-            @include pc{
-                width: 409px;
-                padding: 70px 0 53px;
-            }
-        }
-        .inventors_wrap{
-            padding: 0 calcPercent(16);
-            @include pc{
-                width: 495px;
-                padding: 0;
-            }
-            .i_list{
-                margin-bottom: 21px;
-            }
-        }
-        h2{
-            margin-bottom: 25px;
-        }
-    }
+	h2{
+		font-weight: $medi;
+		@include pc{
+			@include fontPc(22, normal, $gray800, $medi);
+		}
+	}
+	.area1{
+		@include setCont(100%, auto, block);
+		.inner{
+			padding: 32px 0 26px 0;
+			@include pc{
+				padding: 80px 0 63px 0;
+			}
+		}
+		h2{
+			margin-bottom: 20.2px;
+			padding-left: calcPercent(24);
+			@include pc{
+				margin-bottom: 40px;
+				padding-left: 0;
+			}
+		}
+		.area_sw {
+			.btn_prev {
+				left: 0;
+			}
+		}
+	}
+	.area2{
+		@include setCont(100%, auto);
+		@include pc{
+			background-color: $gray50;
+			justify-content: space-between;
+		}
+		.inner{
+			padding: 0;
+			@include pc{
+				display: flex;
+				flex-direction: row-reverse;
+				justify-content: space-between;
+			}
+		}
+		.c_inventors{
+			@include setCont(100%, auto, block, relative, $gray50);
+			padding: 32px 0 17px;
+			@include pc{
+				background-color: unset;
+				width: 495px;
+				padding: 70px 0 53px;
+			}
+			h2{
+				padding: 0 calcPercent(24);
+				@include pc{
+					padding: 0
+				}
+			}
+		}
+		.c_sectors{
+			@include setCont(100%, auto, block, relative);
+			padding: 32px calcPercent(24) 43px;
+			@include pc{
+				width: 409px;
+				padding: 70px 0 53px;
+			}
+		}
+		.inventors_wrap{
+			padding: 0 calcPercent(16);
+			@include pc{
+				width: 495px;
+				padding: 0;
+			}
+			.i_list{
+				margin-bottom: 21px;
+			}
+		}
+		h2{
+			margin-bottom: 25px;
+		}
+	}
 }
 .patentSpec, .company_spec, .universitySpec, .inventorSpec, .company_spec_unlisted, .company_spec_listed{
-    .area_feadback{
-        @include pc{
-            position: relative;
-            margin-top: 103px;
-        }
-        .area_search{
-            @include pc{
-                top: -119px;
-                height: 119px;
-                .c_inner{
-                    @include setCont(1004px, 100%, flex);
-                    justify-content: center;
-                    align-items: center;
-                }
-            }
-        }
-        .area_search, .area_filter_search{
-            @include pc{
-                @include setCont(1004px, 103px, block, absolute);
-                margin: 0 auto;
-                transform: translateX(-50%);
-                border: none;
-                top: -103px;
-                padding-left: 0;
-                padding-right: 0;
-                left: 50%;
-                .c_inner{
-                    // justify-content: center;
-                    // align-items: center;
-                }
-            }
-        }
-    }
+	.area_feadback{
+		@include pc{
+			position: relative;
+			margin-top: 103px;
+		}
+		.area_search{
+			@include pc{
+				top: -119px;
+				height: 119px;
+				.c_inner{
+					@include setCont(1004px, 100%, flex);
+					justify-content: center;
+					align-items: center;
+				}
+			}
+		}
+		.area_search, .area_filter_search{
+			@include pc{
+				@include setCont(1004px, 103px, block, absolute);
+				margin: 0 auto;
+				transform: translateX(-50%);
+				border: none;
+				top: -103px;
+				padding-left: 0;
+				padding-right: 0;
+				left: 50%;
+				.c_inner{
+					// justify-content: center;
+					// align-items: center;
+				}
+			}
+		}
+	}
 }
 .company_spec_unlisted, .company_spec_listed{
-    .area1{
-        .inner{
-            padding: 36px 0 31px;
-            @include pc{
-                padding: 58px 0 63px;
-            }
-        }
-    }
-    .area2{
-        .c_evaluation{
-            @include setCont(100%, auto, block, relative);
-            padding: 35px calcPercent(24) 62px;
-            @include pc{
-                padding: 70px 20px 53px 0;
-                flex-grow: 1;
-            }
-        }
-    }
-    .area{
-        @include setCont(100%, auto, block, relative);
-        .inner{
-            @include setCont(100%, auto, block);
-            @include pc{
-                display: flex;
-                justify-content: space-between;
-            }
-        }
-        .left{
-            width: 100%;
-            @include pc{
-                width: 409px;
-            }
-        }
-        .right{
-            width: 100%;
-            @include pc{
-                width: 494px;
-            }
-        }
-    }
-    .a3{
-        background-color: #faf8fd;
-        .inner{
-            @include setCont(100%, auto);
-            padding: 0;
-            @include pc{
-                padding: 49px 0 65px;
-            }
-        }
-        .c_inventors{
-            padding-top: 73px;
-            padding: 0 calcPercent(16) 41px;
-            @include pc{
-                padding: 0;
-            }
-        }
-        .c_chart{
-            padding: 40px calcPercent(24) 18px;
-            @include pc{
-                padding: 0 ;
-            }
-        }
-    }
-    .a4{
-        overflow: hidden;
-        .inner{
-            padding: 60px calcPercent(24) 71px;
-            @include pc{
-                padding: 60px 0 71px;
-            }
-        }
-        .c_sectors {
-            padding-bottom: 60px;
-            @include pc{
-                padding: 0;
-            }
-        }
-        h2{
-            margin-bottom: 12px;
-            @include pc{
-                margin-bottom: 32px;
-            }
-        }
-    }
-    .a5{
-        background-color: $gray50;
-        .inner{
-            padding: 43px calcPercent(24) 37px;
-            @include pc{
-                padding: 60px 0 71px;
-            }
-        }
-        .left {
-            padding-bottom: 60px;
-            @include pc{
-                padding: 0;
-            }
-        }
-        h2{
-            margin-bottom: 25px;
-        }
-    }
-    .area_feadback{
-        .area_filter_search{
-            border: none;
-            &+.left{
-                border-top: 12px solid #f5f5f6;
-            }
-        }
-        .left{
-            border: none;
-            &+.area_filter_search{
-                border-top: 12px solid #f5f5f6;
-            }
-        }
-    }
+	.area1{
+		.inner{
+			padding: 36px 0 31px;
+			@include pc{
+				padding: 58px 0 63px;
+			}
+		}
+	}
+	.area2{
+		.c_evaluation{
+			@include setCont(100%, auto, block, relative);
+			padding: 35px calcPercent(24) 62px;
+			@include pc{
+				padding: 70px 20px 53px 0;
+				flex-grow: 1;
+			}
+		}
+	}
+	.area{
+		@include setCont(100%, auto, block, relative);
+		.inner{
+			@include setCont(100%, auto, block);
+			@include pc{
+				display: flex;
+				justify-content: space-between;
+			}
+		}
+		.left{
+			width: 100%;
+			@include pc{
+				width: 409px;
+			}
+		}
+		.right{
+			width: 100%;
+			@include pc{
+				width: 494px;
+			}
+		}
+	}
+	.a3{
+		background-color: #faf8fd;
+		.inner{
+			@include setCont(100%, auto);
+			padding: 0;
+			@include pc{
+				padding: 49px 0 65px;
+			}
+		}
+		.c_inventors{
+			padding-top: 73px;
+			padding: 0 calcPercent(16) 41px;
+			@include pc{
+				padding: 0;
+			}
+		}
+		.c_chart{
+			padding: 40px calcPercent(24) 18px;
+			@include pc{
+				padding: 0 ;
+			}
+		}
+	}
+	.a4{
+		overflow: hidden;
+		.inner{
+			padding: 60px calcPercent(24) 71px;
+			@include pc{
+				padding: 60px 0 71px;
+			}
+		}
+		.c_sectors {
+			padding-bottom: 60px;
+			@include pc{
+				padding: 0;
+			}
+		}
+		h2{
+			margin-bottom: 12px;
+			@include pc{
+				margin-bottom: 32px;
+			}
+		}
+	}
+	.a5{
+		background-color: $gray50;
+		.inner{
+			padding: 43px calcPercent(24) 37px;
+			@include pc{
+				padding: 60px 0 71px;
+			}
+		}
+		.left {
+			padding-bottom: 60px;
+			@include pc{
+				padding: 0;
+			}
+		}
+		h2{
+			margin-bottom: 25px;
+		}
+	}
+	.area_feadback{
+		.area_filter_search{
+			border: none;
+			&+.left{
+				border-top: 12px solid #f5f5f6;
+			}
+		}
+		.left{
+			border: none;
+			&+.area_filter_search{
+				border-top: 12px solid #f5f5f6;
+			}
+		}
+	}
 }
 .company_spec_listed{
-    .visual_wrap {
-        &.type_unlisted .v_area2 .inner{
-            .cont {
-                @include pc{
-                    padding: 35px 0 45px;
-                }
-                .c_left{
-                    padding: 24px calcPercent(24) 36px;
-                    @include pc{
-                        padding: 0;
-                    }
-                }
-                .c_right{
-                    padding: 25px calcPercent(24) 41px;
-                    @include pc{
-                        padding: 0;
-                    }
-                }
-            }
-        }
-        .tooltip .desc{
-            right: -75px;
-        }
-    }
+	.visual_wrap {
+		&.type_unlisted .v_area2 .inner{
+			.cont {
+				@include pc{
+					padding: 35px 0 45px;
+				}
+				.c_left{
+					padding: 24px calcPercent(24) 36px;
+					@include pc{
+						padding: 0;
+					}
+				}
+				.c_right{
+					padding: 25px calcPercent(24) 41px;
+					@include pc{
+						padding: 0;
+					}
+				}
+			}
+		}
+		.tooltip .desc{
+			right: -75px;
+		}
+	}
 }
 .inventor, .total_search{
-    h2{
-        font-weight: $medi;
-        @include pc{
-            font-weight: $bold;
-            @include fontPc(26, normal, $gray800);
-        }
-    }
-    .area_top{
-        .inner{
-            padding: 32px calcPercent(24) 51px;
-            @include pc{
-                padding: 32px 0 51px;
-            }
-        }
-        h2{
-            @include pc{
-                margin-bottom: 23.5px;
-            }
-        }
-    }
-    .area1{
-        .inner{
-            padding: 0;
-            @include pc{
-                display: flex;
-                justify-content: space-between;
-            }
-        }
-        .inventors_wrap{
-            padding: 16px calcPercent(16) 28px;
-            @include pc{
-                padding: 36px 0 80px;
-            }
-        }
-        h2{
-            padding: 0 calcPercent(24); 
-            @include pc{
-                padding: 0 0;
-            }
-        }
-        .left, .right{
-            @include pc{
-                width: 494px;
-                width: 100%;
-            }
-        }
-        .right{
-            @include pc{
-                margin-top: 31px;
-            }
-        }
-    }
-    .search_results{
-        background-color: $gray50;
-        position: relative;
-        z-index: 2;
-        &+.area_feadback .left{
-            border-top: none;
-        }
-        .inner{
-            margin-top: -36.5px;
-            padding-top: 16px;
-            display: block;
-            @include pc{
-                margin-top: -27.5px;
-                padding-top: 32px;
-            }
-        }
-        .inventors_wrap{
-            padding-bottom: 28px;
-            @include pc{
-                padding-bottom: 52px;
-            }
-            .c_right{
-                padding-top: 1px;
-            }
-        }
-        h2{
-            @include font(13, normal, $gray600, $medi);
-        }
-    }
+	h2{
+		font-weight: $medi;
+		@include pc{
+			font-weight: $bold;
+			@include fontPc(26, normal, $gray800);
+		}
+	}
+	.area_top{
+		.inner{
+			padding: 32px calcPercent(24) 51px;
+			@include pc{
+				padding: 32px 0 51px;
+			}
+		}
+		h2{
+			@include pc{
+				margin-bottom: 23.5px;
+			}
+		}
+	}
+	.area1{
+		.inner{
+			padding: 0;
+			@include pc{
+				display: flex;
+				justify-content: space-between;
+			}
+		}
+		.inventors_wrap{
+			padding: 16px calcPercent(16) 28px;
+			@include pc{
+				padding: 36px 0 80px;
+			}
+		}
+		h2{
+			padding: 0 calcPercent(24); 
+			@include pc{
+				padding: 0 0;
+			}
+		}
+		.left, .right{
+			@include pc{
+				width: 494px;
+				width: 100%;
+			}
+		}
+		.right{
+			@include pc{
+				margin-top: 31px;
+			}
+		}
+	}
+	.search_results{
+		background-color: $gray50;
+		position: relative;
+		z-index: 2;
+		&+.area_feadback .left{
+			border-top: none;
+		}
+		.inner{
+			margin-top: -36.5px;
+			padding-top: 16px;
+			display: block;
+			@include pc{
+				margin-top: -27.5px;
+				padding-top: 32px;
+			}
+		}
+		.s_top{
+			display: flex;
+			justify-content: space-between;
+			align-items: center;
+			padding: 0 calcPercent(16);
+			@include pc{
+				padding: 0;
+			}
+			.btn_txt{
+				padding: 0;
+				@include font(16,19);
+				@include pc{
+					@include fontPc(16,19);
+				}
+			}
+			h2{
+				padding: 0;
+			}
+		}
+		.inventors_wrap{
+			padding-bottom: 28px;
+			@include pc{
+				padding-bottom: 52px;
+			}
+			.c_right{
+				padding-top: 1px;
+			}
+		}
+		h2{
+			@include font(13, normal, $gray600, $medi);
+		}
+	}
 }
 .inventorSpec{
-    h2{
-        font-weight: $medi;
-        @include pc{
-            @include fontPc(22, normal, $gray800, $medi);
-        }
-    }
-    .area1{
-        @include setCont(100%, auto, block);
-        .inner{
-            padding: 32px 0;
-            @include pc{
-                padding: 60px 0;
-            }
-        }
-        .area_sw{
-            @include pc{
-                position: relative;
-                top: unset;
-                width: 100%;
-            }
-        }
-        h2{
-            margin-bottom: 20.2px;
-            padding-left: calcPercent(24);
-            @include pc{
-                margin-bottom: 40px;
-                padding-left: 0;
-            }
-        }
-        .area_sw {
-            .sw_patents .slide{
-                height: 261px;
-                margin-right: 12px;
-                @include pc{
-                    margin-right: 16px;
-                }
-            }
-            .btn_prev {
-                left: 0;
-            }
-        }
-    }
-    .area3{
-        @include pc{
-            border-bottom: 12px solid #f5f5f6;
-        }
-        .inner{
-            @include pc{
-                // padding-bottom:48px;
-                padding-bottom:0;
-            }
-        }
-        .left{
-            .cont_more{
-                @include pc{
-                    max-height: 0;
-                    overflow: hidden;
-                    opacity: 0;
-                    &.open{
-                        padding: 24px 5px 5px 3px;
-                    }
-                }
-                .c_tit{
-                    padding: 0 0 15px 0;
-                }
-            }
-            .unit{
-                // &:last-child{
-                //     border-bottom: 1px solid #f5f5f6;
-                // }
-                &+.unit{
-                    padding-top: 31px;
-                    border-top: 1px solid #f5f5f6;
-                }
-            }
-            .btn_txt{
-                display: block;
-            }
-        }
-    }
+	h2{
+		font-weight: $medi;
+		@include pc{
+			@include fontPc(22, normal, $gray800, $medi);
+		}
+	}
+	.area1{
+		@include setCont(100%, auto, block);
+		.inner{
+			padding: 32px 0;
+			@include pc{
+				padding: 60px 0;
+			}
+		}
+		.area_sw{
+			@include pc{
+				position: relative;
+				top: unset;
+				width: 100%;
+			}
+		}
+		h2{
+			margin-bottom: 20.2px;
+			padding-left: calcPercent(24);
+			@include pc{
+				margin-bottom: 40px;
+				padding-left: 0;
+			}
+		}
+		.area_sw {
+			.sw_patents .slide{
+				height: 261px;
+				margin-right: 12px;
+				@include pc{
+					margin-right: 16px;
+				}
+			}
+			.btn_prev {
+				left: 0;
+			}
+		}
+	}
+	.area3{
+		@include pc{
+			border-bottom: 12px solid #f5f5f6;
+		}
+		.inner{
+			@include pc{
+				// padding-bottom:48px;
+				padding-bottom:0;
+			}
+		}
+		.left{
+			.cont_more{
+				@include pc{
+					max-height: 0;
+					overflow: hidden;
+					opacity: 0;
+					&.open{
+						padding: 24px 5px 5px 3px;
+					}
+				}
+				.c_tit{
+					padding: 0 0 15px 0;
+				}
+			}
+			.unit{
+				// &:last-child{
+				//     border-bottom: 1px solid #f5f5f6;
+				// }
+				&+.unit{
+					padding-top: 31px;
+					border-top: 1px solid #f5f5f6;
+				}
+			}
+			.btn_txt{
+				display: block;
+			}
+		}
+	}
 }
 .total_search{
-    h2.tit{
-        @include font(13, 16, $gray600, $medi);
-        padding: 0 calcPercent(16) 26px;
-        @include pc{
-            @include fontPc(13, 16);
-            padding: 0 0 36px;
-        }
-    }
-    h3{
-        @include font(19, 22, $gray800, $normal);
-        padding: 0 calcPercent(16);
-        @include pc{
-            @include fontPc(19, 22);
-            padding: 0
-        }
-    }
-    .area_top{
-        .inner{
-            padding: 35.5px calcPercent(16) ;
-            @include pc{
-                padding: 79.5px 0 35.5px;
-            }
-        }
-    }
-    .area1{
-        padding-bottom: 79.5px;
-        .inventors_wrap{
-            padding-bottom: 36px;
-        }
-        .unit{
-            border-bottom: 1px solid $gray100;
-            &+.unit{
-                padding-top: 25.5px;
-                @include pc{
-                    padding-top: 42.5px;
-                }
-            }
-        }
-    }
-    .btn_txt{
-        border-top: none;
-        padding: 0;
-        margin: 20px 0 -15px;
-        @include pc{
-            margin: 35px 0 -10px;
-        }
-    }
+	h2.tit{
+		@include font(13, 16, $gray600, $medi);
+		padding: 0 calcPercent(16) 26px;
+		@include pc{
+			@include fontPc(13, 16);
+			padding: 0 0 36px;
+		}
+	}
+	h3{
+		@include font(19, 22, $gray800, $normal);
+		padding: 0 calcPercent(16);
+		@include pc{
+			@include fontPc(19, 22);
+			padding: 0
+		}
+	}
+	.area_top{
+		.inner{
+			padding: 35.5px calcPercent(16) ;
+			@include pc{
+				padding: 79.5px 0 35.5px;
+			}
+		}
+	}
+	.area1{
+		padding-bottom: 79.5px;
+		.inventors_wrap{
+			padding-bottom: 36px;
+		}
+		.unit{
+			border-bottom: 1px solid $gray100;
+			&+.unit{
+				padding-top: 25.5px;
+				@include pc{
+					padding-top: 42.5px;
+				}
+			}
+		}
+	}
+	.btn_txt{
+		border-top: none;
+		padding: 0;
+		margin: 20px 0 -15px;
+		@include pc{
+			margin: 35px 0 -10px;
+		}
+	}
 }
 .error, .privacy{
-    .inner{
-        padding: 20px calcPercent(24) 60px !important;
-        @include font(16);
-        @include pc{
-            padding: 80px 0  150px !important;
-            @include fontPc(16);
-        }
-    }
-    h1{
-        @include font(26, normal, $gray800, $bold);
-        margin-bottom: 22px;
-        @include pc{
-            @include fontPc(26);
-            margin-bottom: 42px;
-        }
-    }
-    h2{
-        @include fontPc(16, normal, $gray800, $bold);
-        margin-bottom: 19px;
-        @include pc{
-            @include fontPc(16);
-        }
-    }
-    .btn{
-        min-width: 239px;
-        margin-top: 46px;
-    }
-    .unit+.unit{
-        margin-top: 20px;
-    }
-    p+p{
-        margin-top: 20px;
-    }
+	.inner{
+		padding: 20px calcPercent(24) 60px !important;
+		@include font(16);
+		@include pc{
+			padding: 80px 0  150px !important;
+			@include fontPc(16);
+		}
+	}
+	h1{
+		@include font(26, normal, $gray800, $bold);
+		margin-bottom: 22px;
+		@include pc{
+			@include fontPc(26);
+			margin-bottom: 42px;
+		}
+	}
+	h2{
+		@include fontPc(16, normal, $gray800, $bold);
+		margin-bottom: 19px;
+		@include pc{
+			@include fontPc(16);
+		}
+	}
+	.btn{
+		min-width: 239px;
+		margin-top: 46px;
+	}
+	.unit+.unit{
+		margin-top: 20px;
+	}
+	p+p{
+		margin-top: 20px;
+	}
 }
