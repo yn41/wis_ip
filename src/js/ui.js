@@ -174,7 +174,7 @@ $(function(){
 		}
 	});
 	//e:터치 이벤트 닫기
-	//v:20240319 - s:툴팁 동작
+	// s:툴팁 동작
 	$(".tooltip").mouseover(function(e){
 		if(!fnCheckDevice()) $(e.target).parents(".tooltip").addClass("on");
 	});
@@ -198,7 +198,7 @@ $(function(){
 			}
 		}
 	});
-	//v:20240319 - e:툴팁 동작
+	// e:툴팁 동작
 
 });
 $(window).resize(function(){
@@ -208,9 +208,9 @@ $(window).resize(function(){
 		scrollPosition = 0;
 	}
 });
-//v:20240319 - s:툴팁 동작
+//s:툴팁 동작
 function fnCheckDevice(){
 	var isMobile = /Android|webOS|iPhone|iPad|iPod|BlackBerry/i.test(navigator.userAgent) ? true : false;
 	return isMobile;
 }
-//v:20240319 - e:툴팁 동작
+// e:툴팁 동작
