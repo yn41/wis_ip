@@ -68,6 +68,17 @@ $(function(){
 		$("body").css({"overflow":"", "top":""});
 		scrollPosition = 0;
 	});
+	//my menu
+	// v:240610 s-마이페이지 추가
+	$(".dep1_menu").click(function(){
+		if($(this).hasClass("on") === true) {
+			$(this).removeClass("on");
+		}else {
+			$(this).addClass("on");
+		}
+	});
+	// v:240610 e-마이페이지 추가
+
 	$(document).on("click", function(e){
 		e.stopPropagation();
 		var temp = e.target.className;
@@ -174,7 +185,7 @@ $(function(){
 		}
 	});
 	//e:터치 이벤트 닫기
-	//v:20240319 - s:툴팁 동작
+	// s:툴팁 동작
 	$(".tooltip").mouseover(function(e){
 		if(!fnCheckDevice()) $(e.target).parents(".tooltip").addClass("on");
 	});
@@ -198,7 +209,7 @@ $(function(){
 			}
 		}
 	});
-	//v:20240319 - e:툴팁 동작
+	// e:툴팁 동작
 
 });
 $(window).resize(function(){
@@ -208,9 +219,9 @@ $(window).resize(function(){
 		scrollPosition = 0;
 	}
 });
-//v:20240319 - s:툴팁 동작
+//s:툴팁 동작
 function fnCheckDevice(){
 	var isMobile = /Android|webOS|iPhone|iPad|iPod|BlackBerry/i.test(navigator.userAgent) ? true : false;
 	return isMobile;
 }
-//v:20240319 - e:툴팁 동작
+// e:툴팁 동작

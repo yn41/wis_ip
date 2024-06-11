@@ -68,6 +68,17 @@ $(function(){
 		$("body").css({"overflow":"", "top":""});
 		scrollPosition = 0;
 	});
+	//my menu
+	// v:240610 s-마이페이지 추가
+	$(".dep1_menu").click(function(){
+		if($(this).hasClass("on") === true) {
+			$(this).removeClass("on");
+		}else {
+			$(this).addClass("on");
+		}
+	});
+	// v:240610 e-마이페이지 추가
+
 	$(document).on("click", function(e){
 		e.stopPropagation();
 		var temp = e.target.className;

@@ -1,4 +1,4 @@
-.login{
+.login, .pw{
 	&.container {
 		.inner{
 			width: 100%;
@@ -119,6 +119,197 @@
 			.txt_point{
 				font-weight: $medi;
 			}
+		}
+	}
+}
+.login{
+	.area_easy{
+		@include setCont(100%, auto, block, relative);
+		padding: 0 0 40px 0;
+		@include pc{
+			width: 50%;
+			padding-right: 127px;
+			padding: 16.5px 0;
+		}
+		&::before{
+			@include setCont(100%, 1px, block, absolute, $gray200);
+			z-index: 1;
+			bottom: 0;
+			left: 0;
+			@include pc{
+				@include setCont(1px, 100%);
+				left: unset;
+				right: 0;
+			}
+		}
+		&::after{
+			content: "OR";
+			display: inline-block;
+			background-color: $white;
+			padding: 0 9px;
+			@include font(15,18, $gray400);
+			z-index: 2;
+			position: absolute;
+			bottom: -9px;
+			left: 50%;
+			transform: translateX(-50%);
+			@include pc{
+				@include fontPc(15, 18);
+				transform: translateY(-50%);
+				top: 50%;
+				right: -10px;
+				left: unset;
+				bottom:unset;
+				padding: 8px 0;
+			}
+		}
+		.btn{
+			@include pc{
+				width: 312px;
+			}
+		}
+	}
+	.area_normal{
+		@include setCont(100%, auto, block, relative);
+		padding: 38.5px 0 56px 0;
+		@include pc{
+			width: 50%;
+			padding: 0 0 0 133px;
+		}
+		.ipt{
+			@include pc{
+				width: 312px;
+			}
+			&+.ipt{
+				margin-top: 16px;
+			}
+		}
+		.btn{
+			margin-top: 24px;
+			@include pc{
+				width: 312px;
+			}
+		}
+		p{
+			margin-top: 16px;
+			@include font(15, 18);
+			@include pc{
+				@include fontPc(15, 18);
+			}
+			a{
+				@include font(15, 18, $gray400);
+				@include pc{
+					@include fontPc(15, 18);
+				}
+				&.txt_point{
+					text-decoration: underline;
+				}
+				&:hover{
+					text-decoration: underline;
+				}
+			}
+			.txt_point{
+				font-weight: $medi;
+			}
+		}
+	}
+}
+.pw{
+	min-height: 512px;
+	@include pc{
+		min-height: 630px;
+	}
+	&.container{
+		.inner{
+			max-width: 500px;
+			@include pc{
+				max-width: 100%;
+			}
+		}
+		h2{
+			padding-bottom: 42px;
+			@include pc{
+				padding-bottom: 80px;
+			}
+		}
+	}
+	.unit{
+		@include pc{
+			text-align: center;
+		}
+		&.u1{
+			@include font(16, 19);
+			@include pc{
+				@include fontPc(19, 23);
+			}
+			.c_left{
+				width: 100%;
+				text-align: left;
+				margin: 0 auto;
+				@include pc{
+					width: 360px;
+				}
+			}
+		}
+		&.u3{
+			@include font(15, 18, null, $medi);
+			text-align: center;
+			@include pc{
+				@include fontPc(15, 18);
+			}
+			a{
+				text-decoration: underline;
+				display: inline-block;
+				margin-left: 4px;
+			}
+		}
+	}
+	.u_conf{
+		width: 100%;
+		text-align: left;
+		margin: 0 auto;
+		@include pc{
+			width: 695px;
+		}
+		p{
+			@include font(16, 19);
+			@include pc{
+				@include fontPc(19, 23);
+			}
+			&+p{
+				margin-top: 19px;
+			}
+		}
+	}
+	.u_form{
+		width: 100%;
+		margin: 16.5px auto 16px;
+		@include pc{
+			width: 312px;
+			margin: 29.5px auto 16px;
+		}
+		.bx_ipt{
+			&+.bx_ipt{
+				margin-top: 16px;
+			}
+		}
+		.colr{
+			display: flex;
+			justify-content: flex-end;
+			margin: 15.5px 0 8px;
+		}
+		.link_gray{
+			@include font(15, 18, $gray400);
+			@include pc{
+				@include fontPc(15, 18);
+			}
+			&:hover{
+				text-decoration: underline;
+			}
+		}
+		.btn{
+			width: 100%;
+			margin: 16.5px 0 0;
 		}
 	}
 }
